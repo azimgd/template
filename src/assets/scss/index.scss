@@ -1,0 +1,23 @@
+$white: #fff;
+$headlineColor1: #3498db;
+$greyColor1: #eee;
+
+@import './bootstrap/bootstrap';
+
+.Root {
+  @extend .container;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.Main {
+  @extend .row;
+}
+
+.Sidebar {
+  @extend .col-sm-3;
+}
+
+.Content {
+  @extend .col-sm-9;
+}
