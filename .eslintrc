@@ -1,0 +1,24 @@
+{
+  "extends": "airbnb",
+  "env": {
+    mocha: true
+  },
+  "globals": {
+    "Stripe": true,
+    "React": true
+  },
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "max-len": [0]
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  }
+}

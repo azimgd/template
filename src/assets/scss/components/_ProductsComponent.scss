@@ -1,0 +1,17 @@
+.ProductComponent {
+  background: $c-gray;
+  padding: $padding-base-horizontal;
+
+  &-title {
+    font-weight: $headings-font-weight;
+    margin-bottom: $padding-small-horizontal;
+  }
+
+  &-name {
+
+  }
+
+  &-price {
+    
+  }
+}

@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const LayoutContainer = () =>
-  <div>done</div>;
+const LayoutContainer = ({ children }) =>
+  <div>{children}</div>;
+
+LayoutContainer.propTypes = {
+  children: PropTypes.object.isRequired,
+};
 
 export default LayoutContainer;
