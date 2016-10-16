@@ -3,25 +3,24 @@
 }
 
 .LayoutContainer {
-  @extend .row;
-
   &-header {
-    @extend .container;
   }
 
   &-topnavbar {
-    @extend .container;
   }
 
-  &-content {
-    @extend .col-sm-9;
-  }
+  &-block {
+    @extend .row;
 
-  &-sidebar {
-    @extend .col-sm-3;
+    &-content {
+      @extend .col-sm-9;
+    }
+
+    &-sidebar {
+      @extend .col-sm-3;
+    }
   }
 
   &-footer {
-    @extend .container;
   }
 }

@@ -14,11 +14,13 @@ const LayoutContainer = ({ children }) =>
       <div className="LayoutContainer-topnavbar">
         <TopnavbarComponent />
       </div>
-      <div className="LayoutContainer-content">
-        {children}
-      </div>
-      <div className="LayoutContainer-sidebar">
-        <SidebarComponent />
+      <div className="LayoutContainer-block">
+        <div className="LayoutContainer-block-content">
+          {children}
+        </div>
+        <div className="LayoutContainer-block-sidebar">
+          <SidebarComponent />
+        </div>
       </div>
       <div className="LayoutContainer-footer">
         <FooterComponent />

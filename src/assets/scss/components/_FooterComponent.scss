@@ -1,3 +1,8 @@
+.FooterComponentBlock {
+  border-top: 1px solid $c-gray;
+  border-bottom: 1px solid $c-gray;
+}
+
 .FooterComponent {
   @extend .row;
   margin-top: $padding-large-horizontal;
@@ -9,5 +14,6 @@
 
   &-right {
     @extend .col-sm-3;
+    text-align: right;
   }
 }
