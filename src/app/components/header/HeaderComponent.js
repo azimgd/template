@@ -2,10 +2,10 @@ import React from 'react';
 
 const HeaderComponent = () =>
   <div className="HeaderComponent">
-    <div className="HeaderComponent-title">
+    <div className="HeaderComponent-left">
       Default Shop name
     </div>
-    <div className="HeaderComponent-sidemenu">
+    <div className="HeaderComponent-right">
       logout
     </div>
   </div>;

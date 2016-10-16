@@ -1,0 +1,15 @@
+.TopnavbarComponent {
+  margin-top: $padding-large-horizontal;
+  margin-bottom: $padding-large-horizontal;
+
+  &-nav {
+    padding: 0;
+    list-style: none;
+    margin: 0 -20px;
+
+    &-item {
+      display: inline-block;
+      padding: 0 20px;
+    }
+  }
+}

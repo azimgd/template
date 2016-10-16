@@ -9,11 +9,19 @@
     @extend .container;
   }
 
+  &-topnavbar {
+    @extend .container;
+  }
+
   &-content {
     @extend .col-xs-9;
   }
 
   &-sidebar {
     @extend .col-xs-3;
+  }
+
+  &-footer {
+    @extend .container;
   }
 }
