@@ -1,7 +1,12 @@
 @import './bootstrap/bootstrap';
 
 @import './variables.scss';
+@import './utils.scss';
+
+@import './containers/LayoutContainer';
 @import './containers/HomeContainer';
 @import './containers/ProductsContainer';
 
+@import './components/HeaderComponent';
+@import './components/SidebarComponent';
 @import './components/ProductsComponent';

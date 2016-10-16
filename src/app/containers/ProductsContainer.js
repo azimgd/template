@@ -7,7 +7,7 @@ import ProductComponent from 'components/product/ProductComponent';
 const ProductsContainer = () =>
   <div className="ProductsContainerBlock">
     {_.map(productsMock, (product, key) =>
-      <div><ProductComponent product={product} key={key} /></div>
+      <div key={key}><ProductComponent product={product} /></div>
     )}
   </div>;
 

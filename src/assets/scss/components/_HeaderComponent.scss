@@ -1,0 +1,13 @@
+.HeaderComponent {
+  @extend .row;
+  margin-top: $padding-large-horizontal;
+  margin-bottom: $padding-large-horizontal;
+
+  &-title {
+    @extend .col-xs-9;
+  }
+
+  &-sidemenu {
+    @extend .col-xs-3;
+  }
+}

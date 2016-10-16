@@ -1,0 +1,22 @@
+.SidebarComponent {
+  background: $c-gray;
+  padding: $padding-large-horizontal;
+
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: $padding-large-horizontal;
+    }
+
+    &-title {
+      font-weight: $headings-font-weight;
+      margin-bottom: $padding-large-horizontal;
+    }
+
+    &-content {
+    }
+
+    &-content > ul {
+      @extend .u-listUnstyled;
+    }
+  }
+}

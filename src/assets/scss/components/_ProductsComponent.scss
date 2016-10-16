@@ -1,10 +1,11 @@
 .ProductComponent {
   background: $c-gray;
-  padding: $padding-base-horizontal;
+  margin-bottom: $padding-large-horizontal * 2;
+  padding: $padding-large-horizontal;
 
   &-title {
     font-weight: $headings-font-weight;
-    margin-bottom: $padding-small-horizontal;
+    margin-bottom: $padding-large-horizontal;
   }
 
   &-name {
@@ -12,6 +13,6 @@
   }
 
   &-price {
-    
+
   }
 }

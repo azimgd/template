@@ -15,7 +15,7 @@ const ProductComponent = ({ product }) =>
 
 ProductComponent.propTypes = {
   product: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
   }).isRequired,

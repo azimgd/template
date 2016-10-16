@@ -1,0 +1,19 @@
+.LayoutContainerBlock {
+  @extend .container;
+}
+
+.LayoutContainer {
+  @extend .row;
+
+  &-header {
+    @extend .container;
+  }
+
+  &-content {
+    @extend .col-xs-9;
+  }
+
+  &-sidebar {
+    @extend .col-xs-3;
+  }
+}

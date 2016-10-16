@@ -2,7 +2,6 @@
   @extend .row;
 
   & > div {
-    @extend .col-xs-3;
-    padding: $padding-base-horizontal;
+    @extend .col-xs-4;
   }
 }
