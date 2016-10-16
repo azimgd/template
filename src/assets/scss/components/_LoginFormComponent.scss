@@ -1,0 +1,34 @@
+.LoginFormComponentBlock {
+  @extend .row;
+  padding: $padding-large-horizontal;
+}
+
+.LoginFormComponent {
+  @extend .col-sm-4;
+  @extend .col-xs-offset-4;
+  padding: $padding-large-horizontal;
+  background: $c-gray;
+
+  &-title {
+    font-weight: $headings-font-weight;
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-input {
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-control {
+    @extend .row;
+
+    &-left {
+      @extend .col-xs-6;
+    }
+
+    &-right {
+      @extend .col-xs-6;
+      text-align: right;
+      padding-top: $padding-base-vertical;
+    }
+  }
+}

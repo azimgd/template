@@ -5,6 +5,7 @@
 
 @import './containers/LayoutContainer';
 @import './containers/HomeContainer';
+@import './containers/LoginContainer';
 @import './containers/ProductsContainer';
 @import './containers/ProductViewContainer';
 
@@ -12,10 +13,19 @@
 @import './components/TopnavbarComponent';
 @import './components/FooterComponent';
 @import './components/SidebarComponent';
+@import './components/LoginFormComponent';
 @import './components/ProductsComponent';
 @import './components/ProductAboutComponent';
 @import './components/ProductDetailsComponent';
 
 img {
   max-width: 100%;
+}
+
+input {
+  @extend .form-control;
+}
+
+button {
+  @extend .btn;
 }
