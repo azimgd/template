@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
-const ProductComponent = ({ product }) =>
-  <div className="ProductComponent">
+const ProductComponent = ({ product, height }) =>
+  <div className="ProductComponent" style={{ height: `${height}px` }}>
     <div className="ProductComponent-title">
       {product.title}
     </div>
@@ -19,6 +19,7 @@ ProductComponent.propTypes = {
     description: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
   }).isRequired,
+  height: PropTypes.number,
 };
 
 export default ProductComponent;
