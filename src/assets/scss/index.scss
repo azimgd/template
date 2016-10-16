@@ -6,9 +6,16 @@
 @import './containers/LayoutContainer';
 @import './containers/HomeContainer';
 @import './containers/ProductsContainer';
+@import './containers/ProductViewContainer';
 
 @import './components/HeaderComponent';
 @import './components/TopnavbarComponent';
 @import './components/FooterComponent';
 @import './components/SidebarComponent';
 @import './components/ProductsComponent';
+@import './components/ProductAboutComponent';
+@import './components/ProductDetailsComponent';
+
+img {
+  max-width: 100%;
+}

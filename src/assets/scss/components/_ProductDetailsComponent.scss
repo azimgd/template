@@ -1,0 +1,25 @@
+.ProductDetailsComponentBlock {
+
+}
+
+.ProductDetailsComponent {
+  &-title {
+    font-weight: $headings-font-weight;
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-image {
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-buttons {
+    margin-bottom: $padding-large-horizontal;
+
+    ul {
+      @extend .u-simpleList;
+    }
+  }
+
+  &-description {
+  }
+}
