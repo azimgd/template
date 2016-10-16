@@ -4,10 +4,10 @@
   margin-bottom: $padding-large-horizontal;
 
   &-left {
-    @extend .col-xs-9;
+    @extend .col-sm-9;
   }
 
   &-right {
-    @extend .col-xs-3;
+    @extend .col-sm-3;
   }
 }
