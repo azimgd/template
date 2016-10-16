@@ -1,0 +1,18 @@
+.CheckoutContainer {
+  &-title {
+    font-weight: $headings-font-weight;
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-summary {
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-userInfo {
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-billing {
+    margin-bottom: $padding-large-horizontal;
+  }
+}

@@ -8,6 +8,7 @@
 @import './containers/LoginContainer';
 @import './containers/ProductsContainer';
 @import './containers/ProductViewContainer';
+@import './containers/CheckoutContainer';
 
 @import './components/HeaderComponent';
 @import './components/TopnavbarComponent';
@@ -17,6 +18,11 @@
 @import './components/ProductsComponent';
 @import './components/ProductAboutComponent';
 @import './components/ProductDetailsComponent';
+@import './components/CheckoutSummaryComponent';
+@import './components/CheckoutUserInfoComponent';
+@import './components/CheckoutBillingComponent';
+@import './components/CheckoutControlComponent';
+@import './components/PaymentOptionComponent';
 
 img {
   max-width: 100%;

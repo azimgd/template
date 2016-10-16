@@ -1,0 +1,11 @@
+.CheckoutUserInfoComponentBlock {
+}
+
+.CheckoutUserInfoComponent {
+  @extend .row;
+
+  &-input {
+    @extend .col-xs-6;
+    margin-bottom: $padding-base-horizontal;
+  }
+}

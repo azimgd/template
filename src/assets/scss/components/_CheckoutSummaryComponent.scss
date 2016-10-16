@@ -1,0 +1,24 @@
+.CheckoutSummaryComponentBlock {
+}
+
+.CheckoutSummaryComponent {
+  &-item {
+    @extend .row;
+
+    &:not(:last-child) {
+      margin-bottom: $padding-large-horizontal;
+    }
+
+    &-image {
+      @extend .col-xs-2;
+    }
+
+    &-title {
+      @extend .col-xs-6;
+    }
+
+    &-price {
+      @extend .col-xs-4;
+    }
+  }
+}

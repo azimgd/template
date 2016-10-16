@@ -1,0 +1,15 @@
+.PaymentOptionComponentBlock {
+}
+
+.PaymentOptionComponent {
+  background: $c-gray;
+  padding: $padding-large-horizontal;
+
+  &-title {
+    font-weight: $headings-font-weight;
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-content {
+  }
+}

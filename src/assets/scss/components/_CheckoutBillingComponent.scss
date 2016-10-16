@@ -1,0 +1,10 @@
+.CheckoutBillingComponentBlock {
+}
+
+.CheckoutBillingComponent {
+  @extend .row;
+
+  &-item {
+    @extend .col-sm-4;
+  }
+}

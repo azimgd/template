@@ -6,6 +6,7 @@ import LayoutContainer from 'containers/LayoutContainer';
 import LoginContainer from 'containers/LoginContainer';
 import HomeContainer from 'containers/HomeContainer';
 import ProductViewContainer from 'containers/ProductViewContainer';
+import CheckoutContainer from 'containers/CheckoutContainer';
 
 const Routes = () =>
   <Router history={browserHistory}>
@@ -15,6 +16,7 @@ const Routes = () =>
       <Route path="/products/">
         <Route path=":id" component={ProductViewContainer} />
       </Route>
+      <Route path="/checkout" component={CheckoutContainer} />
     </Route>
   </Router>;
 
