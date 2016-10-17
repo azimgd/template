@@ -8,8 +8,13 @@
     margin-bottom: $padding-large-horizontal;
   }
 
-  &-name {
-
+  &-image {
+    display: block;
+    margin-bottom: $padding-large-horizontal;
+    height: 140px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
   }
 
   &-price {

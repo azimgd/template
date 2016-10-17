@@ -5,6 +5,7 @@ const ProductComponent = ({ product, height }) =>
     <div className="ProductComponent-title">
       {product.title}
     </div>
+    <div className="ProductComponent-image" style={{ backgroundImage: `url(${product.image})` }}></div>
     <div className="ProductComponent-description">
       {product.description}
     </div>
