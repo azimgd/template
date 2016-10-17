@@ -7,10 +7,11 @@ import CheckoutControlComponent from 'components/checkoutControl/CheckoutControl
 
 const CheckoutContainer = () =>
   <div className="CheckoutContainerBlock">
-    <div className="CheckoutContainerBlock">
-      <div className="CheckoutContainer-title">
-        Checkout #123
-      </div>
+    <div className="CheckoutContainerBlock-title">
+      Checkout #123
+    </div>
+
+    <div className="CheckoutContainer">
       <div className="CheckoutContainer-summary">
         <CheckoutSummaryComponent />
       </div>

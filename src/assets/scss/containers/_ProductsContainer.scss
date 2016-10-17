@@ -1,8 +1,17 @@
 .ProductsContainerBlock {
-  @extend .row;
+  &-title {
+    @extend .u-pageTitle;
+  }
+}
 
-  & > div {
-    @extend .col-lg-3;
-    @extend .col-sm-4;
+.ProductsContainer {
+
+  &-products {
+    @extend .row;
+
+    & > div {
+      @extend .col-lg-3;
+      @extend .col-sm-4;
+    }
   }
 }

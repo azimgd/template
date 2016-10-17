@@ -1,15 +1,18 @@
 .FooterComponentBlock {
-  border-top: 1px solid $c-gray;
+  background: $c-gray;
+  padding: $padding-large-horizontal;
   margin-top: $padding-large-horizontal;
 }
 
 .FooterComponent {
   @extend .row;
-  margin-top: $padding-large-horizontal;
-  margin-bottom: $padding-large-horizontal;
 
   &-left {
     @extend .col-sm-9;
+
+    &-title {
+      font-weight: $headings-font-weight;
+    }
   }
 
   &-right {

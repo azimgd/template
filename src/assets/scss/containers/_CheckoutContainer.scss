@@ -1,9 +1,10 @@
-.CheckoutContainer {
+.CheckoutContainerBlock {
   &-title {
-    font-weight: $headings-font-weight;
-    margin-bottom: $padding-large-horizontal;
+    @extend .u-pageTitle;
   }
+}
 
+.CheckoutContainer {
   &-summary {
     margin-bottom: $padding-large-horizontal;
   }

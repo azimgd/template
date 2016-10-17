@@ -1,18 +1,25 @@
 .HeaderComponentBlock {
-  border-bottom: 1px solid $c-gray;
+  background: $c-black-1;
+  padding: $padding-large-horizontal;
 }
 
 .HeaderComponent {
   @extend .row;
-  margin-top: $padding-large-horizontal;
-  margin-bottom: $padding-large-horizontal;
+  color: $c-white;
 
   &-left {
     @extend .col-sm-9;
+
+    &-title {
+      font-size: $font-size-h4;
+    }
   }
 
   &-right {
     @extend .col-sm-3;
+    @extend .hidden-xs;
     text-align: right;
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }

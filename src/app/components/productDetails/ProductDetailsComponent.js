@@ -3,9 +3,6 @@ import React from 'react';
 const ProductDetailsComponent = () =>
   <div className="ProductDetailsComponentBlock">
     <div className="ProductDetailsComponent">
-      <div className="ProductDetailsComponent-title">
-        Sample product
-      </div>
       <div className="ProductDetailsComponent-image">
         <img src="/build/images/defaultone.jpg" alt="" />
       </div>

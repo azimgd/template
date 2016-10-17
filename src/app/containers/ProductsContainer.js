@@ -8,9 +8,17 @@ import ProductComponent from 'components/product/ProductComponent';
 
 const ProductsContainer = ({ maxHeight }) =>
   <div className="ProductsContainerBlock">
-    {_.map(productsMock, (product, key) =>
-      <div key={key}><ProductComponent product={product} height={maxHeight} /></div>
-    )}
+    <div className="ProductsContainerBlock-title">
+      Checkout #123
+    </div>
+
+    <div className="ProductsContainer">
+      <div className="ProductsContainer-products">
+        {_.map(productsMock, (product, key) =>
+          <div key={key}><ProductComponent product={product} height={maxHeight} /></div>
+        )}
+      </div>
+    </div>
   </div>;
 
 ProductsContainer.propTypes = {

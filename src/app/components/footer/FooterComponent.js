@@ -4,7 +4,9 @@ const FooterComponent = () =>
   <div className="FooterComponentBlock">
     <div className="FooterComponent">
       <div className="FooterComponent-left">
-        Default Shop name
+        <div className="FooterComponent-left-title">
+          Default Shop name
+        </div>
       </div>
       <div className="FooterComponent-right">
         logout

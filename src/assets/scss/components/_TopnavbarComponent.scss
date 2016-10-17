@@ -1,14 +1,13 @@
+.TopnavbarComponentBlock {
+  background: $c-gray;
+  padding: $padding-small-horizontal $padding-large-horizontal;
+  margin-bottom: $padding-large-horizontal;
+}
+
 .TopnavbarComponent {
   border-top: 1px solid $c-gray;
-  border-bottom: 1px solid $c-gray;
-  margin-top: $padding-small-horizontal;
-  margin-bottom: $padding-large-horizontal;
-  padding-top: $padding-small-horizontal;
-  padding-bottom: $padding-small-horizontal;
 
   &-nav {
     @extend .u-simpleList;
-    padding: 0;
-    list-style: none;
   }
 }

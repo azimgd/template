@@ -13,3 +13,11 @@ ul.u-simpleList {
     padding: 0 20px;
   }
 }
+
+.u-pageTitle {
+  font-size: $font-size-h3;
+  font-weight: $headings-font-weight;
+  border-bottom: 1px solid $c-gray;
+  margin-bottom: $padding-large-horizontal;
+  padding-bottom: $padding-small-horizontal;
+}

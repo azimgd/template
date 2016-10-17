@@ -1,3 +1,13 @@
 $c-gray: #eee;
 $c-gray-1: lighten($c-gray, 2%);
 $c-gray-2: lighten($c-gray, 4%);
+
+$c-black: #000;
+$c-black-1: lighten($c-black, 10%);
+$c-black-2: lighten($c-black, 20%);
+$c-black-3: lighten($c-black, 30%);
+
+$c-white: #fff;
+$c-white-1: darken($c-white, 10%);
+$c-white-2: darken($c-white, 20%);
+$c-white-3: darken($c-white, 30%);
