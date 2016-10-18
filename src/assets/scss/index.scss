@@ -23,6 +23,7 @@
 @import './components/CheckoutBillingComponent';
 @import './components/CheckoutControlComponent';
 @import './components/PaymentOptionComponent';
+@import './components/CartDropdownComponent';
 
 img {
   max-width: 100%;
@@ -34,4 +35,14 @@ input {
 
 button {
   @extend .btn;
+  @extend .btn-default;
+}
+
+a:hover {
+  color: $c-linkHoverColor;
+  text-decoration: none;
+}
+
+a {
+  color: $c-linkColor;
 }

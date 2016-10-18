@@ -7,11 +7,21 @@
   @extend .row;
   color: $c-white;
 
+  a {
+    color: $c-white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $c-white-2;
+  }
+
   &-left {
     @extend .col-sm-9;
 
     &-title {
-      font-size: $font-size-h4;
+      font-size: $f-h4Size;
+      font-weight: $f-h4Size;
     }
   }
 

@@ -1,3 +1,26 @@
+/**
+ * Font size
+ */
+$f-baseSize: $font-size-base;
+$f-largeSize: $font-size-large;
+$f-smallSize: $font-size-small;
+
+$f-h1Size: $font-size-h1;
+$f-h2Size: $font-size-h2;
+$f-h3Size: $font-size-h3;
+$f-h4Size: $font-size-h4;
+$f-h5Size: $font-size-h5;
+$f-h6Size: $font-size-h6;
+
+/**
+ * Font weight
+ */
+$f-headingsWeight: 400;
+$f-textWeight: 400;
+
+/**
+ * Colors
+ */
 $c-gray: #eee;
 $c-gray-1: lighten($c-gray, 2%);
 $c-gray-2: lighten($c-gray, 4%);
@@ -11,3 +34,6 @@ $c-white: #fff;
 $c-white-1: darken($c-white, 10%);
 $c-white-2: darken($c-white, 20%);
 $c-white-3: darken($c-white, 30%);
+
+$c-linkColor: $brand-primary !default;
+$c-linkHoverColor: darken($c-linkColor, 15%) !default;
