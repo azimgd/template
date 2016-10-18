@@ -47,3 +47,7 @@ $c-blue-3: darken($c-blue, 30%);
 
 $c-linkColor: $c-blue !default;
 $c-linkHoverColor: darken($c-linkColor, 15%) !default;
+
+$c-blackTransparent: rgba(0, 0, 0, 0.7);
+$c-blackTransparent-1: rgba(0, 0, 0, 0.6);
+$c-blackTransparent-2: rgba(0, 0, 0, 0.5);

@@ -25,7 +25,7 @@ const productsResizeListener = (ProductViewComponent) => {
     }
 
     onResize() {
-      const elements = document.querySelectorAll('.ProductsContainerBlock .ProductComponent');
+      const elements = document.querySelectorAll('.ProductsContainerBlock .ProductComponent > .ProductComponent-content');
       const maxHeight = _.chain(elements).map(item => item.offsetHeight).max().value();
       this.setState({ maxHeight });
     }

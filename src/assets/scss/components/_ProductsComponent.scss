@@ -1,26 +1,50 @@
 .ProductComponent {
   background: $c-gray;
-  margin: -$padding-large-horizontal;
-  padding: $padding-large-horizontal;
-
-  &-title {
-    font-weight: $headings-font-weight;
-    margin-bottom: $padding-large-horizontal;
-  }
-
-  &-title > a {
-  }
+  padding-bottom: $padding-large-horizontal * 2;
 
   &-image {
     display: block;
-    margin-bottom: $padding-large-horizontal;
     height: 140px;
     width: 100%;
     background-size: cover;
     background-position: center center;
+    position: relative;
+
+    &-price {
+      background: $c-blackTransparent-1;
+      color: $c-white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: $padding-small-vertical $padding-small-horizontal;
+    }
   }
 
-  &-price {
-    margin-top: $padding-large-horizontal;
+  &-content {
+    background: $c-white;
+    padding: $padding-small-horizontal;
+
+    &-title {
+      font-weight: $headings-font-weight;
+      margin-bottom: $padding-small-horizontal;
+    }
+
+    &-title > a {
+    }
+  }
+
+  &-button {
+    padding: $padding-small-horizontal;
+    background: $c-black-2;
+    color: $c-white;
+
+    & > a {
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+    & > a:hover {
+      color: inherit;
+    }
   }
 }

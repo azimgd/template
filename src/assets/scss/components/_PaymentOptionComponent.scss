@@ -1,8 +1,22 @@
 .PaymentOptionComponentBlock {
+  &-button {
+    padding: $padding-small-horizontal $padding-large-horizontal;
+    background: $c-black-2;
+    color: $c-white;
+
+    & > a {
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+    & > a:hover {
+      color: inherit;
+    }
+  }
 }
 
 .PaymentOptionComponent {
-  background: $c-gray;
+  background: $c-white;
   padding: $padding-large-horizontal;
 
   &-title {
