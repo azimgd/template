@@ -13,7 +13,7 @@ const LayoutContainer = ({ children, cartPosition }) =>
     <div className="LayoutContainer">
       <div className="LayoutContainer-header">
         <HeaderComponent />
-        <CartDropdownComponent cartPosition={cartPosition} />
+        <CartDropdownComponent cartPosition={cartPosition} isVisible={false} />
       </div>
       <div className="LayoutContainer-topnavbar">
         <TopnavbarComponent />

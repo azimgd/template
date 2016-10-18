@@ -10,11 +10,28 @@
     border-bottom: 15px solid $c-blue;
     margin-left: calc(100% - 50px);
   }
+
+  &-title {
+    padding: $padding-small-horizontal;
+    background: $c-blue;
+    font-weight: $headings-font-weight;
+    color: $c-white;
+  }
+
+  &-summary {
+    padding: $padding-small-horizontal;
+    background: $c-blue-1;
+    color: $c-white;
+  }
 }
 
 .CartDropdownComponent {
-  padding: $padding-large-horizontal;
+  padding: $padding-small-horizontal;
   background: $c-blue;
   color: $c-white;
-  width: 150px;
+  width: 262px;
+
+  &-item:not(:last-child) {
+    margin-bottom: $padding-small-horizontal;
+  }
 }

@@ -1,0 +1,13 @@
+.CartDropdownItemComponentBlock {
+}
+
+.CartDropdownItemComponent {
+  @extend .row;
+  &-left {
+    @extend .col-xs-3;
+  }
+
+  &-right {
+    @extend .col-xs-9;
+  }
+}
