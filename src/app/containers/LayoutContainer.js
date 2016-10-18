@@ -1,15 +1,19 @@
 import React, { PropTypes } from 'react';
 
+import cartResizeListener from 'hoc/CartResizeListener';
+
 import HeaderComponent from 'components/header/HeaderComponent';
 import SidebarComponent from 'components/sidebar/SidebarComponent';
 import FooterComponent from 'components/footer/FooterComponent';
 import TopnavbarComponent from 'components/topnavbar/TopnavbarComponent';
+import CartDropdownComponent from 'components/cartDropdown/CartDropdownComponent';
 
-const LayoutContainer = ({ children }) =>
+const LayoutContainer = ({ children, cartPosition }) =>
   <div className="LayoutContainerBlock">
     <div className="LayoutContainer">
       <div className="LayoutContainer-header">
         <HeaderComponent />
+        <CartDropdownComponent cartPosition={cartPosition} />
       </div>
       <div className="LayoutContainer-topnavbar">
         <TopnavbarComponent />
@@ -30,6 +34,10 @@ const LayoutContainer = ({ children }) =>
 
 LayoutContainer.propTypes = {
   children: PropTypes.object.isRequired,
+  cartPosition: PropTypes.shape({
+    top: PropTypes.number,
+    left: PropTypes.number,
+  }).isRequired,
 };
 
-export default LayoutContainer;
+export default cartResizeListener(LayoutContainer);

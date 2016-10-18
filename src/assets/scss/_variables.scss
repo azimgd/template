@@ -35,5 +35,8 @@ $c-white-1: darken($c-white, 10%);
 $c-white-2: darken($c-white, 20%);
 $c-white-3: darken($c-white, 30%);
 
-$c-linkColor: $brand-primary !default;
+$c-green: $brand-success;
+$c-blue: $brand-primary;
+
+$c-linkColor: $c-blue !default;
 $c-linkHoverColor: darken($c-linkColor, 15%) !default;

@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-const productsResizeListener = (CameraViewComponent) => {
+const productsResizeListener = (ProductViewComponent) => {
   class ProductsResizeListenerComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -31,7 +31,7 @@ const productsResizeListener = (CameraViewComponent) => {
     }
 
     render() {
-      return <CameraViewComponent {...this.state} />;
+      return <ProductViewComponent {...this.state} />;
     }
   }
 

@@ -1,0 +1,20 @@
+.CartDropdownComponentBlock {
+  position: fixed;
+  z-index: 2;
+
+  &-triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid $c-blue;
+    margin-left: calc(100% - 50px);
+  }
+}
+
+.CartDropdownComponent {
+  padding: $padding-large-horizontal;
+  background: $c-blue;
+  color: $c-white;
+  width: 150px;
+}
