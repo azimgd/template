@@ -1,4 +1,6 @@
 .ProductViewContainerBlock {
+  @extend .u-containerBlock;
+
   &-title {
     @extend .u-pageTitle;
   }
@@ -6,6 +8,7 @@
 
 .ProductViewContainer {
   @extend .row;
+  @extend .u-container;
 
   &-left {
     @extend .col-sm-9;

@@ -1,6 +1,6 @@
 .ProductComponent {
   background: $c-gray;
-  margin-bottom: $padding-large-horizontal * 2;
+  margin: -$padding-large-horizontal;
   padding: $padding-large-horizontal;
 
   &-title {

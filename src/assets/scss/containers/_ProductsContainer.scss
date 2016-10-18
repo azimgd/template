@@ -1,10 +1,13 @@
 .ProductsContainerBlock {
+  @extend .u-containerBlock;
+
   &-title {
     @extend .u-pageTitle;
   }
 }
 
 .ProductsContainer {
+  @extend .u-container;
 
   &-products {
     @extend .row;

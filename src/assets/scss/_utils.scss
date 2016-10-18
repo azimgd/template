@@ -17,7 +17,15 @@ ul.u-simpleList {
 .u-pageTitle {
   font-size: $font-size-h3;
   font-weight: $headings-font-weight;
-  border-bottom: 1px solid $c-gray;
-  margin-bottom: $padding-large-horizontal;
-  padding-bottom: $padding-small-horizontal;
+  padding: $padding-small-horizontal $padding-large-horizontal;
+  background: $c-black-2;
+  color: $c-white;
+}
+
+.u-containerBlock {
+  background: $c-gray;
+}
+
+.u-container {
+  padding: $padding-large-horizontal;
 }

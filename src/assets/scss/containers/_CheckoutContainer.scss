@@ -1,10 +1,14 @@
 .CheckoutContainerBlock {
+  @extend .u-containerBlock;
+
   &-title {
     @extend .u-pageTitle;
   }
 }
 
 .CheckoutContainer {
+  @extend .u-container;
+
   &-summary {
     margin-bottom: $padding-large-horizontal;
   }
