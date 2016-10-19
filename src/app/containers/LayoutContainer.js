@@ -4,6 +4,7 @@ import cartResizeListener from 'hoc/CartResizeListener';
 
 import HeaderComponent from 'components/header/HeaderComponent';
 import SidebarComponent from 'components/sidebar/SidebarComponent';
+import SidebarSearchComponent from 'components/sidebarSearch/SidebarSearchComponent';
 import FooterComponent from 'components/footer/FooterComponent';
 import TopnavbarComponent from 'components/topnavbar/TopnavbarComponent';
 import AlertMessageComponent from 'components/alertMessage/AlertMessageComponent';
@@ -27,6 +28,7 @@ const LayoutContainer = ({ children, cartPosition }) =>
           {children}
         </div>
         <div className="LayoutContainer-block-sidebar">
+          <SidebarSearchComponent />
           <SidebarComponent />
         </div>
       </div>

@@ -1,0 +1,39 @@
+.SidebarSearchComponentBlock {
+
+}
+.SidebarSearchComponent {
+  background: $c-contentBackground;
+  padding: $padding-large-horizontal;
+
+  &-search {
+    margin-bottom: $padding-small-horizontal;
+    input {
+      border-color: $c-secondaryBackground;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
+  &-resultsTitle {
+    margin-bottom: $padding-small-horizontal;
+    font-style: italic;
+  }
+
+  &-results {
+    margin-bottom: $padding-small-horizontal;
+
+    &-item:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+
+  &-button {
+    button {
+      width: 100%;
+      border-radius: 0;
+      border: 0;
+      background: $c-secondaryBackground;
+      color: $c-white;
+    }
+  }
+}
