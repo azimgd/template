@@ -4,6 +4,7 @@ import { Router, Route, Redirect, IndexRoute, browserHistory } from 'react-route
 
 import LayoutContainer from 'containers/LayoutContainer';
 import LoginContainer from 'containers/LoginContainer';
+import HomeContainer from 'containers/HomeContainer';
 import ProductsContainer from 'containers/ProductsContainer';
 import ProductViewContainer from 'containers/ProductViewContainer';
 import CheckoutContainer from 'containers/CheckoutContainer';
@@ -13,7 +14,7 @@ const Routes = () =>
   <Router history={browserHistory}>
     <Route path="/login" component={LoginContainer} />
     <Route path="/" component={LayoutContainer}>
-      <IndexRoute component={ProductsContainer} />
+      <IndexRoute component={HomeContainer} />
       <Route path="/products/">
         <IndexRoute component={ProductsContainer} />
         <Route path=":id" component={ProductViewContainer} />

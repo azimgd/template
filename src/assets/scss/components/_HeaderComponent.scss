@@ -20,6 +20,7 @@
     @extend .col-sm-9;
 
     &-title {
+      display: inline-block;
       font-size: $f-h4Size;
       font-weight: $f-h4Size;
     }

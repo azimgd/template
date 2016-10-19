@@ -1,2 +1,11 @@
 .HomeContainerBlock {
+  @extend .u-containerBlock;
+
+  &-title {
+    @extend .u-pageTitle;
+  }
+}
+
+.HomeContainer {
+  @extend .u-container;
 }
