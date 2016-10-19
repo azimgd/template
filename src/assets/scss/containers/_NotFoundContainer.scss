@@ -1,0 +1,11 @@
+.NotFoundContainerBlock {
+  @extend .u-containerBlock;
+
+  &-title {
+    @extend .u-pageTitle;
+  }
+}
+
+.NotFoundContainer {
+  @extend .u-container;
+}
