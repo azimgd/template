@@ -6,6 +6,7 @@ import HeaderComponent from 'components/header/HeaderComponent';
 import SidebarComponent from 'components/sidebar/SidebarComponent';
 import FooterComponent from 'components/footer/FooterComponent';
 import TopnavbarComponent from 'components/topnavbar/TopnavbarComponent';
+import AlertMessageComponent from 'components/alertMessage/AlertMessageComponent';
 import CartDropdownComponent from 'components/cartDropdown/CartDropdownComponent';
 
 const LayoutContainer = ({ children, cartPosition }) =>
@@ -17,6 +18,9 @@ const LayoutContainer = ({ children, cartPosition }) =>
       </div>
       <div className="LayoutContainer-topnavbar">
         <TopnavbarComponent />
+      </div>
+      <div className="LayoutContainer-search">
+        <AlertMessageComponent />
       </div>
       <div className="LayoutContainer-block">
         <div className="LayoutContainer-block-content">

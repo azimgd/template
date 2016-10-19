@@ -1,0 +1,15 @@
+.AlertMessageComponentBlock {
+  background: $c-secondaryBackground-1;
+  padding: $padding-large-horizontal;
+}
+
+.AlertMessageComponent {
+  &-title {
+    margin-bottom: $padding-small-horizontal;
+    font-size: $f-h4Size;
+  }
+
+  &-content {
+
+  }
+}
