@@ -3,11 +3,12 @@ import React from 'react';
 import ProductDetailsComponent from 'components/productDetails/ProductDetailsComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
 import ProductPriceComponent from 'components/productPrice/ProductPriceComponent';
+import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 
 const ProductViewContainer = () =>
   <div className="ProductViewContainerBlock">
     <div className="ProductViewContainerBlock-title">
-      Products page 123
+      <PageNavLocationComponent pageName="Products page 123" />
     </div>
     <div className="ProductViewContainer">
       <div className="ProductViewContainer-left">
