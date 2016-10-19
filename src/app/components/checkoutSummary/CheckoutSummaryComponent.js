@@ -12,10 +12,11 @@ const CheckoutSummaryComponent = () =>
             <img src={product.image} alt="" />
           </div>
           <div className="CheckoutSummaryComponent-item-title">
-            {product.title}
+            <p>{product.title}</p>
+            <p><small>{product.description}</small></p>
           </div>
           <div className="CheckoutSummaryComponent-item-price">
-            {product.price}
+            <p>{product.price}</p>
           </div>
         </div>
       )}

@@ -2,7 +2,7 @@
   &-button {
     padding: $padding-small-horizontal $padding-large-horizontal;
     background: $c-primaryBackground;
-    color: $c-white;
+    color: $c-primaryText;
 
     & > a {
       width: 100%;
@@ -16,7 +16,7 @@
 }
 
 .PaymentOptionComponent {
-  background: $c-white;
+  background: $c-bodyBackground-1;
   padding: $padding-large-horizontal;
 
   &-title {

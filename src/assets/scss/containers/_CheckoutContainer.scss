@@ -20,4 +20,9 @@
   &-billing {
     margin-bottom: $padding-large-horizontal;
   }
+
+  &-control {
+    margin: -$padding-large-horizontal;
+    margin-top: $padding-large-horizontal;
+  }
 }

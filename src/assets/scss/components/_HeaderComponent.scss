@@ -1,19 +1,19 @@
 .HeaderComponentBlock {
-  background: $c-primaryBackground;
+  background: $c-black-2;
   padding: $padding-large-horizontal;
 }
 
 .HeaderComponent {
   @extend .row;
-  color: $c-primaryText;
+  color: $c-secondaryBackground;
 
   a {
-    color: $c-primaryText;
+    color: $c-secondaryBackground;
     text-decoration: none;
   }
 
   a:hover {
-    color: $c-primaryText;
+    color: $c-secondaryBackground;
   }
 
   &-left {
