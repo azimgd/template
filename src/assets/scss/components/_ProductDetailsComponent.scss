@@ -7,14 +7,30 @@
     margin-bottom: $padding-large-horizontal;
   }
 
-  &-buttons {
+  &-detailsBlock {
+    background: $c-bodyBackground-1;
+    padding: $padding-large-horizontal;
     margin-bottom: $padding-large-horizontal;
+  }
 
-    ul {
-      @extend .u-simpleList;
+  &-details {
+    @extend .row;
+    margin-bottom: -$padding-large-horizontal;
+
+    &-item {
+      @extend .col-xs-4;
+      margin-bottom: $padding-large-horizontal;
     }
   }
 
   &-description {
+  }
+}
+
+.ProductDetailsItemComponent {
+  &-title {
+    font-weight: $f-headingsWeight;
+  }
+  &-content {
   }
 }
