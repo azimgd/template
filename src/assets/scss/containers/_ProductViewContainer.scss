@@ -16,5 +16,9 @@
 
   &-right {
     @extend .col-sm-3;
+
+    & > div:not(:last-child) {
+      margin-bottom: $padding-large-horizontal;
+    }
   }
 }

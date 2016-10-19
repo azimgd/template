@@ -2,6 +2,7 @@ import React from 'react';
 
 import ProductDetailsComponent from 'components/productDetails/ProductDetailsComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
+import ProductPriceComponent from 'components/productPrice/ProductPriceComponent';
 
 const ProductViewContainer = () =>
   <div className="ProductViewContainerBlock">
@@ -13,6 +14,7 @@ const ProductViewContainer = () =>
         <ProductDetailsComponent />
       </div>
       <div className="ProductViewContainer-right">
+        <ProductPriceComponent />
         <ProductAboutComponent />
       </div>
     </div>

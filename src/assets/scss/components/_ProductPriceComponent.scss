@@ -1,0 +1,36 @@
+.ProductPriceComponentBlock {
+  &-button {
+    padding: $padding-small-horizontal $padding-large-horizontal;
+    background: $c-secondaryBackground;
+    color: $c-white;
+    text-align: center;
+
+    & > a {
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    & > a:hover {
+      color: inherit;
+    }
+  }
+}
+
+.ProductPriceComponent {
+  background: $c-bodyBackground-1;
+  padding: $padding-large-horizontal;
+
+  &-price {
+    font-size: $f-h3Size;
+    text-align: center;
+    color: $c-secondaryBackground;
+    font-weight: $headings-font-weight;
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-more {
+    text-align: center;
+    font-style: italic;
+  }
+}
