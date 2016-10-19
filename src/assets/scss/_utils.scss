@@ -6,6 +6,7 @@
 ul.u-simpleList {
   padding: 0;
   list-style: none;
+  margin-bottom: 0;
 
   & > li {
     display: inline-block;
@@ -23,12 +24,12 @@ ul.u-simpleList {
 .u-pageTitle {
   font-size: $font-size-h4;
   padding: $padding-small-horizontal $padding-large-horizontal;
-  background: $c-black-2;
-  color: $c-white;
+  background: $c-primaryBackground;
+  color: $c-primaryText;
 }
 
 .u-containerBlock {
-  background: $c-gray;
+  background: $c-contentBackground;
 }
 
 .u-container {

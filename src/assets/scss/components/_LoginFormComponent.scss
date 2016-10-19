@@ -7,7 +7,7 @@
   @extend .col-sm-4;
   @extend .col-xs-offset-4;
   padding: $padding-large-horizontal;
-  background: $c-gray;
+  background: $c-contentBackground;
 
   &-title {
     font-weight: $headings-font-weight;

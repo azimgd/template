@@ -7,27 +7,27 @@
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 15px solid $c-blue;
+    border-bottom: 15px solid $c-secondaryBackground;
     margin-left: calc(100% - 50px);
   }
 
   &-title {
     padding: $padding-small-horizontal;
-    background: $c-blue;
+    background: $c-secondaryBackground;
     font-weight: $headings-font-weight;
     color: $c-white;
   }
 
   &-summary {
     padding: $padding-small-horizontal;
-    background: $c-blue-1;
+    background: $c-secondaryBackground;
     color: $c-white;
   }
 }
 
 .CartDropdownComponent {
   padding: $padding-small-horizontal;
-  background: $c-blue;
+  background: $c-secondaryBackground-1;
   color: $c-white;
   width: 262px;
 

@@ -1,12 +1,10 @@
 .TopnavbarComponentBlock {
-  background: $c-gray;
+  background: $c-contentBackground;
   padding: $padding-small-horizontal $padding-large-horizontal;
   margin-bottom: $padding-large-horizontal;
 }
 
 .TopnavbarComponent {
-  border-top: 1px solid $c-gray;
-
   &-nav {
     @extend .u-simpleList;
   }

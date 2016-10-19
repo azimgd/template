@@ -19,6 +19,17 @@ $f-headingsWeight: 400;
 $f-textWeight: 400;
 
 /**
+ * Main theme colors
+ */
+$c-primaryBackground: #edeae3;
+$c-primaryText: #333;
+$c-secondaryBackground: #84b154;
+$c-secondaryBackground-1: lighten($c-secondaryBackground, 10%);
+$c-contentBackground: #fff;
+$c-bodyBackground: #eee;
+$c-bodyBackground-1: lighten($c-bodyBackground, 4%);
+
+/**
  * Colors
  */
 $c-gray: #eee;

@@ -1,5 +1,5 @@
 .ProductComponent {
-  background: $c-gray;
+  background: $c-contentBackground;
   padding-bottom: $padding-large-horizontal * 2;
 
   &-image {
@@ -21,7 +21,7 @@
   }
 
   &-content {
-    background: $c-white;
+    background: $c-bodyBackground-1;
     padding: $padding-small-horizontal;
 
     &-title {
@@ -35,7 +35,7 @@
 
   &-button {
     padding: $padding-small-horizontal;
-    background: $c-black-2;
+    background: $c-secondaryBackground;
     color: $c-white;
 
     & > a {
