@@ -11,12 +11,14 @@ const ProductViewContainer = () =>
       <PageNavLocationComponent pageName="Products page 123" />
     </div>
     <div className="ProductViewContainer">
-      <div className="ProductViewContainer-left">
-        <ProductDetailsComponent />
-      </div>
-      <div className="ProductViewContainer-right">
-        <ProductPriceComponent />
-        <ProductAboutComponent />
+      <div className="ProductViewContainer-block">
+        <div className="ProductViewContainer-block-left">
+          <ProductDetailsComponent />
+        </div>
+        <div className="ProductViewContainer-block-right">
+          <ProductPriceComponent />
+          <ProductAboutComponent />
+        </div>
       </div>
     </div>
   </div>;

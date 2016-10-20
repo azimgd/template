@@ -7,6 +7,7 @@ import LoginContainer from 'containers/LoginContainer';
 import HomeContainer from 'containers/HomeContainer';
 import ProductsContainer from 'containers/ProductsContainer';
 import ProductViewContainer from 'containers/ProductViewContainer';
+import ProductFormContainer from 'containers/ProductFormContainer';
 import CheckoutContainer from 'containers/CheckoutContainer';
 import NotFoundContainer from 'containers/NotFoundContainer';
 
@@ -15,6 +16,7 @@ const Routes = () =>
     <Route path="/login" component={LoginContainer} />
     <Route path="/" component={LayoutContainer}>
       <IndexRoute component={HomeContainer} />
+      <Route path="/form" component={ProductFormContainer} />
       <Route path="/products">
         <IndexRoute component={ProductsContainer} />
         <Route path=":id" component={ProductViewContainer} />

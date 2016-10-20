@@ -1,0 +1,20 @@
+.ProductFormComponentBlock {
+}
+
+.ProductFormComponent {
+  &-contactForm {
+    margin-bottom: $padding-base-horizontal;
+
+    &-input:not(:last-child) {
+      margin-bottom: $padding-base-horizontal;
+    }
+  }
+
+  &-productForm {
+    margin-bottom: $padding-base-horizontal;
+
+    &-input:not(:last-child) {
+      margin-bottom: $padding-base-horizontal;
+    }
+  }
+}

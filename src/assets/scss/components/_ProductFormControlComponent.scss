@@ -1,0 +1,39 @@
+.ProductFormControlComponentBlock {
+  padding: $padding-large-horizontal * 2 $padding-large-horizontal;
+  background: $c-primaryBackground;
+}
+
+.ProductFormControlComponent {
+  color: $c-primaryText;
+  @extend .row;
+
+  &-left {
+    @extend .col-xs-8;
+
+    &-total {
+      padding: $padding-small-horizontal 0;
+      font-weight: $f-headingsWeight;
+    }
+  }
+
+  &-right {
+    @extend .col-xs-4;
+
+    &-button {
+      padding: $padding-small-horizontal $padding-large-horizontal;
+      background: $c-secondaryBackground;
+      color: $c-white;
+      text-align: center;
+
+      & > a {
+        width: 100%;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      & > a:hover {
+        color: inherit;
+      }
+    }
+  }
+}

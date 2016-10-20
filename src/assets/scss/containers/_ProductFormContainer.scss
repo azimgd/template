@@ -1,4 +1,4 @@
-.ProductViewContainerBlock {
+.ProductFormContainerBlock {
   @extend .u-containerBlock;
 
   &-title {
@@ -6,10 +6,9 @@
   }
 }
 
-.ProductViewContainer {
-  padding: $padding-large-horizontal;
-
+.ProductFormContainer {
   &-block {
+    padding: $padding-large-horizontal;
     @extend .row;
 
     &-left {
