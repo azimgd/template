@@ -6,9 +6,6 @@ const HomeCategoriesComponent = () =>
     <div className="HomeCategoriesComponent">
       {_.map([1, 2, 3, 4, 5, 6, 7], (item, key) =>
         <div className="HomeCategoriesComponent-item" key={key}>
-          <div className="HomeCategoriesComponent-item-image">
-            <img src="http://image.flaticon.com/icons/png/128/214/214347.png" alt="" />
-          </div>
           <div className="HomeCategoriesComponent-item-title">
             <a href="">Cars</a>
           </div>

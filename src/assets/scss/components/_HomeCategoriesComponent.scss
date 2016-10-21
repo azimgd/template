@@ -9,15 +9,6 @@
     @extend .col-sm-3;
     margin-bottom: $padding-large-horizontal * 2;
 
-    &-image {
-      margin-bottom: $padding-large-horizontal;
-
-      img {
-        display: block;
-        max-width: 80px;
-      }
-    }
-
     &-title {
       font-size: $f-h4Size;
       margin-bottom: $padding-large-horizontal;
