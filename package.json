@@ -29,7 +29,10 @@
     "react-dom": "^15.3.2",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-hz": "^0.4.0",
+    "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.6",
+    "redux-actions": "^0.12.0",
     "run-sequence": "^1.2.2",
     "webpack": "^1.13.2"
   },
@@ -39,6 +42,10 @@
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-util": "^3.0.7",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.1.0",
+    "redux-logger": "^2.7.0",
     "webpack-dev-server": "^1.16.2",
     "write-file-webpack-plugin": "^3.3.0"
   }
