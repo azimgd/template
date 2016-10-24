@@ -60,7 +60,9 @@ select {
 
 button {
   @extend .btn;
-  @extend .btn-default;
+  box-shadow: 0;
+  border-radius: 0;
+  border: 0;
 }
 
 a:hover {
