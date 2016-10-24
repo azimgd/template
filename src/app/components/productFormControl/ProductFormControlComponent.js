@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const ProductFormControlComponent = ({ createProduct }) =>
+const ProductFormControlComponent = ({ onClick }) =>
   <div className="ProductFormControlComponentBlock">
     <div className="ProductFormControlComponent">
       <div className="ProductFormControlComponent-left">
@@ -9,7 +9,7 @@ const ProductFormControlComponent = ({ createProduct }) =>
         </div>
       </div>
       <div className="ProductFormControlComponent-right">
-        <button onClick={createProduct} className="ProductFormControlComponent-right-button">
+        <button onClick={onClick} className="ProductFormControlComponent-right-button">
           Create now
         </button>
       </div>
@@ -17,7 +17,7 @@ const ProductFormControlComponent = ({ createProduct }) =>
   </div>;
 
 ProductFormControlComponent.propTypes = {
-  createProduct: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ProductFormControlComponent;

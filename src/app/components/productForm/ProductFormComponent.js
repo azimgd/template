@@ -1,59 +1,68 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { Field, reduxForm } from 'redux-form';
 
-const ProductFormComponent = () =>
+const ProductFormComponent = ({ handleSubmit, createProduct }) =>
   <div className="ProductFormComponentBlock">
-    <div className="ProductFormComponent">
+    <form className="ProductFormComponent" onSubmit={handleSubmit(createProduct)}>
       <div className="ProductFormComponent-contactForm">
         <div className="ProductFormComponent-contactForm-input">
           <label htmlFor="">Name</label>
-          <input type="text" placeholder="Name" />
+          <Field name="name" component="input" type="text" placeholder="Name" />
         </div>
         <div className="ProductFormComponent-contactForm-input">
           <label htmlFor="">Email</label>
-          <input type="text" placeholder="Email" />
+          <Field name="email" component="input" type="text" placeholder="Email" />
         </div>
         <div className="ProductFormComponent-contactForm-input">
           <label htmlFor="">Phone number</label>
-          <input type="text" placeholder="Phone number" />
+          <Field name="phone" component="input" type="text" placeholder="Phone number" />
         </div>
         <div className="ProductFormComponent-contactForm-input">
           <label htmlFor="">Address</label>
-          <input type="text" placeholder="Address" />
+          <Field name="address" component="input" type="text" placeholder="Address" />
         </div>
         <div className="ProductFormComponent-contactForm-input">
           <label htmlFor="">City</label>
-          <select>
+          <Field name="city" component="select">
             <option value="volvo">Volvo</option>
             <option value="saab">Saab</option>
             <option value="mercedes">Mercedes</option>
             <option value="audi">Audi</option>
-          </select>
+          </Field>
         </div>
         <div className="ProductFormComponent-contactForm-input">
           <label htmlFor="">Category</label>
-          <select>
+          <Field name="category" component="select">
             <option value="volvo">Volvo</option>
             <option value="saab">Saab</option>
             <option value="mercedes">Mercedes</option>
             <option value="audi">Audi</option>
-          </select>
+          </Field>
         </div>
       </div>
 
       <div className="ProductFormComponent-productForm">
         <div className="ProductFormComponent-productForm-input">
           <label htmlFor="">Subject</label>
-          <input type="text" placeholder="Subject" />
+          <Field name="subject" component="input" type="text" placeholder="Subject" />
         </div>
         <div className="ProductFormComponent-productForm-input">
           <label htmlFor="">Message</label>
-          <textarea placeholder="Email" />
+          <Field name="message" component="textarea" />
         </div>
       </div>
-    </div>
+
+      <button type="submit" className="ProductFormControlComponent-right-button">
+        Create now
+      </button>
+    </form>
   </div>;
 
 ProductFormComponent.propTypes = {
+  createProduct: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
-export default ProductFormComponent;
+export default reduxForm({
+  form: 'ProductFormComponent',
+})(ProductFormComponent);
