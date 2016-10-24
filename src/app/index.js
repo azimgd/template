@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Redirect, IndexRoute, browserHistory } from 'react-router';
+import { Horizon as horizon, HorizonProvider } from 'react-hz';
 
 import LayoutContainer from 'containers/LayoutContainer';
 import LoginContainer from 'containers/LoginContainer';
@@ -27,4 +28,10 @@ const Routes = () =>
     </Route>
   </Router>;
 
-ReactDOM.render(<Routes />, document.getElementById('root'));
+const horizonInstance = horizon({ host: 'localhost:8181' });
+
+ReactDOM.render((
+  <HorizonProvider instance={horizonInstance}>
+    <Routes />
+  </HorizonProvider>
+), document.getElementById('root'));
