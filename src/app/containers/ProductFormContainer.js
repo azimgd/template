@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-hz';
-
+import productFormContainerHoc from 'hoc/productFormContainerHoc';
 import ProductFormComponent from 'components/productForm/ProductFormComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
 
@@ -42,10 +41,4 @@ ProductFormContainer.propTypes = {
   createProduct: PropTypes.func.isRequired,
 };
 
-const Container = connect(ProductFormContainer, {
-  mutations: {
-    createProduct: (hz) => (product) => hz('products').store(product),
-  },
-});
-
-export default Container;
+export default productFormContainerHoc(ProductFormContainer);

@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
-import { connect } from 'react-hz';
-
+import productsContainerHoc from 'hoc/productsContainerHoc';
 import productsResizeListener from 'hoc/ProductsResizeListener';
 import ProductComponent from 'components/product/ProductComponent';
 
@@ -25,10 +24,6 @@ ProductsContainer.propTypes = {
   maxHeight: PropTypes.number,
 };
 
-const Container = connect(ProductsContainer, {
-  subscriptions: {
-    products: (hz) => hz('products'),
-  },
-});
-
-export default productsResizeListener(Container);
+export default productsResizeListener(
+  productsContainerHoc(ProductsContainer)
+);
