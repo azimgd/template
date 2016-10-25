@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const ProductFormControlComponent = () =>
+const ProductFormControlComponent = ({ onClick }) =>
   <div className="ProductFormControlComponentBlock">
     <div className="ProductFormControlComponent">
       <div className="ProductFormControlComponent-left">
@@ -9,14 +9,15 @@ const ProductFormControlComponent = () =>
         </div>
       </div>
       <div className="ProductFormControlComponent-right">
-        <div className="ProductFormControlComponent-right-button">
+        <button onClick={onClick} className="ProductFormControlComponent-right-button">
           Create now
-        </div>
+        </button>
       </div>
     </div>
   </div>;
 
 ProductFormControlComponent.propTypes = {
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ProductFormControlComponent;

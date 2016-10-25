@@ -1,12 +1,10 @@
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
-
+import productsContainerHoc from 'hoc/productsContainerHoc';
 import productsResizeListener from 'hoc/ProductsResizeListener';
-
-import productsMock from 'mocks/products';
 import ProductComponent from 'components/product/ProductComponent';
 
-const ProductsContainer = ({ maxHeight }) =>
+const ProductsContainer = ({ maxHeight, products }) =>
   <div className="ProductsContainerBlock">
     <div className="ProductsContainerBlock-title">
       Checkout #123
@@ -14,7 +12,7 @@ const ProductsContainer = ({ maxHeight }) =>
 
     <div className="ProductsContainer">
       <div className="ProductsContainer-products">
-        {_.map(productsMock, (product, key) =>
+        {_.map(products, (product, key) =>
           <div key={key}><ProductComponent product={product} height={maxHeight} /></div>
         )}
       </div>
@@ -22,7 +20,10 @@ const ProductsContainer = ({ maxHeight }) =>
   </div>;
 
 ProductsContainer.propTypes = {
+  products: PropTypes.array.isRequired,
   maxHeight: PropTypes.number,
 };
 
-export default productsResizeListener(ProductsContainer);
+export default productsResizeListener(
+  productsContainerHoc(ProductsContainer)
+);
