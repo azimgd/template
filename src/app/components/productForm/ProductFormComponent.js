@@ -30,25 +30,38 @@ const ProductFormComponent = ({ handleSubmit, createProduct }) =>
             <option value="audi">Audi</option>
           </Field>
         </div>
-        <div className="ProductFormComponent-contactForm-input">
+      </div>
+
+      <div className="ProductFormComponent-productForm">
+        <div className="ProductFormComponent-productForm-input">
+          <label htmlFor="">Product title</label>
+          <Field name="productTitle" component="input" type="text" placeholder="Product title" />
+        </div>
+        <div className="ProductFormComponent-productForm-input">
           <label htmlFor="">Category</label>
-          <Field name="category" component="select">
+          <Field name="productCategory" component="select">
             <option value="volvo">Volvo</option>
             <option value="saab">Saab</option>
             <option value="mercedes">Mercedes</option>
             <option value="audi">Audi</option>
           </Field>
         </div>
-      </div>
-
-      <div className="ProductFormComponent-productForm">
         <div className="ProductFormComponent-productForm-input">
-          <label htmlFor="">Subject</label>
-          <Field name="subject" component="input" type="text" placeholder="Subject" />
+          <label htmlFor="">Subcategory</label>
+          <Field name="productSubCategory" component="select">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </Field>
         </div>
         <div className="ProductFormComponent-productForm-input">
-          <label htmlFor="">Message</label>
-          <Field name="message" component="textarea" />
+          <label htmlFor="">Description</label>
+          <Field name="productDescription" component="textarea" placeholder="Product description" />
+        </div>
+        <div className="ProductFormComponent-productForm-input">
+          <label htmlFor="">Product price</label>
+          <Field name="productPrice" component="input" type="text" placeholder="Product price" />
         </div>
       </div>
 
