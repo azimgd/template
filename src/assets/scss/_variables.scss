@@ -29,6 +29,11 @@ $c-contentBackground: #fff;
 $c-bodyBackground: #eee;
 $c-bodyBackground-1: lighten($c-bodyBackground, 4%);
 
+$c-success: $brand-success;
+$c-info: $brand-info;
+$c-warning: $brand-warning;
+$c-danger: $brand-danger;
+
 /**
  * Colors
  */
