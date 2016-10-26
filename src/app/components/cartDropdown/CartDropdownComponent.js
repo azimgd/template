@@ -2,8 +2,12 @@ import React, { PropTypes } from 'react';
 
 import CartDropdownItemComponent from 'components/cartDropdownItem/CartDropdownItemComponent';
 
+/**
+ * Using css -> visibility prop over css -> display on CartDropdownComponent
+ * is must when calculating offsetWidth param
+ */
 const CartDropdownComponent = ({ cartPosition, isVisible }) =>
-  <div className="CartDropdownComponentBlock" style={{ left: `${cartPosition.left}px`, top: `${cartPosition.top}px`, display: isVisible ? 'block' : 'none' }}>
+  <div className="CartDropdownComponentBlock" style={{ left: `${cartPosition.left}px`, top: `${cartPosition.top}px`, visibility: isVisible ? 'visible' : 'hidden' }}>
     <div className="CartDropdownComponentBlock-triangle">
       <div className="triangleUp"></div>
     </div>

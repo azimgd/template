@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartResizeListener = (CartViewComponent) => {
+const cartResizeListener = (CartViewComponent) => {
   class CartResizeListenerComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -24,6 +24,10 @@ const CartResizeListener = (CartViewComponent) => {
       window.removeEventListener('resize', this.onResize);
     }
 
+    /**
+     * Using css -> visibility prop over css -> display on CartDropdownComponent
+     * is must when calculating offsetWidth param
+     */
     onResize() {
       const headerElement = document.querySelector('.HeaderComponentBlock');
       const dropdownElement = document.querySelector('.CartDropdownComponent');
@@ -41,4 +45,4 @@ const CartResizeListener = (CartViewComponent) => {
   return CartResizeListenerComponent;
 };
 
-export default CartResizeListener;
+export default cartResizeListener;
