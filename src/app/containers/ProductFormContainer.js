@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import configMock from 'mocks/config';
 import productFormContainerHoc from 'hoc/productFormContainerHoc';
 import ProductFormComponent from 'components/productForm/ProductFormComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
@@ -25,6 +26,9 @@ class ProductFormContainer extends React.Component {
             <div className="ProductFormContainer-block-left">
               <ProductFormComponent
                 createProduct={this.createProduct}
+                citiesList={configMock.citiesList}
+                categoriesList={configMock.categoriesList}
+                subcategoriesList={configMock.subcategoriesList}
               />
             </div>
             <div className="ProductFormContainer-block-right">
