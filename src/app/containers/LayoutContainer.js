@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import cartResizeListener from 'hoc/CartResizeListener';
+import cartResizeListener from 'hoc/cartResizeListener';
 import layoutContainerHoc from 'hoc/layoutContainerHoc';
 
 import HeaderComponent from 'components/header/HeaderComponent';
@@ -49,4 +49,4 @@ LayoutContainer.propTypes = {
   toggleCartDropdown: PropTypes.func.isRequired,
 };
 
-export default cartResizeListener(layoutContainerHoc(LayoutContainer));
+export default layoutContainerHoc(cartResizeListener(LayoutContainer));
