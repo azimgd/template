@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import configMock from 'mocks/config';
 
 import cartResizeListener from 'hoc/cartResizeListener';
 import layoutContainerHoc from 'hoc/layoutContainerHoc';
@@ -30,7 +31,7 @@ const LayoutContainer = ({ ui, toggleCartDropdown, toggleAlertMessage, children,
         </div>
         <div className="LayoutContainer-block-sidebar">
           <SidebarSearchComponent />
-          <SidebarComponent />
+          <SidebarComponent items={configMock.sidebarComponentItems} />
         </div>
       </div>
       <div className="LayoutContainer-footer">
