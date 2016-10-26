@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import cartResizeListener from 'hoc/CartResizeListener';
+import layoutContainerHoc from 'hoc/layoutContainerHoc';
 
 import HeaderComponent from 'components/header/HeaderComponent';
 import SidebarComponent from 'components/sidebar/SidebarComponent';
@@ -10,12 +11,12 @@ import TopnavbarComponent from 'components/topnavbar/TopnavbarComponent';
 import AlertMessageComponent from 'components/alertMessage/AlertMessageComponent';
 import CartDropdownComponent from 'components/cartDropdown/CartDropdownComponent';
 
-const LayoutContainer = ({ children, cartPosition }) =>
+const LayoutContainer = ({ ui, toggleCartDropdown, children, cartPosition }) =>
   <div className="LayoutContainerBlock">
     <div className="LayoutContainer">
       <div className="LayoutContainer-header">
-        <HeaderComponent />
-        <CartDropdownComponent cartPosition={cartPosition} isVisible={false} />
+        <HeaderComponent toggleCartDropdown={toggleCartDropdown} />
+        <CartDropdownComponent cartPosition={cartPosition} isVisible={ui.cartDropdownIsVisible} />
       </div>
       <div className="LayoutContainer-topnavbar">
         <TopnavbarComponent />
@@ -44,6 +45,8 @@ LayoutContainer.propTypes = {
     top: PropTypes.number,
     left: PropTypes.number,
   }).isRequired,
+  ui: PropTypes.object.isRequired,
+  toggleCartDropdown: PropTypes.func.isRequired,
 };
 
-export default cartResizeListener(LayoutContainer);
+export default cartResizeListener(layoutContainerHoc(LayoutContainer));
