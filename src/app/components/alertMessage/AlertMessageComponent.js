@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const AlertMessageComponent = () =>
-  <div className="AlertMessageComponentBlock">
+const AlertMessageComponent = ({ isVisible, toggleAlertMessage }) =>
+  <div className="AlertMessageComponentBlock" style={{ display: isVisible ? 'block' : 'none' }}>
     <div className="AlertMessageComponent">
       <div className="AlertMessageComponent-title">
-        Hello there!
+        <div className="AlertMessageComponent-title-left">
+          Hello there!
+        </div>
+        <div className="AlertMessageComponent-title-right">
+          <div onClick={toggleAlertMessage}>(x)</div>
+        </div>
       </div>
       <div className="AlertMessageComponent-content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dolores, cum distinctio. Recusandae, eos tenetur, vel facere expedita deleniti amet esse, atque dicta officia blanditiis rerum numquam consequatur dignissimos, minima!
@@ -13,6 +18,8 @@ const AlertMessageComponent = () =>
   </div>;
 
 AlertMessageComponent.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  toggleAlertMessage: PropTypes.func.isRequired,
 };
 
 export default AlertMessageComponent;

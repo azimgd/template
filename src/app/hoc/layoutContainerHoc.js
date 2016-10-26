@@ -6,6 +6,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = {
   toggleCartDropdown: actions.toggleCartDropdown,
+  toggleAlertMessage: actions.toggleAlertMessage,
 };
 
 export default (LayoutContainer) => connect(mapStateToProps, mapDispatchToProps)(LayoutContainer);
