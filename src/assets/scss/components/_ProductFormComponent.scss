@@ -3,7 +3,7 @@
 
 .ProductFormComponent {
   &-contactForm {
-    margin-bottom: $padding-base-horizontal;
+    margin-bottom: $padding-large-horizontal * 2;
 
     &-input:not(:last-child) {
       margin-bottom: $padding-base-horizontal;

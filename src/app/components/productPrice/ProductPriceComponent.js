@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const ProductPriceComponent = () =>
+const ProductPriceComponent = ({ product }) =>
   <div className="ProductPriceComponentBlock">
     <div className="ProductPriceComponent">
       <div className="ProductPriceComponent-price">
-        300 USD
+        {product.productPrice}
       </div>
       <div className="ProductPriceComponent-more">
         <strong>15% OFF</strong> until october 30
@@ -16,6 +16,7 @@ const ProductPriceComponent = () =>
   </div>;
 
 ProductPriceComponent.propTypes = {
+  product: PropTypes.object.isRequired,
 };
 
 export default ProductPriceComponent;

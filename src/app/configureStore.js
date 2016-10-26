@@ -8,7 +8,7 @@ export default (preloadedState) => {
     rootReducer,
     preloadedState,
     compose(
-      applyMiddleware(createLogger()),
+      applyMiddleware(createLogger({ logErrors: false, level: 'error' })),
       DevToolsContainer.instrument()
     )
   );

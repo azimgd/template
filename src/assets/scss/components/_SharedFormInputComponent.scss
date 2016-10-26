@@ -1,0 +1,19 @@
+.SharedFormInputComponent {
+  &-error {
+    background: $c-danger;
+    color: $c-white;
+    margin-top: $padding-small-vertical;
+    padding: $padding-xs-vertical $padding-small-vertical;
+  }
+
+  &-isValidating {
+    opacity: 0.5;
+  }
+
+  &--InputText {
+  }
+  &--InputTextarea {
+  }
+  &--InputSelect {
+  }
+}

@@ -1,39 +1,52 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import _ from 'lodash';
 
-const ProductDetailsItemComponent = () =>
+const ProductDetailsItemComponent = ({ details }) =>
   <div className="ProductDetailsItemComponent">
     <div className="ProductDetailsItemComponent-title">
-      Modellår:
+      {details.title}:
     </div>
     <div className="ProductDetailsItemComponent-content">
-      1994
+      {details.content}
     </div>
   </div>;
 
-const ProductDetailsComponent = () =>
-  <div className="ProductDetailsComponentBlock">
-    <div className="ProductDetailsComponent">
-      <div className="ProductDetailsComponent-image">
-        <img src="/build/images/defaultone.jpg" alt="" />
-      </div>
-      <div className="ProductDetailsComponent-detailsBlock">
-        <div className="ProductDetailsComponent-details">
-        {_.map([1, 2, 3, 4, 5], (item, key) =>
-          <div className="ProductDetailsComponent-details-item" key={key}>
-          <ProductDetailsItemComponent />
+ProductDetailsItemComponent.propTypes = {
+  details: PropTypes.object.isRequired,
+};
+
+const ProductDetailsComponent = ({ product }) => {
+  const productDetails = [
+    { title: 'Id', content: product.id },
+    { title: 'City', content: product.productCity },
+    { title: 'Category', content: product.productCategory },
+    { title: 'SubCategory', content: product.productSubCategory },
+  ];
+  return (
+    <div className="ProductDetailsComponentBlock">
+      <div className="ProductDetailsComponent">
+        <div className="ProductDetailsComponent-image">
+          <img src="//placehold.it/600x400" alt="" />
+        </div>
+        <div className="ProductDetailsComponent-detailsBlock">
+          <div className="ProductDetailsComponent-details">
+          {_.map(productDetails, (details, key) =>
+            <div className="ProductDetailsComponent-details-item" key={key}>
+              <ProductDetailsItemComponent details={details} />
+            </div>
+          )}
           </div>
-        )}
+        </div>
+        <div className="ProductDetailsComponent-description">
+          <p>{product.productDescription}</p>
         </div>
       </div>
-      <div className="ProductDetailsComponent-description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
     </div>
-  </div>;
+  );
+};
 
 ProductDetailsComponent.propTypes = {
+  product: PropTypes.object.isRequired,
 };
 
 export default ProductDetailsComponent;
