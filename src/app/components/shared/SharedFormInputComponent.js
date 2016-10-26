@@ -48,7 +48,8 @@ export const InputSelect = ({ input, label, options, meta: { asyncValidating, to
   <div className="SharedFormInputComponent SharedFormInputComponent--InputSelect">
     <label>{label}</label>
     <div className={asyncValidating ? 'SharedFormInputComponent-isValidating' : ''}>
-      <select {...input} placeholder={label}>
+      <select {...input}>
+        <option value="">{label}</option>
         {_.map(options, (item, key) => <option value={key} key={key}>{item}</option>)}
       </select>
       {touched && error && <div className="SharedFormInputComponent-error">{error}</div>}

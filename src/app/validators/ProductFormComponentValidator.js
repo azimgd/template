@@ -2,7 +2,7 @@ import yup from 'yup';
 import { transformYupValidationErrors } from 'utils/index';
 
 const schema = yup.object().shape({
-  name: yup.string().email(),
+  name: yup.string().required(),
   email: yup.string().email().required(),
   phone: yup.string().required(),
   address: yup.string().required(),
@@ -17,7 +17,8 @@ const schema = yup.object().shape({
 const asyncValidate = values => schema.validate(values, {
   abortEarly: false,
 })
-.catch(res => { throw transformYupValidationErrors(res); });
+.then(() => true)
+.catch(res => { console.log(transformYupValidationErrors(res), res, 'ser'); throw transformYupValidationErrors(res); });
 
 export default {
   asyncBlurFields: [],
