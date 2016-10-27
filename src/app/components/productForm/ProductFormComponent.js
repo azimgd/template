@@ -3,13 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import ProductFormComponentValidator from 'validators/ProductFormComponentValidator';
 import { InputText, InputTextarea, InputSelect } from 'components/shared/SharedFormInputComponent';
 
-const options = {
-  0: 'Volvo',
-  1: 'Mercedes',
-  2: 'Kia',
-};
-
-const ProductFormComponent = ({ handleSubmit, createProduct }) =>
+const ProductFormComponent = ({ citiesList, categoriesList, subcategoriesList, handleSubmit, createProduct }) =>
   <div className="ProductFormComponentBlock">
     <form className="ProductFormComponent" onSubmit={handleSubmit(createProduct)}>
       <div className="ProductFormComponent-contactForm">
@@ -26,7 +20,7 @@ const ProductFormComponent = ({ handleSubmit, createProduct }) =>
           <Field name="address" component={InputText} label="Address" />
         </div>
         <div className="ProductFormComponent-contactForm-input">
-          <Field name="city" component={InputSelect} label="City" options={options} />
+          <Field name="city" component={InputSelect} label="City" options={citiesList} />
         </div>
       </div>
 
@@ -35,10 +29,10 @@ const ProductFormComponent = ({ handleSubmit, createProduct }) =>
           <Field name="productTitle" component={InputText} label="Product title" />
         </div>
         <div className="ProductFormComponent-productForm-input">
-          <Field name="productCategory" component={InputSelect} label="Product category" options={options} />
+          <Field name="productCategory" component={InputSelect} label="Product category" options={categoriesList} />
         </div>
         <div className="ProductFormComponent-productForm-input">
-          <Field name="productSubCategory" component={InputSelect} label="Product subcategory" options={options} />
+          <Field name="productSubCategory" component={InputSelect} label="Product subcategory" options={subcategoriesList} />
         </div>
         <div className="ProductFormComponent-productForm-input">
           <Field name="productDescription" component={InputTextarea} label="Product description" />
@@ -57,6 +51,9 @@ const ProductFormComponent = ({ handleSubmit, createProduct }) =>
 ProductFormComponent.propTypes = {
   createProduct: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  citiesList: PropTypes.object.isRequired,
+  categoriesList: PropTypes.object.isRequired,
+  subcategoriesList: PropTypes.object.isRequired,
 };
 
 export default reduxForm({

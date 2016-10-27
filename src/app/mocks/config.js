@@ -1,0 +1,41 @@
+export default ({
+  productComponentThumb: '//placehold.it/300/95a5a6/ffffff',
+  siteTitle: 'Default shop nam 2e',
+  sidebarComponentItems: [{
+    title: 'Default title',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  }, {
+    title: 'Default title',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  }],
+  citiesList: {
+    0: 'Ashgabat',
+    1: 'Mary',
+    2: 'Dashoguz',
+    3: 'Kone-urgench',
+    4: 'Gypjak',
+    5: 'Krasnovodsk',
+  },
+  categoriesList: {
+    0: 'Transportation',
+    1: 'Real estate',
+    2: 'Construction',
+    3: 'Wholesale',
+    4: 'Sports',
+    5: 'Computers',
+    6: 'Entertainment',
+    7: 'Giveaway',
+    8: 'Lost and found',
+  },
+  subcategoriesList: {
+    4: 'Sports',
+    5: 'Computers',
+    8: 'Lost and found',
+    6: 'Entertainment',
+    7: 'Giveaway',
+    1: 'Real estate',
+    2: 'Construction',
+    3: 'Wholesale',
+    0: 'Transportation',
+  },
+});

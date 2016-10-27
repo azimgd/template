@@ -1,32 +1,24 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import _ from 'lodash';
 
-const SidebarComponent = () =>
-  <div className="SidebarComponent">
-    <div className="SidebarComponent-item">
-      <div className="SidebarComponent-item-title">
-        Default sidebar title
-      </div>
-      <div className="SidebarComponent-item-content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-    </div>
-
-    <div className="SidebarComponent-item">
-      <div className="SidebarComponent-item-title">
-        Default sidebar title
-      </div>
-      <div className="SidebarComponent-item-content">
-        <ul>
-          <li><a href="">Hello</a></li>
-          <li><a href="">Hello</a></li>
-          <li><a href="">Hello</a></li>
-          <li><a href="">Hello</a></li>
-        </ul>
-      </div>
+const SidebarComponent = ({ items }) =>
+  <div className="SidebarComponentBlock">
+    <div className="SidebarComponent">
+      {_.map(items, (item, key) =>
+        <div className="SidebarComponent-item" key={key}>
+          <div className="SidebarComponent-item-title">
+            {item.title}
+          </div>
+          <div className="SidebarComponent-item-content">
+            {item.content}
+          </div>
+        </div>
+      )}
     </div>
   </div>;
 
 SidebarComponent.propTypes = {
+  items: PropTypes.array.isRequired,
 };
 
 export default SidebarComponent;
