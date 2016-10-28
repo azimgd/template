@@ -18,7 +18,7 @@ const asyncValidate = values => schema.validate(values, {
   abortEarly: false,
 })
 .then(() => true)
-.catch(res => { console.log(transformYupValidationErrors(res), res, 'ser'); throw transformYupValidationErrors(res); });
+.catch(res => { throw transformYupValidationErrors(res); });
 
 export default {
   asyncBlurFields: [],

@@ -42,7 +42,7 @@ const ProductFormComponent = ({ citiesList, categoriesList, subcategoriesList, h
         </div>
       </div>
 
-      <button type="submit" className="ProductFormControlComponent-right-button">
+      <button type="submit" className="ProductFormComponent-button">
         Create now
       </button>
     </form>

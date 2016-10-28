@@ -1,0 +1,11 @@
+.PageFormContainerBlock {
+  @extend .u-containerBlock;
+
+  &-title {
+    @extend .u-pageTitle;
+  }
+}
+
+.PageFormContainer {
+  padding: $padding-large-horizontal;
+}
