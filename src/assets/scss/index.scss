@@ -13,6 +13,7 @@
 @import './containers/NotFoundContainer';
 @import './containers/PagesContainer';
 @import './containers/PageFormContainer';
+@import './containers/PageViewContainer';
 
 @import './components/HeaderComponent';
 @import './components/TopnavbarComponent';
@@ -38,6 +39,7 @@
 @import './components/SharedFormInputComponent';
 @import './components/PagesComponent';
 @import './components/PageFormComponent';
+@import './components/PageDetailsComponent';
 
 body {
   background: $c-bodyBackground;

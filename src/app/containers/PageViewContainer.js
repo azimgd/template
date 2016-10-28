@@ -1,31 +1,21 @@
 import React, { PropTypes } from 'react';
 
-import productViewContainerHoc from 'hoc/productViewContainerHoc';
-import ProductDetailsComponent from 'components/productDetails/ProductDetailsComponent';
-import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
-import ProductPriceComponent from 'components/productPrice/ProductPriceComponent';
+import pageViewContainerHoc from 'hoc/pageViewContainerHoc';
+import PageDetailsComponent from 'components/pageDetails/PageDetailsComponent';
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 
-const ProductViewContainer = ({ product }) =>
-  <div className="ProductViewContainerBlock">
-    <div className="ProductViewContainerBlock-title">
-      <PageNavLocationComponent pageName={product.productTitle} />
+const PageViewContainer = ({ page }) =>
+  <div className="PageViewContainerBlock">
+    <div className="PageViewContainerBlock-title">
+      <PageNavLocationComponent pageName={page.pageTitle} />
     </div>
-    <div className="ProductViewContainer">
-      <div className="ProductViewContainer-block">
-        <div className="ProductViewContainer-block-left">
-          <ProductDetailsComponent product={product} />
-        </div>
-        <div className="ProductViewContainer-block-right">
-          <ProductPriceComponent product={product} />
-          <ProductAboutComponent product={product} />
-        </div>
-      </div>
+    <div className="PageViewContainer">
+      <PageDetailsComponent page={page} />
     </div>
   </div>;
 
-ProductViewContainer.propTypes = {
-  product: PropTypes.object.isRequired,
+PageViewContainer.propTypes = {
+  page: PropTypes.object.isRequired,
 };
 
-export default productViewContainerHoc(ProductViewContainer);
+export default pageViewContainerHoc(PageViewContainer);
