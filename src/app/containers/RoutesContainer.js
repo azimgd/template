@@ -10,6 +10,8 @@ import ProductViewContainer from 'containers/ProductViewContainer';
 import ProductFormContainer from 'containers/ProductFormContainer';
 import CheckoutContainer from 'containers/CheckoutContainer';
 import NotFoundContainer from 'containers/NotFoundContainer';
+import PagesContainer from 'containers/PagesContainer';
+import PageViewContainer from 'containers/PageViewContainer';
 import PageFormContainer from 'containers/PageFormContainer';
 
 const RoutesContainer = ({ history }) =>
@@ -18,10 +20,14 @@ const RoutesContainer = ({ history }) =>
     <Route path={routes.ROOT} component={LayoutContainer}>
       <IndexRoute component={HomeContainer} />
       <Route path={routes.PRODUCTS_CREATE} component={ProductFormContainer} />
-      <Route path={routes.PAGES_CREATE} component={PageFormContainer} />
       <Route path={routes.PRODUCTS}>
         <IndexRoute component={ProductsContainer} />
         <Route path={routes.PRODUCTS_SHOW} component={ProductViewContainer} />
+      </Route>
+      <Route path={routes.PAGES_CREATE} component={PageFormContainer} />
+      <Route path={routes.PAGES}>
+        <IndexRoute component={PagesContainer} />
+        <Route path={routes.PAGES_SHOW} component={PageViewContainer} />
       </Route>
       <Route path={routes.CHECKOUT} component={CheckoutContainer} />
       <Route path={routes.NOTFOUND} component={NotFoundContainer} />
