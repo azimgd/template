@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Router, Route, Redirect, IndexRoute } from 'react-router';
 
+import * as routes from 'constants/routes';
 import LayoutContainer from 'containers/LayoutContainer';
 import LoginContainer from 'containers/LoginContainer';
 import HomeContainer from 'containers/HomeContainer';
@@ -9,20 +10,28 @@ import ProductViewContainer from 'containers/ProductViewContainer';
 import ProductFormContainer from 'containers/ProductFormContainer';
 import CheckoutContainer from 'containers/CheckoutContainer';
 import NotFoundContainer from 'containers/NotFoundContainer';
+import PagesContainer from 'containers/PagesContainer';
+import PageViewContainer from 'containers/PageViewContainer';
+import PageFormContainer from 'containers/PageFormContainer';
 
 const RoutesContainer = ({ history }) =>
   <Router history={history}>
-    <Route path="/login" component={LoginContainer} />
-    <Route path="/" component={LayoutContainer}>
+    <Route path={routes.LOGIN} component={LoginContainer} />
+    <Route path={routes.ROOT} component={LayoutContainer}>
       <IndexRoute component={HomeContainer} />
-      <Route path="/form" component={ProductFormContainer} />
-      <Route path="/products">
+      <Route path={routes.PRODUCTS_CREATE} component={ProductFormContainer} />
+      <Route path={routes.PRODUCTS}>
         <IndexRoute component={ProductsContainer} />
-        <Route path=":id" component={ProductViewContainer} />
+        <Route path={routes.PRODUCTS_SHOW} component={ProductViewContainer} />
       </Route>
-      <Route path="/checkout" component={CheckoutContainer} />
-      <Route path="/404" component={NotFoundContainer} />
-      <Redirect from="*" to="/404" />
+      <Route path={routes.PAGES_CREATE} component={PageFormContainer} />
+      <Route path={routes.PAGES}>
+        <IndexRoute component={PagesContainer} />
+        <Route path={routes.PAGES_SHOW} component={PageViewContainer} />
+      </Route>
+      <Route path={routes.CHECKOUT} component={CheckoutContainer} />
+      <Route path={routes.NOTFOUND} component={NotFoundContainer} />
+      <Redirect from="*" to={routes.NOTFOUND} />
     </Route>
   </Router>;
 

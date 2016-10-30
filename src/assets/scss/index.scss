@@ -11,6 +11,9 @@
 @import './containers/ProductFormContainer';
 @import './containers/CheckoutContainer';
 @import './containers/NotFoundContainer';
+@import './containers/PagesContainer';
+@import './containers/PageFormContainer';
+@import './containers/PageViewContainer';
 
 @import './components/HeaderComponent';
 @import './components/TopnavbarComponent';
@@ -24,7 +27,6 @@
 @import './components/ProductAboutComponent';
 @import './components/ProductDetailsComponent';
 @import './components/ProductFormComponent';
-@import './components/ProductFormControlComponent';
 @import './components/CheckoutSummaryComponent';
 @import './components/CheckoutUserInfoComponent';
 @import './components/CheckoutBillingComponent';
@@ -35,6 +37,9 @@
 @import './components/HomeCategoriesComponent';
 @import './components/AlertMessageComponent';
 @import './components/SharedFormInputComponent';
+@import './components/PagesComponent';
+@import './components/PageFormComponent';
+@import './components/PageDetailsComponent';
 
 body {
   background: $c-bodyBackground;

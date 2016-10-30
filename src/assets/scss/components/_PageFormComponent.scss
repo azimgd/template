@@ -1,7 +1,7 @@
-.ProductFormComponentBlock {
+.PageFormComponentBlock {
 }
 
-.ProductFormComponent {
+.PageFormComponent {
   &-contactForm {
     margin-bottom: $padding-large-horizontal * 2;
 
@@ -10,7 +10,7 @@
     }
   }
 
-  &-productForm {
+  &-pageForm {
     margin-bottom: $padding-base-horizontal;
 
     &-input:not(:last-child) {

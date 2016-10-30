@@ -1,0 +1,28 @@
+.PageComponent {
+  background: $c-contentBackground;
+
+  &-content {
+    &-title {
+      font-size: $f-h4Size;
+      margin-bottom: $padding-small-horizontal;
+    }
+
+    &-title > a {
+    }
+  }
+
+  &-details {
+    @extend .row;
+    margin-top: $padding-base-horizontal;
+    color: $c-mutedText;
+
+    &-left {
+      @extend .col-sm-6;
+    }
+
+    &-right {
+      @extend .col-sm-6;
+      text-align: right;
+    }
+  }
+}
