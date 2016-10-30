@@ -1,31 +1,9 @@
 .PageComponent {
   background: $c-contentBackground;
-  padding-bottom: $padding-large-horizontal * 2;
-
-  &-image {
-    display: block;
-    height: 140px;
-    width: 100%;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-
-    &-price {
-      background: $c-blackTransparent-1;
-      color: $c-white;
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: $padding-small-vertical $padding-small-horizontal;
-    }
-  }
 
   &-content {
-    background: $c-bodyBackground-1;
-    padding: $padding-small-horizontal;
-
     &-title {
-      font-weight: $f-headingsWeight;
+      font-size: $f-h4Size;
       margin-bottom: $padding-small-horizontal;
     }
 
@@ -33,18 +11,18 @@
     }
   }
 
-  &-button {
-    padding: $padding-small-horizontal;
-    background: $c-secondaryBackground;
-    color: $c-white;
+  &-details {
+    @extend .row;
+    margin-top: $padding-base-horizontal;
+    color: $c-mutedText;
 
-    & > a {
-      width: 100%;
-      text-decoration: none;
-      color: inherit;
+    &-left {
+      @extend .col-sm-6;
     }
-    & > a:hover {
-      color: inherit;
+
+    &-right {
+      @extend .col-sm-6;
+      text-align: right;
     }
   }
 }

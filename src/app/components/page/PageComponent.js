@@ -1,27 +1,25 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import _ from 'lodash';
-import configMock from 'mocks/config';
 
-const PageComponent = ({ page, height }) =>
+const PageComponent = ({ page }) =>
   <div className="PageComponentBlock">
     <div className="PageComponent">
-      <Link to={`/pages/${page.id}`}>
-        <div className="PageComponent-image" style={{ backgroundImage: `url(${page.image || configMock.pageComponentThumb})` }}>
-          <div className="PageComponent-image-price">{page.pagePrice}</div>
-        </div>
-      </Link>
-
-      <div className="PageComponent-content" style={{ height: `${height}px` }}>
+      <div className="PageComponent-content">
         <div className="PageComponent-content-title">
           <Link to={`/pages/${page.id}`}>{page.pageTitle}</Link>
         </div>
         <div className="PageComponent-content-description">
-          {_.truncate(page.pageDescription, { length: 160 })}
+          {_.truncate(page.pageDescription, { length: 420 })}
         </div>
       </div>
-      <div className="PageComponent-button">
-        <Link to={`/pages/${page.id}`}>Add to cart</Link>
+      <div className="PageComponent-details">
+        <div className="PageComponent-details-left">
+          Created on 12 oct
+        </div>
+        <div className="PageComponent-details-right">
+          By username
+        </div>
       </div>
     </div>
   </div>;
@@ -32,7 +30,6 @@ PageComponent.propTypes = {
     description: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
   }).isRequired,
-  height: PropTypes.number,
 };
 
 export default PageComponent;

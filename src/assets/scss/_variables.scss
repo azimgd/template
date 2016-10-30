@@ -23,6 +23,7 @@ $f-textWeight: 400;
  */
 $c-primaryBackground: #edeae3;
 $c-primaryText: #333;
+$c-mutedText: lighten($c-primaryText, 25%);
 $c-secondaryBackground: #84b154;
 $c-secondaryBackground-1: lighten($c-secondaryBackground, 10%);
 $c-contentBackground: #fff;

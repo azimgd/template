@@ -10,12 +10,8 @@
   @extend .u-container;
 
   &-pages {
-    @extend .row;
-    margin-bottom: -$padding-large-horizontal;
-
-    & > div {
-      @extend .col-lg-3;
-      @extend .col-sm-4;
+    & > div:not(:last-child) {
+      margin-bottom: $padding-large-horizontal * 2;
     }
   }
 }
