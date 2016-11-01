@@ -1,0 +1,11 @@
+.ConfigNavigationContainerBlock {
+  @extend .u-containerBlock;
+
+  &-title {
+    @extend .u-pageTitle;
+  }
+}
+
+.ConfigNavigationContainer {
+  @extend .u-container;
+}

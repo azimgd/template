@@ -1,0 +1,11 @@
+.ConfigContainerBlock {
+  @extend .u-containerBlock;
+
+  &-title {
+    @extend .u-pageTitle;
+  }
+}
+
+.ConfigContainer {
+  @extend .u-container;
+}

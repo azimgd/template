@@ -1,0 +1,11 @@
+.ConfigCategoriesContainerBlock {
+  @extend .u-containerBlock;
+
+  &-title {
+    @extend .u-pageTitle;
+  }
+}
+
+.ConfigCategoriesContainer {
+  @extend .u-container;
+}
