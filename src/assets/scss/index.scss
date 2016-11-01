@@ -43,6 +43,9 @@
 @import './components/PagesComponent';
 @import './components/PageFormComponent';
 @import './components/PageDetailsComponent';
+@import './components/ConfigNavigationComponent';
+@import './components/ConfigCategoriesComponent';
+@import './components/ConfigSubCategoriesComponent';
 
 body {
   background: $c-bodyBackground;

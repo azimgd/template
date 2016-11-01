@@ -7,5 +7,20 @@
 }
 
 .ConfigContainer {
-  @extend .u-container;
+  &-block {
+    padding: $padding-large-horizontal;
+    @extend .row;
+
+    &-left {
+      @extend .col-sm-9;
+    }
+
+    &-right {
+      @extend .col-sm-3;
+
+      & > div:not(:last-child) {
+        margin-bottom: $padding-large-horizontal;
+      }
+    }
+  }
 }
