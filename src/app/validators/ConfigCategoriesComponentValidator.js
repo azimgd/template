@@ -2,7 +2,7 @@ import yup from 'yup';
 import { transformYupValidationErrors } from 'utils/index';
 
 const schema = yup.object().shape({
-  productCategory: yup.string().required(),
+  categoryName: yup.string().required(),
 });
 
 const asyncValidate = values => schema.validate(values, {

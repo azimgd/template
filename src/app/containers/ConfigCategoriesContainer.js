@@ -11,9 +11,13 @@ class ConfigCategoriesContainer extends React.Component {
     this.createNewSubCategory = this.createNewSubCategory.bind(this);
   }
 
-  createNewCategory() {}
+  createNewCategory(category) {
+    this.props.createNewCategory(category);
+  }
 
-  createNewSubCategory() {}
+  createNewSubCategory(subCategory) {
+    this.props.createNewSubCategory(subCategory);
+  }
 
   render() {
     return (
@@ -25,7 +29,7 @@ class ConfigCategoriesContainer extends React.Component {
           <div className="ConfigCategoriesContainer-block">
             <div className="ConfigCategoriesContainer-block-left">
               <ConfigCategoriesComponent createNewCategory={this.createNewCategory} />
-              <ConfigSubCategoriesComponent createNewSubCategory={this.createNewSubCategory} />
+              <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.createNewSubCategory} />
             </div>
             <div className="ConfigCategoriesContainer-block-right">
             </div>
@@ -37,7 +41,11 @@ class ConfigCategoriesContainer extends React.Component {
 }
 
 ConfigCategoriesContainer.propTypes = {
-  config: PropTypes.object.isRequired,
+  mappedCategories: PropTypes.array.isRequired,
+  categories: PropTypes.array.isRequired,
+  subCategories: PropTypes.array.isRequired,
+  createNewCategory: PropTypes.func.isRequired,
+  createNewSubCategory: PropTypes.func.isRequired,
 };
 
 export default configCategoriesContainerHoc(ConfigCategoriesContainer);
