@@ -1,7 +1,12 @@
-import { connect } from 'react-hz';
+import { connect } from 'react-redux';
+import * as actions from 'actions/index';
 
-export default (PageViewContainer) => connect(PageViewContainer, {
-  subscriptions: {
-    page: (hz, props) => hz('pages').find(props.params.id),
-  },
+const mapStateToProps = (state) => ({
+  page: null,
 });
+
+const mapDispatchToProps = {
+  createPage: null,
+};
+
+export default (PageViewContainer) => connect(mapStateToProps, mapDispatchToProps)(PageViewContainer);

@@ -1,26 +1,14 @@
-import React from 'react';
-import { connect } from 'react-hz';
-import { transformCategories } from 'utils/index';
+import { connect } from 'react-redux';
+import * as actions from 'actions/index';
 
-const horizonConnect = (ConfigCategoriesContainer) => connect(ConfigCategoriesContainer, {
-  mutations: {
-    createNewCategory: (hz) => (category) => hz('categories').store(category),
-    createNewSubCategory: (hz) => (subCategory) => hz('subCategories').store(subCategory),
-  },
-  subscriptions: {
-    categories: (hz) => hz('categories'),
-    subCategories: (hz) => hz('subCategories'),
-  },
+const mapStateToProps = (state) => ({
+  categories: null,
+  subCategories: null,
 });
 
-const hocTransforms = (ConfigCategoriesContainer) => (props) => {
-  const mappedCategories = transformCategories(props.categories);
-  return (
-    <ConfigCategoriesContainer
-      mappedCategories={mappedCategories}
-      {...props}
-    />
-  );
+const mapDispatchToProps = {
+  createNewCategory: null,
+  createNewSubCategory: null,
 };
 
-export default (Container) => horizonConnect(hocTransforms(Container));
+export default (ConfigCategoriesContainer) => connect(mapStateToProps, mapDispatchToProps)(ConfigCategoriesContainer);

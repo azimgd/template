@@ -1,7 +1,12 @@
-import { connect } from 'react-hz';
+import { connect } from 'react-redux';
+import * as actions from 'actions/index';
 
-export default (ProductsContainer) => connect(ProductsContainer, {
-  subscriptions: {
-    products: (hz) => hz('products'),
-  },
+const mapStateToProps = (state) => ({
+  product: null,
 });
+
+const mapDispatchToProps = {
+  createProduct: null,
+};
+
+export default (ProductsContainer) => connect(mapStateToProps, mapDispatchToProps)(ProductsContainer);
