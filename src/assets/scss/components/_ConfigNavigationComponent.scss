@@ -1,0 +1,25 @@
+.ConfigNavigationComponentBlock {
+}
+
+.ConfigNavigationComponent {
+  &-configForm {
+    @extend .row;
+    margin-bottom: $padding-large-horizontal * 2;
+
+    &-input {
+      @extend .col-sm-6;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $padding-base-horizontal;
+    }
+  }
+
+  &-button {
+    width: 100%;
+    padding: $padding-small-horizontal $padding-large-horizontal;
+    background: $c-secondaryBackground;
+    color: $c-white;
+    text-align: center;
+  }
+}
