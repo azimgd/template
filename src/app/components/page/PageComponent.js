@@ -9,7 +9,7 @@ const PageComponent = ({ page }) =>
         <div className="PageComponent-content-title">
           <Link to={`/pages/${page.id}`}>{page.title}</Link>
         </div>
-        <div className="PageComponent-content-description">
+        <div className="PageComponent-content-content">
           {_.truncate(page.content, { length: 420 })}
         </div>
       </div>

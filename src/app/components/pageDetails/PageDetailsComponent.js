@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 const PageDetailsComponent = ({ page }) =>
   <div className="PageDetailsComponentBlock">
     <div className="PageDetailsComponent">
-      <div className="PageDetailsComponent-description">
+      <div className="PageDetailsComponent-content">
         <p>{page.content}</p>
       </div>
     </div>
