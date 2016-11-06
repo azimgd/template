@@ -7,11 +7,11 @@ const schema = yup.object().shape({
   phone: yup.string().required(),
   address: yup.string().required(),
   city: yup.string().required(),
-  productTitle: yup.string().required(),
-  productCategory: yup.string().required(),
-  productSubCategory: yup.string().required(),
-  productDescription: yup.string().required(),
-  productPrice: yup.string().required(),
+  title: yup.string().required(),
+  category: yup.string().required(),
+  subCategory: yup.string().required(),
+  description: yup.string().required(),
+  price: yup.number().required(),
 });
 
 const asyncValidate = values => schema.validate(values, {

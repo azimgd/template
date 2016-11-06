@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import * as actions from 'actions/index';
 
 const mapStateToProps = (state) => ({
-  product: null,
+  products: state.productsReducer.products,
 });
 
 const mapDispatchToProps = {
-  createProduct: null,
+  getProductsRequest: actions.getProductsRequest,
 };
 
 export default (ProductsContainer) => connect(mapStateToProps, mapDispatchToProps)(ProductsContainer);

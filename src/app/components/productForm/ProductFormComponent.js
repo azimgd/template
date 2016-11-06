@@ -26,19 +26,19 @@ const ProductFormComponent = ({ citiesList, categoriesList, subcategoriesList, h
 
       <div className="ProductFormComponent-productForm">
         <div className="ProductFormComponent-productForm-input">
-          <Field name="productTitle" component={InputText} label="Product title" />
+          <Field name="title" component={InputText} label="Product title" />
         </div>
         <div className="ProductFormComponent-productForm-input">
-          <Field name="productCategory" component={InputSelect} label="Product category" options={categoriesList} />
+          <Field name="category" component={InputSelect} label="Product category" options={categoriesList} />
         </div>
         <div className="ProductFormComponent-productForm-input">
-          <Field name="productSubCategory" component={InputSelect} label="Product subcategory" options={subcategoriesList} />
+          <Field name="subCategory" component={InputSelect} label="Product subcategory" options={subcategoriesList} />
         </div>
         <div className="ProductFormComponent-productForm-input">
-          <Field name="productDescription" component={InputTextarea} label="Product description" />
+          <Field name="description" component={InputTextarea} label="Product description" />
         </div>
         <div className="ProductFormComponent-productForm-input">
-          <Field name="productPrice" component={InputText} label="Product price" />
+          <Field name="price" component={InputText} label="Product price" />
         </div>
       </div>
 

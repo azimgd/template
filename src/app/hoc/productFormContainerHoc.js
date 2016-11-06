@@ -6,7 +6,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  createProduct: null,
+  createProduct: actions.postProductRequest,
 };
 
 export default (ProductFormContainer) => connect(mapStateToProps, mapDispatchToProps)(ProductFormContainer);
