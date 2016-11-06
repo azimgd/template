@@ -4,7 +4,7 @@ const PageDetailsComponent = ({ page }) =>
   <div className="PageDetailsComponentBlock">
     <div className="PageDetailsComponent">
       <div className="PageDetailsComponent-description">
-        <p>{page.pageDescription}</p>
+        <p>{page.content}</p>
       </div>
     </div>
   </div>;

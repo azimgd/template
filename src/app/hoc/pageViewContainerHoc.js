@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import * as actions from 'actions/index';
 
 const mapStateToProps = (state) => ({
-  page: null,
+  page: state.pagesReducer.page,
 });
 
 const mapDispatchToProps = {
-  createPage: null,
+  getPageRequest: actions.getPageRequest,
 };
 
 export default (PageViewContainer) => connect(mapStateToProps, mapDispatchToProps)(PageViewContainer);

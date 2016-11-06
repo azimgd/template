@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import * as actions from 'actions/index';
 
 const mapStateToProps = (state) => ({
-  pages: state.pagesReducer,
+  pages: state.pagesReducer.pages,
 });
 
 const mapDispatchToProps = {

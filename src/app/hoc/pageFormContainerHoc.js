@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import * as actions from 'actions/index';
 
 const mapStateToProps = (state) => ({
-  page: null,
+  page: {},
 });
 
 const mapDispatchToProps = {
-  createPage: null,
+  createPage: actions.postPageRequest,
 };
 
 export default (PageFormContainer) => connect(mapStateToProps, mapDispatchToProps)(PageFormContainer);

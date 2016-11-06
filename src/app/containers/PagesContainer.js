@@ -11,7 +11,6 @@ class PagesContainer extends React.Component {
 
   render() {
     const { maxHeight, pages } = this.props;
-    console.log(pages.data);
     return (
       <div className="PagesContainerBlock">
         <div className="PagesContainerBlock-title">
