@@ -27,3 +27,27 @@ export const getProductFailure = createAction(constants.GET_PRODUCT_FAILURE);
 export const postProductRequest = createAction(constants.POST_PRODUCT_REQUEST);
 export const postProductSuccess = createAction(constants.POST_PRODUCT_SUCCESS);
 export const postProductFailure = createAction(constants.POST_PRODUCT_FAILURE);
+
+export const getPageCategoriesRequest = createAction(constants.GET_PAGE_CATEGORIES_REQUEST);
+export const getPageCategoriesSuccess = createAction(constants.GET_PAGE_CATEGORIES_SUCCESS);
+export const getPageCategoriesFailure = createAction(constants.GET_PAGE_CATEGORIES_FAILURE);
+
+export const getPageCategoryRequest = createAction(constants.GET_PAGE_CATEGORY_REQUEST);
+export const getPageCategorySuccess = createAction(constants.GET_PAGE_CATEGORY_SUCCESS);
+export const getPageCategoryFailure = createAction(constants.GET_PAGE_CATEGORY_FAILURE);
+
+export const postPageCategoryRequest = createAction(constants.POST_PAGE_CATEGORY_REQUEST);
+export const postPageCategorySuccess = createAction(constants.POST_PAGE_CATEGORY_SUCCESS);
+export const postPageCategoryFailure = createAction(constants.POST_PAGE_CATEGORY_FAILURE);
+
+export const getProductCategoriesRequest = createAction(constants.GET_PRODUCT_CATEGORIES_REQUEST);
+export const getProductCategoriesSuccess = createAction(constants.GET_PRODUCT_CATEGORIES_SUCCESS);
+export const getProductCategoriesFailure = createAction(constants.GET_PRODUCT_CATEGORIES_FAILURE);
+
+export const getProductCategoryRequest = createAction(constants.GET_PRODUCT_CATEGORY_REQUEST);
+export const getProductCategorySuccess = createAction(constants.GET_PRODUCT_CATEGORY_SUCCESS);
+export const getProductCategoryFailure = createAction(constants.GET_PRODUCT_CATEGORY_FAILURE);
+
+export const postProductCategoryRequest = createAction(constants.POST_PRODUCT_CATEGORY_REQUEST);
+export const postProductCategorySuccess = createAction(constants.POST_PRODUCT_CATEGORY_SUCCESS);
+export const postProductCategoryFailure = createAction(constants.POST_PRODUCT_CATEGORY_FAILURE);

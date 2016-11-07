@@ -23,3 +23,27 @@ export const getProduct = ({ id }) =>
 export const postProduct = (data) =>
   axios.post('//localhost:8080/api/products', data)
   .then(res => res.data);
+
+export const getPageCategories = () =>
+  axios.get('//localhost:8080/api/pageCategories')
+  .then(res => res.data);
+
+export const getPageCategory = ({ id }) =>
+  axios.get(`//localhost:8080/api/pageCategories/${id}`)
+  .then(res => res.data);
+
+export const postPageCategory = (data) =>
+  axios.post('//localhost:8080/api/pageCategories', data)
+  .then(res => res.data);
+
+export const getProductCategories = () =>
+  axios.get('//localhost:8080/api/productCategories')
+  .then(res => res.data);
+
+export const getProductCategory = ({ id }) =>
+  axios.get(`//localhost:8080/api/productCategories/${id}`)
+  .then(res => res.data);
+
+export const postProductCategory = (data) =>
+  axios.post('//localhost:8080/api/productCategories', data)
+  .then(res => res.data);

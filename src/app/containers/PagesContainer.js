@@ -7,6 +7,7 @@ import PageComponent from 'components/page/PageComponent';
 class PagesContainer extends React.Component {
   componentWillMount() {
     this.props.getPagesRequest();
+    this.props.getPageCategoriesRequest();
   }
 
   render() {
@@ -32,6 +33,7 @@ class PagesContainer extends React.Component {
 PagesContainer.propTypes = {
   pages: PropTypes.array.isRequired,
   getPagesRequest: PropTypes.func.isRequired,
+  getPageCategoriesRequest: PropTypes.func.isRequired,
   maxHeight: PropTypes.number,
 };
 
