@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import configCategoriesContainerHoc from 'hoc/configCategoriesContainerHoc';
+import configPageCategoriesContainerHoc from 'hoc/configPageCategoriesContainerHoc';
 import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';
 import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
 
@@ -12,23 +12,23 @@ class ConfigCategoriesContainer extends React.Component {
   }
 
   componentWillMount() {
-    this.props.getProductCategoriesRequest();
-    this.props.getProductSubCategoriesRequest();
+    this.props.getPageCategoriesRequest();
+    this.props.getPageSubCategoriesRequest();
   }
 
   createNewCategory(category) {
-    this.props.postProductCategoryRequest(category);
+    this.props.postPageCategoryRequest(category);
   }
 
   createNewSubCategory(subCategory) {
-    this.props.postProductSubCategoryRequest(subCategory);
+    this.props.postPageSubCategoryRequest(subCategory);
   }
 
   render() {
     return (
       <div className="ConfigCategoriesContainerBlock">
         <div className="ConfigCategoriesContainerBlock-title">
-          Config categories
+          Config page categories
         </div>
         <div className="ConfigCategoriesContainer">
           <div className="ConfigCategoriesContainer-block">
@@ -50,10 +50,10 @@ ConfigCategoriesContainer.propTypes = {
   mappedSubCategories: PropTypes.array.isRequired,
   categories: PropTypes.array.isRequired,
   subCategories: PropTypes.array.isRequired,
-  getProductCategoriesRequest: PropTypes.func.isRequired,
-  getProductSubCategoriesRequest: PropTypes.func.isRequired,
-  postProductCategoryRequest: PropTypes.func.isRequired,
-  postProductSubCategoryRequest: PropTypes.func.isRequired,
+  getPageCategoriesRequest: PropTypes.func.isRequired,
+  getPageSubCategoriesRequest: PropTypes.func.isRequired,
+  postPageCategoryRequest: PropTypes.func.isRequired,
+  postPageSubCategoryRequest: PropTypes.func.isRequired,
 };
 
-export default configCategoriesContainerHoc(ConfigCategoriesContainer);
+export default configPageCategoriesContainerHoc(ConfigCategoriesContainer);
