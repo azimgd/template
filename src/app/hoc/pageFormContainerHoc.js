@@ -1,7 +1,12 @@
-import { connect } from 'react-hz';
+import { connect } from 'react-redux';
+import * as actions from 'actions/index';
 
-export default (PageFormContainer) => connect(PageFormContainer, {
-  mutations: {
-    createPage: (hz) => (page) => hz('pages').store(page),
-  },
+const mapStateToProps = (state) => ({
+  page: {},
 });
+
+const mapDispatchToProps = {
+  createPage: actions.postPageRequest,
+};
+
+export default (PageFormContainer) => connect(mapStateToProps, mapDispatchToProps)(PageFormContainer);

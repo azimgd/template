@@ -19,8 +19,8 @@ const ProductDetailsComponent = ({ product }) => {
   const productDetails = [
     { title: 'Id', content: product.id },
     { title: 'City', content: product.productCity },
-    { title: 'Category', content: product.productCategory },
-    { title: 'SubCategory', content: product.productSubCategory },
+    { title: 'Category', content: product.category },
+    { title: 'SubCategory', content: product.subCategory },
   ];
   return (
     <div className="ProductDetailsComponentBlock">
@@ -38,7 +38,7 @@ const ProductDetailsComponent = ({ product }) => {
           </div>
         </div>
         <div className="ProductDetailsComponent-description">
-          <p>{product.productDescription}</p>
+          <p>{product.description}</p>
         </div>
       </div>
     </div>

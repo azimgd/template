@@ -1,4 +1,4 @@
-.ConfigCategoriesContainerBlock {
+.ConfigPageCategoriesContainerBlock {
   @extend .u-containerBlock;
 
   &-title {
@@ -6,7 +6,7 @@
   }
 }
 
-.ConfigCategoriesContainer {
+.ConfigPageCategoriesContainer {
   &-block {
     padding: $padding-large-horizontal;
     @extend .row;

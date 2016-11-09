@@ -4,17 +4,32 @@ import pageViewContainerHoc from 'hoc/pageViewContainerHoc';
 import PageDetailsComponent from 'components/pageDetails/PageDetailsComponent';
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 
-const PageViewContainer = ({ page }) =>
-  <div className="PageViewContainerBlock">
-    <div className="PageViewContainerBlock-title">
-      <PageNavLocationComponent pageName={page.pageTitle} />
-    </div>
-    <div className="PageViewContainer">
-      <PageDetailsComponent page={page} />
-    </div>
-  </div>;
+class PageViewContainer extends React.Component {
+  componentWillMount() {
+    const { id } = this.props.params;
+    this.props.getPageRequest({ id });
+  }
+
+  render() {
+    const { page } = this.props;
+    return (
+      <div className="PageViewContainerBlock">
+        <div className="PageViewContainerBlock-title">
+          <PageNavLocationComponent pageName={page.data.title} />
+        </div>
+        <div className="PageViewContainer">
+          <PageDetailsComponent page={page.data} />
+        </div>
+      </div>
+    );
+  }
+}
 
 PageViewContainer.propTypes = {
+  params: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+  }).isRequired,
+  getPageRequest: PropTypes.func.isRequired,
   page: PropTypes.object.isRequired,
 };
 

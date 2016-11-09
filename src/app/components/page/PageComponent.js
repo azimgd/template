@@ -7,10 +7,10 @@ const PageComponent = ({ page }) =>
     <div className="PageComponent">
       <div className="PageComponent-content">
         <div className="PageComponent-content-title">
-          <Link to={`/pages/${page.id}`}>{page.pageTitle}</Link>
+          <Link to={`/pages/${page.id}`}>{page.title}</Link>
         </div>
-        <div className="PageComponent-content-description">
-          {_.truncate(page.pageDescription, { length: 420 })}
+        <div className="PageComponent-content-content">
+          {_.truncate(page.content, { length: 420 })}
         </div>
       </div>
       <div className="PageComponent-details">
@@ -27,8 +27,7 @@ const PageComponent = ({ page }) =>
 PageComponent.propTypes = {
   page: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
   }).isRequired,
 };
 

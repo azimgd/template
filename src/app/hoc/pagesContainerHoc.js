@@ -1,7 +1,14 @@
-import { connect } from 'react-hz';
+import { connect } from 'react-redux';
+import * as actions from 'actions/index';
 
-export default (PagesContainer) => connect(PagesContainer, {
-  subscriptions: {
-    pages: (hz) => hz('pages'),
-  },
+const mapStateToProps = (state) => ({
+  pages: state.pagesReducer.pages,
+  pageCategories: state.pageCategoriesReducer.pageCategories,
 });
+
+const mapDispatchToProps = {
+  getPagesRequest: actions.getPagesRequest,
+  getPageCategoriesRequest: actions.getPageCategoriesRequest,
+};
+
+export default (PagesContainer) => connect(mapStateToProps, mapDispatchToProps)(PagesContainer);

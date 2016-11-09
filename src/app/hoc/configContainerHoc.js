@@ -1,7 +1,11 @@
-import { connect } from 'react-hz';
+import { connect } from 'react-redux';
+import * as actions from 'actions/index';
 
-export default (ConfigContainer) => connect(ConfigContainer, {
-  subscriptions: {
-    config: (hz) => hz('config'),
-  },
+const mapStateToProps = (state) => ({
+  config: null,
 });
+
+const mapDispatchToProps = {
+};
+
+export default (ConfigContainer) => connect(mapStateToProps, mapDispatchToProps)(ConfigContainer);

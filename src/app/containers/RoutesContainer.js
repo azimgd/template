@@ -15,7 +15,8 @@ import PageViewContainer from 'containers/PageViewContainer';
 import PageFormContainer from 'containers/PageFormContainer';
 import ConfigContainer from 'containers/ConfigContainer';
 import ConfigNavigationContainer from 'containers/ConfigNavigationContainer';
-import ConfigCategoriesContainer from 'containers/ConfigCategoriesContainer';
+import ConfigPageCategoriesContainer from 'containers/ConfigPageCategoriesContainer';
+import ConfigProductCategoriesContainer from 'containers/ConfigProductCategoriesContainer';
 
 const RoutesContainer = ({ history }) =>
   <Router history={history}>
@@ -35,7 +36,8 @@ const RoutesContainer = ({ history }) =>
       <Route path={routes.CONFIG}>
         <IndexRoute component={ConfigContainer} />
         <Route path={routes.CONFIG_NAVIGATION} component={ConfigNavigationContainer} />
-        <Route path={routes.CONFIG_CATEGORIES} component={ConfigCategoriesContainer} />
+        <Route path={routes.CONFIG_PRODUCT_CATEGORIES} component={ConfigProductCategoriesContainer} />
+        <Route path={routes.CONFIG_PAGE_CATEGORIES} component={ConfigPageCategoriesContainer} />
       </Route>
       <Route path={routes.CHECKOUT} component={CheckoutContainer} />
       <Route path={routes.NOTFOUND} component={NotFoundContainer} />

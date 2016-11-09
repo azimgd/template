@@ -8,7 +8,7 @@ const ConfigCategoriesComponent = ({ handleSubmit, createNewCategory }) =>
     <form className="ConfigCategoriesComponent" onSubmit={handleSubmit(createNewCategory)}>
       <div className="ConfigCategoriesComponent-configForm">
         <div className="ConfigCategoriesComponent-configForm-input">
-          <Field name="categoryName" component={InputText} label="New category name" />
+          <Field name="name" component={InputText} label="New category name" />
         </div>
       </div>
 

@@ -1,7 +1,12 @@
-import { connect } from 'react-hz';
+import { connect } from 'react-redux';
+import * as actions from 'actions/index';
 
-export default (ProductFormContainer) => connect(ProductFormContainer, {
-  mutations: {
-    createProduct: (hz) => (product) => hz('products').store(product),
-  },
+const mapStateToProps = (state) => ({
+  product: null,
 });
+
+const mapDispatchToProps = {
+  createProduct: actions.postProductRequest,
+};
+
+export default (ProductFormContainer) => connect(mapStateToProps, mapDispatchToProps)(ProductFormContainer);

@@ -6,25 +6,40 @@ import ProductAboutComponent from 'components/productAbout/ProductAboutComponent
 import ProductPriceComponent from 'components/productPrice/ProductPriceComponent';
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 
-const ProductViewContainer = ({ product }) =>
-  <div className="ProductViewContainerBlock">
-    <div className="ProductViewContainerBlock-title">
-      <PageNavLocationComponent pageName={product.productTitle} />
-    </div>
-    <div className="ProductViewContainer">
-      <div className="ProductViewContainer-block">
-        <div className="ProductViewContainer-block-left">
-          <ProductDetailsComponent product={product} />
+class ProductViewContainer extends React.Component {
+  componentWillMount() {
+    const { id } = this.props.params;
+    this.props.getProductRequest({ id });
+  }
+
+  render() {
+    const { product } = this.props;
+    return (
+      <div className="ProductViewContainerBlock">
+        <div className="ProductViewContainerBlock-title">
+          <PageNavLocationComponent pageName={product.data.title} />
         </div>
-        <div className="ProductViewContainer-block-right">
-          <ProductPriceComponent product={product} />
-          <ProductAboutComponent product={product} />
+        <div className="ProductViewContainer">
+          <div className="ProductViewContainer-block">
+            <div className="ProductViewContainer-block-left">
+              <ProductDetailsComponent product={product.data} />
+            </div>
+            <div className="ProductViewContainer-block-right">
+              <ProductPriceComponent product={product.data} />
+              <ProductAboutComponent product={product.data} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>;
+    );
+  }
+}
 
 ProductViewContainer.propTypes = {
+  params: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+  }).isRequired,
+  getProductRequest: PropTypes.func.isRequired,
   product: PropTypes.object.isRequired,
 };
 

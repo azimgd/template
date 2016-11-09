@@ -8,16 +8,16 @@ const PageFormComponent = ({ categoriesList, subcategoriesList, handleSubmit, cr
     <form className="PageFormComponent" onSubmit={handleSubmit(createPage)}>
       <div className="PageFormComponent-pageForm">
         <div className="PageFormComponent-pageForm-input">
-          <Field name="pageTitle" component={InputText} label="Page title" />
+          <Field name="title" component={InputText} label="Page title" />
         </div>
         <div className="PageFormComponent-pageForm-input">
-          <Field name="pageCategory" component={InputSelect} label="Page category" options={categoriesList} />
+          <Field name="category" component={InputSelect} label="Page category" options={categoriesList} />
         </div>
         <div className="PageFormComponent-pageForm-input">
-          <Field name="pageSubCategory" component={InputSelect} label="Page subcategory" options={subcategoriesList} />
+          <Field name="subCategory" component={InputSelect} label="Page subcategory" options={subcategoriesList} />
         </div>
         <div className="PageFormComponent-pageForm-input">
-          <Field name="pageDescription" component={InputTextarea} label="Page description" />
+          <Field name="content" component={InputTextarea} label="Page content" />
         </div>
       </div>
 

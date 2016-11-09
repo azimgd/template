@@ -11,7 +11,8 @@ export const PAGES_CREATE = 'new';
 
 export const CONFIG = '/config';
 export const CONFIG_NAVIGATION = 'navigation';
-export const CONFIG_CATEGORIES = 'categories';
+export const CONFIG_PRODUCT_CATEGORIES = 'categories/products';
+export const CONFIG_PAGE_CATEGORIES = 'categories/pages';
 
 export const CHECKOUT = '/checkout';
 export const NOTFOUND = '/404';
