@@ -9,3 +9,10 @@ export const transformCategories = categories => _.reduce(categories, (acc, cate
   _.set(acc, category.id, category.name);
   return acc;
 }, {});
+
+export const mapCategoriesToSubCategories = (categories, subcategories) => _.reduce(categories, (acc, category) => {
+  const modifiedSubcategories = _.filter(subcategories, { categoryId: category.id });
+  const modifiedCategory = Object.assign({}, category, { subcategories: modifiedSubcategories });
+  acc.push(modifiedCategory);
+  return acc;
+}, []);

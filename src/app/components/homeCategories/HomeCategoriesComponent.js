@@ -1,21 +1,19 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import _ from 'lodash';
 
-const HomeCategoriesComponent = () =>
+const HomeCategoriesComponent = ({ categories }) =>
   <div className="HomeCategoriesComponentBlock">
     <div className="HomeCategoriesComponent">
-      {_.map([1, 2, 3, 4, 5, 6, 7], (item, key) =>
-        <div className="HomeCategoriesComponent-item" key={key}>
+      {_.map(categories, (category, ckey) =>
+        <div className="HomeCategoriesComponent-item" key={ckey}>
           <div className="HomeCategoriesComponent-item-title">
-            <a href="">Cars</a>
+            <a href="">{category.name}</a>
           </div>
           <div className="HomeCategoriesComponent-item-list">
             <ul>
-              <li><a href="">Cars</a></li>
-              <li><a href="">Trucks</a></li>
-              <li><a href="">Motorcycles and other equipment</a></li>
-              <li><a href="">Unicycles</a></li>
-              <li><a href="">Bicycles</a></li>
+              {_.map(category.subcategories, (subcategory, skey) =>
+                <li key={skey}><a href="">{subcategory.name}</a></li>
+              )}
             </ul>
           </div>
         </div>
@@ -24,6 +22,7 @@ const HomeCategoriesComponent = () =>
   </div>;
 
 HomeCategoriesComponent.propTypes = {
+  categories: PropTypes.object.isRequired,
 };
 
 export default HomeCategoriesComponent;

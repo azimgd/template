@@ -8,4 +8,22 @@
 
 .HomeContainer {
   @extend .u-container;
+
+  & > div:not(:last-child) {
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-productCategories {
+    &-title {
+      font-weight: $f-headingsWeight;
+      margin-bottom: $padding-large-horizontal;
+    }
+  }
+
+  &-pageCategories {
+    &-title {
+      font-weight: $f-headingsWeight;
+      margin-bottom: $padding-large-horizontal;
+    }
+  }
 }
