@@ -6,6 +6,6 @@ export const transformYupValidationErrors = res => _.reduce(res.inner, (acc, ite
 }, { _error: res.message });
 
 export const transformCategories = categories => _.reduce(categories, (acc, category) => {
-  _.set(acc, category.id, category.categoryName);
+  _.set(acc, category.id, category.name);
   return acc;
 }, {});

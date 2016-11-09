@@ -3,17 +3,17 @@ import update from 'react-addons-update';
 import * as constants from 'constants/index';
 
 const initialState = {
-  productCategories: {
+  productSubCategories: {
     data: [],
   },
 };
 
-const getProductCategoriesSuccess = (state, action) => update(state, {
-  productCategories: {
+const getProductSubCategoriesSuccess = (state, action) => update(state, {
+  productSubCategories: {
     data: { $set: action.payload.data },
   },
 });
 
 export default handleActions({
-  [constants.GET_PRODUCT_CATEGORIES_SUCCESS]: getProductCategoriesSuccess,
+  [constants.GET_PRODUCT_SUB_CATEGORIES_SUCCESS]: getProductSubCategoriesSuccess,
 }, initialState);

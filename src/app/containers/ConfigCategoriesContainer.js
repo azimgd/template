@@ -11,12 +11,17 @@ class ConfigCategoriesContainer extends React.Component {
     this.createNewSubCategory = this.createNewSubCategory.bind(this);
   }
 
+  componentWillMount() {
+    this.props.getProductCategoriesRequest();
+    this.props.getProductSubCategoriesRequest();
+  }
+
   createNewCategory(category) {
-    this.props.createNewCategory(category);
+    this.props.postProductCategoryRequest(category);
   }
 
   createNewSubCategory(subCategory) {
-    this.props.createNewSubCategory(subCategory);
+    this.props.postProductSubCategoryRequest(subCategory);
   }
 
   render() {
@@ -42,10 +47,13 @@ class ConfigCategoriesContainer extends React.Component {
 
 ConfigCategoriesContainer.propTypes = {
   mappedCategories: PropTypes.array.isRequired,
+  mappedSubCategories: PropTypes.array.isRequired,
   categories: PropTypes.array.isRequired,
   subCategories: PropTypes.array.isRequired,
-  createNewCategory: PropTypes.func.isRequired,
-  createNewSubCategory: PropTypes.func.isRequired,
+  getProductCategoriesRequest: PropTypes.func.isRequired,
+  getProductSubCategoriesRequest: PropTypes.func.isRequired,
+  postProductCategoryRequest: PropTypes.func.isRequired,
+  postProductSubCategoryRequest: PropTypes.func.isRequired,
 };
 
 export default configCategoriesContainerHoc(ConfigCategoriesContainer);

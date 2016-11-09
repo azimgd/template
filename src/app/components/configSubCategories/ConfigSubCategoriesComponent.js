@@ -8,10 +8,10 @@ const ConfigSubCategoriesComponent = ({ categories, handleSubmit, createNewSubCa
     <form className="ConfigSubCategoriesComponent" onSubmit={handleSubmit(createNewSubCategory)}>
       <div className="ConfigSubCategoriesComponent-configForm">
         <div className="ConfigSubCategoriesComponent-configForm-input">
-          <Field name="parentCategory" component={InputSelect} label="Product category" options={categories} />
+          <Field name="categoryId" component={InputSelect} label="Product category" options={categories} />
         </div>
         <div className="ConfigSubCategoriesComponent-configForm-input">
-          <Field name="subCategoryName" component={InputText} label="New sub category name" />
+          <Field name="name" component={InputText} label="New sub category name" />
         </div>
       </div>
 

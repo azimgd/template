@@ -5,6 +5,9 @@ import * as api from 'api/index';
 
 import * as constants from 'constants/index';
 
+/**
+ * Pages
+ */
 function* getPagesRequest() {
   try {
     const data = yield call(api.getPages);
@@ -34,6 +37,10 @@ function* postPageRequest(req) {
   }
 }
 
+
+/**
+ * Products
+ */
 function* getProductsRequest() {
   try {
     const data = yield call(api.getProducts);
@@ -64,6 +71,9 @@ function* postProductRequest(req) {
 }
 
 
+/**
+ * Page categories
+ */
 function* getPageCategoriesRequest() {
   try {
     const data = yield call(api.getPageCategories);
@@ -94,6 +104,42 @@ function* postPageCategoryRequest(req) {
 }
 
 
+/**
+ * Page sub categories
+ */
+function* getPageSubCategoriesRequest() {
+  try {
+    const data = yield call(api.getPageSubCategories);
+    yield put(actions.getPageSubCategoriesSuccess({ data }));
+  } catch (e) {
+    yield put(actions.getPageSubCategoriesFailure({ errors: { preview: 'Cant get products' } }));
+  }
+}
+
+function* getPageSubCategoryRequest(req) {
+  const { payload } = req;
+  try {
+    const data = yield call(api.getPageSubCategory.bind(null, payload));
+    yield put(actions.getPageSubCategorySuccess({ data }));
+  } catch (e) {
+    yield put(actions.getPageSubCategoryFailure({ errors: { preview: 'Cant get products' } }));
+  }
+}
+
+function* postPageSubCategoryRequest(req) {
+  const { payload } = req;
+  try {
+    const data = yield call(api.postPageSubCategory.bind(null, payload));
+    yield put(actions.postPageSubCategorySuccess({ data }));
+  } catch (e) {
+    yield put(actions.postPageSubCategoryFailure({ errors: { preview: 'Cant post product' } }));
+  }
+}
+
+
+/**
+ * Product categories
+ */
 function* getProductCategoriesRequest() {
   try {
     const data = yield call(api.getProductCategories);
@@ -123,6 +169,39 @@ function* postProductCategoryRequest(req) {
   }
 }
 
+
+/**
+ * Product sub categories
+ */
+function* getProductSubCategoriesRequest() {
+  try {
+    const data = yield call(api.getProductSubCategories);
+    yield put(actions.getProductSubCategoriesSuccess({ data }));
+  } catch (e) {
+    yield put(actions.getProductSubCategoriesFailure({ errors: { preview: 'Cant get products' } }));
+  }
+}
+
+function* getProductSubCategoryRequest(req) {
+  const { payload } = req;
+  try {
+    const data = yield call(api.getProductSubCategory.bind(null, payload));
+    yield put(actions.getProductSubCategorySuccess({ data }));
+  } catch (e) {
+    yield put(actions.getProductSubCategoryFailure({ errors: { preview: 'Cant get products' } }));
+  }
+}
+
+function* postProductSubCategoryRequest(req) {
+  const { payload } = req;
+  try {
+    const data = yield call(api.postProductSubCategory.bind(null, payload));
+    yield put(actions.postProductSubCategorySuccess({ data }));
+  } catch (e) {
+    yield put(actions.postProductSubCategoryFailure({ errors: { preview: 'Cant post product' } }));
+  }
+}
+
 export default [
   fork(takeEvery, constants.GET_PAGES_REQUEST, getPagesRequest),
   fork(takeEvery, constants.GET_PAGE_REQUEST, getPageRequest),
@@ -136,7 +215,15 @@ export default [
   fork(takeEvery, constants.GET_PAGE_CATEGORY_REQUEST, getPageCategoryRequest),
   fork(takeEvery, constants.POST_PAGE_CATEGORY_REQUEST, postPageCategoryRequest),
 
+  fork(takeEvery, constants.GET_PAGE_SUB_CATEGORIES_REQUEST, getPageSubCategoriesRequest),
+  fork(takeEvery, constants.GET_PAGE_SUB_CATEGORY_REQUEST, getPageSubCategoryRequest),
+  fork(takeEvery, constants.POST_PAGE_SUB_CATEGORY_REQUEST, postPageSubCategoryRequest),
+
   fork(takeEvery, constants.GET_PRODUCT_CATEGORIES_REQUEST, getProductCategoriesRequest),
   fork(takeEvery, constants.GET_PRODUCT_CATEGORY_REQUEST, getProductCategoryRequest),
   fork(takeEvery, constants.POST_PRODUCT_CATEGORY_REQUEST, postProductCategoryRequest),
+
+  fork(takeEvery, constants.GET_PRODUCT_SUB_CATEGORIES_REQUEST, getProductSubCategoriesRequest),
+  fork(takeEvery, constants.GET_PRODUCT_SUB_CATEGORY_REQUEST, getProductSubCategoryRequest),
+  fork(takeEvery, constants.POST_PRODUCT_SUB_CATEGORY_REQUEST, postProductSubCategoryRequest),
 ];
