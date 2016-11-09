@@ -4,7 +4,7 @@ import configPageCategoriesContainerHoc from 'hoc/configPageCategoriesContainerH
 import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';
 import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
 
-class ConfigCategoriesContainer extends React.Component {
+class ConfigPageCategoriesContainer extends React.Component {
   constructor(props) {
     super(props);
     this.createNewCategory = this.createNewCategory.bind(this);
@@ -26,17 +26,17 @@ class ConfigCategoriesContainer extends React.Component {
 
   render() {
     return (
-      <div className="ConfigCategoriesContainerBlock">
-        <div className="ConfigCategoriesContainerBlock-title">
+      <div className="ConfigPageCategoriesContainerBlock">
+        <div className="ConfigPageCategoriesContainerBlock-title">
           Config page categories
         </div>
-        <div className="ConfigCategoriesContainer">
-          <div className="ConfigCategoriesContainer-block">
-            <div className="ConfigCategoriesContainer-block-left">
+        <div className="ConfigPageCategoriesContainer">
+          <div className="ConfigPageCategoriesContainer-block">
+            <div className="ConfigPageCategoriesContainer-block-left">
               <ConfigCategoriesComponent createNewCategory={this.createNewCategory} />
               <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.createNewSubCategory} />
             </div>
-            <div className="ConfigCategoriesContainer-block-right">
+            <div className="ConfigPageCategoriesContainer-block-right">
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ class ConfigCategoriesContainer extends React.Component {
   }
 }
 
-ConfigCategoriesContainer.propTypes = {
+ConfigPageCategoriesContainer.propTypes = {
   mappedCategories: PropTypes.array.isRequired,
   mappedSubCategories: PropTypes.array.isRequired,
   categories: PropTypes.array.isRequired,
@@ -56,4 +56,4 @@ ConfigCategoriesContainer.propTypes = {
   postPageSubCategoryRequest: PropTypes.func.isRequired,
 };
 
-export default configPageCategoriesContainerHoc(ConfigCategoriesContainer);
+export default configPageCategoriesContainerHoc(ConfigPageCategoriesContainer);

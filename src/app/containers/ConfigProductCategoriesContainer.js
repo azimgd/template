@@ -4,7 +4,7 @@ import configProductCategoriesContainerHoc from 'hoc/configProductCategoriesCont
 import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';
 import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
 
-class ConfigCategoriesContainer extends React.Component {
+class ConfigProductCategoriesContainer extends React.Component {
   constructor(props) {
     super(props);
     this.createNewCategory = this.createNewCategory.bind(this);
@@ -26,17 +26,17 @@ class ConfigCategoriesContainer extends React.Component {
 
   render() {
     return (
-      <div className="ConfigCategoriesContainerBlock">
-        <div className="ConfigCategoriesContainerBlock-title">
+      <div className="ConfigProductCategoriesContainerBlock">
+        <div className="ConfigProductCategoriesContainerBlock-title">
           Config product categories
         </div>
-        <div className="ConfigCategoriesContainer">
-          <div className="ConfigCategoriesContainer-block">
-            <div className="ConfigCategoriesContainer-block-left">
+        <div className="ConfigProductCategoriesContainer">
+          <div className="ConfigProductCategoriesContainer-block">
+            <div className="ConfigProductCategoriesContainer-block-left">
               <ConfigCategoriesComponent createNewCategory={this.createNewCategory} />
               <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.createNewSubCategory} />
             </div>
-            <div className="ConfigCategoriesContainer-block-right">
+            <div className="ConfigProductCategoriesContainer-block-right">
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ class ConfigCategoriesContainer extends React.Component {
   }
 }
 
-ConfigCategoriesContainer.propTypes = {
+ConfigProductCategoriesContainer.propTypes = {
   mappedCategories: PropTypes.array.isRequired,
   mappedSubCategories: PropTypes.array.isRequired,
   categories: PropTypes.array.isRequired,
@@ -56,4 +56,4 @@ ConfigCategoriesContainer.propTypes = {
   postProductSubCategoryRequest: PropTypes.func.isRequired,
 };
 
-export default configProductCategoriesContainerHoc(ConfigCategoriesContainer);
+export default configProductCategoriesContainerHoc(ConfigProductCategoriesContainer);
