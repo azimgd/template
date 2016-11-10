@@ -13,7 +13,7 @@ class ProductViewContainer extends React.Component {
   }
 
   render() {
-    const { product } = this.props;
+    const { product, productParsedToHtml } = this.props;
     return (
       <div className="ProductViewContainerBlock">
         <div className="ProductViewContainerBlock-title">
@@ -22,7 +22,7 @@ class ProductViewContainer extends React.Component {
         <div className="ProductViewContainer">
           <div className="ProductViewContainer-block">
             <div className="ProductViewContainer-block-left">
-              <ProductDetailsComponent product={product.data} />
+              <ProductDetailsComponent product={product.data} productParsedToHtml={productParsedToHtml} />
             </div>
             <div className="ProductViewContainer-block-right">
               <ProductPriceComponent product={product.data} />
@@ -41,6 +41,7 @@ ProductViewContainer.propTypes = {
   }).isRequired,
   getProductRequest: PropTypes.func.isRequired,
   product: PropTypes.object.isRequired,
+  productParsedToHtml: PropTypes.string.isRequired,
 };
 
 export default productViewContainerHoc(ProductViewContainer);

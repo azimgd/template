@@ -15,7 +15,7 @@ ProductDetailsItemComponent.propTypes = {
   details: PropTypes.object.isRequired,
 };
 
-const ProductDetailsComponent = ({ product }) => {
+const ProductDetailsComponent = ({ product, productParsedToHtml }) => {
   const productDetails = [
     { title: 'Id', content: product.id },
     { title: 'City', content: product.productCity },
@@ -38,7 +38,7 @@ const ProductDetailsComponent = ({ product }) => {
           </div>
         </div>
         <div className="ProductDetailsComponent-description">
-          <p>{product.description}</p>
+          <p dangerouslySetInnerHTML={{ __html: productParsedToHtml }} />
         </div>
       </div>
     </div>
@@ -47,6 +47,7 @@ const ProductDetailsComponent = ({ product }) => {
 
 ProductDetailsComponent.propTypes = {
   product: PropTypes.object.isRequired,
+  productParsedToHtml: PropTypes.string.isRequired,
 };
 
 export default ProductDetailsComponent;

@@ -10,8 +10,13 @@ class PageFormContainer extends React.Component {
     this.createPage = this.createPage.bind(this);
   }
 
+  componentWillMount() {
+    this.props.getPageCategoriesRequest();
+    this.props.getPageSubCategoriesRequest();
+  }
+
   createPage(data) {
-    this.props.createPage(data);
+    this.props.postPageRequest(data);
   }
 
   render() {
@@ -24,8 +29,8 @@ class PageFormContainer extends React.Component {
           <PageFormComponent
             createPage={this.createPage}
             citiesList={configMock.citiesList}
-            categoriesList={configMock.categoriesList}
-            subcategoriesList={configMock.subcategoriesList}
+            categories={this.props.mappedCategories}
+            subCategories={this.props.mappedSubCategories}
           />
         </div>
       </div>
@@ -34,7 +39,11 @@ class PageFormContainer extends React.Component {
 }
 
 PageFormContainer.propTypes = {
-  createPage: PropTypes.func.isRequired,
+  mappedCategories: PropTypes.object.isRequired,
+  mappedSubCategories: PropTypes.object.isRequired,
+  postPageRequest: PropTypes.func.isRequired,
+  getPageCategoriesRequest: PropTypes.func.isRequired,
+  getPageSubCategoriesRequest: PropTypes.func.isRequired,
 };
 
 export default pageFormContainerHoc(PageFormContainer);

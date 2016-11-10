@@ -48,8 +48,6 @@ class ConfigProductCategoriesContainer extends React.Component {
 ConfigProductCategoriesContainer.propTypes = {
   mappedCategories: PropTypes.array.isRequired,
   mappedSubCategories: PropTypes.array.isRequired,
-  categories: PropTypes.array.isRequired,
-  subCategories: PropTypes.array.isRequired,
   getProductCategoriesRequest: PropTypes.func.isRequired,
   getProductSubCategoriesRequest: PropTypes.func.isRequired,
   postProductCategoryRequest: PropTypes.func.isRequired,

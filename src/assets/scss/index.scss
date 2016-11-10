@@ -86,3 +86,11 @@ a:hover {
 a {
   color: $c-linkColor;
 }
+
+.DraftEditor-root {
+  font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
+  font-size: $f-baseSize;
+  .DraftEditor-editorContainer {
+    height: 160px;
+  }
+}
