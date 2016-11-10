@@ -15,7 +15,7 @@ ProductDetailsItemComponent.propTypes = {
   details: PropTypes.object.isRequired,
 };
 
-const ProductDetailsComponent = ({ product }) => {
+const ProductDetailsComponent = ({ product, productParsedToHtml }) => {
   const productDetails = [
     { title: 'Id', content: product.id },
     { title: 'City', content: product.productCity },
