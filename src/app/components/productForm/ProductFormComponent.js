@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import ProductFormComponentValidator from 'validators/ProductFormComponentValidator';
-import { InputText, InputTextarea, InputSelect } from 'components/shared/SharedFormInputComponent';
+import { InputText, RichTextarea, InputSelect } from 'components/shared/SharedFormInputComponent';
 
 const ProductFormComponent = ({ citiesList, categoriesList, subcategoriesList, handleSubmit, createProduct }) =>
   <div className="ProductFormComponentBlock">
@@ -35,7 +35,7 @@ const ProductFormComponent = ({ citiesList, categoriesList, subcategoriesList, h
           <Field name="subCategory" component={InputSelect} label="Product subcategory" options={subcategoriesList} />
         </div>
         <div className="ProductFormComponent-productForm-input">
-          <Field name="description" component={InputTextarea} label="Product description" />
+          <Field name="description" component={RichTextarea} label="Product description" />
         </div>
         <div className="ProductFormComponent-productForm-input">
           <Field name="price" component={InputText} label="Product price" />

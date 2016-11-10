@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import RichTextEditor from 'react-rte';
 import _ from 'lodash';
 
 /**
@@ -63,4 +64,43 @@ InputSelect.propTypes = {
   type: PropTypes.string,
   meta: PropTypes.object,
   options: PropTypes.object,
+};
+
+export class RichTextarea extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+    this.state = {
+      value: RichTextEditor.createValueFromString(this.props.input.value, 'markdown'),
+    };
+  }
+
+  onChange(value) {
+    this.setState({ value });
+    if (this.props.input.onChange) {
+      this.props.input.onChange(value.toString('markdown'));
+    }
+  }
+
+  render() {
+    const { input, label, options, meta: { asyncValidating, touched, error } } = this.props;
+    return (
+      <div className="SharedFormInputComponent SharedFormInputComponent--InputTextarea">
+        <label>{label}</label>
+        <div className={asyncValidating ? 'SharedFormInputComponent-isValidating' : ''}>
+          <RichTextEditor name={input.name} value={this.state.value} onChange={this.onChange} placeholder={label} rows="" />
+          {touched && error && <div className="SharedFormInputComponent-error">{error}</div>}
+        </div>
+      </div>
+    );
+  }
+}
+
+RichTextarea.propTypes = {
+  input: PropTypes.object,
+  label: PropTypes.string,
+  type: PropTypes.string,
+  meta: PropTypes.object,
+  options: PropTypes.object,
+  onChange: PropTypes.func,
 };
