@@ -3,8 +3,8 @@ import { transformYupValidationErrors } from 'utils/index';
 
 const schema = yup.object().shape({
   title: yup.string().required(),
-  category: yup.string().required(),
-  subCategory: yup.string().required(),
+  categoryId: yup.string().required(),
+  subCategoryId: yup.string().required(),
   content: yup.string().required(),
 });
 

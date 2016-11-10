@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import PageFormComponentValidator from 'validators/PageFormComponentValidator';
 import { InputText, InputTextarea, InputSelect } from 'components/shared/SharedFormInputComponent';
 
-const PageFormComponent = ({ categoriesList, subcategoriesList, handleSubmit, createPage }) =>
+const PageFormComponent = ({ categories, subCategories, handleSubmit, createPage }) =>
   <div className="PageFormComponentBlock">
     <form className="PageFormComponent" onSubmit={handleSubmit(createPage)}>
       <div className="PageFormComponent-pageForm">
@@ -11,10 +11,10 @@ const PageFormComponent = ({ categoriesList, subcategoriesList, handleSubmit, cr
           <Field name="title" component={InputText} label="Page title" />
         </div>
         <div className="PageFormComponent-pageForm-input">
-          <Field name="category" component={InputSelect} label="Page category" options={categoriesList} />
+          <Field name="categoryId" component={InputSelect} label="Page category" options={categories} />
         </div>
         <div className="PageFormComponent-pageForm-input">
-          <Field name="subCategory" component={InputSelect} label="Page subcategory" options={subcategoriesList} />
+          <Field name="subCategoryId" component={InputSelect} label="Page subcategory" options={subCategories} />
         </div>
         <div className="PageFormComponent-pageForm-input">
           <Field name="content" component={InputTextarea} label="Page content" />
@@ -30,8 +30,8 @@ const PageFormComponent = ({ categoriesList, subcategoriesList, handleSubmit, cr
 PageFormComponent.propTypes = {
   createPage: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  categoriesList: PropTypes.object.isRequired,
-  subcategoriesList: PropTypes.object.isRequired,
+  categories: PropTypes.object.isRequired,
+  subCategories: PropTypes.object.isRequired,
 };
 
 export default reduxForm({

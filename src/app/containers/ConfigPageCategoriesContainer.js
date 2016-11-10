@@ -48,8 +48,6 @@ class ConfigPageCategoriesContainer extends React.Component {
 ConfigPageCategoriesContainer.propTypes = {
   mappedCategories: PropTypes.array.isRequired,
   mappedSubCategories: PropTypes.array.isRequired,
-  categories: PropTypes.array.isRequired,
-  subCategories: PropTypes.array.isRequired,
   getPageCategoriesRequest: PropTypes.func.isRequired,
   getPageSubCategoriesRequest: PropTypes.func.isRequired,
   postPageCategoryRequest: PropTypes.func.isRequired,
