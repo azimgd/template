@@ -25,6 +25,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "lodash": "^4.16.4",
+    "marked": "^0.3.6",
     "react": "^15.3.2",
     "react-addons-update": "^15.3.2",
     "react-dom": "^15.3.2",

@@ -11,14 +11,14 @@ class PageViewContainer extends React.Component {
   }
 
   render() {
-    const { page } = this.props;
+    const { page, pageParsedToHtml } = this.props;
     return (
       <div className="PageViewContainerBlock">
         <div className="PageViewContainerBlock-title">
           <PageNavLocationComponent pageName={page.data.title} />
         </div>
         <div className="PageViewContainer">
-          <PageDetailsComponent page={page.data} />
+          <PageDetailsComponent page={page.data} pageParsedToHtml={pageParsedToHtml} />
         </div>
       </div>
     );
@@ -31,6 +31,7 @@ PageViewContainer.propTypes = {
   }).isRequired,
   getPageRequest: PropTypes.func.isRequired,
   page: PropTypes.object.isRequired,
+  pageParsedToHtml: PropTypes.object.isRequired,
 };
 
 export default pageViewContainerHoc(PageViewContainer);
