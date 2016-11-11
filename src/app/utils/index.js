@@ -16,3 +16,7 @@ export const mapCategoriesToSubCategories = (categories, subcategories) => _.red
   acc.push(modifiedCategory);
   return acc;
 }, []);
+
+export const filterSubCategories = (subCategories, { categoryId }) => _.filter(subCategories, subCategory =>
+  parseInt(subCategory.categoryId, 10) === parseInt(categoryId, 10),
+);

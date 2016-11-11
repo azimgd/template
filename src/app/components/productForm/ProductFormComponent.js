@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import ProductFormComponentValidator from 'validators/ProductFormComponentValidator';
 import { InputText, RichTextarea, InputSelect } from 'components/shared/SharedFormInputComponent';
 
-const ProductFormComponent = ({ citiesList, categoriesList, subcategoriesList, handleSubmit, createProduct }) =>
+const ProductFormComponent = ({ categories, subCategories, handleSubmit, createProduct }) =>
   <div className="ProductFormComponentBlock">
     <form className="ProductFormComponent" onSubmit={handleSubmit(createProduct)}>
       <div className="ProductFormComponent-productForm">
@@ -11,10 +11,10 @@ const ProductFormComponent = ({ citiesList, categoriesList, subcategoriesList, h
           <Field name="title" component={InputText} label="Product title" />
         </div>
         <div className="ProductFormComponent-productForm-input">
-          <Field name="category" component={InputSelect} label="Product category" options={categoriesList} />
+          <Field name="categoryId" component={InputSelect} label="Product category" options={categories} />
         </div>
         <div className="ProductFormComponent-productForm-input">
-          <Field name="subCategory" component={InputSelect} label="Product subcategory" options={subcategoriesList} />
+          <Field name="subCategoryId" component={InputSelect} label="Product subcategory" options={subCategories} />
         </div>
         <div className="ProductFormComponent-productForm-input">
           <Field name="description" component={RichTextarea} label="Product description" />
@@ -33,9 +33,8 @@ const ProductFormComponent = ({ citiesList, categoriesList, subcategoriesList, h
 ProductFormComponent.propTypes = {
   createProduct: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  citiesList: PropTypes.object.isRequired,
-  categoriesList: PropTypes.object.isRequired,
-  subcategoriesList: PropTypes.object.isRequired,
+  categories: PropTypes.object.isRequired,
+  subCategories: PropTypes.object.isRequired,
 };
 
 export default reduxForm({

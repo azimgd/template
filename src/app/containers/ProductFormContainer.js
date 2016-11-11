@@ -7,12 +7,16 @@ import ProductAboutComponent from 'components/productAbout/ProductAboutComponent
 class ProductFormContainer extends React.Component {
   constructor(props) {
     super(props);
-
     this.createProduct = this.createProduct.bind(this);
   }
 
+  componentWillMount() {
+    this.props.getProductCategoriesRequest();
+    this.props.getProductSubCategoriesRequest();
+  }
+
   createProduct(data) {
-    this.props.createProduct(data);
+    this.props.postProductRequest(data);
   }
 
   render() {
@@ -26,9 +30,8 @@ class ProductFormContainer extends React.Component {
             <div className="ProductFormContainer-block-left">
               <ProductFormComponent
                 createProduct={this.createProduct}
-                citiesList={configMock.citiesList}
-                categoriesList={configMock.categoriesList}
-                subcategoriesList={configMock.subcategoriesList}
+                categories={this.props.mappedCategories}
+                subCategories={this.props.mappedSubCategories}
               />
             </div>
             <div className="ProductFormContainer-block-right">
@@ -42,7 +45,11 @@ class ProductFormContainer extends React.Component {
 }
 
 ProductFormContainer.propTypes = {
-  createProduct: PropTypes.func.isRequired,
+  mappedCategories: PropTypes.object.isRequired,
+  mappedSubCategories: PropTypes.object.isRequired,
+  postProductRequest: PropTypes.func.isRequired,
+  getProductCategoriesRequest: PropTypes.func.isRequired,
+  getProductSubCategoriesRequest: PropTypes.func.isRequired,
 };
 
 export default productFormContainerHoc(ProductFormContainer);
