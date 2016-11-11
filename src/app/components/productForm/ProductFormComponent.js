@@ -6,24 +6,6 @@ import { InputText, RichTextarea, InputSelect } from 'components/shared/SharedFo
 const ProductFormComponent = ({ citiesList, categoriesList, subcategoriesList, handleSubmit, createProduct }) =>
   <div className="ProductFormComponentBlock">
     <form className="ProductFormComponent" onSubmit={handleSubmit(createProduct)}>
-      <div className="ProductFormComponent-contactForm">
-        <div className="ProductFormComponent-contactForm-input">
-          <Field name="name" component={InputText} label="Name" />
-        </div>
-        <div className="ProductFormComponent-contactForm-input">
-          <Field name="email" component={InputText} label="Email" />
-        </div>
-        <div className="ProductFormComponent-contactForm-input">
-          <Field name="phone" component={InputText} label="Phone number" />
-        </div>
-        <div className="ProductFormComponent-contactForm-input">
-          <Field name="address" component={InputText} label="Address" />
-        </div>
-        <div className="ProductFormComponent-contactForm-input">
-          <Field name="city" component={InputSelect} label="City" options={citiesList} />
-        </div>
-      </div>
-
       <div className="ProductFormComponent-productForm">
         <div className="ProductFormComponent-productForm-input">
           <Field name="title" component={InputText} label="Product title" />
