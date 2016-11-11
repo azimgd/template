@@ -12,28 +12,34 @@ class HomeContainer extends React.Component {
   }
 
   render() {
+    const { mappedProductCategories, mappedPageCategories } = this.props;
     return (
       <div className="HomeContainerBlock">
         <div className="HomeContainerBlock-title">
           Home
         </div>
         <div className="HomeContainer">
-          <div className="HomeContainer-productCategories">
-            <div className="HomeContainer-productCategories-title">
-              Product categories
+          {mappedProductCategories.length ?
+            <div className="HomeContainer-productCategories">
+              <div className="HomeContainer-productCategories-title">
+                Product categories
+              </div>
+              <div className="HomeContainer-productCategories-content">
+                <HomeCategoriesComponent categories={mappedProductCategories} />
+              </div>
             </div>
-            <div className="HomeContainer-productCategories-content">
-              <HomeCategoriesComponent categories={this.props.mappedProductCategories} />
+          : null}
+
+          {mappedPageCategories ?
+            <div className="HomeContainer-pageCategories">
+              <div className="HomeContainer-pageCategories-title">
+                Page categories
+              </div>
+              <div className="HomeContainer-pageCategories-content">
+                <HomeCategoriesComponent categories={mappedPageCategories} />
+              </div>
             </div>
-          </div>
-          <div className="HomeContainer-pageCategories">
-            <div className="HomeContainer-pageCategories-title">
-              Page categories
-            </div>
-            <div className="HomeContainer-pageCategories-content">
-              <HomeCategoriesComponent categories={this.props.mappedPageCategories} />
-            </div>
-          </div>
+          : null}
         </div>
       </div>
     );

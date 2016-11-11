@@ -1,10 +1,14 @@
 import { connect } from 'react-redux';
+import { formValueSelector } from 'redux-form';
 import * as actions from 'actions/index';
-import { transformCategories } from 'utils/index';
+import { transformCategories, filterSubCategories } from 'utils/index';
+
+const selector = formValueSelector('PageFormComponent');
 
 const mapStateToProps = (state) => ({
   pageCategories: state.pageCategoriesReducer.pageCategories,
   pageSubCategories: state.pageSubCategoriesReducer.pageSubCategories,
+  formCategoryId: selector(state, 'categoryId'),
 });
 
 const mapDispatchToProps = {
@@ -15,7 +19,8 @@ const mapDispatchToProps = {
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const mappedCategories = transformCategories(stateProps.pageCategories.data);
-  const mappedSubCategories = transformCategories(stateProps.pageSubCategories.data);
+  const filteredSubCategories = filterSubCategories(stateProps.pageSubCategories.data, { categoryId: stateProps.formCategoryId });
+  const mappedSubCategories = transformCategories(filteredSubCategories);
   return Object.assign({
     mappedCategories,
     mappedSubCategories,
