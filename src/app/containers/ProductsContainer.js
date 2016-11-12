@@ -1,13 +1,12 @@
 import React, { PropTypes } from 'react';
-import _ from 'lodash';
-
 import productsContainerHoc from 'hoc/productsContainerHoc';
 import productsResizeListener from 'hoc/ProductsResizeListener';
 import ProductComponent from 'components/product/ProductComponent';
 
-class ProductsContainer extends React.Component {
+export class ProductsContainer extends React.Component {
   componentWillMount() {
     this.props.getProductsRequest();
+    this.props.getProductCategoriesRequest();
   }
 
   render() {
@@ -20,7 +19,7 @@ class ProductsContainer extends React.Component {
 
         <div className="ProductsContainer">
           <div className="ProductsContainer-products">
-            {_.map(products.data, (product, key) =>
+            {products && products.data.map((product, key) =>
               <div key={key}><ProductComponent product={product} height={maxHeight} /></div>
             )}
           </div>
@@ -34,6 +33,7 @@ ProductsContainer.propTypes = {
   products: PropTypes.array.isRequired,
   maxHeight: PropTypes.number,
   getProductsRequest: PropTypes.func.isRequired,
+  getProductCategoriesRequest: PropTypes.func.isRequired,
 };
 
 export default productsResizeListener(

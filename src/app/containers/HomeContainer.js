@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import homeContainerHoc from 'hoc/homeContainerHoc';
 import HomeCategoriesComponent from 'components/homeCategories/HomeCategoriesComponent';
 
-class HomeContainer extends React.Component {
+export class HomeContainer extends React.Component {
   componentWillMount() {
     this.props.getPageCategoriesRequest();
     this.props.getPageSubCategoriesRequest();
@@ -19,7 +19,7 @@ class HomeContainer extends React.Component {
           Home
         </div>
         <div className="HomeContainer">
-          {mappedProductCategories.length ?
+          {mappedProductCategories && mappedProductCategories.length ?
             <div className="HomeContainer-productCategories">
               <div className="HomeContainer-productCategories-title">
                 Product categories
@@ -30,7 +30,7 @@ class HomeContainer extends React.Component {
             </div>
           : null}
 
-          {mappedPageCategories ?
+          {mappedPageCategories && mappedPageCategories.length ?
             <div className="HomeContainer-pageCategories">
               <div className="HomeContainer-pageCategories-title">
                 Page categories

@@ -15,7 +15,8 @@
   "ava": {
     "babel": "inherit",
     "require": [
-      "babel-register"
+      "babel-register",
+      "./src/test/setup-browser-env.js"
     ]
   },
   "dependencies": {
@@ -55,6 +56,8 @@
   "devDependencies": {
     "autoprefixer": "^6.5.1",
     "ava": "^0.16.0",
+    "browser-env": "^2.0.15",
+    "enzyme": "^2.6.0",
     "eslint": "^3.9.1",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
@@ -64,10 +67,12 @@
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-util": "^3.0.7",
+    "react-addons-test-utils": "^15.3.2",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.1.0",
     "redux-logger": "^2.7.0",
+    "sinon": "^1.17.6",
     "webpack-dev-server": "^1.16.2",
     "write-file-webpack-plugin": "^3.3.0"
   }

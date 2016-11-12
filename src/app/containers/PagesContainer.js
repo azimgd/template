@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react';
-import _ from 'lodash';
 
 import pagesContainerHoc from 'hoc/pagesContainerHoc';
 import PageComponent from 'components/page/PageComponent';
 
-class PagesContainer extends React.Component {
+export class PagesContainer extends React.Component {
   componentWillMount() {
     this.props.getPagesRequest();
     this.props.getPageCategoriesRequest();
@@ -20,7 +19,7 @@ class PagesContainer extends React.Component {
 
         <div className="PagesContainer">
           <div className="PagesContainer-pages">
-            {_.map(pages.data, (page, key) =>
+            {pages && pages.data.map((page, key) =>
               <div key={key}><PageComponent page={page} height={maxHeight} /></div>
             )}
           </div>

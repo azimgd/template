@@ -7,6 +7,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   getProductsRequest: actions.getProductsRequest,
+  getProductCategoriesRequest: actions.getProductCategoriesRequest,
 };
 
 export default (ProductsContainer) => connect(mapStateToProps, mapDispatchToProps)(ProductsContainer);
