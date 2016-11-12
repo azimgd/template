@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react';
-import configMock from 'mocks/config';
 import productFormContainerHoc from 'hoc/productFormContainerHoc';
 import ProductFormComponent from 'components/productForm/ProductFormComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
 
-class ProductFormContainer extends React.Component {
+export class ProductFormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.createProduct = this.createProduct.bind(this);

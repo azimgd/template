@@ -3,7 +3,7 @@ import configMock from 'mocks/config';
 import pageFormContainerHoc from 'hoc/pageFormContainerHoc';
 import PageFormComponent from 'components/pageForm/PageFormComponent';
 
-class PageFormContainer extends React.Component {
+export class PageFormContainer extends React.Component {
   constructor(props) {
     super(props);
 

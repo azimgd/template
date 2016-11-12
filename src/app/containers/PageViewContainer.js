@@ -4,7 +4,7 @@ import pageViewContainerHoc from 'hoc/pageViewContainerHoc';
 import PageDetailsComponent from 'components/pageDetails/PageDetailsComponent';
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 
-class PageViewContainer extends React.Component {
+export class PageViewContainer extends React.Component {
   componentWillMount() {
     const { id } = this.props.params;
     this.props.getPageRequest({ id });

@@ -4,7 +4,7 @@ import configPageCategoriesContainerHoc from 'hoc/configPageCategoriesContainerH
 import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';
 import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
 
-class ConfigPageCategoriesContainer extends React.Component {
+export class ConfigPageCategoriesContainer extends React.Component {
   constructor(props) {
     super(props);
     this.createNewCategory = this.createNewCategory.bind(this);

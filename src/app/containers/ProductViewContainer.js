@@ -6,7 +6,7 @@ import ProductAboutComponent from 'components/productAbout/ProductAboutComponent
 import ProductPriceComponent from 'components/productPrice/ProductPriceComponent';
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 
-class ProductViewContainer extends React.Component {
+export class ProductViewContainer extends React.Component {
   componentWillMount() {
     const { id } = this.props.params;
     this.props.getProductRequest({ id });
