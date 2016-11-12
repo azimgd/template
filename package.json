@@ -6,11 +6,18 @@
   "scripts": {
     "build": "webpack --config ./webpack.config.js --progress --colors",
     "postinstall": "npm run build && ./node_modules/.bin/gulp styles",
-    "start": "node ./src/app.js"
+    "start": "node ./src/app.js",
+    "test": "NODE_PATH=./src/app/ ./node_modules/.bin/ava"
   },
   "keywords": [],
   "author": "Azim Gadzhiagayev",
   "license": "ISC",
+  "ava": {
+    "babel": "inherit",
+    "require": [
+      "babel-register"
+    ]
+  },
   "dependencies": {
     "axios": "^0.15.2",
     "babel": "^6.5.2",
@@ -47,6 +54,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.5.1",
+    "ava": "^0.16.0",
     "eslint": "^3.9.1",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
