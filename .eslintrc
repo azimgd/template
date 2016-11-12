@@ -15,7 +15,11 @@
   ],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "max-len": [0]
+    "max-len": [0],
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
+    "import/no-absolute-path": "off",
+    "import/extensions": "off",
   },
   "parserOptions": {
     "ecmaFeatures": {
