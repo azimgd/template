@@ -4,6 +4,7 @@ import configPageCategoriesContainerHoc from 'hoc/configPageCategoriesContainerH
 import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';
 import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
 import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
+import NotificationComponent from 'components/notification/NotificationComponent';
 
 export class ConfigPageCategoriesContainer extends React.Component {
   constructor(props) {
@@ -33,6 +34,14 @@ export class ConfigPageCategoriesContainer extends React.Component {
         </div>
         <div className="ConfigPageCategoriesContainer">
           <div className="ConfigPageCategoriesContainer-block">
+            <div className="ConfigPageCategoriesContainer-block-full">
+              {this.props.notificationsSuccess.map(notificationSuccess =>
+                <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
+              )}
+              {this.props.notificationsFailure.map(notificationsFailure =>
+                <NotificationComponent isVisible message={notificationsFailure.message} status={notificationsFailure.status} />
+              )}
+            </div>
             <div className="ConfigPageCategoriesContainer-block-left">
               <ConfigCategoriesComponent createNewCategory={this.createNewCategory} />
               <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.createNewSubCategory} />
@@ -48,6 +57,8 @@ export class ConfigPageCategoriesContainer extends React.Component {
 }
 
 ConfigPageCategoriesContainer.propTypes = {
+  notificationsSuccess: PropTypes.array.isRequired,
+  notificationsFailure: PropTypes.array.isRequired,
   mappedCategories: PropTypes.array.isRequired,
   mappedSubCategories: PropTypes.array.isRequired,
   getPageCategoriesRequest: PropTypes.func.isRequired,

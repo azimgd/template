@@ -7,5 +7,29 @@
 }
 
 .PageFormContainer {
-  padding: $padding-large-horizontal;
+  &-block {
+    padding: $padding-large-horizontal;
+    @extend .row;
+
+    &-full {
+      @extend .col-sm-12;
+      margin-bottom: $padding-large-horizontal;
+      &:empty {
+        margin-bottom: 0;
+      }
+    }
+
+    &-left {
+      @extend .col-sm-9;
+    }
+
+    &-right {
+      @extend .col-sm-3;
+
+      & > div:not(:last-child) {
+        margin-bottom: $padding-large-horizontal;
+      }
+    }
+  }
+
 }

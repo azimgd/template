@@ -13,7 +13,7 @@ function* getProductSubCategoriesRequest() {
     const data = yield call(api.getProductSubCategories);
     yield put(actions.getProductSubCategoriesSuccess({ data }));
   } catch (e) {
-    yield put(actions.getProductSubCategoriesFailure({ errors: { preview: 'Cant get products' } }));
+    yield put(actions.getProductSubCategoriesFailure({ message: 'Cant get products' }));
   }
 }
 
@@ -23,7 +23,7 @@ function* getProductSubCategoryRequest(req) {
     const data = yield call(api.getProductSubCategory.bind(null, payload));
     yield put(actions.getProductSubCategorySuccess({ data }));
   } catch (e) {
-    yield put(actions.getProductSubCategoryFailure({ errors: { preview: 'Cant get products' } }));
+    yield put(actions.getProductSubCategoryFailure({ message: 'Cant get products' }));
   }
 }
 
@@ -31,9 +31,9 @@ function* postProductSubCategoryRequest(req) {
   const { payload } = req;
   try {
     const data = yield call(api.postProductSubCategory.bind(null, payload));
-    yield put(actions.postProductSubCategorySuccess({ data }));
+    yield put(actions.postProductSubCategorySuccess({ data, message: 'Product sub category has been created' }));
   } catch (e) {
-    yield put(actions.postProductSubCategoryFailure({ errors: { preview: 'Cant post product' } }));
+    yield put(actions.postProductSubCategoryFailure({ message: 'Cant post product' }));
   }
 }
 

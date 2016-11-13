@@ -13,7 +13,7 @@ function* getPageCategoriesRequest() {
     const data = yield call(api.getPageCategories);
     yield put(actions.getPageCategoriesSuccess({ data }));
   } catch (e) {
-    yield put(actions.getPageCategoriesFailure({ errors: { preview: 'Cant get products' } }));
+    yield put(actions.getPageCategoriesFailure({ message: 'Cant get products' }));
   }
 }
 
@@ -23,7 +23,7 @@ function* getPageCategoryRequest(req) {
     const data = yield call(api.getPageCategory.bind(null, payload));
     yield put(actions.getPageCategorySuccess({ data }));
   } catch (e) {
-    yield put(actions.getPageCategoryFailure({ errors: { preview: 'Cant get products' } }));
+    yield put(actions.getPageCategoryFailure({ message: 'Cant get products' }));
   }
 }
 
@@ -31,9 +31,9 @@ function* postPageCategoryRequest(req) {
   const { payload } = req;
   try {
     const data = yield call(api.postPageCategory.bind(null, payload));
-    yield put(actions.postPageCategorySuccess({ data }));
+    yield put(actions.postPageCategorySuccess({ data, message: 'Page category has been created' }));
   } catch (e) {
-    yield put(actions.postPageCategoryFailure({ errors: { preview: 'Cant post product' } }));
+    yield put(actions.postPageCategoryFailure({ message: 'Cant post product' }));
   }
 }
 

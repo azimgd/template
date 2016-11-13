@@ -9,6 +9,13 @@ const initialState = {
   product: {
     data: {},
   },
+  actions: {
+    postProduct: {
+      message: null,
+      status: null,
+      createdAt: null,
+    },
+  },
 };
 
 const getProductsSuccess = (state, action) => update(state, {
@@ -23,7 +30,29 @@ const getProductSuccess = (state, action) => update(state, {
   },
 });
 
+const postProductSuccess = (state, action) => update(state, {
+  actions: {
+    postProduct: {
+      message: { $set: action.payload.message },
+      status: { $set: constants.STATUS_SUCCESS },
+      createdAt: { $set: Date.now() },
+    },
+  },
+});
+
+const postProductFailure = (state, action) => update(state, {
+  actions: {
+    postProduct: {
+      message: { $set: action.payload.message },
+      status: { $set: constants.STATUS_FAILURE },
+      createdAt: { $set: Date.now() },
+    },
+  },
+});
+
 export default handleActions({
   [constants.GET_PRODUCTS_SUCCESS]: getProductsSuccess,
   [constants.GET_PRODUCT_SUCCESS]: getProductSuccess,
+  [constants.POST_PRODUCT_SUCCESS]: postProductSuccess,
+  [constants.POST_PRODUCT_FAILURE]: postProductFailure,
 }, initialState);

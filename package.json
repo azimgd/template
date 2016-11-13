@@ -49,6 +49,7 @@
     "redux-form": "^6.1.1",
     "redux-saga": "^0.12.1",
     "regenerator-runtime": "^0.9.6",
+    "reselect": "^2.5.4",
     "run-sequence": "^1.2.2",
     "webpack": "^1.13.2",
     "yup": "^0.21.2"

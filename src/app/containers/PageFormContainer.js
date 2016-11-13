@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import configMock from 'mocks/config';
 import pageFormContainerHoc from 'hoc/pageFormContainerHoc';
 import PageFormComponent from 'components/pageForm/PageFormComponent';
+import NotificationComponent from 'components/notification/NotificationComponent';
+import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
 
 export class PageFormContainer extends React.Component {
   constructor(props) {
@@ -26,12 +28,27 @@ export class PageFormContainer extends React.Component {
           Pages
         </div>
         <div className="PageFormContainer">
-          <PageFormComponent
-            createPage={this.createPage}
-            citiesList={configMock.citiesList}
-            categories={this.props.mappedCategories}
-            subCategories={this.props.mappedSubCategories}
-          />
+          <div className="PageFormContainer-block">
+            <div className="PageFormContainer-block-full">
+              {this.props.notificationsSuccess.map(notificationSuccess =>
+                <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
+              )}
+              {this.props.notificationsFailure.map(notificationsFailure =>
+                <NotificationComponent isVisible message={notificationsFailure.message} status={notificationsFailure.status} />
+              )}
+            </div>
+            <div className="PageFormContainer-block-left">
+              <PageFormComponent
+                createPage={this.createPage}
+                citiesList={configMock.citiesList}
+                categories={this.props.mappedCategories}
+                subCategories={this.props.mappedSubCategories}
+              />
+            </div>
+            <div className="PageFormContainer-block-right">
+              <ProductAboutComponent />
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -39,6 +56,8 @@ export class PageFormContainer extends React.Component {
 }
 
 PageFormContainer.propTypes = {
+  notificationsSuccess: PropTypes.array.isRequired,
+  notificationsFailure: PropTypes.array.isRequired,
   mappedCategories: PropTypes.object.isRequired,
   mappedSubCategories: PropTypes.object.isRequired,
   postPageRequest: PropTypes.func.isRequired,

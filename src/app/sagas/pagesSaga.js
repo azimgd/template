@@ -13,7 +13,7 @@ function* getPagesRequest() {
     const data = yield call(api.getPages);
     yield put(actions.getPagesSuccess({ data }));
   } catch (e) {
-    yield put(actions.getPagesFailure({ errors: { preview: 'Cant get pages' } }));
+    yield put(actions.getPagesFailure({ message: 'Cant get pages' }));
   }
 }
 
@@ -23,7 +23,7 @@ function* getPageRequest(req) {
     const data = yield call(api.getPage.bind(null, payload));
     yield put(actions.getPageSuccess({ data }));
   } catch (e) {
-    yield put(actions.getPageFailure({ errors: { preview: 'Cant get pages' } }));
+    yield put(actions.getPageFailure({ message: 'Cant get pages' }));
   }
 }
 
@@ -31,9 +31,9 @@ function* postPageRequest(req) {
   const { payload } = req;
   try {
     const data = yield call(api.postPage.bind(null, payload));
-    yield put(actions.postPageSuccess({ data }));
+    yield put(actions.postPageSuccess({ data, message: 'Page has been created' }));
   } catch (e) {
-    yield put(actions.postPageFailure({ errors: { preview: 'Cant post page' } }));
+    yield put(actions.postPageFailure({ message: 'Cant post page' }));
   }
 }
 

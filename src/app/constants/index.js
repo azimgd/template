@@ -1,3 +1,6 @@
+export const STATUS_SUCCESS = 'success';
+export const STATUS_FAILURE = 'failure';
+
 export const TOGGLE_CART_DROPDOWN = 'TOGGLE_CART_DROPDOWN';
 export const TOGGLE_ALERT_MESSAGE = 'TOGGLE_ALERT_MESSAGE';
 

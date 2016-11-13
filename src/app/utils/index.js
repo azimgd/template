@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import * as constants from 'constants/index';
 
 export const transformYupValidationErrors = res => _.reduce(res.inner, (acc, item) => {
   _.set(acc, item.path, item.errors.join());
@@ -20,3 +21,7 @@ export const mapCategoriesToSubCategories = (categories, subcategories) => _.red
 export const filterSubCategories = (subCategories, { categoryId }) => _.filter(subCategories, subCategory =>
   parseInt(subCategory.categoryId, 10) === parseInt(categoryId, 10),
 );
+
+export const getSucceededNotifications = notifications => _.filter(notifications, notification => notification.status === constants.STATUS_SUCCESS);
+
+export const getFailedNotifications = notifications => _.filter(notifications, notification => notification.status === constants.STATUS_FAILURE);

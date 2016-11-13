@@ -13,7 +13,7 @@ function* getProductsRequest() {
     const data = yield call(api.getProducts);
     yield put(actions.getProductsSuccess({ data }));
   } catch (e) {
-    yield put(actions.getProductsFailure({ errors: { preview: 'Cant get products' } }));
+    yield put(actions.getProductsFailure({ message: 'Cant get products' }));
   }
 }
 
@@ -23,7 +23,7 @@ function* getProductRequest(req) {
     const data = yield call(api.getProduct.bind(null, payload));
     yield put(actions.getProductSuccess({ data }));
   } catch (e) {
-    yield put(actions.getProductFailure({ errors: { preview: 'Cant get products' } }));
+    yield put(actions.getProductFailure({ message: 'Cant get products' }));
   }
 }
 
@@ -31,9 +31,9 @@ function* postProductRequest(req) {
   const { payload } = req;
   try {
     const data = yield call(api.postProduct.bind(null, payload));
-    yield put(actions.postProductSuccess({ data }));
+    yield put(actions.postProductSuccess({ data, message: 'Product has been created' }));
   } catch (e) {
-    yield put(actions.postProductFailure({ errors: { preview: 'Cant post product' } }));
+    yield put(actions.postProductFailure({ message: 'Cant post product' }));
   }
 }
 

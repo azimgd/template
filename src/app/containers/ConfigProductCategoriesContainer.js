@@ -4,6 +4,7 @@ import configProductCategoriesContainerHoc from 'hoc/configProductCategoriesCont
 import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';
 import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
 import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
+import NotificationComponent from 'components/notification/NotificationComponent';
 
 export class ConfigProductCategoriesContainer extends React.Component {
   constructor(props) {
@@ -33,6 +34,14 @@ export class ConfigProductCategoriesContainer extends React.Component {
         </div>
         <div className="ConfigProductCategoriesContainer">
           <div className="ConfigProductCategoriesContainer-block">
+            <div className="ConfigProductCategoriesContainer-block-full">
+              {this.props.notificationsSuccess.map(notificationSuccess =>
+                <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
+              )}
+              {this.props.notificationsFailure.map(notificationsFailure =>
+                <NotificationComponent isVisible message={notificationsFailure.message} status={notificationsFailure.status} />
+              )}
+            </div>
             <div className="ConfigProductCategoriesContainer-block-left">
               <ConfigCategoriesComponent createNewCategory={this.createNewCategory} />
               <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.createNewSubCategory} />
@@ -48,6 +57,8 @@ export class ConfigProductCategoriesContainer extends React.Component {
 }
 
 ConfigProductCategoriesContainer.propTypes = {
+  notificationsSuccess: PropTypes.array.isRequired,
+  notificationsFailure: PropTypes.array.isRequired,
   mappedCategories: PropTypes.array.isRequired,
   mappedSubCategories: PropTypes.array.isRequired,
   getProductCategoriesRequest: PropTypes.func.isRequired,
