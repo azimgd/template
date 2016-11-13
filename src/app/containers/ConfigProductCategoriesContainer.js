@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react';
 import configProductCategoriesContainerHoc from 'hoc/configProductCategoriesContainerHoc';
 import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';
 import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
+import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
 
 export class ConfigProductCategoriesContainer extends React.Component {
   constructor(props) {
@@ -37,6 +38,7 @@ export class ConfigProductCategoriesContainer extends React.Component {
               <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.createNewSubCategory} />
             </div>
             <div className="ConfigProductCategoriesContainer-block-right">
+              <ConfigSidebarComponent />
             </div>
           </div>
         </div>

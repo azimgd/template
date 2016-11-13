@@ -1,0 +1,26 @@
+.ConfigSidebarComponentBlock {
+}
+
+.ConfigSidebarComponent {
+  background: $c-bodyBackground-1;
+  padding: $padding-large-horizontal;
+
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: $padding-large-horizontal;
+    }
+
+    &-title {
+      font-weight: $f-headingsWeight;
+      margin-bottom: $padding-large-horizontal;
+    }
+
+    &-content {
+      font-size: $f-smallSize;
+    }
+
+    &-content > ul {
+      @extend .u-listUnstyled;
+    }
+  }
+}
