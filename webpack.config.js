@@ -1,18 +1,18 @@
-var path = require('path');
-var webpack = require('webpack');
-var WriteFilePlugin = require('write-file-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:3000',
     'webpack/hot/only-dev-server',
-    './src/app/index'
+    './src/app/index',
   ],
   output: {
     path: path.join(__dirname, 'build/webpack'),
     filename: 'bundle.js',
-    publicPath: '/build/webpack/'
+    publicPath: '/build/webpack/',
   },
   aggregateTimeout: 300,
   poll: 1000,
@@ -37,8 +37,8 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       loaders: ['react-hot-loader/webpack', 'babel'],
-      include: path.join(__dirname, 'src')
+      include: path.join(__dirname, 'src'),
     },
-    ]
-  }
+    ],
+  },
 };
