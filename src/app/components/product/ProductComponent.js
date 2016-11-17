@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import _ from 'lodash';
 import configMock from 'mocks/config';
+import { ButtonIcon } from 'components/icons/IconsComponent';
 
 const ProductComponent = ({ product, height }) =>
   <div className="ProductComponentBlock">
@@ -21,7 +22,7 @@ const ProductComponent = ({ product, height }) =>
         </div>
       </div>
       <div className="ProductComponent-button">
-        <Link to={`/products/${product.id}`}>Add to cart</Link>
+        <Link to={`/products/${product.id}`}><ButtonIcon name="IoAndroidAdd" /> Add to cart</Link>
       </div>
     </div>
   </div>;
