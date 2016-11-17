@@ -1,29 +1,29 @@
 import React, { PropTypes } from 'react';
 import * as Icons from 'react-icons/lib/io';
 
-export const TitleIcon = ({ name }) => {
+export const TitleIconComponent = ({ name }) => {
   const Component = Icons[name];
   return <Component style={{ fontSize: '1.1em', marginTop: '-4px' }} />;
 };
 
-TitleIcon.propTypes = {
+TitleIconComponent.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export const BodyIcon = ({ name }) => {
+export const BodyIconComponent = ({ name }) => {
   const Component = Icons[name];
   return <Component />;
 };
 
-BodyIcon.propTypes = {
+BodyIconComponent.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export const ButtonIcon = ({ name }) => {
+export const ButtonIconComponent = ({ name }) => {
   const Component = Icons[name];
   return <Component style={{ fontSize: '1.1em', marginTop: '-4px' }} />;
 };
 
-ButtonIcon.propTypes = {
+ButtonIconComponent.propTypes = {
   name: PropTypes.string.isRequired,
 };

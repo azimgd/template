@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import pageViewContainerHoc from 'hoc/pageViewContainerHoc';
 import PageDetailsComponent from 'components/pageDetails/PageDetailsComponent';
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
-import { TitleIcon } from 'components/icons/IconsComponent';
+import { TitleIconComponent } from 'components/icons/IconsComponent';
 
 export class PageViewContainer extends React.Component {
   componentWillMount() {
@@ -16,7 +16,7 @@ export class PageViewContainer extends React.Component {
     return (
       <div className="PageViewContainerBlock">
         <div className="PageViewContainerBlock-title">
-          <TitleIcon name="IoIosPaper" /> <PageNavLocationComponent pageName={page.data.title} />
+          <TitleIconComponent name="IoIosPaper" /> <PageNavLocationComponent pageName={page.data.title} />
         </div>
         <div className="PageViewContainer">
           <PageDetailsComponent page={page.data} pageParsedToHtml={pageParsedToHtml} />

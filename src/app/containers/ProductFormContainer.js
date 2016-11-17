@@ -4,7 +4,7 @@ import productFormContainerHoc from 'hoc/productFormContainerHoc';
 import ProductFormComponent from 'components/productForm/ProductFormComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
-import { TitleIcon } from 'components/icons/IconsComponent';
+import { TitleIconComponent } from 'components/icons/IconsComponent';
 
 export class ProductFormContainer extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ export class ProductFormContainer extends React.Component {
     return (
       <div className="ProductFormContainerBlock">
         <div className="ProductFormContainerBlock-title">
-          <TitleIcon name="IoIosCompose" /> Products page
+          <TitleIconComponent name="IoIosCompose" /> Products page
         </div>
         <div className="ProductFormContainer">
           <div className="ProductFormContainer-block">

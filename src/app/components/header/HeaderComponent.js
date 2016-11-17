@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import configMock from 'mocks/config';
-import { TitleIcon } from 'components/icons/IconsComponent';
+import { TitleIconComponent } from 'components/icons/IconsComponent';
 
 const HeaderComponent = ({ toggleCartDropdown }) =>
   <div className="HeaderComponentBlock">
@@ -10,7 +10,7 @@ const HeaderComponent = ({ toggleCartDropdown }) =>
         <div className="HeaderComponent-left-title"><Link to="/">{configMock.siteTitle}</Link></div>
       </div>
       <div className="HeaderComponent-right">
-        <div onClick={toggleCartDropdown}><TitleIcon name="IoIosCart" /> Cart (10)</div>
+        <div onClick={toggleCartDropdown}><TitleIconComponent name="IoIosCart" /> Cart (10)</div>
       </div>
     </div>
   </div>;

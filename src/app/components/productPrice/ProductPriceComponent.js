@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { ButtonIcon } from 'components/icons/IconsComponent';
+import { ButtonIconComponent } from 'components/icons/IconsComponent';
 
 const ProductPriceComponent = ({ product }) =>
   <div className="ProductPriceComponentBlock">
@@ -12,7 +12,7 @@ const ProductPriceComponent = ({ product }) =>
       </div>
     </div>
     <div className="ProductPriceComponentBlock-button">
-      <ButtonIcon name="IoCash" /> Buy now
+      <ButtonIconComponent name="IoCash" /> Buy now
     </div>
   </div>;
 

@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import homeContainerHoc from 'hoc/homeContainerHoc';
 import * as routes from 'constants/routes';
 import HomeCategoriesComponent from 'components/homeCategories/HomeCategoriesComponent';
-import { TitleIcon } from 'components/icons/IconsComponent';
+import { TitleIconComponent } from 'components/icons/IconsComponent';
 
 export class HomeContainer extends React.Component {
   componentWillMount() {
@@ -18,7 +18,7 @@ export class HomeContainer extends React.Component {
     return (
       <div className="HomeContainerBlock">
         <div className="HomeContainerBlock-title">
-          <TitleIcon name="IoIosHome" /> Home
+          <TitleIconComponent name="IoIosHome" /> Home
         </div>
         <div className="HomeContainer">
           {mappedProductCategories && mappedProductCategories.length ?
