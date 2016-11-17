@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import configNavigationContainerHoc from 'hoc/configNavigationContainerHoc';
+import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
 import ConfigNavigationComponent from 'components/configNavigation/ConfigNavigationComponent';
 import { TitleIcon } from 'components/icons/IconsComponent';
 
@@ -24,6 +25,7 @@ class ConfigNavigationContainer extends React.Component {
               <ConfigNavigationComponent createNewRoute={this.createNewRoute} />
             </div>
             <div className="ConfigNavigationContainer-block-right">
+              <ConfigSidebarComponent />
             </div>
           </div>
         </div>

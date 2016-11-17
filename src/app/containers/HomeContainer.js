@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import homeContainerHoc from 'hoc/homeContainerHoc';
+import * as routes from 'constants/routes';
 import HomeCategoriesComponent from 'components/homeCategories/HomeCategoriesComponent';
 import { TitleIcon } from 'components/icons/IconsComponent';
 
@@ -26,7 +27,11 @@ export class HomeContainer extends React.Component {
                 Product categories
               </div>
               <div className="HomeContainer-productCategories-content">
-                <HomeCategoriesComponent categories={mappedProductCategories} />
+                <HomeCategoriesComponent
+                  categories={mappedProductCategories}
+                  categoryUrl={routes.PRODUCTS}
+                  subCategoryUrl={routes.PRODUCTS}
+                />
               </div>
             </div>
           : null}
@@ -37,7 +42,11 @@ export class HomeContainer extends React.Component {
                 Page categories
               </div>
               <div className="HomeContainer-pageCategories-content">
-                <HomeCategoriesComponent categories={mappedPageCategories} />
+                <HomeCategoriesComponent
+                  categories={mappedPageCategories}
+                  categoryUrl={routes.PAGES}
+                  subCategoryUrl={routes.PAGES}
+                />
               </div>
             </div>
           : null}

@@ -6,7 +6,8 @@ import { TitleIcon } from 'components/icons/IconsComponent';
 
 export class PagesContainer extends React.Component {
   componentWillMount() {
-    this.props.getPagesRequest();
+    const { categoryId, subCategoryId } = this.props.location.query;
+    this.props.getPagesRequest({ categoryId, subCategoryId });
     this.props.getPageCategoriesRequest();
   }
 
@@ -31,6 +32,7 @@ export class PagesContainer extends React.Component {
 }
 
 PagesContainer.propTypes = {
+  location: PropTypes.object.isRequired,
   pages: PropTypes.array.isRequired,
   getPagesRequest: PropTypes.func.isRequired,
   getPageCategoriesRequest: PropTypes.func.isRequired,

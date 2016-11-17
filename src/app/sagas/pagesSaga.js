@@ -8,9 +8,10 @@ import * as constants from 'constants/index';
 /**
  * Pages
  */
-function* getPagesRequest() {
+function* getPagesRequest(req) {
+  const { payload } = req;
   try {
-    const data = yield call(api.getPages);
+    const data = yield call(api.getPages.bind(null, payload));
     yield put(actions.getPagesSuccess({ data }));
   } catch (e) {
     yield put(actions.getPagesFailure({ message: 'Cant get pages' }));

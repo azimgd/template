@@ -3,8 +3,8 @@ import axios from 'axios';
 /**
  * Pages
  */
-export const getPages = () =>
-  axios.get('//localhost:8080/api/pages')
+export const getPages = (data) =>
+  axios.get('//localhost:8080/api/pages', { params: data })
   .then(res => res.data);
 
 export const getPage = ({ id }) =>
@@ -19,8 +19,8 @@ export const postPage = (data) =>
 /**
  * Products
  */
-export const getProducts = () =>
-  axios.get('//localhost:8080/api/products')
+export const getProducts = (data) =>
+  axios.get('//localhost:8080/api/products', { params: data })
   .then(res => res.data);
 
 export const getProduct = ({ id }) =>

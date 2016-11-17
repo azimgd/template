@@ -7,7 +7,8 @@ import { TitleIcon } from 'components/icons/IconsComponent';
 
 export class ProductsContainer extends React.Component {
   componentWillMount() {
-    this.props.getProductsRequest();
+    const { categoryId, subCategoryId } = this.props.location.query;
+    this.props.getProductsRequest({ categoryId, subCategoryId });
     this.props.getProductCategoriesRequest();
   }
 
@@ -32,6 +33,7 @@ export class ProductsContainer extends React.Component {
 }
 
 ProductsContainer.propTypes = {
+  location: PropTypes.object.isRequired,
   products: PropTypes.array.isRequired,
   maxHeight: PropTypes.number,
   getProductsRequest: PropTypes.func.isRequired,

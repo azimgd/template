@@ -31,7 +31,7 @@ const productsResizeListener = (ProductViewComponent) => {
     }
 
     render() {
-      return <ProductViewComponent {...this.state} />;
+      return <ProductViewComponent {...this.props} {...this.state} />;
     }
   }
 
