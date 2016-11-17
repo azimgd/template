@@ -16,7 +16,7 @@ class ConfigNavigationContainer extends React.Component {
     return (
       <div className="ConfigNavigationContainerBlock">
         <div className="ConfigNavigationContainerBlock-title">
-          <TitleIcon name="IoIosNavigateOutline" /> Config navigation
+          <TitleIcon name="IoIosNavigate" /> Config navigation
         </div>
         <div className="ConfigNavigationContainer">
           <div className="ConfigNavigationContainer-block">

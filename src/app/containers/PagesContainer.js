@@ -15,7 +15,7 @@ export class PagesContainer extends React.Component {
     return (
       <div className="PagesContainerBlock">
         <div className="PagesContainerBlock-title">
-          <TitleIcon name="IoIosCopyOutline" /> Pages
+          <TitleIcon name="IoIosCopy" /> Pages
         </div>
 
         <div className="PagesContainer">

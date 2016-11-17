@@ -5,7 +5,7 @@ import { TitleIcon } from 'components/icons/IconsComponent';
 const NotFoundContainer = () =>
   <div className="NotFoundContainerBlock">
     <div className="NotFoundContainerBlock-title">
-      <TitleIcon name="IoIosLightBulbOutline" /> Not found
+      <TitleIcon name="IoIosLightBulb" /> Not found
     </div>
     <div className="NotFoundContainer">
       Following page does not exist

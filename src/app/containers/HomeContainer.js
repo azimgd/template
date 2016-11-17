@@ -17,7 +17,7 @@ export class HomeContainer extends React.Component {
     return (
       <div className="HomeContainerBlock">
         <div className="HomeContainerBlock-title">
-          <TitleIcon name="IoIosHomeOutline" /> Home
+          <TitleIcon name="IoIosHome" /> Home
         </div>
         <div className="HomeContainer">
           {mappedProductCategories && mappedProductCategories.length ?

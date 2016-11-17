@@ -6,7 +6,7 @@ const PageNavLocationComponent = ({ pageName }) =>
   <div className="PageNavLocationComponentBlock">
     <div className="PageNavLocationComponent">
       <div className="PageNavLocationComponent-title">
-        <TitleIcon name="IoIosGlassesOutline" /> {pageName}
+        <TitleIcon name="IoIosGlasses" /> {pageName}
       </div>
       <div className="PageNavLocationComponent-content">
         <div className="PageNavLocationComponent-content-item"><Link to="/">Home</Link></div>

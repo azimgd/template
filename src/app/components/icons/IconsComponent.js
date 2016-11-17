@@ -3,7 +3,7 @@ import * as Icons from 'react-icons/lib/io';
 
 export const TitleIcon = ({ name }) => {
   const Component = Icons[name];
-  return <Component style={{ fontSize: '1.25em', marginTop: '-4px' }} />;
+  return <Component style={{ fontSize: '1.1em', marginTop: '-4px' }} />;
 };
 
 TitleIcon.propTypes = {

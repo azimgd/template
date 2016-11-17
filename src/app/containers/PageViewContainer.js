@@ -16,7 +16,7 @@ export class PageViewContainer extends React.Component {
     return (
       <div className="PageViewContainerBlock">
         <div className="PageViewContainerBlock-title">
-          <TitleIcon name="IoIosPaperOutline" /> <PageNavLocationComponent pageName={page.data.title} />
+          <TitleIcon name="IoIosPaper" /> <PageNavLocationComponent pageName={page.data.title} />
         </div>
         <div className="PageViewContainer">
           <PageDetailsComponent page={page.data} pageParsedToHtml={pageParsedToHtml} />

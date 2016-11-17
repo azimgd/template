@@ -31,7 +31,7 @@ export class ConfigProductCategoriesContainer extends React.Component {
     return (
       <div className="ConfigProductCategoriesContainerBlock">
         <div className="ConfigProductCategoriesContainerBlock-title">
-          <TitleIcon name="IoIosListOutline" /> Config product categories
+          <TitleIcon name="IoIosList" /> Config product categories
         </div>
         <div className="ConfigProductCategoriesContainer">
           <div className="ConfigProductCategoriesContainer-block">

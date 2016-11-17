@@ -26,7 +26,7 @@ export class PageFormContainer extends React.Component {
     return (
       <div className="PageFormContainerBlock">
         <div className="PageFormContainerBlock-title">
-          <TitleIcon name="IoIosComposeOutline" /> Pages
+          <TitleIcon name="IoIosCompose" /> Pages
         </div>
         <div className="PageFormContainer">
           <div className="PageFormContainer-block">

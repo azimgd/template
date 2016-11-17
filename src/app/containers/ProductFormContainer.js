@@ -25,7 +25,7 @@ export class ProductFormContainer extends React.Component {
     return (
       <div className="ProductFormContainerBlock">
         <div className="ProductFormContainerBlock-title">
-          <TitleIcon name="IoIosComposeOutline" /> Products page
+          <TitleIcon name="IoIosCompose" /> Products page
         </div>
         <div className="ProductFormContainer">
           <div className="ProductFormContainer-block">

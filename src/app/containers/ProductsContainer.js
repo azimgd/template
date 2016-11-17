@@ -16,7 +16,7 @@ export class ProductsContainer extends React.Component {
     return (
       <div className="ProductsContainerBlock">
         <div className="ProductsContainerBlock-title">
-          <TitleIcon name="IoIosKeypadOutline" /> Products
+          <TitleIcon name="IoIosKeypad" /> Products
         </div>
 
         <div className="ProductsContainer">
