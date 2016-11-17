@@ -4,11 +4,12 @@ import CheckoutSummaryComponent from 'components/checkoutSummary/CheckoutSummary
 import CheckoutUserInfoComponent from 'components/checkoutUserInfo/CheckoutUserInfoComponent';
 import CheckoutBillingComponent from 'components/checkoutBilling/CheckoutBillingComponent';
 import CheckoutControlComponent from 'components/checkoutControl/CheckoutControlComponent';
+import { TitleIcon } from 'components/icons/IconsComponent';
 
 const CheckoutContainer = () =>
   <div className="CheckoutContainerBlock">
     <div className="CheckoutContainerBlock-title">
-      Checkout #123
+      <TitleIcon name="IoBag" /> Checkout
     </div>
 
     <div className="CheckoutContainer">

@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 
 import pagesContainerHoc from 'hoc/pagesContainerHoc';
 import PageComponent from 'components/page/PageComponent';
+import { TitleIcon } from 'components/icons/IconsComponent';
 
 export class PagesContainer extends React.Component {
   componentWillMount() {
@@ -14,7 +15,7 @@ export class PagesContainer extends React.Component {
     return (
       <div className="PagesContainerBlock">
         <div className="PagesContainerBlock-title">
-          Pages
+          <TitleIcon name="IoIosCopyOutline" /> Pages
         </div>
 
         <div className="PagesContainer">

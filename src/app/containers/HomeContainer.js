@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 
 import homeContainerHoc from 'hoc/homeContainerHoc';
 import HomeCategoriesComponent from 'components/homeCategories/HomeCategoriesComponent';
+import { TitleIcon } from 'components/icons/IconsComponent';
 
 export class HomeContainer extends React.Component {
   componentWillMount() {
@@ -16,7 +17,7 @@ export class HomeContainer extends React.Component {
     return (
       <div className="HomeContainerBlock">
         <div className="HomeContainerBlock-title">
-          Home
+          <TitleIcon name="IoIosHomeOutline" /> Home
         </div>
         <div className="HomeContainer">
           {mappedProductCategories && mappedProductCategories.length ?
