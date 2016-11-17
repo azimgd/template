@@ -4,6 +4,7 @@ import pageFormContainerHoc from 'hoc/pageFormContainerHoc';
 import PageFormComponent from 'components/pageForm/PageFormComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
+import { TitleIcon } from 'components/icons/IconsComponent';
 
 export class PageFormContainer extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ export class PageFormContainer extends React.Component {
     return (
       <div className="PageFormContainerBlock">
         <div className="PageFormContainerBlock-title">
-          Pages
+          <TitleIcon name="IoIosCompose" /> Pages
         </div>
         <div className="PageFormContainer">
           <div className="PageFormContainer-block">

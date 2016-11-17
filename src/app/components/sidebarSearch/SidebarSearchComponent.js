@@ -1,4 +1,5 @@
 import React from 'react';
+import { ButtonIcon } from 'components/icons/IconsComponent';
 
 const SidebarSearchComponent = () =>
   <div className="SidebarSearchComponentBlock">
@@ -24,7 +25,7 @@ const SidebarSearchComponent = () =>
         </div>
       </div>
       <div className="SidebarSearchComponent-button">
-        <button>Search</button>
+        <button><ButtonIcon name="IoIosSearchStrong" /> Search</button>
       </div>
     </div>
   </div>;

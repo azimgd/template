@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
+
 import productsContainerHoc from 'hoc/productsContainerHoc';
 import productsResizeListener from 'hoc/ProductsResizeListener';
 import ProductComponent from 'components/product/ProductComponent';
+import { TitleIcon } from 'components/icons/IconsComponent';
 
 export class ProductsContainer extends React.Component {
   componentWillMount() {
@@ -14,7 +16,7 @@ export class ProductsContainer extends React.Component {
     return (
       <div className="ProductsContainerBlock">
         <div className="ProductsContainerBlock-title">
-          Products
+          <TitleIcon name="IoIosKeypad" /> Products
         </div>
 
         <div className="ProductsContainer">

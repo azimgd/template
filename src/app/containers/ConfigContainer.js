@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import configContainerHoc from 'hoc/configContainerHoc';
+import { TitleIcon } from 'components/icons/IconsComponent';
 
 class ConfigContainer extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class ConfigContainer extends React.Component {
     return (
       <div className="ConfigContainerBlock">
         <div className="ConfigContainerBlock-title">
-          Config
+          <TitleIcon name="IoGearA" /> Config
         </div>
         <div className="ConfigContainer">
         </div>

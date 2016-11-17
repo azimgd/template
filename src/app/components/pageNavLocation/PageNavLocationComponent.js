@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { TitleIcon } from 'components/icons/IconsComponent';
 
 const PageNavLocationComponent = ({ pageName }) =>
   <div className="PageNavLocationComponentBlock">
     <div className="PageNavLocationComponent">
       <div className="PageNavLocationComponent-title">
-        {pageName}
+        <TitleIcon name="IoIosGlasses" /> {pageName}
       </div>
       <div className="PageNavLocationComponent-content">
         <div className="PageNavLocationComponent-content-item"><Link to="/">Home</Link></div>
