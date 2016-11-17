@@ -4,6 +4,8 @@ import pageViewContainerHoc from 'hoc/pageViewContainerHoc';
 import PageDetailsComponent from 'components/pageDetails/PageDetailsComponent';
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
+import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
+import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 
 export class PageViewContainer extends React.Component {
   componentWillMount() {
@@ -12,14 +14,18 @@ export class PageViewContainer extends React.Component {
   }
 
   render() {
-    const { page, pageParsedToHtml } = this.props;
+    const { isLoading, isEmpty, page, pageParsedToHtml } = this.props;
     return (
       <div className="PageViewContainerBlock">
         <div className="PageViewContainerBlock-title">
           <TitleIconComponent name="IoIosPaper" /> <PageNavLocationComponent pageName={page.data.title} />
         </div>
         <div className="PageViewContainer">
-          <PageDetailsComponent page={page.data} pageParsedToHtml={pageParsedToHtml} />
+          <IsLoadingComponent isLoading={isLoading}>
+            <IsEmptyComponent isEmpty={isEmpty}>
+              <PageDetailsComponent page={page.data} pageParsedToHtml={pageParsedToHtml} />
+            </IsEmptyComponent>
+          </IsLoadingComponent>
         </div>
       </div>
     );
@@ -27,6 +33,8 @@ export class PageViewContainer extends React.Component {
 }
 
 PageViewContainer.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  isEmpty: PropTypes.bool.isRequired,
   params: PropTypes.shape({
     id: PropTypes.string.isRequired,
   }).isRequired,

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import * as actions from 'actions/index';
+import { isInputArrayContentEmpty } from 'utils/index';
 
 const mapStateToProps = (state) => ({
   pages: state.pagesReducer.pages,
@@ -11,4 +12,13 @@ const mapDispatchToProps = {
   getPageCategoriesRequest: actions.getPageCategoriesRequest,
 };
 
-export default (PagesContainer) => connect(mapStateToProps, mapDispatchToProps)(PagesContainer);
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  const isLoading = false;
+  const isEmpty = isInputArrayContentEmpty([stateProps.pages.data]);
+  return Object.assign({
+    isLoading,
+    isEmpty,
+  }, ownProps, stateProps, dispatchProps);
+};
+
+export default (PagesContainer) => connect(mapStateToProps, mapDispatchToProps, mergeProps)(PagesContainer);

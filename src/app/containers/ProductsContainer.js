@@ -4,6 +4,8 @@ import productsContainerHoc from 'hoc/productsContainerHoc';
 import productsResizeListener from 'hoc/ProductsResizeListener';
 import ProductComponent from 'components/product/ProductComponent';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
+import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
+import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 
 export class ProductsContainer extends React.Component {
   componentWillMount() {
@@ -13,7 +15,7 @@ export class ProductsContainer extends React.Component {
   }
 
   render() {
-    const { maxHeight, products } = this.props;
+    const { isLoading, isEmpty, maxHeight, products } = this.props;
     return (
       <div className="ProductsContainerBlock">
         <div className="ProductsContainerBlock-title">
@@ -21,11 +23,15 @@ export class ProductsContainer extends React.Component {
         </div>
 
         <div className="ProductsContainer">
-          <div className="ProductsContainer-products">
-            {products && products.data.map((product, key) =>
-              <div key={key}><ProductComponent product={product} height={maxHeight} /></div>
-            )}
-          </div>
+          <IsLoadingComponent isLoading={isLoading}>
+            <IsEmptyComponent isEmpty={isEmpty}>
+              <div className="ProductsContainer-products">
+                {products && products.data.map((product, key) =>
+                  <div key={key}><ProductComponent product={product} height={maxHeight} /></div>
+                )}
+              </div>
+            </IsEmptyComponent>
+          </IsLoadingComponent>
         </div>
       </div>
     );
@@ -33,6 +39,8 @@ export class ProductsContainer extends React.Component {
 }
 
 ProductsContainer.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  isEmpty: PropTypes.bool.isRequired,
   location: PropTypes.object.isRequired,
   products: PropTypes.array.isRequired,
   maxHeight: PropTypes.number,

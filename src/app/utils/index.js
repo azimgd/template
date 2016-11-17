@@ -25,3 +25,5 @@ export const filterSubCategories = (subCategories, { categoryId }) => _.filter(s
 export const getSucceededNotifications = notifications => _.filter(notifications, notification => notification.status === constants.STATUS_SUCCESS);
 
 export const getFailedNotifications = notifications => _.filter(notifications, notification => notification.status === constants.STATUS_FAILURE);
+
+export const isInputArrayContentEmpty = arrayContent => _.chain(arrayContent).map(item => _.isEmpty(item)).without(true).value().length === 0;
