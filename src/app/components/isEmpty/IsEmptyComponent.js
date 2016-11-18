@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const IsEmptyComponent = ({ isEmpty, children }) => {
   if (isEmpty) {
-    return <div>Is empty</div>;
+    return <div className="IsEmptyComponent">No content available for this page</div>;
   }
   return <div>{children}</div>;
 };
