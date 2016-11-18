@@ -9,6 +9,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   getProductsRequest: actions.getProductsRequest,
   getProductCategoriesRequest: actions.getProductCategoriesRequest,
+  getProductsIdle: actions.getProductsIdle,
+  getProductCategoriesIdle: actions.getProductCategoriesIdle,
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {

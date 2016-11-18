@@ -12,6 +12,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   getProductCategoriesRequest: actions.getProductCategoriesRequest,
   getProductSubCategoriesRequest: actions.getProductSubCategoriesRequest,
+  getProductCategoriesIdle: actions.getProductCategoriesIdle,
+  getProductSubCategoriesIdle: actions.getProductSubCategoriesIdle,
   postProductCategoryRequest: actions.postProductCategoryRequest,
   postProductSubCategoryRequest: actions.postProductSubCategoryRequest,
 };

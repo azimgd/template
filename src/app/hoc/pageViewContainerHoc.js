@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   getPageRequest: actions.getPageRequest,
+  getPageIdle: actions.getPageIdle,
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {

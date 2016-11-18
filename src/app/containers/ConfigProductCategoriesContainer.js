@@ -19,6 +19,11 @@ export class ConfigProductCategoriesContainer extends React.Component {
     this.props.getProductSubCategoriesRequest();
   }
 
+  componentWillUnmount() {
+    this.props.getProductCategoriesIdle();
+    this.props.getProductSubCategoriesIdle();
+  }
+
   createNewCategory(category) {
     this.props.postProductCategoryRequest(category);
   }
@@ -64,6 +69,8 @@ ConfigProductCategoriesContainer.propTypes = {
   mappedSubCategories: PropTypes.array.isRequired,
   getProductCategoriesRequest: PropTypes.func.isRequired,
   getProductSubCategoriesRequest: PropTypes.func.isRequired,
+  getProductCategoriesIdle: PropTypes.func.isRequired,
+  getProductSubCategoriesIdle: PropTypes.func.isRequired,
   postProductCategoryRequest: PropTypes.func.isRequired,
   postProductSubCategoryRequest: PropTypes.func.isRequired,
 };

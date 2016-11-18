@@ -15,6 +15,13 @@ export class HomeContainer extends React.Component {
     this.props.getProductSubCategoriesRequest();
   }
 
+  componentWillUnmount() {
+    this.props.getPageCategoriesIdle();
+    this.props.getPageSubCategoriesIdle();
+    this.props.getProductCategoriesIdle();
+    this.props.getProductSubCategoriesIdle();
+  }
+
   render() {
     const { isLoading, isEmpty, mappedProductCategories, mappedPageCategories } = this.props;
     return (
@@ -71,6 +78,10 @@ HomeContainer.propTypes = {
   getPageSubCategoriesRequest: PropTypes.func.isRequired,
   getProductCategoriesRequest: PropTypes.func.isRequired,
   getProductSubCategoriesRequest: PropTypes.func.isRequired,
+  getPageCategoriesIdle: PropTypes.func.isRequired,
+  getPageSubCategoriesIdle: PropTypes.func.isRequired,
+  getProductCategoriesIdle: PropTypes.func.isRequired,
+  getProductSubCategoriesIdle: PropTypes.func.isRequired,
 };
 
 export default homeContainerHoc(HomeContainer);

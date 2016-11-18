@@ -19,6 +19,11 @@ export class ConfigPageCategoriesContainer extends React.Component {
     this.props.getPageSubCategoriesRequest();
   }
 
+  componentWillUnmount() {
+    this.props.getPageCategoriesIdle();
+    this.props.getPageSubCategoriesIdle();
+  }
+
   createNewCategory(category) {
     this.props.postPageCategoryRequest(category);
   }
@@ -64,6 +69,8 @@ ConfigPageCategoriesContainer.propTypes = {
   mappedSubCategories: PropTypes.array.isRequired,
   getPageCategoriesRequest: PropTypes.func.isRequired,
   getPageSubCategoriesRequest: PropTypes.func.isRequired,
+  getPageCategoriesIdle: PropTypes.func.isRequired,
+  getPageSubCategoriesIdle: PropTypes.func.isRequired,
   postPageCategoryRequest: PropTypes.func.isRequired,
   postPageSubCategoryRequest: PropTypes.func.isRequired,
 };

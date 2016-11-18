@@ -18,6 +18,11 @@ export class PageFormContainer extends React.Component {
     this.props.getPageSubCategoriesRequest();
   }
 
+  componentWillUnmount() {
+    this.props.getPageCategoriesIdle();
+    this.props.getPageSubCategoriesIdle();
+  }
+
   createPage(data) {
     this.props.postPageRequest(data);
   }
@@ -64,6 +69,8 @@ PageFormContainer.propTypes = {
   postPageRequest: PropTypes.func.isRequired,
   getPageCategoriesRequest: PropTypes.func.isRequired,
   getPageSubCategoriesRequest: PropTypes.func.isRequired,
+  getPageCategoriesIdle: PropTypes.func.isRequired,
+  getPageSubCategoriesIdle: PropTypes.func.isRequired,
 };
 
 export default pageFormContainerHoc(PageFormContainer);

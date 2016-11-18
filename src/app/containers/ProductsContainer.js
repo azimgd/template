@@ -14,6 +14,11 @@ export class ProductsContainer extends React.Component {
     this.props.getProductCategoriesRequest();
   }
 
+  componentWillUnmount() {
+    this.props.getProductsIdle();
+    this.props.getProductCategoriesIdle();
+  }
+
   render() {
     const { isLoading, isEmpty, maxHeight, products } = this.props;
     return (
@@ -46,6 +51,8 @@ ProductsContainer.propTypes = {
   maxHeight: PropTypes.number,
   getProductsRequest: PropTypes.func.isRequired,
   getProductCategoriesRequest: PropTypes.func.isRequired,
+  getProductsIdle: PropTypes.func.isRequired,
+  getProductCategoriesIdle: PropTypes.func.isRequired,
 };
 
 export default productsResizeListener(

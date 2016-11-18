@@ -13,6 +13,11 @@ export class PagesContainer extends React.Component {
     this.props.getPageCategoriesRequest();
   }
 
+  componentWillUnmount() {
+    this.props.getPagesIdle();
+    this.props.getPageCategoriesIdle();
+  }
+
   render() {
     const { isLoading, isEmpty, maxHeight, pages } = this.props;
     return (
@@ -44,6 +49,8 @@ PagesContainer.propTypes = {
   pages: PropTypes.array.isRequired,
   getPagesRequest: PropTypes.func.isRequired,
   getPageCategoriesRequest: PropTypes.func.isRequired,
+  getPagesIdle: PropTypes.func.isRequired,
+  getPageCategoriesIdle: PropTypes.func.isRequired,
   maxHeight: PropTypes.number,
 };
 

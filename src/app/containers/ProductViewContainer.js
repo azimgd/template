@@ -14,6 +14,10 @@ export class ProductViewContainer extends React.Component {
     this.props.getProductRequest({ id });
   }
 
+  componentWillUnmount() {
+    this.props.getProductIdle();
+  }
+
   render() {
     const { isLoading, isEmpty, product, productParsedToHtml } = this.props;
     return (
@@ -48,6 +52,7 @@ ProductViewContainer.propTypes = {
     id: PropTypes.string.isRequired,
   }).isRequired,
   getProductRequest: PropTypes.func.isRequired,
+  getProductIdle: PropTypes.func.isRequired,
   product: PropTypes.object.isRequired,
   productParsedToHtml: PropTypes.string.isRequired,
 };

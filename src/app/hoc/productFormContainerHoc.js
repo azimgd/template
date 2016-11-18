@@ -16,6 +16,8 @@ const mapDispatchToProps = {
   postProductRequest: actions.postProductRequest,
   getProductCategoriesRequest: actions.getProductCategoriesRequest,
   getProductSubCategoriesRequest: actions.getProductSubCategoriesRequest,
+  getProductCategoriesIdle: actions.getProductCategoriesIdle,
+  getProductSubCategoriesIdle: actions.getProductSubCategoriesIdle,
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {

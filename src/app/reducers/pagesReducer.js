@@ -18,18 +18,40 @@ const initialState = {
   },
 };
 
+/**
+ * Get pages
+ */
 const getPagesSuccess = (state, action) => update(state, {
   pages: {
     data: { $set: action.payload.data },
   },
 });
 
+const getPagesIdle = (state) => update(state, {
+  pages: {
+    data: { $set: initialState.pages.data },
+  },
+});
+
+
+/**
+ * Get page
+ */
 const getPageSuccess = (state, action) => update(state, {
   page: {
     data: { $set: action.payload.data },
   },
 });
 
+const getPageIdle = (state) => update(state, {
+  page: {
+    data: { $set: initialState.page.data },
+  },
+});
+
+/**
+ * Post page
+ */
 const postPageSuccess = (state, action) => update(state, {
   actions: {
     postPage: {
@@ -52,7 +74,11 @@ const postPageFailure = (state, action) => update(state, {
 
 export default handleActions({
   [constants.GET_PAGES_SUCCESS]: getPagesSuccess,
+  [constants.GET_PAGES_IDLE]: getPagesIdle,
+
   [constants.GET_PAGE_SUCCESS]: getPageSuccess,
+  [constants.GET_PAGE_IDLE]: getPageIdle,
+
   [constants.POST_PAGE_SUCCESS]: postPageSuccess,
   [constants.POST_PAGE_FAILURE]: postPageFailure,
 }, initialState);

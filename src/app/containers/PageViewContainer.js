@@ -13,6 +13,10 @@ export class PageViewContainer extends React.Component {
     this.props.getPageRequest({ id });
   }
 
+  componentWillUnmount() {
+    this.props.getPageIdle();
+  }
+
   render() {
     const { isLoading, isEmpty, page, pageParsedToHtml } = this.props;
     return (
@@ -39,6 +43,7 @@ PageViewContainer.propTypes = {
     id: PropTypes.string.isRequired,
   }).isRequired,
   getPageRequest: PropTypes.func.isRequired,
+  getPageIdle: PropTypes.func.isRequired,
   page: PropTypes.object.isRequired,
   pageParsedToHtml: PropTypes.object.isRequired,
 };

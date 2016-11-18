@@ -17,6 +17,11 @@ export class ProductFormContainer extends React.Component {
     this.props.getProductSubCategoriesRequest();
   }
 
+  componentWillUnmount() {
+    this.props.getProductCategoriesIdle();
+    this.props.getProductSubCategoriesIdle();
+  }
+
   createProduct(data) {
     this.props.postProductRequest(data);
   }
@@ -62,6 +67,8 @@ ProductFormContainer.propTypes = {
   postProductRequest: PropTypes.func.isRequired,
   getProductCategoriesRequest: PropTypes.func.isRequired,
   getProductSubCategoriesRequest: PropTypes.func.isRequired,
+  getProductCategoriesIdle: PropTypes.func.isRequired,
+  getProductSubCategoriesIdle: PropTypes.func.isRequired,
 };
 
 export default productFormContainerHoc(ProductFormContainer);

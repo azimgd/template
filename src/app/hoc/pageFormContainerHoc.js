@@ -16,6 +16,8 @@ const mapDispatchToProps = {
   postPageRequest: actions.postPageRequest,
   getPageCategoriesRequest: actions.getPageCategoriesRequest,
   getPageSubCategoriesRequest: actions.getPageSubCategoriesRequest,
+  getPageCategoriesIdle: actions.getPageCategoriesIdle,
+  getPageSubCategoriesIdle: actions.getPageSubCategoriesIdle,
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {

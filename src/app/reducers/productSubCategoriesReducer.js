@@ -15,12 +15,24 @@ const initialState = {
   },
 };
 
+/**
+ * Get product subCategories
+ */
 const getProductSubCategoriesSuccess = (state, action) => update(state, {
   productSubCategories: {
     data: { $set: action.payload.data },
   },
 });
 
+const getProductSubCategoriesIdle = (state) => update(state, {
+  productSubCategories: {
+    data: { $set: initialState.productSubCategories.data },
+  },
+});
+
+/**
+ * Post product subCategory
+ */
 const postProductSubCategorySuccess = (state, action) => update(state, {
   actions: {
     postProductSubCategory: {
@@ -43,6 +55,8 @@ const postProductSubCategoryFailure = (state, action) => update(state, {
 
 export default handleActions({
   [constants.GET_PRODUCT_SUB_CATEGORIES_SUCCESS]: getProductSubCategoriesSuccess,
+  [constants.GET_PRODUCT_SUB_CATEGORIES_IDLE]: getProductSubCategoriesIdle,
+
   [constants.POST_PRODUCT_SUB_CATEGORY_SUCCESS]: postProductSubCategorySuccess,
   [constants.POST_PRODUCT_SUB_CATEGORY_FAILURE]: postProductSubCategoryFailure,
 }, initialState);
