@@ -4,6 +4,7 @@ import ReactUploader from 'react-s3-uploader';
 const ImageUploadComponent = (props) =>
   <div className="ImageUploadComponentBlock">
     <div className="ImageUploadComponent">
+      <label>Image uploader</label>
       <ReactUploader
         signingUrl={props.signingUrl}
         accept={props.accept}

@@ -51,6 +51,8 @@
 @import './components/ConfigCategoriesComponent';
 @import './components/ConfigSubCategoriesComponent';
 @import './components/ConfigSidebarComponent';
+@import './components/ImagePreviewComponent';
+@import './components/ImageUploadComponent';
 
 body {
   background: $c-bodyBackground;

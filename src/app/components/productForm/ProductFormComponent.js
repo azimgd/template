@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import ProductFormComponentValidator from 'validators/ProductFormComponentValidator';
 import { InputText, RichTextarea, InputSelect } from 'components/shared/SharedFormInputComponent';
 
-const ProductFormComponent = ({ categories, subCategories, handleSubmit, createProduct }) =>
+const ProductFormComponent = ({ children, categories, subCategories, handleSubmit, createProduct }) =>
   <div className="ProductFormComponentBlock">
     <form className="ProductFormComponent" onSubmit={handleSubmit(createProduct)}>
       <div className="ProductFormComponent-productForm">
@@ -24,6 +24,8 @@ const ProductFormComponent = ({ categories, subCategories, handleSubmit, createP
         </div>
       </div>
 
+      {children}
+
       <button type="submit" className="ProductFormComponent-button">
         Create now
       </button>
@@ -31,6 +33,7 @@ const ProductFormComponent = ({ categories, subCategories, handleSubmit, createP
   </div>;
 
 ProductFormComponent.propTypes = {
+  children: PropTypes.object.isRequired,
   createProduct: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   categories: PropTypes.object.isRequired,

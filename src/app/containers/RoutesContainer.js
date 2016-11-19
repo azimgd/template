@@ -17,7 +17,6 @@ import ConfigContainer from 'containers/ConfigContainer';
 import ConfigNavigationContainer from 'containers/ConfigNavigationContainer';
 import ConfigPageCategoriesContainer from 'containers/ConfigPageCategoriesContainer';
 import ConfigProductCategoriesContainer from 'containers/ConfigProductCategoriesContainer';
-import ImageUploadContainer from 'containers/ImageUploadContainer';
 
 const RoutesContainer = ({ history }) =>
   <Router history={history}>
@@ -27,7 +26,6 @@ const RoutesContainer = ({ history }) =>
       <Route path={routes.PRODUCTS}>
         <IndexRoute component={ProductsContainer} />
         <Route path={routes.PRODUCTS_CREATE} component={ProductFormContainer} />
-        <Route path="/upload" component={ImageUploadContainer} />
         <Route path={routes.PRODUCTS_SHOW} component={ProductViewContainer} />
       </Route>
       <Route path={routes.PAGES}>
