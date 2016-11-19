@@ -7,6 +7,7 @@ import pageSubCategoriesReducer from 'reducers/pageSubCategoriesReducer';
 import productsReducer from 'reducers/productsReducer';
 import productCategoriesReducer from 'reducers/productCategoriesReducer';
 import productSubCategoriesReducer from 'reducers/productSubCategoriesReducer';
+import imageUploadReducer from 'reducers/imageUploadReducer';
 import { reducer as formReducer } from 'redux-form';
 
 export default combineReducers({
@@ -17,6 +18,7 @@ export default combineReducers({
   productsReducer,
   productCategoriesReducer,
   productSubCategoriesReducer,
+  imageUploadReducer,
   routing,
   form: formReducer,
 });

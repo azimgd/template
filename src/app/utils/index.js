@@ -27,3 +27,10 @@ export const getSucceededNotifications = notifications => _.filter(notifications
 export const getFailedNotifications = notifications => _.filter(notifications, notification => notification.status === constants.STATUS_FAILURE);
 
 export const isInputArrayContentEmpty = arrayContent => _.chain(arrayContent).map(item => _.isEmpty(item)).without(true).value().length === 0;
+
+export const generateFilePreviewAsync = file => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.onload = () => resolve(reader.result);
+  reader.onerror = () => reject('nope');
+  reader.readAsDataURL(file);
+});

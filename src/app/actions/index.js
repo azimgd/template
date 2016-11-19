@@ -116,3 +116,11 @@ export const postProductSubCategoryIdle = createAction(constants.POST_PRODUCT_SU
 export const postProductSubCategoryRequest = createAction(constants.POST_PRODUCT_SUB_CATEGORY_REQUEST);
 export const postProductSubCategorySuccess = createAction(constants.POST_PRODUCT_SUB_CATEGORY_SUCCESS);
 export const postProductSubCategoryFailure = createAction(constants.POST_PRODUCT_SUB_CATEGORY_FAILURE);
+
+/**
+ * Image upload
+ */
+export const startImageUpload = createAction(constants.START_IMAGE_UPLOAD);
+export const progressImageUpload = createAction(constants.PROGRESS_IMAGE_UPLOAD);
+export const errorImageUpload = createAction(constants.ERROR_IMAGE_UPLOAD);
+export const finishImageUpload = createAction(constants.FINISH_IMAGE_UPLOAD);
