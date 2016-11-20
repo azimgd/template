@@ -38,3 +38,8 @@ export const generateFilePreviewAsync = file => new Promise((resolve, reject) =>
 export const transformProductImages = (images, { uniqueProductId }) => _.map(images, item => ({ ...item, ...{ uniqueProductId } }));
 
 export const randomString = () => Math.random().toString(36).substring(7);
+
+export const mapProductImagesToAmazonUrl = images => _.chain(images)
+  .filter(item => item.filename)
+  .map(item => `https://shoptemplate.s3-eu-west-1.amazonaws.com/${item.filename}`)
+  .value();

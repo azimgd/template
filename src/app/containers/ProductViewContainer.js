@@ -13,14 +13,16 @@ export class ProductViewContainer extends React.Component {
   componentWillMount() {
     const { id } = this.props.params;
     this.props.getProductRequest({ id });
+    this.props.getProductImagesRequest({ id });
   }
 
   componentWillUnmount() {
     this.props.getProductIdle();
+    this.props.getProductImagesIdle();
   }
 
   render() {
-    const { isLoading, isEmpty, product, productParsedToHtml } = this.props;
+    const { isLoading, isEmpty, product, mappedProductImages, productParsedToHtml } = this.props;
     return (
       <div className="ProductViewContainerBlock">
         <div className="ProductViewContainerBlock-title">
@@ -31,7 +33,7 @@ export class ProductViewContainer extends React.Component {
             <IsEmptyComponent isEmpty={isEmpty}>
               <div className="ProductViewContainer-block">
                 <div className="ProductViewContainer-block-left">
-                  <ProductGalleryComponent product={product.data} />
+                  <ProductGalleryComponent images={mappedProductImages} />
                   <ProductDetailsComponent product={product.data} productParsedToHtml={productParsedToHtml} />
                 </div>
                 <div className="ProductViewContainer-block-right">
@@ -54,8 +56,11 @@ ProductViewContainer.propTypes = {
     id: PropTypes.string.isRequired,
   }).isRequired,
   getProductRequest: PropTypes.func.isRequired,
+  getProductImagesRequest: PropTypes.func.isRequired,
   getProductIdle: PropTypes.func.isRequired,
+  getProductImagesIdle: PropTypes.func.isRequired,
   product: PropTypes.object.isRequired,
+  mappedProductImages: PropTypes.object.isRequired,
   productParsedToHtml: PropTypes.string.isRequired,
 };
 
