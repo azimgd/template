@@ -34,3 +34,7 @@ export const generateFilePreviewAsync = file => new Promise((resolve, reject) =>
   reader.onerror = () => reject('nope');
   reader.readAsDataURL(file);
 });
+
+export const transformProductImages = (images, { uniqueProductId }) => _.map(images, item => ({ ...item, ...{ uniqueProductId } }));
+
+export const randomString = () => Math.random().toString(36).substring(7);

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
 import * as actions from 'actions/index';
-import { transformCategories, getFailedNotifications, getSucceededNotifications, filterSubCategories, generateFilePreviewAsync } from 'utils/index';
+import { transformCategories, getFailedNotifications, getSucceededNotifications, filterSubCategories, generateFilePreviewAsync, transformProductImages, randomString } from 'utils/index';
 
 const selector = formValueSelector('ProductFormComponent');
 
@@ -19,6 +19,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   postProductRequest: actions.postProductRequest,
+  postProductImageRequestBulk: actions.postProductImageRequestBulk,
   getProductCategoriesRequest: actions.getProductCategoriesRequest,
   getProductSubCategoriesRequest: actions.getProductSubCategoriesRequest,
   getProductCategoriesIdle: actions.getProductCategoriesIdle,
@@ -34,9 +35,11 @@ const mapDispatchToProps = {
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  const uniqueProductId = randomString();
   const mappedCategories = transformCategories(stateProps.productCategories.data);
   const filteredSubCategories = filterSubCategories(stateProps.productSubCategories.data, { categoryId: stateProps.formCategoryId });
   const mappedSubCategories = transformCategories(filteredSubCategories);
+  const mappedImages = transformProductImages(stateProps.images.data, { uniqueProductId });
   const notificationsSuccess = getSucceededNotifications([
     stateProps.productsActions.postProduct,
   ]);
@@ -62,10 +65,12 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     dispatchProps.finishImageUpload({ name: file.name, publicUrl });
   };
   return Object.assign({
+    uniqueProductId,
     notificationsSuccess,
     notificationsFailure,
     mappedCategories,
     mappedSubCategories,
+    mappedImages,
 
     /**
      * Image upload

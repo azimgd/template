@@ -25,7 +25,8 @@ export class ProductFormContainer extends React.Component {
   }
 
   createProduct(data) {
-    this.props.postProductRequest(data);
+    this.props.postProductRequest({ ...data, uniqueProductId: this.props.uniqueProductId });
+    this.props.postProductImageRequestBulk(this.props.mappedImages);
   }
 
   render() {
@@ -87,6 +88,8 @@ export class ProductFormContainer extends React.Component {
 }
 
 ProductFormContainer.propTypes = {
+  uniqueProductId: PropTypes.string.isRequired,
+  mappedImages: PropTypes.array.isRequired,
   images: PropTypes.array.isRequired,
   onUploadStart: PropTypes.func.isRequired,
   onUploadProgress: PropTypes.func.isRequired,
