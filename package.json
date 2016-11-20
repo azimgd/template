@@ -42,6 +42,7 @@
     "react-dom": "^15.3.2",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-icons": "^2.2.1",
+    "react-image-slider": "0.0.6",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "react-router-redux": "^4.0.6",

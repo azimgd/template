@@ -1,3 +1,4 @@
+@import '../../../node_modules/react-image-slider/lib/image-slider.css';
 @import './bootstrap/bootstrap';
 
 @import './variables.scss';
@@ -34,6 +35,7 @@
 @import './components/ProductAboutComponent';
 @import './components/ProductDetailsComponent';
 @import './components/ProductFormComponent';
+@import './components/ProductGalleryComponent';
 @import './components/CheckoutSummaryComponent';
 @import './components/CheckoutUserInfoComponent';
 @import './components/CheckoutBillingComponent';
