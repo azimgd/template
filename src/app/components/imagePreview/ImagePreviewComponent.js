@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const ImagePreviewComponent = ({ image }) => {
   const status = image.publicUrl ? 'Complete' : `Pending ${image.percent}%`;
-  const backgroundImage = image.publicUrl || image.thumbnail;
+  const backgroundImage = image.publicUrl ? `https://shoptemplate.s3-eu-west-1.amazonaws.com/${image.filename}` : image.thumbnail;
   const opacity = status === 'Complete' ? 1 : 0.5;
 
   return (

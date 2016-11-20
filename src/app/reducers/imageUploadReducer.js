@@ -23,7 +23,7 @@ update.extend('$failImageProgress', (updatedImage, images) => images.map(item =>
  * and update percent attribute of the object. No mutations, only composition
  */
 update.extend('$completeImageProgress', (updatedImage, images) => images.map(item =>
-  item.name === updatedImage.name ? ({ ...item, ...{ publicUrl: updatedImage.publicUrl, percent: 100 } }) : item,
+  item.name === updatedImage.name ? ({ ...item, ...{ publicUrl: updatedImage.publicUrl, filename: updatedImage.filename, percent: 100 } }) : item,
 ));
 
 const initialState = {

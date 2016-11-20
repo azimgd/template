@@ -61,8 +61,8 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const onUploadError = (errorMessage, file) => {
     dispatchProps.errorImageUpload({ name: file.name, errorMessage });
   };
-  const onUploadFinish = ({ publicUrl }, file) => {
-    dispatchProps.finishImageUpload({ name: file.name, publicUrl });
+  const onUploadFinish = ({ publicUrl, filename }, file) => {
+    dispatchProps.finishImageUpload({ name: file.name, publicUrl, filename });
   };
   return Object.assign({
     uniqueProductId,

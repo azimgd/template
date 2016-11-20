@@ -40,7 +40,7 @@ function* postProductImageRequest(req) {
 function* postProductImageRequestBulk(req) {
   const { payload } = req;
   yield payload
-    .map(image => ({ name: image.name, publicUrl: image.publicUrl, uniqueProductId: image.uniqueProductId }))
+    .map(image => ({ name: image.name, filename: image.filename, publicUrl: image.publicUrl, uniqueProductId: image.uniqueProductId }))
     .map(image => put(actions.postProductImageRequest(image)));
 }
 
