@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react';
 import productViewContainerHoc from 'hoc/productViewContainerHoc';
 import ProductDetailsComponent from 'components/productDetails/ProductDetailsComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
+import ProductGalleryComponent from 'components/productGallery/ProductGalleryComponent';
 import ProductPriceComponent from 'components/productPrice/ProductPriceComponent';
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
@@ -30,6 +31,7 @@ export class ProductViewContainer extends React.Component {
             <IsEmptyComponent isEmpty={isEmpty}>
               <div className="ProductViewContainer-block">
                 <div className="ProductViewContainer-block-left">
+                  <ProductGalleryComponent product={product.data} />
                   <ProductDetailsComponent product={product.data} productParsedToHtml={productParsedToHtml} />
                 </div>
                 <div className="ProductViewContainer-block-right">
