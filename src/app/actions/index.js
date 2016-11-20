@@ -116,3 +116,30 @@ export const postProductSubCategoryIdle = createAction(constants.POST_PRODUCT_SU
 export const postProductSubCategoryRequest = createAction(constants.POST_PRODUCT_SUB_CATEGORY_REQUEST);
 export const postProductSubCategorySuccess = createAction(constants.POST_PRODUCT_SUB_CATEGORY_SUCCESS);
 export const postProductSubCategoryFailure = createAction(constants.POST_PRODUCT_SUB_CATEGORY_FAILURE);
+
+/**
+* Product images
+*/
+export const getProductImagesIdle = createAction(constants.GET_PRODUCT_IMAGES_IDLE);
+export const getProductImagesRequest = createAction(constants.GET_PRODUCT_IMAGES_REQUEST);
+export const getProductImagesSuccess = createAction(constants.GET_PRODUCT_IMAGES_SUCCESS);
+export const getProductImagesFailure = createAction(constants.GET_PRODUCT_IMAGES_FAILURE);
+
+export const getProductImageIdle = createAction(constants.GET_PRODUCT_IMAGE_IDLE);
+export const getProductImageRequest = createAction(constants.GET_PRODUCT_IMAGE_REQUEST);
+export const getProductImageSuccess = createAction(constants.GET_PRODUCT_IMAGE_SUCCESS);
+export const getProductImageFailure = createAction(constants.GET_PRODUCT_IMAGE_FAILURE);
+
+export const postProductImageIdle = createAction(constants.POST_PRODUCT_IMAGE_IDLE);
+export const postProductImageRequest = createAction(constants.POST_PRODUCT_IMAGE_REQUEST);
+export const postProductImageRequestBulk = createAction(constants.POST_PRODUCT_IMAGE_REQUEST_BULK);
+export const postProductImageSuccess = createAction(constants.POST_PRODUCT_IMAGE_SUCCESS);
+export const postProductImageFailure = createAction(constants.POST_PRODUCT_IMAGE_FAILURE);
+
+/**
+ * Image upload
+ */
+export const startImageUpload = createAction(constants.START_IMAGE_UPLOAD);
+export const progressImageUpload = createAction(constants.PROGRESS_IMAGE_UPLOAD);
+export const errorImageUpload = createAction(constants.ERROR_IMAGE_UPLOAD);
+export const finishImageUpload = createAction(constants.FINISH_IMAGE_UPLOAD);

@@ -94,3 +94,18 @@ export const getProductSubCategory = ({ id }) =>
 export const postProductSubCategory = (data) =>
   axios.post('//localhost:8080/api/productSubCategories', data)
   .then(res => res.data);
+
+/**
+ * Product images
+ */
+export const getProductImages = () =>
+  axios.get('//localhost:8080/api/productImages')
+  .then(res => res.data);
+
+export const getProductImage = ({ id }) =>
+  axios.get(`//localhost:8080/api/productImages/${id}`)
+  .then(res => res.data);
+
+export const postProductImage = (data) =>
+  axios.post('//localhost:8080/api/productImages', data)
+  .then(res => res.data);
