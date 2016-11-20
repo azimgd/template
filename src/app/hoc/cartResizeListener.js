@@ -17,7 +17,8 @@ const cartResizeListener = (CartViewComponent) => {
     }
 
     componentDidMount() {
-      this.onResize();
+      // hack to ensure all documents loaded into dom
+      setTimeout(() => this.onResize(), 300);
     }
 
     componentWillUnmount() {
