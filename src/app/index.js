@@ -5,6 +5,7 @@ import { browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 
+import 'services/immutabilityService';
 import configureStore from 'configureStore';
 import DevToolsContainer from 'containers/DevToolsContainer';
 import RoutesContainer from 'containers/RoutesContainer';

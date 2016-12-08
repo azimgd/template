@@ -7,6 +7,11 @@ const initialState = {
     data: [],
   },
   actions: {
+    getProductImages: {
+      message: null,
+      status: null,
+      createdAt: null,
+    },
     postProductImage: {
       message: null,
       status: null,
@@ -22,11 +27,23 @@ const getProductImagesSuccess = (state, action) => update(state, {
   productImages: {
     data: { $set: action.payload.data },
   },
+  actions: {
+    getProductImages: { $setRequestActionSuccess: action.payload },
+  },
 });
 
-const getProductImagesIdle = (state) => update(state, {
+const getProductImagesFailure = (state, action) => update(state, {
+  actions: {
+    getProductImages: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const getProductImagesIdle = (state, action) => update(state, {
   productImages: {
     data: { $set: initialState.productImages.data },
+  },
+  actions: {
+    getProductImages: { $setRequestActionIdle: action.payload },
   },
 });
 
@@ -35,28 +52,28 @@ const getProductImagesIdle = (state) => update(state, {
  */
 const postProductImageSuccess = (state, action) => update(state, {
   actions: {
-    postProductImage: {
-      message: { $set: action.payload.message },
-      status: { $set: constants.STATUS_SUCCESS },
-      createdAt: { $set: Date.now() },
-    },
+    postProductImage: { $setRequestActionSuccess: action.payload },
   },
 });
 
 const postProductImageFailure = (state, action) => update(state, {
   actions: {
-    postProductImage: {
-      message: { $set: action.payload.message },
-      status: { $set: constants.STATUS_FAILURE },
-      createdAt: { $set: Date.now() },
-    },
+    postProductImage: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const postProductImageIdle = (state, action) => update(state, {
+  actions: {
+    postProductImage: { $setRequestActionIdle: action.payload },
   },
 });
 
 export default handleActions({
   [constants.GET_PRODUCT_IMAGES_SUCCESS]: getProductImagesSuccess,
+  [constants.GET_PRODUCT_IMAGES_FAILURE]: getProductImagesFailure,
   [constants.GET_PRODUCT_IMAGES_IDLE]: getProductImagesIdle,
 
   [constants.POST_PRODUCT_IMAGE_SUCCESS]: postProductImageSuccess,
   [constants.POST_PRODUCT_IMAGE_FAILURE]: postProductImageFailure,
+  [constants.POST_PRODUCT_IMAGE_IDLE]: postProductImageIdle,
 }, initialState);

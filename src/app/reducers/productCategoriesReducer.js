@@ -7,6 +7,11 @@ const initialState = {
     data: [],
   },
   actions: {
+    getProductCategories: {
+      message: null,
+      status: null,
+      createdAt: null,
+    },
     postProductCategory: {
       message: null,
       status: null,
@@ -22,11 +27,23 @@ const getProductCategoriesSuccess = (state, action) => update(state, {
   productCategories: {
     data: { $set: action.payload.data },
   },
+  actions: {
+    getProductCategories: { $setRequestActionSuccess: action.payload },
+  },
 });
 
-const getProductCategoriesIdle = (state) => update(state, {
+const getProductCategoriesFailure = (state, action) => update(state, {
+  actions: {
+    getProductCategories: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const getProductCategoriesIdle = (state, action) => update(state, {
   productCategories: {
     data: { $set: initialState.productCategories.data },
+  },
+  actions: {
+    getProductCategories: { $setRequestActionIdle: action.payload },
   },
 });
 
@@ -35,28 +52,28 @@ const getProductCategoriesIdle = (state) => update(state, {
  */
 const postProductCategorySuccess = (state, action) => update(state, {
   actions: {
-    postProductCategory: {
-      message: { $set: action.payload.message },
-      status: { $set: constants.STATUS_SUCCESS },
-      createdAt: { $set: Date.now() },
-    },
+    postProductCategory: { $setRequestActionSuccess: action.payload },
   },
 });
 
 const postProductCategoryFailure = (state, action) => update(state, {
   actions: {
-    postProductCategory: {
-      message: { $set: action.payload.message },
-      status: { $set: constants.STATUS_FAILURE },
-      createdAt: { $set: Date.now() },
-    },
+    postProductCategory: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const postProductCategoryIdle = (state, action) => update(state, {
+  actions: {
+    postProductCategory: { $setRequestActionIdle: action.payload },
   },
 });
 
 export default handleActions({
   [constants.GET_PRODUCT_CATEGORIES_SUCCESS]: getProductCategoriesSuccess,
+  [constants.GET_PRODUCT_CATEGORIES_FAILURE]: getProductCategoriesFailure,
   [constants.GET_PRODUCT_CATEGORIES_IDLE]: getProductCategoriesIdle,
 
   [constants.POST_PRODUCT_CATEGORY_SUCCESS]: postProductCategorySuccess,
   [constants.POST_PRODUCT_CATEGORY_FAILURE]: postProductCategoryFailure,
+  [constants.POST_PRODUCT_CATEGORY_IDLE]: postProductCategoryIdle,
 }, initialState);

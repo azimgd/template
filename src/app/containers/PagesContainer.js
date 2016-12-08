@@ -30,7 +30,7 @@ export class PagesContainer extends React.Component {
           <IsLoadingComponent isLoading={isLoading}>
             <IsEmptyComponent isEmpty={isEmpty}>
               <div className="PagesContainer-pages">
-                {pages && pages.data.map((page, key) =>
+                {pages.data && pages.data.map((page, key) =>
                   <div key={key}><PageComponent page={page} height={maxHeight} /></div>
                 )}
               </div>

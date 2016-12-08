@@ -7,6 +7,11 @@ const initialState = {
     data: [],
   },
   actions: {
+    getPageCategories: {
+      message: null,
+      status: null,
+      createdAt: null,
+    },
     postPageCategory: {
       message: null,
       status: null,
@@ -22,11 +27,23 @@ const getPageCategoriesSuccess = (state, action) => update(state, {
   pageCategories: {
     data: { $set: action.payload.data },
   },
+  actions: {
+    getPageCategories: { $setRequestActionSuccess: action.payload },
+  },
 });
 
-const getPageCategoriesIdle = (state) => update(state, {
+const getPageCategoriesFailure = (state, action) => update(state, {
+  actions: {
+    getPageCategories: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const getPageCategoriesIdle = (state, action) => update(state, {
   pageCategories: {
     data: { $set: initialState.pageCategories.data },
+  },
+  actions: {
+    getPageCategories: { $setRequestActionIdle: action.payload },
   },
 });
 
@@ -35,28 +52,28 @@ const getPageCategoriesIdle = (state) => update(state, {
  */
 const postPageCategorySuccess = (state, action) => update(state, {
   actions: {
-    postPageCategory: {
-      message: { $set: action.payload.message },
-      status: { $set: constants.STATUS_SUCCESS },
-      createdAt: { $set: Date.now() },
-    },
+    postPageCategory: { $setRequestActionSuccess: action.payload },
   },
 });
 
 const postPageCategoryFailure = (state, action) => update(state, {
   actions: {
-    postPageCategory: {
-      message: { $set: action.payload.message },
-      status: { $set: constants.STATUS_FAILURE },
-      createdAt: { $set: Date.now() },
-    },
+    postPageCategory: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const postPageCategoryIdle = (state, action) => update(state, {
+  actions: {
+    postPageCategory: { $setRequestActionIdle: action.payload },
   },
 });
 
 export default handleActions({
   [constants.GET_PAGE_CATEGORIES_SUCCESS]: getPageCategoriesSuccess,
+  [constants.GET_PAGE_CATEGORIES_FAILURE]: getPageCategoriesFailure,
   [constants.GET_PAGE_CATEGORIES_IDLE]: getPageCategoriesIdle,
 
   [constants.POST_PAGE_CATEGORY_SUCCESS]: postPageCategorySuccess,
   [constants.POST_PAGE_CATEGORY_FAILURE]: postPageCategoryFailure,
+  [constants.POST_PAGE_CATEGORY_IDLE]: postPageCategoryIdle,
 }, initialState);
