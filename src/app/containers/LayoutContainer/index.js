@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import configMock from 'mocks/config';
 
 import cartResizeListener from 'hoc/cartResizeListener';
-import layoutContainerHoc from 'hoc/layoutContainerHoc';
+import layoutHoc from 'hoc/layoutHoc';
 
 import HeaderComponent from 'components/header/HeaderComponent';
 import SidebarComponent from 'components/sidebar/SidebarComponent';
@@ -51,4 +51,4 @@ LayoutContainer.propTypes = {
   toggleAlertMessage: PropTypes.func.isRequired,
 };
 
-export default layoutContainerHoc(cartResizeListener(LayoutContainer));
+export default layoutHoc(cartResizeListener(LayoutContainer));

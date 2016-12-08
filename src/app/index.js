@@ -7,8 +7,8 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import 'services/immutabilityService';
 import configureStore from 'configureStore';
-import DevToolsContainer from 'containers/DevToolsContainer';
-import RoutesContainer from 'containers/RoutesContainer';
+import DevTools from 'containers/DevTools';
+import Routes from 'containers/Routes';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
@@ -16,8 +16,8 @@ const history = syncHistoryWithStore(browserHistory, store);
 ReactDOM.render((
   <Provider store={store}>
     <div>
-      <RoutesContainer history={history} />
-      <DevToolsContainer />
+      <Routes history={history} />
+      <DevTools />
     </div>
   </Provider>
 ), document.getElementById('root'));

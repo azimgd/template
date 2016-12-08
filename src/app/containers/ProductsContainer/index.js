@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import productsContainerHoc from 'hoc/productsContainerHoc';
+import productsHoc from 'containers/ProductsContainer/productsHoc';
 import productsResizeListener from 'hoc/ProductsResizeListener';
 import ProductComponent from 'components/product/ProductComponent';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
@@ -56,5 +56,5 @@ ProductsContainer.propTypes = {
 };
 
 export default productsResizeListener(
-  productsContainerHoc(ProductsContainer)
+  productsHoc(ProductsContainer)
 );

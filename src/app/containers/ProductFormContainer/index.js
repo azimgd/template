@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import productFormContainerHoc from 'hoc/productFormContainerHoc';
+import productFormHoc from 'containers/ProductFormContainer/productFormHoc';
 import ProductFormComponent from 'components/productForm/ProductFormComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
@@ -107,4 +107,4 @@ ProductFormContainer.propTypes = {
   getProductSubCategoriesIdle: PropTypes.func.isRequired,
 };
 
-export default productFormContainerHoc(ProductFormContainer);
+export default productFormHoc(ProductFormContainer);

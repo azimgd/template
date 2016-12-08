@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import pageViewContainerHoc from 'hoc/pageViewContainerHoc';
+import pageViewHoc from 'containers/PageViewContainer/pageViewHoc';
 import PageDetailsComponent from 'components/pageDetails/PageDetailsComponent';
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
@@ -48,4 +48,4 @@ PageViewContainer.propTypes = {
   pageParsedToHtml: PropTypes.object.isRequired,
 };
 
-export default pageViewContainerHoc(PageViewContainer);
+export default pageViewHoc(PageViewContainer);

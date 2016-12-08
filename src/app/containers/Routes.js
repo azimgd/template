@@ -2,23 +2,23 @@ import React, { PropTypes } from 'react';
 import { Router, Route, Redirect, IndexRoute } from 'react-router';
 
 import * as routes from 'constants/routes';
-import LayoutContainer from 'containers/LayoutContainer';
-import LoginContainer from 'containers/LoginContainer';
-import HomeContainer from 'containers/HomeContainer';
-import ProductsContainer from 'containers/ProductsContainer';
-import ProductViewContainer from 'containers/ProductViewContainer';
-import ProductFormContainer from 'containers/ProductFormContainer';
-import CheckoutContainer from 'containers/CheckoutContainer';
-import NotFoundContainer from 'containers/NotFoundContainer';
-import PagesContainer from 'containers/PagesContainer';
-import PageViewContainer from 'containers/PageViewContainer';
-import PageFormContainer from 'containers/PageFormContainer';
-import ConfigContainer from 'containers/ConfigContainer';
-import ConfigNavigationContainer from 'containers/ConfigNavigationContainer';
-import ConfigPageCategoriesContainer from 'containers/ConfigPageCategoriesContainer';
-import ConfigProductCategoriesContainer from 'containers/ConfigProductCategoriesContainer';
+import LayoutContainer from 'containers/LayoutContainer/index';
+import LoginContainer from 'containers/LoginContainer/index';
+import HomeContainer from 'containers/HomeContainer/index';
+import ProductsContainer from 'containers/ProductsContainer/index';
+import ProductViewContainer from 'containers/ProductViewContainer/index';
+import ProductFormContainer from 'containers/ProductFormContainer/index';
+import CheckoutContainer from 'containers/CheckoutContainer/index';
+import NotFoundContainer from 'containers/NotFoundContainer/index';
+import PagesContainer from 'containers/PagesContainer/index';
+import PageViewContainer from 'containers/PageViewContainer/index';
+import PageFormContainer from 'containers/PageFormContainer/index';
+import ConfigContainer from 'containers/ConfigContainer/index';
+import ConfigNavigationContainer from 'containers/ConfigNavigationContainer/index';
+import ConfigPageCategoriesContainer from 'containers/ConfigPageCategoriesContainer/index';
+import ConfigProductCategoriesContainer from 'containers/ConfigProductCategoriesContainer/index';
 
-const RoutesContainer = ({ history }) =>
+const Routes = ({ history }) =>
   <Router history={history}>
     <Route path={routes.LOGIN} component={LoginContainer} />
     <Route path={routes.ROOT} component={LayoutContainer}>
@@ -45,8 +45,8 @@ const RoutesContainer = ({ history }) =>
     </Route>
   </Router>;
 
-RoutesContainer.propTypes = {
+Routes.propTypes = {
   history: PropTypes.object.isRequired,
 };
 
-export default RoutesContainer;
+export default Routes;

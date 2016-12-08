@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import homeContainerHoc from 'hoc/homeContainerHoc';
+import homeHoc from 'containers/HomeContainer/homeHoc';
 import * as routes from 'constants/routes';
 import HomeCategoriesComponent from 'components/homeCategories/HomeCategoriesComponent';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
@@ -84,4 +84,4 @@ HomeContainer.propTypes = {
   getProductSubCategoriesIdle: PropTypes.func.isRequired,
 };
 
-export default homeContainerHoc(HomeContainer);
+export default homeHoc(HomeContainer);

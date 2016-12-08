@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import configMock from 'mocks/config';
-import pageFormContainerHoc from 'hoc/pageFormContainerHoc';
+import pageFormHoc from 'containers/PageFormContainer/pageFormHoc';
 import PageFormComponent from 'components/pageForm/PageFormComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
@@ -73,4 +73,4 @@ PageFormContainer.propTypes = {
   getPageSubCategoriesIdle: PropTypes.func.isRequired,
 };
 
-export default pageFormContainerHoc(PageFormContainer);
+export default pageFormHoc(PageFormContainer);

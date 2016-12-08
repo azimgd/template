@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import pagesContainerHoc from 'hoc/pagesContainerHoc';
+import pagesHoc from 'containers/PagesContainer/pagesHoc';
 import PageComponent from 'components/page/PageComponent';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
@@ -54,4 +54,4 @@ PagesContainer.propTypes = {
   maxHeight: PropTypes.number,
 };
 
-export default pagesContainerHoc(PagesContainer);
+export default pagesHoc(PagesContainer);
