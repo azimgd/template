@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import configNavigationContainerHoc from 'hoc/configNavigationContainerHoc';
+import configNavigationHoc from 'containers/ConfigNavigationContainer/configNavigationHoc';
 import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
 import ConfigNavigationComponent from 'components/configNavigation/ConfigNavigationComponent';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
@@ -38,4 +38,4 @@ ConfigNavigationContainer.propTypes = {
   config: PropTypes.object.isRequired,
 };
 
-export default configNavigationContainerHoc(ConfigNavigationContainer);
+export default configNavigationHoc(ConfigNavigationContainer);

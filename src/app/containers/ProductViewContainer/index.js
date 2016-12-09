@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import productViewContainerHoc from 'hoc/productViewContainerHoc';
+import productViewHoc from 'containers/ProductViewContainer/productViewHoc';
 import ProductDetailsComponent from 'components/productDetails/ProductDetailsComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
 import ProductPriceComponent from 'components/productPrice/ProductPriceComponent';
@@ -57,4 +57,4 @@ ProductViewContainer.propTypes = {
   productParsedToHtml: PropTypes.string.isRequired,
 };
 
-export default productViewContainerHoc(ProductViewContainer);
+export default productViewHoc(ProductViewContainer);

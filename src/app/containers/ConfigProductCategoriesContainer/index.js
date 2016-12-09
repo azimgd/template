@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import configProductCategoriesContainerHoc from 'hoc/configProductCategoriesContainerHoc';
+import configProductCategoriesHoc from 'containers/ConfigProductCategoriesContainer/configProductCategoriesHoc';
 import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';
 import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
 import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
@@ -75,4 +75,4 @@ ConfigProductCategoriesContainer.propTypes = {
   postProductSubCategoryRequest: PropTypes.func.isRequired,
 };
 
-export default configProductCategoriesContainerHoc(ConfigProductCategoriesContainer);
+export default configProductCategoriesHoc(ConfigProductCategoriesContainer);

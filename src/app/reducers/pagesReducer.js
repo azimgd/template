@@ -10,6 +10,16 @@ const initialState = {
     data: {},
   },
   actions: {
+    getPages: {
+      message: null,
+      status: null,
+      createdAt: null,
+    },
+    getPage: {
+      message: null,
+      status: null,
+      createdAt: null,
+    },
     postPage: {
       message: null,
       status: null,
@@ -25,11 +35,23 @@ const getPagesSuccess = (state, action) => update(state, {
   pages: {
     data: { $set: action.payload.data },
   },
+  actions: {
+    getPages: { $setRequestActionSuccess: action.payload },
+  },
 });
 
-const getPagesIdle = (state) => update(state, {
+const getPagesFailure = (state, action) => update(state, {
+  actions: {
+    getPages: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const getPagesIdle = (state, action) => update(state, {
   pages: {
     data: { $set: initialState.pages.data },
+  },
+  actions: {
+    getPages: { $setRequestActionIdle: action.payload },
   },
 });
 
@@ -41,11 +63,23 @@ const getPageSuccess = (state, action) => update(state, {
   page: {
     data: { $set: action.payload.data },
   },
+  actions: {
+    getPage: { $setRequestActionSuccess: action.payload },
+  },
 });
 
-const getPageIdle = (state) => update(state, {
+const getPageFailure = (state, action) => update(state, {
+  actions: {
+    getPage: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const getPageIdle = (state, action) => update(state, {
   page: {
     data: { $set: initialState.page.data },
+  },
+  actions: {
+    getPage: { $setRequestActionIdle: action.payload },
   },
 });
 
@@ -54,31 +88,32 @@ const getPageIdle = (state) => update(state, {
  */
 const postPageSuccess = (state, action) => update(state, {
   actions: {
-    postPage: {
-      message: { $set: action.payload.message },
-      status: { $set: constants.STATUS_SUCCESS },
-      createdAt: { $set: Date.now() },
-    },
+    postPage: { $setRequestActionSuccess: action.payload },
   },
 });
 
 const postPageFailure = (state, action) => update(state, {
   actions: {
-    postPage: {
-      message: { $set: action.payload.message },
-      status: { $set: constants.STATUS_SUCCESS },
-      createdAt: { $set: Date.now() },
-    },
+    postPage: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const postPageIdle = (state, action) => update(state, {
+  actions: {
+    postPage: { $setRequestActionIdle: action.payload },
   },
 });
 
 export default handleActions({
   [constants.GET_PAGES_SUCCESS]: getPagesSuccess,
+  [constants.GET_PAGES_FAILURE]: getPagesFailure,
   [constants.GET_PAGES_IDLE]: getPagesIdle,
 
   [constants.GET_PAGE_SUCCESS]: getPageSuccess,
+  [constants.GET_PAGE_FAILURE]: getPageFailure,
   [constants.GET_PAGE_IDLE]: getPageIdle,
 
   [constants.POST_PAGE_SUCCESS]: postPageSuccess,
   [constants.POST_PAGE_FAILURE]: postPageFailure,
+  [constants.POST_PAGE_IDLE]: postPageIdle,
 }, initialState);

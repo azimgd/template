@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import pagesContainerHoc from 'hoc/pagesContainerHoc';
+import pagesHoc from 'containers/PagesContainer/pagesHoc';
 import PageComponent from 'components/page/PageComponent';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
@@ -30,7 +30,7 @@ export class PagesContainer extends React.Component {
           <IsLoadingComponent isLoading={isLoading}>
             <IsEmptyComponent isEmpty={isEmpty}>
               <div className="PagesContainer-pages">
-                {pages && pages.data.map((page, key) =>
+                {pages.data && pages.data.map((page, key) =>
                   <div key={key}><PageComponent page={page} height={maxHeight} /></div>
                 )}
               </div>
@@ -54,4 +54,4 @@ PagesContainer.propTypes = {
   maxHeight: PropTypes.number,
 };
 
-export default pagesContainerHoc(PagesContainer);
+export default pagesHoc(PagesContainer);

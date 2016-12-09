@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import configContainerHoc from 'hoc/configContainerHoc';
+import configHoc from 'containers/ConfigContainer/configHoc';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
 
 class ConfigContainer extends React.Component {
@@ -28,4 +28,4 @@ ConfigContainer.propTypes = {
   config: PropTypes.object.isRequired,
 };
 
-export default configContainerHoc(ConfigContainer);
+export default configHoc(ConfigContainer);

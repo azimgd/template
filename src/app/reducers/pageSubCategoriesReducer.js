@@ -7,6 +7,11 @@ const initialState = {
     data: [],
   },
   actions: {
+    getPageSubCategories: {
+      message: null,
+      status: null,
+      createdAt: null,
+    },
     postPageSubCategory: {
       message: null,
       status: null,
@@ -22,11 +27,23 @@ const getPageSubCategoriesSuccess = (state, action) => update(state, {
   pageSubCategories: {
     data: { $set: action.payload.data },
   },
+  actions: {
+    getPageSubCategories: { $setRequestActionSuccess: action.payload },
+  },
 });
 
-const getPageSubCategoriesIdle = (state) => update(state, {
+const getPageSubCategoriesFailure = (state, action) => update(state, {
+  actions: {
+    getPageSubCategories: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const getPageSubCategoriesIdle = (state, action) => update(state, {
   pageSubCategories: {
     data: { $set: initialState.pageSubCategories.data },
+  },
+  actions: {
+    getPageSubCategories: { $setRequestActionIdle: action.payload },
   },
 });
 
@@ -36,28 +53,28 @@ const getPageSubCategoriesIdle = (state) => update(state, {
  */
 const postPageSubCategorySuccess = (state, action) => update(state, {
   actions: {
-    postPageSubCategory: {
-      message: { $set: action.payload.message },
-      status: { $set: constants.STATUS_SUCCESS },
-      createdAt: { $set: Date.now() },
-    },
+    postPageSubCategory: { $setRequestActionSuccess: action.payload },
   },
 });
 
 const postPageSubCategoryFailure = (state, action) => update(state, {
   actions: {
-    postPageSubCategory: {
-      message: { $set: action.payload.message },
-      status: { $set: constants.STATUS_FAILURE },
-      createdAt: { $set: Date.now() },
-    },
+    postPageSubCategory: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const postPageSubCategoryIdle = (state, action) => update(state, {
+  actions: {
+    postPageSubCategory: { $setRequestActionIdle: action.payload },
   },
 });
 
 export default handleActions({
   [constants.GET_PAGE_SUB_CATEGORIES_SUCCESS]: getPageSubCategoriesSuccess,
+  [constants.GET_PAGE_SUB_CATEGORIES_FAILURE]: getPageSubCategoriesFailure,
   [constants.GET_PAGE_SUB_CATEGORIES_IDLE]: getPageSubCategoriesIdle,
 
   [constants.POST_PAGE_SUB_CATEGORY_SUCCESS]: postPageSubCategorySuccess,
   [constants.POST_PAGE_SUB_CATEGORY_FAILURE]: postPageSubCategoryFailure,
+  [constants.POST_PAGE_SUB_CATEGORY_IDLE]: postPageSubCategoryIdle,
 }, initialState);
