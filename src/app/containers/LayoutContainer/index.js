@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import configMock from 'mocks/config';
 
 import cartResizeListener from 'hoc/cartResizeListener';
-import layoutHoc from 'hoc/layoutHoc';
+import layoutHoc from 'containers/LayoutContainer/layoutHoc';
 
 import HeaderComponent from 'components/header/HeaderComponent';
 import SidebarComponent from 'components/sidebar/SidebarComponent';
