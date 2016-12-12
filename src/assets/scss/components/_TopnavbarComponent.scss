@@ -1,10 +1,36 @@
 .TopnavbarComponentBlock {
-  background: $c-contentBackground;
-  padding: $padding-small-horizontal $padding-large-horizontal;
+  background: lighten($c-primaryText, 12%);
 }
 
 .TopnavbarComponent {
   &-nav {
-    @extend .u-simpleList;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0;
+
+    & > li {
+      display: inline-block;
+      padding: $padding-small-horizontal $padding-base-horizontal;
+    }
+
+    &-item > a {
+      color: $c-white;
+      text-decoration: none;
+    }
+
+    &-item--active {
+      border-bottom: 3px solid $c-secondaryBackground-1;
+    }
+
+    &-item--active > a {
+      color: $c-secondaryBackground-1;
+      cursor: pointer;
+    }
+
+    &-item > a:hover,
+    &-item > a:active {
+      color: $c-secondaryBackground-1;
+      cursor: pointer;
+    }
   }
 }

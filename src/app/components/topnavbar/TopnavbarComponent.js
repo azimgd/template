@@ -1,22 +1,42 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
-const TopnavbarComponent = () =>
-  <div className="TopnavbarComponentBlock">
-    <div className="TopnavbarComponent">
-      <ul className="TopnavbarComponent-nav">
-        <li className="TopnavbarComponent-nav-item"><Link to="/">Home page</Link></li>
-        <li className="TopnavbarComponent-nav-item"><Link to="/products">All products</Link></li>
-        <li className="TopnavbarComponent-nav-item"><Link to="/products/new">Create new product</Link></li>
-        <li className="TopnavbarComponent-nav-item"><Link to="/pages">All pages</Link></li>
-        <li className="TopnavbarComponent-nav-item"><Link to="/pages/new">Create new page</Link></li>
-        <li className="TopnavbarComponent-nav-item"><Link to="/config/categories/products">Product categories</Link></li>
-        <li className="TopnavbarComponent-nav-item"><Link to="/config/categories/pages">Page categories</Link></li>
-      </ul>
+const NavbarItem = ({ currentPath, itemPath, itemText }) => {
+  const isActive = currentPath === (itemPath === '/' ? '' : itemPath);
+  return (
+    <li className={`TopnavbarComponent-nav-item ${isActive ? 'TopnavbarComponent-nav-item--active' : ''}`}>
+      <Link to={itemPath}>{itemText}</Link>
+    </li>
+  );
+};
+
+NavbarItem.propTypes = {
+  currentPath: PropTypes.string.isRequired,
+  itemPath: PropTypes.string.isRequired,
+  itemText: PropTypes.string.isRequired,
+};
+
+const TopnavbarComponent = ({ pathname }) => {
+  const path = pathname.replace(/\/$/, '');
+  return (
+    <div className="TopnavbarComponentBlock">
+      <div className="TopnavbarComponent">
+        <ul className="TopnavbarComponent-nav">
+          <NavbarItem currentPath={path} itemPath="/" itemText="Home page" />
+          <NavbarItem currentPath={path} itemPath="/products" itemText="All products" />
+          <NavbarItem currentPath={path} itemPath="/products/new" itemText="Create new product" />
+          <NavbarItem currentPath={path} itemPath="/pages" itemText="All pages" />
+          <NavbarItem currentPath={path} itemPath="/pages/new" itemText="Create new page" />
+          <NavbarItem currentPath={path} itemPath="/config/categories/products" itemText="Product categories" />
+          <NavbarItem currentPath={path} itemPath="/config/categories/pages" itemText="Page categories" />
+        </ul>
+      </div>
     </div>
-  </div>;
+  );
+};
 
 TopnavbarComponent.propTypes = {
+  pathname: PropTypes.string.isRequired,
 };
 
 export default TopnavbarComponent;

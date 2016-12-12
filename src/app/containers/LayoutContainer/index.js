@@ -12,7 +12,7 @@ import TopnavbarComponent from 'components/topnavbar/TopnavbarComponent';
 import AlertMessageComponent from 'components/alertMessage/AlertMessageComponent';
 import CartDropdownComponent from 'components/cartDropdown/CartDropdownComponent';
 
-const LayoutContainer = ({ ui, toggleCartDropdown, toggleAlertMessage, children, cartPosition }) =>
+const LayoutContainer = ({ ui, toggleCartDropdown, toggleAlertMessage, children, cartPosition, location }) =>
   <div className="LayoutContainerBlock">
     <div className="LayoutContainer">
       <div className="LayoutContainer-header">
@@ -20,7 +20,7 @@ const LayoutContainer = ({ ui, toggleCartDropdown, toggleAlertMessage, children,
         <CartDropdownComponent cartPosition={cartPosition} isVisible={ui.cartDropdownIsVisible} />
       </div>
       <div className="LayoutContainer-topnavbar">
-        <TopnavbarComponent />
+        <TopnavbarComponent pathname={location.pathname} />
       </div>
       <div className="LayoutContainer-search">
         <AlertMessageComponent toggleAlertMessage={toggleAlertMessage} isVisible={ui.alertMessageIsVisible} />
@@ -49,6 +49,7 @@ LayoutContainer.propTypes = {
   ui: PropTypes.object.isRequired,
   toggleCartDropdown: PropTypes.func.isRequired,
   toggleAlertMessage: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default layoutHoc(cartResizeListener(LayoutContainer));
