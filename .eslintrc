@@ -23,6 +23,7 @@
     "import/no-absolute-path": "off",
     "import/extensions": "off",
     "arrow-parens": "off",
+    "no-underscore-dangle": "off"
   },
   "parserOptions": {
     "ecmaFeatures": {

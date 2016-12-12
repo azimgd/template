@@ -37,8 +37,13 @@ function* postProductCategoryRequest(req) {
   }
 }
 
+function* _postProductCategoryRequest(req) {
+  yield* postProductCategoryRequest(req);
+  yield* getProductCategoriesRequest(req);
+}
+
 export default [
   fork(takeEvery, constants.GET_PRODUCT_CATEGORIES_REQUEST, getProductCategoriesRequest),
   fork(takeEvery, constants.GET_PRODUCT_CATEGORY_REQUEST, getProductCategoryRequest),
-  fork(takeEvery, constants.POST_PRODUCT_CATEGORY_REQUEST, postProductCategoryRequest),
+  fork(takeEvery, constants.POST_PRODUCT_CATEGORY_REQUEST, _postProductCategoryRequest),
 ];
