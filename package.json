@@ -72,14 +72,15 @@
     "gulp-clean-css": "^2.0.13",
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.3.2",
-    "gulp-util": "^3.0.7",
+    "pm2": "^2.1.6",
     "react-addons-test-utils": "^15.3.2",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.1.0",
     "redux-logger": "^2.7.0",
     "sinon": "^1.17.6",
-    "webpack-dev-server": "^1.16.2",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.2",
     "write-file-webpack-plugin": "^3.3.0"
   }
 }

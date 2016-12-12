@@ -1,6 +1,10 @@
 const path = require('path');
 const express = require('express');
 const cons = require('consolidate');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const webpackConfig = require('../webpack.config');
 
 const locations = {
   buildFolder: path.join(__dirname, '../build'),
@@ -8,7 +12,7 @@ const locations = {
 };
 
 module.exports = {
-  app: () => {
+  init: () => {
     const app = express();
     const buildPath = express.static(locations.buildFolder);
 
@@ -22,5 +26,16 @@ module.exports = {
     app.engine('html', cons.nunjucks);
     app.set('view engine', 'html');
     app.set('views', locations.viewFolder);
+  },
+
+  devServer: (app) => {
+    const compiler = webpack(webpackConfig);
+    app.use(webpackDevMiddleware(compiler, {
+      publicPath: webpackConfig.output.publicPath,
+      stats: { colors: true },
+    }));
+    app.use(webpackHotMiddleware(compiler, {
+      log: console.log,
+    }));
   },
 };
