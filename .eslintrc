@@ -4,8 +4,10 @@
     mocha: true
   },
   "globals": {
-    "Stripe": true,
-    "React": true
+    "window": true,
+    "document": true,
+    "React": true,
+    "apiEndpoint": true,
   },
   "ecmaFeatures": {
     "jsx": true

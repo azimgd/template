@@ -4,15 +4,15 @@ import axios from 'axios';
  * Pages
  */
 export const getPages = (data) =>
-  axios.get('//localhost:8080/api/pages', { params: data })
+  axios.get(`${API_ENDPOINT}/api/pages`, { params: data })
   .then(res => res.data);
 
 export const getPage = ({ id }) =>
-  axios.get(`//localhost:8080/api/pages/${id}`)
+  axios.get(`${API_ENDPOINT}/api/pages/${id}`)
   .then(res => res.data);
 
 export const postPage = (data) =>
-  axios.post('//localhost:8080/api/pages', data)
+  axios.post(`${API_ENDPOINT}/api/pages`, data)
   .then(res => res.data);
 
 
@@ -20,15 +20,15 @@ export const postPage = (data) =>
  * Products
  */
 export const getProducts = (data) =>
-  axios.get('//localhost:8080/api/products', { params: data })
+  axios.get(`${API_ENDPOINT}/api/products`, { params: data })
   .then(res => res.data);
 
 export const getProduct = ({ id }) =>
-  axios.get(`//localhost:8080/api/products/${id}`)
+  axios.get(`${API_ENDPOINT}/api/products/${id}`)
   .then(res => res.data);
 
 export const postProduct = (data) =>
-  axios.post('//localhost:8080/api/products', data)
+  axios.post(`${API_ENDPOINT}/api/products`, data)
   .then(res => res.data);
 
 
@@ -36,15 +36,15 @@ export const postProduct = (data) =>
  * Page categories
  */
 export const getPageCategories = () =>
-  axios.get('//localhost:8080/api/pageCategories')
+  axios.get(`${API_ENDPOINT}/api/pageCategories`)
   .then(res => res.data);
 
 export const getPageCategory = ({ id }) =>
-  axios.get(`//localhost:8080/api/pageCategories/${id}`)
+  axios.get(`${API_ENDPOINT}/api/pageCategories/${id}`)
   .then(res => res.data);
 
 export const postPageCategory = (data) =>
-  axios.post('//localhost:8080/api/pageCategories', data)
+  axios.post(`${API_ENDPOINT}/api/pageCategories`, data)
   .then(res => res.data);
 
 
@@ -52,15 +52,15 @@ export const postPageCategory = (data) =>
  * Page sub categories
  */
 export const getPageSubCategories = () =>
-  axios.get('//localhost:8080/api/pageSubCategories')
+  axios.get(`${API_ENDPOINT}/api/pageSubCategories`)
   .then(res => res.data);
 
 export const getPageSubCategory = ({ id }) =>
-  axios.get(`//localhost:8080/api/pageSubCategories/${id}`)
+  axios.get(`${API_ENDPOINT}/api/pageSubCategories/${id}`)
   .then(res => res.data);
 
 export const postPageSubCategory = (data) =>
-  axios.post('//localhost:8080/api/pageSubCategories', data)
+  axios.post(`${API_ENDPOINT}/api/pageSubCategories`, data)
   .then(res => res.data);
 
 
@@ -68,15 +68,15 @@ export const postPageSubCategory = (data) =>
  * Product categories
  */
 export const getProductCategories = () =>
-  axios.get('//localhost:8080/api/productCategories')
+  axios.get(`${API_ENDPOINT}/api/productCategories`)
   .then(res => res.data);
 
 export const getProductCategory = ({ id }) =>
-  axios.get(`//localhost:8080/api/productCategories/${id}`)
+  axios.get(`${API_ENDPOINT}/api/productCategories/${id}`)
   .then(res => res.data);
 
 export const postProductCategory = (data) =>
-  axios.post('//localhost:8080/api/productCategories', data)
+  axios.post(`${API_ENDPOINT}/api/productCategories`, data)
   .then(res => res.data);
 
 
@@ -84,28 +84,28 @@ export const postProductCategory = (data) =>
  * Product sub categories
  */
 export const getProductSubCategories = () =>
-  axios.get('//localhost:8080/api/productSubCategories')
+  axios.get(`${API_ENDPOINT}/api/productSubCategories`)
   .then(res => res.data);
 
 export const getProductSubCategory = ({ id }) =>
-  axios.get(`//localhost:8080/api/productSubCategories/${id}`)
+  axios.get(`${API_ENDPOINT}/api/productSubCategories/${id}`)
   .then(res => res.data);
 
 export const postProductSubCategory = (data) =>
-  axios.post('//localhost:8080/api/productSubCategories', data)
+  axios.post(`${API_ENDPOINT}/api/productSubCategories`, data)
   .then(res => res.data);
 
 /**
  * Product images
  */
 export const getProductImages = () =>
-  axios.get('//localhost:8080/api/productImages')
+  axios.get(`${API_ENDPOINT}/api/productImages`)
   .then(res => res.data);
 
 export const getProductImage = ({ id }) =>
-  axios.get(`//localhost:8080/api/productImages/${id}`)
+  axios.get(`${API_ENDPOINT}/api/productImages/${id}`)
   .then(res => res.data);
 
 export const postProductImage = (data) =>
-  axios.post('//localhost:8080/api/productImages', data)
+  axios.post(`${API_ENDPOINT}/api/productImages`, data)
   .then(res => res.data);
