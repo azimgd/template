@@ -12,6 +12,10 @@
   &-block {
     @extend .row;
 
+    &-full {
+      @extend .col-xs-12;
+    }
+
     &-left {
       @extend .col-sm-9;
     }

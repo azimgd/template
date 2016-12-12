@@ -32,8 +32,12 @@ export class ProductViewContainer extends React.Component {
           <IsLoadingComponent isLoading={isLoading}>
             <IsEmptyComponent isEmpty={isEmpty}>
               <div className="ProductViewContainer-block">
+                <div className="ProductViewContainer-block-full">
+                  {mappedProductImages.length ?
+                    <ProductGalleryComponent images={mappedProductImages} />
+                  : null}
+                </div>
                 <div className="ProductViewContainer-block-left">
-                  <ProductGalleryComponent images={mappedProductImages} />
                   <ProductDetailsComponent product={product.data} productParsedToHtml={productParsedToHtml} />
                 </div>
                 <div className="ProductViewContainer-block-right">
