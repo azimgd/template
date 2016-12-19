@@ -9,6 +9,7 @@ import pageSubCategoriesReducer from 'reducers/pageSubCategoriesReducer';
 import productsReducer from 'reducers/productsReducer';
 import productCategoriesReducer from 'reducers/productCategoriesReducer';
 import productImagesReducer from 'reducers/productImagesReducer';
+import productOptionsReducer from 'reducers/productOptionsReducer';
 import productSubCategoriesReducer from 'reducers/productSubCategoriesReducer';
 import imageUploadReducer from 'reducers/imageUploadReducer';
 
@@ -20,6 +21,7 @@ export default combineReducers({
   productsReducer,
   productImagesReducer,
   productCategoriesReducer,
+  productOptionsReducer,
   productSubCategoriesReducer,
   imageUploadReducer,
   routing,

@@ -4,6 +4,7 @@ export const LOGIN = '/login';
 export const PRODUCTS = '/products';
 export const PRODUCTS_SHOW = ':id';
 export const PRODUCTS_CREATE = 'new';
+export const PRODUCTS_OPTIONS_CREATE = 'options/:id';
 
 export const PAGES = '/pages';
 export const PAGES_SHOW = ':id';

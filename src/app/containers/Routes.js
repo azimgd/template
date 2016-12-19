@@ -8,6 +8,7 @@ import HomeContainer from 'containers/HomeContainer/index';
 import ProductsContainer from 'containers/ProductsContainer/index';
 import ProductViewContainer from 'containers/ProductViewContainer/index';
 import ProductFormContainer from 'containers/ProductFormContainer/index';
+import ProductOptionsFormContainer from 'containers/ProductOptionsFormContainer/index';
 import CheckoutContainer from 'containers/CheckoutContainer/index';
 import NotFoundContainer from 'containers/NotFoundContainer/index';
 import PagesContainer from 'containers/PagesContainer/index';
@@ -26,6 +27,7 @@ const Routes = ({ history }) =>
       <Route path={routes.PRODUCTS}>
         <IndexRoute component={ProductsContainer} />
         <Route path={routes.PRODUCTS_CREATE} component={ProductFormContainer} />
+        <Route path={routes.PRODUCTS_OPTIONS_CREATE} component={ProductOptionsFormContainer} />
         <Route path={routes.PRODUCTS_SHOW} component={ProductViewContainer} />
       </Route>
       <Route path={routes.PAGES}>

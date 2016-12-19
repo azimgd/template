@@ -4,6 +4,7 @@ import pageSubCategoriesSaga from './pageSubCategoriesSaga';
 import productCategoriesSaga from './productCategoriesSaga';
 import productsSaga from './productsSaga';
 import productImagesSaga from './productImagesSaga';
+import productOptionsSaga from './productOptionsSaga';
 import productSubCategoriesSaga from './productSubCategoriesSaga';
 
 export default function* rootSaga() {
@@ -14,5 +15,6 @@ export default function* rootSaga() {
     .concat(productCategoriesSaga)
     .concat(productsSaga)
     .concat(productImagesSaga)
+    .concat(productOptionsSaga)
     .concat(productSubCategoriesSaga);
 }

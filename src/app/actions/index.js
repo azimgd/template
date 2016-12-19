@@ -118,6 +118,24 @@ export const postProductSubCategorySuccess = createAction(constants.POST_PRODUCT
 export const postProductSubCategoryFailure = createAction(constants.POST_PRODUCT_SUB_CATEGORY_FAILURE);
 
 /**
+ * Product categories
+ */
+export const getProductOptionsIdle = createAction(constants.GET_PRODUCT_OPTIONS_IDLE);
+export const getProductOptionsRequest = createAction(constants.GET_PRODUCT_OPTIONS_REQUEST);
+export const getProductOptionsSuccess = createAction(constants.GET_PRODUCT_OPTIONS_SUCCESS);
+export const getProductOptionsFailure = createAction(constants.GET_PRODUCT_OPTIONS_FAILURE);
+
+export const getProductOptionIdle = createAction(constants.GET_PRODUCT_OPTION_IDLE);
+export const getProductOptionRequest = createAction(constants.GET_PRODUCT_OPTION_REQUEST);
+export const getProductOptionSuccess = createAction(constants.GET_PRODUCT_OPTION_SUCCESS);
+export const getProductOptionFailure = createAction(constants.GET_PRODUCT_OPTION_FAILURE);
+
+export const postProductOptionIdle = createAction(constants.POST_PRODUCT_OPTION_IDLE);
+export const postProductOptionRequest = createAction(constants.POST_PRODUCT_OPTION_REQUEST);
+export const postProductOptionSuccess = createAction(constants.POST_PRODUCT_OPTION_SUCCESS);
+export const postProductOptionFailure = createAction(constants.POST_PRODUCT_OPTION_FAILURE);
+
+/**
 * Product images
 */
 export const getProductImagesIdle = createAction(constants.GET_PRODUCT_IMAGES_IDLE);
