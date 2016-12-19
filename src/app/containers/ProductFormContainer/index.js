@@ -39,7 +39,7 @@ export class ProductFormContainer extends React.Component {
       onUploadFinish: this.props.onUploadFinish,
       uploadRequestHeaders: { 'x-amz-acl': 'public-read' },
       multiple: 'true',
-      server: 'http://localhost:8080/api',
+      server: `${API_ENDPOINT}/api`,
     };
 
     return (
