@@ -22,9 +22,14 @@ const mapDispatchToProps = {
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const isLoading = false;
-  const isEmpty = isInputArrayContentEmpty([stateProps.pageCategories.data, stateProps.pageSubCategories.data]);
-  const mappedProductCategories = mapCategoriesToSubCategories(stateProps.pageCategories.data, stateProps.pageSubCategories.data);
-  const mappedPageCategories = mapCategoriesToSubCategories(stateProps.productCategories.data, stateProps.productSubCategories.data);
+  const isEmpty = isInputArrayContentEmpty([
+    stateProps.productCategories.data,
+    stateProps.productSubCategories.data,
+    stateProps.pageCategories.data,
+    stateProps.pageSubCategories.data,
+  ]);
+  const mappedPageCategories = mapCategoriesToSubCategories(stateProps.pageCategories.data, stateProps.pageSubCategories.data);
+  const mappedProductCategories = mapCategoriesToSubCategories(stateProps.productCategories.data, stateProps.productSubCategories.data);
   return Object.assign({
     isLoading,
     isEmpty,

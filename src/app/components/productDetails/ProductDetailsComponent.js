@@ -25,9 +25,6 @@ const ProductDetailsComponent = ({ product, productParsedToHtml }) => {
   return (
     <div className="ProductDetailsComponentBlock">
       <div className="ProductDetailsComponent">
-        <div className="ProductDetailsComponent-image">
-          <img src="//placehold.it/600x400" alt="" />
-        </div>
         <div className="ProductDetailsComponent-detailsBlock">
           <div className="ProductDetailsComponent-details">
           {_.map(productDetails, (details, key) =>
