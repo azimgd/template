@@ -8,6 +8,7 @@ Set following variables to run on locally.
 ```
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
+API_ENDPOINT=
 ```
 
 #### set up nodejs
