@@ -20,6 +20,7 @@
 @import './containers/ConfigNavigationContainer';
 @import './containers/ConfigPageCategoriesContainer';
 @import './containers/ConfigProductCategoriesContainer';
+@import './containers/ProductOptionsFormContainer';
 
 @import './components/HeaderComponent';
 @import './components/TopnavbarComponent';
@@ -36,6 +37,8 @@
 @import './components/ProductAboutComponent';
 @import './components/ProductDetailsComponent';
 @import './components/ProductFormComponent';
+@import './components/ProductOptionsFormComponent';
+@import './components/ProductOptionsListComponent';
 @import './components/ProductGalleryComponent';
 @import './components/CheckoutSummaryComponent';
 @import './components/CheckoutUserInfoComponent';

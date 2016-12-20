@@ -96,6 +96,21 @@ export const postProductSubCategory = (data) =>
   .then(res => res.data);
 
 /**
+ * Product categories
+ */
+export const getProductOptions = () =>
+  axios.get(`${API_ENDPOINT}/api/productOptions`)
+  .then(res => res.data);
+
+export const getProductOption = ({ id }) =>
+  axios.get(`${API_ENDPOINT}/api/productOptions/${id}`)
+  .then(res => res.data);
+
+export const postProductOption = (data) =>
+  axios.post(`${API_ENDPOINT}/api/productOptions`, data)
+  .then(res => res.data);
+
+/**
  * Product images
  */
 export const getProductImages = () =>

@@ -23,23 +23,22 @@ export class HomeContainer extends React.Component {
   }
 
   render() {
-    const { isLoading, isEmpty, mappedProductCategories, mappedPageCategories } = this.props;
     return (
       <div className="HomeContainerBlock">
         <div className="HomeContainerBlock-title">
           <TitleIconComponent name="IoIosHome" /> Home
         </div>
         <div className="HomeContainer">
-          <IsLoadingComponent isLoading={isLoading}>
-            <IsEmptyComponent isEmpty={isEmpty}>
-              {mappedProductCategories && mappedProductCategories.length ?
+          <IsLoadingComponent isLoading={this.props.isLoading}>
+            <IsEmptyComponent isEmpty={this.props.isEmpty}>
+              {this.props.mappedProductCategories && this.props.mappedProductCategories.length ?
                 <div className="HomeContainer-productCategories">
                   <div className="HomeContainer-productCategories-title">
                     Product categories
                   </div>
                   <div className="HomeContainer-productCategories-content">
                     <HomeCategoriesComponent
-                      categories={mappedProductCategories}
+                      categories={this.props.mappedProductCategories}
                       categoryUrl={routes.PRODUCTS}
                       subCategoryUrl={routes.PRODUCTS}
                     />
@@ -47,14 +46,14 @@ export class HomeContainer extends React.Component {
                 </div>
               : null}
 
-              {mappedPageCategories && mappedPageCategories.length ?
+              {this.props.mappedPageCategories && this.props.mappedPageCategories.length ?
                 <div className="HomeContainer-pageCategories">
                   <div className="HomeContainer-pageCategories-title">
                     Page categories
                   </div>
                   <div className="HomeContainer-pageCategories-content">
                     <HomeCategoriesComponent
-                      categories={mappedPageCategories}
+                      categories={this.props.mappedPageCategories}
                       categoryUrl={routes.PAGES}
                       subCategoryUrl={routes.PAGES}
                     />

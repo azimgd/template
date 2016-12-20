@@ -1,20 +1,17 @@
 import { connect } from 'react-redux';
-import marked from 'marked';
-import _ from 'lodash';
 import * as actions from 'actions/index';
-import { isInputArrayContentEmpty, mapProductImagesToAmazonUrl } from 'utils/index';
+import { isInputArrayContentEmpty, getSucceededNotifications, getFailedNotifications } from 'utils/index';
 
 const mapStateToProps = (state) => ({
   product: state.productsReducer.product,
-  productImages: state.productImagesReducer.productImages,
   productOptions: state.productOptionsReducer.productOptions,
+  productOptionsActions: state.productOptionsReducer.actions,
 });
 
 const mapDispatchToProps = {
+  postProductOptionRequest: actions.postProductOptionRequest,
   getProductRequest: actions.getProductRequest,
-  getProductImagesRequest: actions.getProductImagesRequest,
   getProductIdle: actions.getProductIdle,
-  getProductImagesIdle: actions.getProductImagesIdle,
   getProductOptionsRequest: actions.getProductOptionsRequest,
   getProductOptionsIdle: actions.getProductOptionsIdle,
 };
@@ -22,14 +19,18 @@ const mapDispatchToProps = {
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const isLoading = false;
   const isEmpty = isInputArrayContentEmpty([stateProps.product.data]);
-  const mappedProductImages = mapProductImagesToAmazonUrl(stateProps.productImages.data);
-  const productContents = _.get(stateProps.product, 'data.description', '');
-  const productParsedToHtml = marked(productContents);
+  const notificationsSuccess = getSucceededNotifications([
+    stateProps.productOptionsActions.postProductOption,
+  ]);
+  const notificationsFailure = getFailedNotifications([
+    stateProps.productOptionsActions.postProductOption,
+  ]);
+
   return Object.assign({
     isLoading,
     isEmpty,
-    productParsedToHtml,
-    mappedProductImages,
+    notificationsSuccess,
+    notificationsFailure,
   }, ownProps, stateProps, dispatchProps);
 };
 

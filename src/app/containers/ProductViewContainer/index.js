@@ -14,35 +14,40 @@ export class ProductViewContainer extends React.Component {
     const { id } = this.props.params;
     this.props.getProductRequest({ id });
     this.props.getProductImagesRequest({ id });
+    this.props.getProductOptionsRequest({ id });
   }
 
   componentWillUnmount() {
     this.props.getProductIdle();
     this.props.getProductImagesIdle();
+    this.props.getProductOptionsIdle();
   }
 
   render() {
-    const { isLoading, isEmpty, product, mappedProductImages, productParsedToHtml } = this.props;
     return (
       <div className="ProductViewContainerBlock">
         <div className="ProductViewContainerBlock-title">
-          <PageNavLocationComponent pageName={product.data.title} />
+          <PageNavLocationComponent pageName={this.props.product.data.title} />
         </div>
         <div className="ProductViewContainer">
-          <IsLoadingComponent isLoading={isLoading}>
-            <IsEmptyComponent isEmpty={isEmpty}>
+          <IsLoadingComponent isLoading={this.props.isLoading}>
+            <IsEmptyComponent isEmpty={this.props.isEmpty}>
               <div className="ProductViewContainer-block">
                 <div className="ProductViewContainer-block-full">
-                  {mappedProductImages.length ?
-                    <ProductGalleryComponent images={mappedProductImages} />
+                  {this.props.mappedProductImages.length ?
+                    <ProductGalleryComponent images={this.props.mappedProductImages} />
                   : null}
                 </div>
                 <div className="ProductViewContainer-block-left">
-                  <ProductDetailsComponent product={product.data} productParsedToHtml={productParsedToHtml} />
+                  <ProductDetailsComponent
+                    product={this.props.product.data}
+                    productOptions={this.props.productOptions.data}
+                    productParsedToHtml={this.props.productParsedToHtml}
+                  />
                 </div>
                 <div className="ProductViewContainer-block-right">
-                  <ProductPriceComponent product={product.data} />
-                  <ProductAboutComponent product={product.data} />
+                  <ProductPriceComponent product={this.props.product.data} />
+                  <ProductAboutComponent product={this.props.product.data} />
                 </div>
               </div>
             </IsEmptyComponent>
@@ -63,7 +68,10 @@ ProductViewContainer.propTypes = {
   getProductImagesRequest: PropTypes.func.isRequired,
   getProductIdle: PropTypes.func.isRequired,
   getProductImagesIdle: PropTypes.func.isRequired,
+  getProductOptionsRequest: PropTypes.func.isRequired,
+  getProductOptionsIdle: PropTypes.func.isRequired,
   product: PropTypes.object.isRequired,
+  productOptions: PropTypes.object.isRequired,
   mappedProductImages: PropTypes.object.isRequired,
   productParsedToHtml: PropTypes.string.isRequired,
 };

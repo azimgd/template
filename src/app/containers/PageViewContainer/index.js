@@ -22,12 +22,12 @@ export class PageViewContainer extends React.Component {
     return (
       <div className="PageViewContainerBlock">
         <div className="PageViewContainerBlock-title">
-          <PageNavLocationComponent pageName={page.data.title} />
+          <PageNavLocationComponent pageName={this.props.page.data.title} />
         </div>
         <div className="PageViewContainer">
-          <IsLoadingComponent isLoading={isLoading}>
-            <IsEmptyComponent isEmpty={isEmpty}>
-              <PageDetailsComponent page={page.data} pageParsedToHtml={pageParsedToHtml} />
+          <IsLoadingComponent isLoading={this.props.isLoading}>
+            <IsEmptyComponent isEmpty={this.props.isEmpty}>
+              <PageDetailsComponent page={this.props.page.data} pageParsedToHtml={this.props.pageParsedToHtml} />
             </IsEmptyComponent>
           </IsLoadingComponent>
         </div>

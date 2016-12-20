@@ -19,7 +19,6 @@ export class PagesContainer extends React.Component {
   }
 
   render() {
-    const { isLoading, isEmpty, maxHeight, pages } = this.props;
     return (
       <div className="PagesContainerBlock">
         <div className="PagesContainerBlock-title">
@@ -27,11 +26,11 @@ export class PagesContainer extends React.Component {
         </div>
 
         <div className="PagesContainer">
-          <IsLoadingComponent isLoading={isLoading}>
-            <IsEmptyComponent isEmpty={isEmpty}>
+          <IsLoadingComponent isLoading={this.props.isLoading}>
+            <IsEmptyComponent isEmpty={this.props.isEmpty}>
               <div className="PagesContainer-pages">
-                {pages.data && pages.data.map((page, key) =>
-                  <div key={key}><PageComponent page={page} height={maxHeight} /></div>
+                {this.props.pages.data && this.props.pages.data.map((page, key) =>
+                  <div key={key}><PageComponent page={page} height={this.props.maxHeight} /></div>
                 )}
               </div>
             </IsEmptyComponent>
