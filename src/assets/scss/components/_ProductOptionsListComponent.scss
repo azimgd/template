@@ -1,0 +1,29 @@
+.ProductOptionsListComponentBlock {
+  background: $c-bodyBackground;
+  padding: $padding-base-horizontal;
+
+  &-title {
+    font-weight: $f-headingsWeight;
+    margin-bottom: $padding-base-horizontal;
+  }
+}
+
+.ProductOptionsListComponent {
+  &-item {
+    @extend .row;
+    &-title {
+      @extend .col-xs-4;
+    }
+    &-content {
+      @extend .col-xs-4;
+    }
+    &-actions {
+      @extend .col-xs-4;
+      a:not(:last-child) { margin-right: $padding-small-horizontal; }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $padding-base-horizontal;
+    }
+  }
+}

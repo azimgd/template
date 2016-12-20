@@ -4,6 +4,7 @@ import { isInputArrayContentEmpty, getSucceededNotifications, getFailedNotificat
 
 const mapStateToProps = (state) => ({
   product: state.productsReducer.product,
+  productOptions: state.productOptionsReducer.productOptions,
   productOptionsActions: state.productOptionsReducer.actions,
 });
 
@@ -11,6 +12,8 @@ const mapDispatchToProps = {
   postProductOptionRequest: actions.postProductOptionRequest,
   getProductRequest: actions.getProductRequest,
   getProductIdle: actions.getProductIdle,
+  getProductOptionsRequest: actions.getProductOptionsRequest,
+  getProductOptionsIdle: actions.getProductOptionsIdle,
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {

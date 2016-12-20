@@ -14,11 +14,13 @@ export class ProductViewContainer extends React.Component {
     const { id } = this.props.params;
     this.props.getProductRequest({ id });
     this.props.getProductImagesRequest({ id });
+    this.props.getProductOptionsRequest({ id });
   }
 
   componentWillUnmount() {
     this.props.getProductIdle();
     this.props.getProductImagesIdle();
+    this.props.getProductOptionsIdle();
   }
 
   render() {
@@ -38,7 +40,11 @@ export class ProductViewContainer extends React.Component {
                   : null}
                 </div>
                 <div className="ProductViewContainer-block-left">
-                  <ProductDetailsComponent product={product.data} productParsedToHtml={productParsedToHtml} />
+                  <ProductDetailsComponent
+                    product={product.data}
+                    productOptions={this.props.productOptions.data}
+                    productParsedToHtml={productParsedToHtml}
+                  />
                 </div>
                 <div className="ProductViewContainer-block-right">
                   <ProductPriceComponent product={product.data} />
@@ -63,6 +69,8 @@ ProductViewContainer.propTypes = {
   getProductImagesRequest: PropTypes.func.isRequired,
   getProductIdle: PropTypes.func.isRequired,
   getProductImagesIdle: PropTypes.func.isRequired,
+  getProductOptionsRequest: PropTypes.func.isRequired,
+  getProductOptionsIdle: PropTypes.func.isRequired,
   product: PropTypes.object.isRequired,
   mappedProductImages: PropTypes.object.isRequired,
   productParsedToHtml: PropTypes.string.isRequired,

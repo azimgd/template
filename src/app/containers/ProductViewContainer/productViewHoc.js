@@ -7,6 +7,7 @@ import { isInputArrayContentEmpty, mapProductImagesToAmazonUrl } from 'utils/ind
 const mapStateToProps = (state) => ({
   product: state.productsReducer.product,
   productImages: state.productImagesReducer.productImages,
+  productOptions: state.productOptionsReducer.productOptions,
 });
 
 const mapDispatchToProps = {
@@ -14,6 +15,8 @@ const mapDispatchToProps = {
   getProductImagesRequest: actions.getProductImagesRequest,
   getProductIdle: actions.getProductIdle,
   getProductImagesIdle: actions.getProductImagesIdle,
+  getProductOptionsRequest: actions.getProductOptionsRequest,
+  getProductOptionsIdle: actions.getProductOptionsIdle,
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {

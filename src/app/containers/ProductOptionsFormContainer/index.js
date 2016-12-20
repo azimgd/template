@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react';
 import productOptionsFormHoc from 'containers/ProductOptionsFormContainer/productOptionsFormHoc';
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 import ProductOptionsFormComponent from 'components/productOptionsForm/ProductOptionsFormComponent';
+import ProductOptionsListComponent from 'components/productOptionsList/ProductOptionsListComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
@@ -10,6 +11,7 @@ import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 export class ProductOptionsFormContainer extends React.Component {
   componentWillMount() {
     this.props.getProductRequest({ id: this.props.params.id });
+    this.props.getProductOptionsRequest({ id: this.props.params.id });
   }
 
   componentWillUnmount() {
@@ -36,6 +38,9 @@ export class ProductOptionsFormContainer extends React.Component {
                   )}
                 </div>
                 <div className="ProductOptionsFormContainer-block-left">
+                  <ProductOptionsListComponent
+                    productOptions={this.props.productOptions.data}
+                  />
                   <ProductOptionsFormComponent
                     createOption={this.props.postProductOptionRequest}
                   />
@@ -57,7 +62,10 @@ ProductOptionsFormContainer.propTypes = {
   params: PropTypes.shape({
     id: PropTypes.string.isRequired,
   }).isRequired,
+  product: PropTypes.object.isRequired,
+  productOptions: PropTypes.object.isRequired,
   getProductRequest: PropTypes.func.isRequired,
+  getProductOptionsRequest: PropTypes.func.isRequired,
   getProductIdle: PropTypes.func.isRequired,
   postProductOptionRequest: PropTypes.func.isRequired,
   notificationsSuccess: PropTypes.array.isRequired,
