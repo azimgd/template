@@ -20,7 +20,6 @@ export class ProductsContainer extends React.Component {
   }
 
   render() {
-    const { isLoading, isEmpty, maxHeight, products } = this.props;
     return (
       <div className="ProductsContainerBlock">
         <div className="ProductsContainerBlock-title">
@@ -28,11 +27,11 @@ export class ProductsContainer extends React.Component {
         </div>
 
         <div className="ProductsContainer">
-          <IsLoadingComponent isLoading={isLoading}>
-            <IsEmptyComponent isEmpty={isEmpty}>
+          <IsLoadingComponent isLoading={this.props.isLoading}>
+            <IsEmptyComponent isEmpty={this.props.isEmpty}>
               <div className="ProductsContainer-products">
-                {products && products.data.map((product, key) =>
-                  <div key={key}><ProductComponent product={product} height={maxHeight} /></div>
+                {this.props.products && this.props.products.data.map((product, key) =>
+                  <div key={key}><ProductComponent product={product} height={this.props.maxHeight} /></div>
                 )}
               </div>
             </IsEmptyComponent>

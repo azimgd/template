@@ -4,6 +4,7 @@ import productOptionsFormHoc from 'containers/ProductOptionsFormContainer/produc
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 import ProductOptionsFormComponent from 'components/productOptionsForm/ProductOptionsFormComponent';
 import ProductOptionsListComponent from 'components/productOptionsList/ProductOptionsListComponent';
+import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
@@ -19,15 +20,14 @@ export class ProductOptionsFormContainer extends React.Component {
   }
 
   render() {
-    const { isLoading, isEmpty, product } = this.props;
     return (
       <div className="ProductOptionsFormContainerBlock">
         <div className="ProductOptionsFormContainerBlock-title">
-          <PageNavLocationComponent pageName={product.data.title} />
+          <PageNavLocationComponent pageName={this.props.product.data.title} />
         </div>
         <div className="ProductOptionsFormContainer">
-          <IsLoadingComponent isLoading={isLoading}>
-            <IsEmptyComponent isEmpty={isEmpty}>
+          <IsLoadingComponent isLoading={this.props.isLoading}>
+            <IsEmptyComponent isEmpty={this.props.isEmpty}>
               <div className="ProductOptionsFormContainer-block">
                 <div className="ProductFormContainer-block-full">
                   {this.props.notificationsSuccess.map(notificationSuccess =>
@@ -46,6 +46,7 @@ export class ProductOptionsFormContainer extends React.Component {
                   />
                 </div>
                 <div className="ProductOptionsFormContainer-block-right">
+                  <ProductAboutComponent product={this.props.product.data} />
                 </div>
               </div>
             </IsEmptyComponent>
