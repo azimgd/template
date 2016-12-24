@@ -1,4 +1,4 @@
-.PageFormContainerBlock {
+.ProductCreateContainerBlock {
   @extend .u-containerBlock;
 
   &-title {
@@ -6,7 +6,7 @@
   }
 }
 
-.PageFormContainer {
+.ProductCreateContainer {
   &-block {
     padding: $padding-large-horizontal;
     @extend .row;
@@ -32,4 +32,23 @@
     }
   }
 
+  &-imagesEmpty {
+    background: $c-bodyBackground;
+    padding: $padding-base-horizontal;
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &-images {
+    @extend .row;
+    margin-bottom: $padding-large-horizontal;
+
+    & > div {
+      @extend .col-xs-4;
+      margin-bottom: $padding-large-horizontal;
+    }
+  }
+
+  &-upload {
+    margin-bottom: $padding-large-horizontal;
+  }
 }

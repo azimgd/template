@@ -1,4 +1,4 @@
-.ProductOptionsFormContainerBlock {
+.ProductOptionsContainerBlock {
   @extend .u-containerBlock;
 
   &-title {
@@ -6,7 +6,7 @@
   }
 }
 
-.ProductOptionsFormContainer {
+.ProductOptionsContainer {
   &-block {
     padding: $padding-large-horizontal;
     @extend .row;

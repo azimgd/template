@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import productFormHoc from 'containers/ProductFormContainer/productFormHoc';
+import productCreateHoc from 'containers/ProductCreateContainer/productCreateHoc';
 import ProductFormComponent from 'components/productForm/ProductFormComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
@@ -8,7 +8,7 @@ import ImagePreviewComponent from 'components/imagePreview/ImagePreviewComponent
 import ImageUploadComponent from 'components/imageUpload/ImageUploadComponent';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
 
-export class ProductFormContainer extends React.Component {
+export class ProductCreateContainer extends React.Component {
   constructor(props) {
     super(props);
     this.createProduct = this.createProduct.bind(this);
@@ -43,13 +43,13 @@ export class ProductFormContainer extends React.Component {
     };
 
     return (
-      <div className="ProductFormContainerBlock">
-        <div className="ProductFormContainerBlock-title">
+      <div className="ProductCreateContainerBlock">
+        <div className="ProductCreateContainerBlock-title">
           <TitleIconComponent name="IoIosCompose" /> Products page
         </div>
-        <div className="ProductFormContainer">
-          <div className="ProductFormContainer-block">
-            <div className="ProductFormContainer-block-full">
+        <div className="ProductCreateContainer">
+          <div className="ProductCreateContainer-block">
+            <div className="ProductCreateContainer-block-full">
               {this.props.notificationsSuccess.map(notificationSuccess =>
                 <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
               )}
@@ -58,26 +58,26 @@ export class ProductFormContainer extends React.Component {
               )}
             </div>
 
-            <div className="ProductFormContainer-block-left">
+            <div className="ProductCreateContainer-block-left">
               <ProductFormComponent
                 createProduct={this.createProduct}
                 categories={this.props.mappedCategories}
                 subCategories={this.props.mappedSubCategories}
               >
-                {!this.props.images.data.length ? <div className="ProductFormContainer-imagesEmpty">No uploaded images</div> : null}
+                {!this.props.images.data.length ? <div className="ProductCreateContainer-imagesEmpty">No uploaded images</div> : null}
                 {this.props.images.data.length ? <label htmlFor="">Uploaded images</label> : null}
                 {this.props.images.data.length ?
-                  <div className="ProductFormContainer-images">
+                  <div className="ProductCreateContainer-images">
                     {this.props.images.data.map((image, key) => <div key={key}><ImagePreviewComponent image={image} /></div>)}
                   </div>
                 : null}
-                <div className="ProductFormContainer-upload">
+                <div className="ProductCreateContainer-upload">
                   <ImageUploadComponent {...config} />
                 </div>
               </ProductFormComponent>
             </div>
 
-            <div className="ProductFormContainer-block-right">
+            <div className="ProductCreateContainer-block-right">
               <ProductAboutComponent />
             </div>
           </div>
@@ -87,7 +87,7 @@ export class ProductFormContainer extends React.Component {
   }
 }
 
-ProductFormContainer.propTypes = {
+ProductCreateContainer.propTypes = {
   uniqueProductId: PropTypes.string.isRequired,
   mappedImages: PropTypes.array.isRequired,
   images: PropTypes.array.isRequired,
@@ -105,6 +105,7 @@ ProductFormContainer.propTypes = {
   getProductSubCategoriesRequest: PropTypes.func.isRequired,
   getProductCategoriesIdle: PropTypes.func.isRequired,
   getProductSubCategoriesIdle: PropTypes.func.isRequired,
+  postProductImageRequestBulk: PropTypes.func.isRequired,
 };
 
-export default productFormHoc(ProductFormContainer);
+export default productCreateHoc(ProductCreateContainer);

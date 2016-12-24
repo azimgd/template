@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 import configMock from 'mocks/config';
-import pageFormHoc from 'containers/PageFormContainer/pageFormHoc';
+import pageCreateHoc from 'containers/PageCreateContainer/pageCreateHoc';
 import PageFormComponent from 'components/pageForm/PageFormComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
 import { TitleIconComponent } from 'components/icons/IconsComponent';
 
-export class PageFormContainer extends React.Component {
+export class PageCreateContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -29,13 +29,13 @@ export class PageFormContainer extends React.Component {
 
   render() {
     return (
-      <div className="PageFormContainerBlock">
-        <div className="PageFormContainerBlock-title">
+      <div className="PageCreateContainerBlock">
+        <div className="PageCreateContainerBlock-title">
           <TitleIconComponent name="IoIosCompose" /> Pages
         </div>
-        <div className="PageFormContainer">
-          <div className="PageFormContainer-block">
-            <div className="PageFormContainer-block-full">
+        <div className="PageCreateContainer">
+          <div className="PageCreateContainer-block">
+            <div className="PageCreateContainer-block-full">
               {this.props.notificationsSuccess.map(notificationSuccess =>
                 <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
               )}
@@ -43,7 +43,7 @@ export class PageFormContainer extends React.Component {
                 <NotificationComponent isVisible message={notificationsFailure.message} status={notificationsFailure.status} />
               )}
             </div>
-            <div className="PageFormContainer-block-left">
+            <div className="PageCreateContainer-block-left">
               <PageFormComponent
                 createPage={this.createPage}
                 citiesList={configMock.citiesList}
@@ -51,7 +51,7 @@ export class PageFormContainer extends React.Component {
                 subCategories={this.props.mappedSubCategories}
               />
             </div>
-            <div className="PageFormContainer-block-right">
+            <div className="PageCreateContainer-block-right">
               <ProductAboutComponent />
             </div>
           </div>
@@ -61,7 +61,7 @@ export class PageFormContainer extends React.Component {
   }
 }
 
-PageFormContainer.propTypes = {
+PageCreateContainer.propTypes = {
   notificationsSuccess: PropTypes.array.isRequired,
   notificationsFailure: PropTypes.array.isRequired,
   mappedCategories: PropTypes.object.isRequired,
@@ -73,4 +73,4 @@ PageFormContainer.propTypes = {
   getPageSubCategoriesIdle: PropTypes.func.isRequired,
 };
 
-export default pageFormHoc(PageFormContainer);
+export default pageCreateHoc(PageCreateContainer);

@@ -38,4 +38,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   }, ownProps, stateProps, dispatchProps);
 };
 
-export default (PageFormContainer) => connect(mapStateToProps, mapDispatchToProps, mergeProps)(PageFormContainer);
+export default (PageCreateContainer) => connect(mapStateToProps, mapDispatchToProps, mergeProps)(PageCreateContainer);

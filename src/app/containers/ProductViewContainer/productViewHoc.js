@@ -33,4 +33,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   }, ownProps, stateProps, dispatchProps);
 };
 
-export default (ProductFormContainer) => connect(mapStateToProps, mapDispatchToProps, mergeProps)(ProductFormContainer);
+export default (ProductViewContainer) => connect(mapStateToProps, mapDispatchToProps, mergeProps)(ProductViewContainer);

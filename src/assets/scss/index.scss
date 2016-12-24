@@ -10,17 +10,17 @@
 @import './containers/LoginContainer';
 @import './containers/ProductsContainer';
 @import './containers/ProductViewContainer';
-@import './containers/ProductFormContainer';
+@import './containers/ProductCreateContainer';
 @import './containers/CheckoutContainer';
 @import './containers/NotFoundContainer';
 @import './containers/PagesContainer';
-@import './containers/PageFormContainer';
+@import './containers/PageCreateContainer';
 @import './containers/PageViewContainer';
 @import './containers/ConfigContainer';
 @import './containers/ConfigNavigationContainer';
 @import './containers/ConfigPageCategoriesContainer';
 @import './containers/ConfigProductCategoriesContainer';
-@import './containers/ProductOptionsFormContainer';
+@import './containers/ProductOptionsContainer';
 
 @import './components/HeaderComponent';
 @import './components/TopnavbarComponent';

@@ -7,13 +7,13 @@ import LoginContainer from 'containers/LoginContainer/index';
 import HomeContainer from 'containers/HomeContainer/index';
 import ProductsContainer from 'containers/ProductsContainer/index';
 import ProductViewContainer from 'containers/ProductViewContainer/index';
-import ProductFormContainer from 'containers/ProductFormContainer/index';
-import ProductOptionsFormContainer from 'containers/ProductOptionsFormContainer/index';
+import ProductCreateContainer from 'containers/ProductCreateContainer/index';
+import ProductOptionsContainer from 'containers/ProductOptionsContainer/index';
 import CheckoutContainer from 'containers/CheckoutContainer/index';
 import NotFoundContainer from 'containers/NotFoundContainer/index';
 import PagesContainer from 'containers/PagesContainer/index';
 import PageViewContainer from 'containers/PageViewContainer/index';
-import PageFormContainer from 'containers/PageFormContainer/index';
+import PageCreateContainer from 'containers/PageCreateContainer/index';
 import ConfigContainer from 'containers/ConfigContainer/index';
 import ConfigNavigationContainer from 'containers/ConfigNavigationContainer/index';
 import ConfigPageCategoriesContainer from 'containers/ConfigPageCategoriesContainer/index';
@@ -26,13 +26,13 @@ const Routes = ({ history }) =>
       <IndexRoute component={HomeContainer} />
       <Route path={routes.PRODUCTS}>
         <IndexRoute component={ProductsContainer} />
-        <Route path={routes.PRODUCTS_CREATE} component={ProductFormContainer} />
-        <Route path={routes.PRODUCTS_OPTIONS_CREATE} component={ProductOptionsFormContainer} />
+        <Route path={routes.PRODUCTS_CREATE} component={ProductCreateContainer} />
+        <Route path={routes.PRODUCTS_OPTIONS_CREATE} component={ProductOptionsContainer} />
         <Route path={routes.PRODUCTS_SHOW} component={ProductViewContainer} />
       </Route>
       <Route path={routes.PAGES}>
         <IndexRoute component={PagesContainer} />
-        <Route path={routes.PAGES_CREATE} component={PageFormContainer} />
+        <Route path={routes.PAGES_CREATE} component={PageCreateContainer} />
         <Route path={routes.PAGES_SHOW} component={PageViewContainer} />
       </Route>
       <Route path={routes.CONFIG}>
