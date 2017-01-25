@@ -12,6 +12,10 @@
     @extend .col-xs-8;
     text-align: right;
 
+    a, a:hover {
+      color: $c-messageboxBackground;
+    }
+
     &-item {
       display: inline-block;
       font-size: $f-baseSize;
