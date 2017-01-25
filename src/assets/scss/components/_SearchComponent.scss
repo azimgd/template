@@ -1,0 +1,16 @@
+.SearchComponentBlock {
+}
+
+.SearchComponent {
+  display: flex;
+  height: $header-itemHeight;
+
+  &-search > input {
+    border: 0;
+    height: 100%;
+  }
+
+  &-button > button {
+    @extend .u-transparentBtn;
+  }
+}

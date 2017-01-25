@@ -35,3 +35,10 @@ ul.u-simpleList {
 .u-container {
   padding: $padding-large-horizontal;
 }
+
+.u-transparentBtn {
+  border: 0;
+  color: $c-white;
+  height: 100%;
+  background: transparent;
+}
