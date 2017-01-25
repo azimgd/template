@@ -1,5 +1,7 @@
 # shop cms
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/azimgd/template.svg)](https://greenkeeper.io/)
+
 ### setting up dev environment
 #### create .env file
 Create a .env file inside project directory. You can directly copy .env.example.
