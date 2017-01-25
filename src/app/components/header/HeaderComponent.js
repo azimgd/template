@@ -10,7 +10,9 @@ const HeaderComponent = ({ toggleCartDropdown }) =>
         <div className="HeaderComponent-left-title"><Link to="/">{configMock.siteTitle}</Link></div>
       </div>
       <div className="HeaderComponent-right">
-        <div onClick={toggleCartDropdown}><TitleIconComponent name="IoIosCart" /> Cart (10)</div>
+        <a href="" onClick={e => { e.preventDefault(); toggleCartDropdown(); }}>
+          <TitleIconComponent name="IoIosCart" /> Cart (10)
+        </a>
       </div>
     </div>
   </div>;

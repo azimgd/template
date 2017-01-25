@@ -7,13 +7,9 @@
   @extend .row;
   color: $c-secondaryBackground;
 
-  a {
-    color: $c-secondaryBackground;
+  a, a:hover {
+    color: $c-white;
     text-decoration: none;
-  }
-
-  a:hover {
-    color: $c-secondaryBackground;
   }
 
   &-left {

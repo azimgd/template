@@ -1,5 +1,5 @@
 .TopnavbarComponentBlock {
-  background: lighten($c-primaryText, 12%);
+  background: $c-contentBackground;
 }
 
 .TopnavbarComponent {
@@ -14,22 +14,22 @@
     }
 
     &-item > a {
-      color: $c-white;
+      color: $c-primaryText;
       text-decoration: none;
     }
 
     &-item--active {
-      border-bottom: 3px solid $c-secondaryBackground-1;
+      border-bottom: 3px solid $c-primaryBackground;
     }
 
     &-item--active > a {
-      color: $c-secondaryBackground-1;
+      color: $c-primaryBackground;
       cursor: pointer;
     }
 
     &-item > a:hover,
     &-item > a:active {
-      color: $c-secondaryBackground-1;
+      color: $c-primaryBackground;
       cursor: pointer;
     }
   }
