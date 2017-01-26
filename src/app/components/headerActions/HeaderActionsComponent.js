@@ -4,8 +4,8 @@ import { TitleIconComponent } from 'components/icons/IconsComponent';
 const HeaderActions = ({ toggleCartDropdown }) =>
   <div className="HeaderActionsBlock">
     <div className="HeaderActions">
-      <button>
-        <TitleIconComponent name="IoIosCart" onClick={toggleCartDropdown} />
+      <button onClick={toggleCartDropdown}>
+        <TitleIconComponent name="IoIosCart" />
       </button>
     </div>
   </div>;

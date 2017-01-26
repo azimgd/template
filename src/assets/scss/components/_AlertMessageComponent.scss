@@ -18,6 +18,11 @@
       text-align: right;
       cursor: pointer;
     }
+
+    &-right > button {
+      @extend .u-transparentBtn;
+      color: $c-primaryText;
+    }
   }
 
   &-content {

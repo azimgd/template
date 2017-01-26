@@ -8,7 +8,7 @@ const AlertMessageComponent = ({ isVisible, toggleAlertMessage }) =>
           Hello there!
         </div>
         <div className="AlertMessageComponent-title-right">
-          <div onClick={toggleAlertMessage}>(x)</div>
+          <button onClick={toggleAlertMessage}>(x)</button>
         </div>
       </div>
       <div className="AlertMessageComponent-content">

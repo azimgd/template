@@ -39,6 +39,6 @@ ul.u-simpleList {
 .u-transparentBtn {
   border: 0;
   color: $c-white;
-  height: 100%;
   background: transparent;
+  &:focus { outline: 0; }
 }

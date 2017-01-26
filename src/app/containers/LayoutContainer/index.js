@@ -10,6 +10,7 @@ import FooterComponent from 'components/footer/FooterComponent';
 import TopnavbarComponent from 'components/topnavbar/TopnavbarComponent';
 import AlertMessageComponent from 'components/alertMessage/AlertMessageComponent';
 import CartDropdownComponent from 'components/cartDropdown/CartDropdownComponent';
+import CartDropdownItemComponent from 'components/cartDropdownItem/CartDropdownItemComponent';
 import HeaderActionsComponent from 'components/headerActions/HeaderActionsComponent';
 import SearchComponent from 'components/search/SearchComponent';
 
@@ -21,7 +22,9 @@ const LayoutContainer = ({ ui, toggleCartDropdown, toggleAlertMessage, children,
           <HeaderActionsComponent toggleCartDropdown={toggleCartDropdown} />
           <SearchComponent />
         </HeaderComponent>
-        <CartDropdownComponent cartPosition={cartPosition} isVisible={ui.cartDropdownIsVisible} />
+        <CartDropdownComponent cartPosition={cartPosition} isVisible={ui.cartDropdownIsVisible}>
+          <CartDropdownItemComponent />
+        </CartDropdownComponent>
       </div>
       <div className="LayoutContainer-topnavbar">
         <TopnavbarComponent pathname={location.pathname} />
