@@ -1,8 +1,8 @@
 .PaymentOptionComponentBlock {
   &-button {
     padding: $padding-small-horizontal $padding-large-horizontal;
-    background: $c-primaryBackground;
-    color: $c-primaryText;
+    background: $c-secondaryBackground;
+    color: $c-white;
 
     & > a {
       width: 100%;
