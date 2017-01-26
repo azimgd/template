@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import marked from 'marked';
 import _ from 'lodash';
 import * as actions from 'actions/index';
-import { mapProductOptions, isInputArrayContentEmpty, mapProductImagesToAmazonUrl } from 'utils/index';
+import { mapProductImagesToAmazonUrl, mapProductOptions } from 'services/productsService';
+import { isInputArrayContentEmpty } from 'utils/index';
 
 const mapStateToProps = (state) => ({
   product: state.productsReducer.product,

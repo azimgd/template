@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import * as actions from 'actions/index';
-import { transformCategories, getFailedNotifications, getSucceededNotifications } from 'utils/index';
+import { transformCategories } from 'services/categoriesService';
+import { getFailedNotifications, getSucceededNotifications } from 'services/uiService';
 
 const mapStateToProps = (state) => ({
   pageCategories: state.pageCategoriesReducer.pageCategories,
