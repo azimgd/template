@@ -8,6 +8,8 @@
     "document": true,
     "React": true,
     "apiEndpoint": true,
+    "FileReader": true,
+    "API_ENDPOINT": true,
   },
   "ecmaFeatures": {
     "jsx": true
@@ -23,7 +25,14 @@
     "import/no-absolute-path": "off",
     "import/extensions": "off",
     "arrow-parens": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "comma-dangle": ["error", {
+      "arrays": "only-multiline",
+      "objects": "only-multiline",
+      "imports": "only-multiline",
+      "exports": "only-multiline",
+      "functions": "ignore",
+    }]
   },
   "parserOptions": {
     "ecmaFeatures": {

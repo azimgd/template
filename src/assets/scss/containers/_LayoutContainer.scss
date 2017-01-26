@@ -15,22 +15,26 @@
   }
 
   &-block {
-    @extend .row;
 
-    &-content {
-      @extend .col-sm-9;
-    }
-
-    &-sidebar {
-      @extend .col-sm-3;
-
-      & > div:not(:last-child) {
-        margin-bottom: $padding-large-horizontal;
-      }
-    }
   }
 
   &-footer {
     margin-top: $padding-large-horizontal;
+  }
+}
+
+.LayoutContainerContent {
+  @extend .row;
+
+  &-left {
+    @extend .col-sm-9;
+  }
+
+  &-right {
+    @extend .col-sm-3;
+
+    & > div:not(:last-child) {
+      margin-bottom: $padding-large-horizontal;
+    }
   }
 }

@@ -1,36 +1,34 @@
 .HeaderComponentBlock {
   background: $c-black-2;
-  padding: $padding-large-horizontal;
+  padding: $padding-large-horizontal 0;
 }
 
 .HeaderComponent {
   @extend .row;
-  color: $c-secondaryBackground;
-
-  a {
-    color: $c-secondaryBackground;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: $c-secondaryBackground;
-  }
 
   &-left {
     @extend .col-sm-9;
-
-    &-title {
-      display: inline-block;
-      font-size: $f-h4Size;
-      font-weight: $f-h4Size;
-    }
   }
 
   &-right {
     @extend .col-sm-3;
     @extend .hidden-xs;
-    text-align: right;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+
+.Logo {
+  display: inline-block;
+  font-size: $f-h4Size;
+  font-weight: $f-h4Size;
+  color: $c-secondaryBackground;
+  line-height: $header-itemHeight;
+  margin-left: $padding-large-horizontal;
+
+  a, a:hover {
+    color: $c-white;
+    text-decoration: none;
   }
 }

@@ -1,7 +1,10 @@
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
 import * as actions from 'actions/index';
-import { transformCategories, getFailedNotifications, getSucceededNotifications, filterSubCategories, generateFilePreviewAsync, transformProductImages, randomString } from 'utils/index';
+import { transformCategories, filterSubCategories } from 'services/categoriesService';
+import { transformProductImages } from 'services/productsService';
+import { getFailedNotifications, getSucceededNotifications } from 'services/uiService';
+import { generateFilePreviewAsync, randomString } from 'utils/index';
 
 const selector = formValueSelector('ProductFormComponent');
 

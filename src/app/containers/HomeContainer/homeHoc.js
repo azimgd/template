@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import * as actions from 'actions/index';
-import { mapCategoriesToSubCategories, isInputArrayContentEmpty } from 'utils/index';
+import { mapCategoriesToSubCategories } from 'services/categoriesService';
+import { isInputArrayContentEmpty } from 'utils/index';
 
 const mapStateToProps = (state) => ({
   pageCategories: state.pageCategoriesReducer.pageCategories,

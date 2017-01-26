@@ -33,7 +33,7 @@ const cartResizeListener = (CartViewComponent) => {
       const headerElement = document.querySelector('.HeaderComponentBlock');
       const dropdownElement = document.querySelector('.CartDropdownComponent');
       const headerCoordinates = headerElement.getBoundingClientRect();
-      const top = headerCoordinates.top + (headerElement.offsetHeight / 2) + 13;
+      const top = headerCoordinates.top + (headerElement.offsetHeight / 2) + 18;
       const left = headerCoordinates.right - dropdownElement.offsetWidth;
       this.setState({ top, left });
     }

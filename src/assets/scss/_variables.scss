@@ -1,3 +1,5 @@
+$header-itemHeight: 34px;
+
 /**
  * Font size
  */
@@ -21,13 +23,14 @@ $f-textWeight: 400;
 /**
  * Main theme colors
  */
-$c-primaryBackground: #edeae3;
-$c-primaryText: #333;
-$c-mutedText: lighten($c-primaryText, 25%);
-$c-secondaryBackground: #84b154;
-$c-secondaryBackground-1: lighten($c-secondaryBackground, 10%);
+$c-primaryBackground: #f2640c;
+$c-primaryText: #282f33;
+$c-mutedText: #c9cbcc;
+$c-secondaryBackground: #7bb661;
 $c-contentBackground: #fff;
 $c-bodyBackground: #eee;
+$c-messageboxBackground: #fef2dc;
+$c-footerBackground: #b6bbbd;
 $c-bodyBackground-1: lighten($c-bodyBackground, 4%);
 
 $c-success: $brand-success;

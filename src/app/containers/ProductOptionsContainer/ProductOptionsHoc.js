@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import * as actions from 'actions/index';
-import { isInputArrayContentEmpty, getSucceededNotifications, getFailedNotifications } from 'utils/index';
+import { getFailedNotifications, getSucceededNotifications } from 'services/uiService';
+import { isInputArrayContentEmpty } from 'utils/index';
 
 const mapStateToProps = (state) => ({
   product: state.productsReducer.product,

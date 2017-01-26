@@ -25,7 +25,7 @@ ul.u-simpleList {
   font-size: $font-size-h4;
   padding: $padding-small-horizontal $padding-large-horizontal;
   background: $c-primaryBackground;
-  color: $c-primaryText;
+  color: $c-messageboxBackground;
 }
 
 .u-containerBlock {
@@ -34,4 +34,11 @@ ul.u-simpleList {
 
 .u-container {
   padding: $padding-large-horizontal;
+}
+
+.u-transparentBtn {
+  border: 0;
+  color: $c-white;
+  background: transparent;
+  &:focus { outline: 0; }
 }

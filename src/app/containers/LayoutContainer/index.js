@@ -6,18 +6,25 @@ import layoutHoc from 'containers/LayoutContainer/layoutHoc';
 
 import HeaderComponent from 'components/header/HeaderComponent';
 import SidebarComponent from 'components/sidebar/SidebarComponent';
-import SidebarSearchComponent from 'components/sidebarSearch/SidebarSearchComponent';
 import FooterComponent from 'components/footer/FooterComponent';
 import TopnavbarComponent from 'components/topnavbar/TopnavbarComponent';
 import AlertMessageComponent from 'components/alertMessage/AlertMessageComponent';
 import CartDropdownComponent from 'components/cartDropdown/CartDropdownComponent';
+import CartDropdownItemComponent from 'components/cartDropdownItem/CartDropdownItemComponent';
+import HeaderActionsComponent from 'components/headerActions/HeaderActionsComponent';
+import SearchComponent from 'components/search/SearchComponent';
 
 const LayoutContainer = ({ ui, toggleCartDropdown, toggleAlertMessage, children, cartPosition, location }) =>
   <div className="LayoutContainerBlock">
     <div className="LayoutContainer">
       <div className="LayoutContainer-header">
-        <HeaderComponent toggleCartDropdown={toggleCartDropdown} />
-        <CartDropdownComponent cartPosition={cartPosition} isVisible={ui.cartDropdownIsVisible} />
+        <HeaderComponent>
+          <HeaderActionsComponent toggleCartDropdown={toggleCartDropdown} />
+          <SearchComponent />
+        </HeaderComponent>
+        <CartDropdownComponent cartPosition={cartPosition} isVisible={ui.cartDropdownIsVisible}>
+          <CartDropdownItemComponent />
+        </CartDropdownComponent>
       </div>
       <div className="LayoutContainer-topnavbar">
         <TopnavbarComponent pathname={location.pathname} />
@@ -26,12 +33,13 @@ const LayoutContainer = ({ ui, toggleCartDropdown, toggleAlertMessage, children,
         <AlertMessageComponent toggleAlertMessage={toggleAlertMessage} isVisible={ui.alertMessageIsVisible} />
       </div>
       <div className="LayoutContainer-block">
-        <div className="LayoutContainer-block-content">
-          {children}
-        </div>
-        <div className="LayoutContainer-block-sidebar">
-          <SidebarSearchComponent />
-          <SidebarComponent items={configMock.sidebarComponentItems} />
+        <div className="LayoutContainerContent">
+          <div className="LayoutContainerContent-left">
+            {children}
+          </div>
+          <div className="LayoutContainerContent-right">
+            <SidebarComponent items={configMock.sidebarComponentItems} />
+          </div>
         </div>
       </div>
       <div className="LayoutContainer-footer">

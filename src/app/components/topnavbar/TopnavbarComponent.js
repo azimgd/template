@@ -23,12 +23,8 @@ const TopnavbarComponent = ({ pathname }) => {
       <div className="TopnavbarComponent">
         <ul className="TopnavbarComponent-nav">
           <NavbarItem currentPath={path} itemPath="/" itemText="Home page" />
-          <NavbarItem currentPath={path} itemPath="/products" itemText="All products" />
-          <NavbarItem currentPath={path} itemPath="/products/new" itemText="Create new product" />
-          <NavbarItem currentPath={path} itemPath="/pages" itemText="All pages" />
-          <NavbarItem currentPath={path} itemPath="/pages/new" itemText="Create new page" />
-          <NavbarItem currentPath={path} itemPath="/config/categories/products" itemText="Product categories" />
-          <NavbarItem currentPath={path} itemPath="/config/categories/pages" itemText="Page categories" />
+          <NavbarItem currentPath={path} itemPath="/products" itemText="Products" />
+          <NavbarItem currentPath={path} itemPath="/pages" itemText="Pages" />
         </ul>
       </div>
     </div>

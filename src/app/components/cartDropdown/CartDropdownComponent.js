@@ -1,25 +1,20 @@
 import React, { PropTypes } from 'react';
 
-import CartDropdownItemComponent from 'components/cartDropdownItem/CartDropdownItemComponent';
-
 /**
  * Using css -> visibility prop over css -> display on CartDropdownComponent
  * is must when calculating offsetWidth param
  */
-const CartDropdownComponent = ({ cartPosition, isVisible }) =>
+const CartDropdownComponent = ({ children, cartPosition, isVisible }) =>
   <div className="CartDropdownComponentBlock" style={{ left: `${cartPosition.left}px`, top: `${cartPosition.top}px`, visibility: isVisible ? 'visible' : 'hidden' }}>
     <div className="CartDropdownComponentBlock-triangle">
-      <div className="triangleUp"></div>
+      <div className="triangleUp" />
     </div>
     <div className="CartDropdownComponentBlock-title">
       Cart items
     </div>
     <div className="CartDropdownComponent">
       <div className="CartDropdownComponent-item">
-        <CartDropdownItemComponent />
-      </div>
-      <div className="CartDropdownComponent-item">
-        <CartDropdownItemComponent />
+        {children}
       </div>
     </div>
     <div className="CartDropdownComponentBlock-summary">
@@ -28,6 +23,7 @@ const CartDropdownComponent = ({ cartPosition, isVisible }) =>
   </div>;
 
 CartDropdownComponent.propTypes = {
+  children: PropTypes.object.isRequired,
   cartPosition: PropTypes.shape({
     top: PropTypes.number,
     left: PropTypes.number,

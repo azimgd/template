@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
 import * as actions from 'actions/index';
-import { transformCategories, getFailedNotifications, getSucceededNotifications, filterSubCategories } from 'utils/index';
+import { transformCategories, filterSubCategories } from 'services/categoriesService';
+import { getFailedNotifications, getSucceededNotifications } from 'services/uiService';
 
 const selector = formValueSelector('PageFormComponent');
 

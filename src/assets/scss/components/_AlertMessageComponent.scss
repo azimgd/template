@@ -1,5 +1,5 @@
 .AlertMessageComponentBlock {
-  background: $c-secondaryBackground-1;
+  background: $c-messageboxBackground;
   padding: $padding-large-horizontal;
 }
 
@@ -17,6 +17,11 @@
       @extend .col-xs-3;
       text-align: right;
       cursor: pointer;
+    }
+
+    &-right > button {
+      @extend .u-transparentBtn;
+      color: $c-primaryText;
     }
   }
 

@@ -1,0 +1,12 @@
+.HeaderActionsBlock {
+}
+
+.HeaderActions {
+  display: flex;
+  height: $header-itemHeight;
+
+  button {
+    @extend .u-transparentBtn;
+    height: 100%;
+  }
+}
