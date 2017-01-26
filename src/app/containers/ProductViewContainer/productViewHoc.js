@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import marked from 'marked';
 import _ from 'lodash';
 import * as actions from 'actions/index';
-import { isInputArrayContentEmpty, mapProductImagesToAmazonUrl } from 'utils/index';
+import { mapProductOptions, isInputArrayContentEmpty, mapProductImagesToAmazonUrl } from 'utils/index';
 
 const mapStateToProps = (state) => ({
   product: state.productsReducer.product,
@@ -23,6 +23,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const isLoading = false;
   const isEmpty = isInputArrayContentEmpty([stateProps.product.data]);
   const mappedProductImages = mapProductImagesToAmazonUrl(stateProps.productImages.data);
+  const mappedProductOptions = mapProductOptions(stateProps.product.data, stateProps.productOptions.data);
   const productContents = _.get(stateProps.product, 'data.description', '');
   const productParsedToHtml = marked(productContents);
   return Object.assign({
@@ -30,6 +31,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     isEmpty,
     productParsedToHtml,
     mappedProductImages,
+    mappedProductOptions,
   }, ownProps, stateProps, dispatchProps);
 };
 

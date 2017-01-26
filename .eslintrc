@@ -8,6 +8,7 @@
     "document": true,
     "React": true,
     "apiEndpoint": true,
+    "FileReader": true,
   },
   "ecmaFeatures": {
     "jsx": true
