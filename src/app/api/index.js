@@ -98,8 +98,8 @@ export const postProductSubCategory = (data) =>
 /**
  * Product categories
  */
-export const getProductOptions = () =>
-  axios.get(`${API_ENDPOINT}/api/productOptions`)
+export const getProductOptions = (data) =>
+  axios.get(`${API_ENDPOINT}/api/productOptions`, { params: data })
   .then(res => res.data);
 
 export const getProductOption = ({ id }) =>

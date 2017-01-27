@@ -2,6 +2,7 @@ import yup from 'yup';
 import { transformYupValidationErrors } from 'utils/index';
 
 const schema = yup.object().shape({
+  productId: yup.number().required(),
   key: yup.string().required(),
   value: yup.string().required(),
 });

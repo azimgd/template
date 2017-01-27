@@ -12,7 +12,7 @@ import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 export class ProductOptionsContainer extends React.Component {
   componentWillMount() {
     this.props.getProductRequest({ id: this.props.params.id });
-    this.props.getProductOptionsRequest({ id: this.props.params.id });
+    this.props.getProductOptionsRequest({ productId: this.props.params.id });
   }
 
   componentWillUnmount() {
@@ -43,6 +43,7 @@ export class ProductOptionsContainer extends React.Component {
                   />
                   <ProductOptionsFormComponent
                     createOption={this.props.postProductOptionRequest}
+                    initialValues={{ productId: this.props.params.id }}
                   />
                 </div>
                 <div className="ProductOptionsContainer-block-right">
