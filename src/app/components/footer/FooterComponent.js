@@ -1,12 +1,11 @@
 import React from 'react';
-import configMock from 'mocks/config';
 
 const FooterComponent = () =>
   <div className="FooterComponentBlock">
     <div className="FooterComponent">
       <div className="FooterComponent-left">
         <div className="FooterComponent-left-title">
-          {configMock.siteTitle}
+          {APP_TITLE}
         </div>
       </div>
       <div className="FooterComponent-right">
