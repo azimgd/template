@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 import productsHoc from 'containers/ProductsContainer/productsHoc';
 import productsResizeListener from 'hoc/ProductsResizeListener';
 import ProductComponent from 'components/product/ProductComponent';
-import { TitleIconComponent } from 'components/icons/IconsComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 
@@ -24,9 +23,7 @@ export class ProductsContainer extends React.Component {
   render() {
     return (
       <div className="ProductsContainerBlock">
-        <div className="ProductsContainerBlock-title">
-          <TitleIconComponent name="IoIosKeypad" /> Products
-        </div>
+        <div className="ProductsContainerBlock-title">Products</div>
 
         <div className="ProductsContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>

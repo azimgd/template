@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 import homeHoc from 'containers/HomeContainer/homeHoc';
 import * as routes from 'constants/routes';
 import HomeCategoriesComponent from 'components/homeCategories/HomeCategoriesComponent';
-import { TitleIconComponent } from 'components/icons/IconsComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 
@@ -25,9 +24,7 @@ export class HomeContainer extends React.Component {
   render() {
     return (
       <div className="HomeContainerBlock">
-        <div className="HomeContainerBlock-title">
-          <TitleIconComponent name="IoIosHome" /> Home
-        </div>
+        <div className="HomeContainerBlock-title">Home</div>
         <div className="HomeContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>

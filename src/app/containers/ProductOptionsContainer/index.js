@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
 import productOptionsHoc from 'containers/ProductOptionsContainer/productOptionsHoc';
-import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 import ProductOptionsFormComponent from 'components/productOptionsForm/ProductOptionsFormComponent';
 import ProductOptionsListComponent from 'components/productOptionsList/ProductOptionsListComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
@@ -23,7 +22,7 @@ export class ProductOptionsContainer extends React.Component {
     return (
       <div className="ProductOptionsContainerBlock">
         <div className="ProductOptionsContainerBlock-title">
-          <PageNavLocationComponent pageName={this.props.product.data.title} />
+          {this.props.product.data.title}
         </div>
         <div className="ProductOptionsContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>

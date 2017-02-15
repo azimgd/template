@@ -5,7 +5,6 @@ import ConfigCategoriesComponent from 'components/configCategories/ConfigCategor
 import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
 import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
-import { TitleIconComponent } from 'components/icons/IconsComponent';
 
 export class ConfigPageCategoriesContainer extends React.Component {
   constructor(props) {
@@ -35,9 +34,7 @@ export class ConfigPageCategoriesContainer extends React.Component {
   render() {
     return (
       <div className="ConfigPageCategoriesContainerBlock">
-        <div className="ConfigPageCategoriesContainerBlock-title">
-          <TitleIconComponent name="IoIosList" /> Config page categories
-        </div>
+        <div className="ConfigPageCategoriesContainerBlock-title">Config page categories</div>
         <div className="ConfigPageCategoriesContainer">
           <div className="ConfigPageCategoriesContainer-block">
             <div className="ConfigPageCategoriesContainer-block-full">
