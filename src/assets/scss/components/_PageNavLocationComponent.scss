@@ -5,11 +5,11 @@
   @extend .row;
 
   &-title {
-    @extend .col-xs-4;
+    @extend .col-sm-7;
   }
 
   &-content {
-    @extend .col-xs-8;
+    @extend .col-sm-5;
     text-align: right;
 
     a, a:hover {
