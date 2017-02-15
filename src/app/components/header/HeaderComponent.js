@@ -14,7 +14,10 @@ const HeaderComponent = ({ children }) =>
   </div>;
 
 HeaderComponent.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: React.PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
 };
 
 export default HeaderComponent;

@@ -13,7 +13,6 @@ const ProductDetailsItemComponent = ({ options }) =>
 
 ProductDetailsItemComponent.propTypes = {
   options: PropTypes.object.isRequired,
-  details: PropTypes.object.isRequired,
 };
 
 const ProductDetailsComponent = ({ productOptions, productParsedToHtml }) => (

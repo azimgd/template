@@ -21,24 +21,6 @@ $f-headingsWeight: 600 !default;
 $f-textWeight: 400;
 
 /**
- * Main theme colors
- */
-$c-primaryBackground: #f2640c;
-$c-primaryText: #282f33;
-$c-mutedText: #c9cbcc;
-$c-secondaryBackground: #7bb661;
-$c-contentBackground: #fff;
-$c-bodyBackground: #eee;
-$c-messageboxBackground: #fef2dc;
-$c-footerBackground: #b6bbbd;
-$c-bodyBackground-1: lighten($c-bodyBackground, 4%);
-
-$c-success: $brand-success;
-$c-info: $brand-info;
-$c-warning: $brand-warning;
-$c-danger: $brand-danger;
-
-/**
  * Colors
  */
 $c-gray: #eee;
@@ -71,3 +53,23 @@ $c-linkHoverColor: darken($c-linkColor, 15%) !default;
 $c-blackTransparent: rgba(0, 0, 0, 0.7);
 $c-blackTransparent-1: rgba(0, 0, 0, 0.6);
 $c-blackTransparent-2: rgba(0, 0, 0, 0.5);
+
+$c-text-1: #282f33;
+$c-text-2: lighten($c-text-1, 30%);
+$c-text-3: lighten($c-text-1, 50%);
+
+/**
+ * Main theme colors
+ */
+$c-primaryBackground: #f2640c;
+$c-secondaryBackground: #7bb661;
+$c-contentBackground: #fff;
+$c-bodyBackground: #eee;
+$c-messageboxBackground: #fef2dc;
+$c-footerBackground: #b6bbbd;
+$c-bodyBackground-1: lighten($c-bodyBackground, 4%);
+
+$c-success: $brand-success;
+$c-info: $brand-info;
+$c-warning: $brand-warning;
+$c-danger: $brand-danger;

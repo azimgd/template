@@ -8,8 +8,11 @@ const IsEmptyComponent = ({ isEmpty, children }) => {
 };
 
 IsEmptyComponent.propTypes = {
-  isEmpty: PropTypes.string.isRequired,
-  children: PropTypes.object.isRequired,
+  isEmpty: PropTypes.bool.isRequired,
+  children: React.PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
 };
 
 export default IsEmptyComponent;
