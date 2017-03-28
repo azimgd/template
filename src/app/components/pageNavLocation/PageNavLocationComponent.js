@@ -1,24 +1,31 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import { TitleIconComponent } from 'components/icons/IconsComponent';
 
-const PageNavLocationComponent = ({ pageName }) =>
+const PageNavLocationComponent = ({ product, productCategory, productSubCategory }) =>
   <div className="PageNavLocationComponentBlock">
     <div className="PageNavLocationComponent">
       <div className="PageNavLocationComponent-title">
-        <TitleIconComponent name="IoIosGlasses" /> {pageName}
+        {product.title}
       </div>
       <div className="PageNavLocationComponent-content">
-        <div className="PageNavLocationComponent-content-item"><Link to="/">Home</Link></div>
-        <div className="PageNavLocationComponent-content-item"><Link to="/">First Category</Link></div>
-        <div className="PageNavLocationComponent-content-item"><Link to="/">Second</Link></div>
-        <div className="PageNavLocationComponent-content-item"><Link to="/">Last item</Link></div>
+        {productCategory ?
+          <div className="PageNavLocationComponent-content-item">
+            <Link to={{ pathname: '/products', query: { categoryId: productCategory.id } }}>{productCategory.name}</Link>
+          </div>
+        : null}
+        {productSubCategory ?
+          <div className="PageNavLocationComponent-content-item">
+            <Link to={{ pathname: '/products', query: { subCategoryId: productSubCategory.id } }}>{productSubCategory.name}</Link>
+          </div>
+        : null}
       </div>
     </div>
   </div>;
 
 PageNavLocationComponent.propTypes = {
-  pageName: PropTypes.string.isRequired,
+  product: PropTypes.object.isRequired,
+  productCategory: PropTypes.object.isRequired,
+  productSubCategory: PropTypes.object.isRequired,
 };
 
 export default PageNavLocationComponent;

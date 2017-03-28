@@ -33,7 +33,10 @@ const ProductFormComponent = ({ children, categories, subCategories, handleSubmi
   </div>;
 
 ProductFormComponent.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: React.PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
   createProduct: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   categories: PropTypes.object.isRequired,

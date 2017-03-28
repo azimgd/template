@@ -11,13 +11,18 @@ const locations = {
   viewFolder: path.join(__dirname, 'views'),
 };
 
+const globalVariables = {
+  API_ENDPOINT: process.env.API_ENDPOINT,
+  APP_TITLE: process.env.APP_TITLE,
+};
+
 module.exports = {
   init: () => {
     const app = express();
     const buildPath = express.static(locations.buildFolder);
 
     app.use('/build', buildPath);
-    app.get('*', (_, res) => { res.render('index', { API_ENDPOINT: process.env.API_ENDPOINT }); });
+    app.get('*', (_, res) => { res.render('index', globalVariables); });
 
     return app;
   },
@@ -36,6 +41,7 @@ module.exports = {
     }));
     app.use(webpackHotMiddleware(compiler, {
       log: console.log,
+      path: '/__webpack_hmr',
     }));
   },
 };

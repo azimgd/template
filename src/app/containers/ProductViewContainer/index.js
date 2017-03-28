@@ -15,19 +15,27 @@ export class ProductViewContainer extends React.Component {
     this.props.getProductRequest({ id });
     this.props.getProductImagesRequest({ id });
     this.props.getProductOptionsRequest({ id });
+    this.props.getProductCategoriesRequest();
+    this.props.getProductSubCategoriesRequest();
   }
 
   componentWillUnmount() {
     this.props.getProductIdle();
     this.props.getProductImagesIdle();
     this.props.getProductOptionsIdle();
+    this.props.getProductCategoriesIdle();
+    this.props.getProductSubCategoriesIdle();
   }
 
   render() {
     return (
       <div className="ProductViewContainerBlock">
         <div className="ProductViewContainerBlock-title">
-          <PageNavLocationComponent pageName={this.props.product.data.title} />
+          <PageNavLocationComponent
+            product={this.props.product.data}
+            productCategory={this.props.productCategory}
+            productSubCategory={this.props.productSubCategory}
+          />
         </div>
         <div className="ProductViewContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>
@@ -69,7 +77,13 @@ ProductViewContainer.propTypes = {
   getProductImagesIdle: PropTypes.func.isRequired,
   getProductOptionsRequest: PropTypes.func.isRequired,
   getProductOptionsIdle: PropTypes.func.isRequired,
+  getProductCategoriesRequest: PropTypes.func.isRequired,
+  getProductSubCategoriesRequest: PropTypes.func.isRequired,
+  getProductCategoriesIdle: PropTypes.func.isRequired,
+  getProductSubCategoriesIdle: PropTypes.func.isRequired,
   product: PropTypes.object.isRequired,
+  productCategory: PropTypes.object.isRequired,
+  productSubCategory: PropTypes.object.isRequired,
   mappedProductOptions: PropTypes.object.isRequired,
   mappedProductImages: PropTypes.object.isRequired,
   productParsedToHtml: PropTypes.string.isRequired,

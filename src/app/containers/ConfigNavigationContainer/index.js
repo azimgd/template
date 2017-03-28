@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 import configNavigationHoc from 'containers/ConfigNavigationContainer/configNavigationHoc';
 import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
 import ConfigNavigationComponent from 'components/configNavigation/ConfigNavigationComponent';
-import { TitleIconComponent } from 'components/icons/IconsComponent';
 
 class ConfigNavigationContainer extends React.Component {
   constructor(props) {
@@ -16,9 +15,7 @@ class ConfigNavigationContainer extends React.Component {
   render() {
     return (
       <div className="ConfigNavigationContainerBlock">
-        <div className="ConfigNavigationContainerBlock-title">
-          <TitleIconComponent name="IoIosNavigate" /> Config navigation
-        </div>
+        <div className="ConfigNavigationContainerBlock-title">Config navigation</div>
         <div className="ConfigNavigationContainer">
           <div className="ConfigNavigationContainer-block">
             <div className="ConfigNavigationContainer-block-left">

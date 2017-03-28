@@ -4,7 +4,6 @@ import pageCreateHoc from 'containers/PageCreateContainer/pageCreateHoc';
 import PageFormComponent from 'components/pageForm/PageFormComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
-import { TitleIconComponent } from 'components/icons/IconsComponent';
 
 export class PageCreateContainer extends React.Component {
   constructor(props) {
@@ -30,9 +29,7 @@ export class PageCreateContainer extends React.Component {
   render() {
     return (
       <div className="PageCreateContainerBlock">
-        <div className="PageCreateContainerBlock-title">
-          <TitleIconComponent name="IoIosCompose" /> Pages
-        </div>
+        <div className="PageCreateContainerBlock-title">Pages</div>
         <div className="PageCreateContainer">
           <div className="PageCreateContainer-block">
             <div className="PageCreateContainer-block-full">

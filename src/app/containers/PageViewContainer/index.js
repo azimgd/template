@@ -2,8 +2,6 @@ import React, { PropTypes } from 'react';
 
 import pageViewHoc from 'containers/PageViewContainer/pageViewHoc';
 import PageDetailsComponent from 'components/pageDetails/PageDetailsComponent';
-import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
-import { TitleIconComponent } from 'components/icons/IconsComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 
@@ -18,12 +16,9 @@ export class PageViewContainer extends React.Component {
   }
 
   render() {
-    const { isLoading, isEmpty, page, pageParsedToHtml } = this.props;
     return (
       <div className="PageViewContainerBlock">
-        <div className="PageViewContainerBlock-title">
-          <PageNavLocationComponent pageName={this.props.page.data.title} />
-        </div>
+        <div className="PageViewContainerBlock-title">{this.props.page.data.title}</div>
         <div className="PageViewContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>

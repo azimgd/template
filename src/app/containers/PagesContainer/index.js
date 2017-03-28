@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 
 import pagesHoc from 'containers/PagesContainer/pagesHoc';
 import PageComponent from 'components/page/PageComponent';
-import { TitleIconComponent } from 'components/icons/IconsComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 
@@ -21,9 +20,7 @@ export class PagesContainer extends React.Component {
   render() {
     return (
       <div className="PagesContainerBlock">
-        <div className="PagesContainerBlock-title">
-          <TitleIconComponent name="IoIosCopy" /> Pages
-        </div>
+        <div className="PagesContainerBlock-title">Pages</div>
 
         <div className="PagesContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>

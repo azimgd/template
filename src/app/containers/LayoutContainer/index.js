@@ -49,7 +49,10 @@ const LayoutContainer = ({ ui, toggleCartDropdown, toggleAlertMessage, children,
   </div>;
 
 LayoutContainer.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: React.PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
   cartPosition: PropTypes.shape({
     top: PropTypes.number,
     left: PropTypes.number,

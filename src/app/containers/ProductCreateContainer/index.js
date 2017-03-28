@@ -6,7 +6,6 @@ import ProductAboutComponent from 'components/productAbout/ProductAboutComponent
 import NotificationComponent from 'components/notification/NotificationComponent';
 import ImagePreviewComponent from 'components/imagePreview/ImagePreviewComponent';
 import ImageUploadComponent from 'components/imageUpload/ImageUploadComponent';
-import { TitleIconComponent } from 'components/icons/IconsComponent';
 
 export class ProductCreateContainer extends React.Component {
   constructor(props) {
@@ -44,9 +43,7 @@ export class ProductCreateContainer extends React.Component {
 
     return (
       <div className="ProductCreateContainerBlock">
-        <div className="ProductCreateContainerBlock-title">
-          <TitleIconComponent name="IoIosCompose" /> Products page
-        </div>
+        <div className="ProductCreateContainerBlock-title">Products page</div>
         <div className="ProductCreateContainer">
           <div className="ProductCreateContainer-block">
             <div className="ProductCreateContainer-block-full">

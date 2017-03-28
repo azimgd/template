@@ -8,8 +8,11 @@ const IsLoadingComponent = ({ isLoading, children }) => {
 };
 
 IsLoadingComponent.propTypes = {
-  isLoading: PropTypes.string.isRequired,
-  children: PropTypes.object.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  children: React.PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
 };
 
 export default IsLoadingComponent;

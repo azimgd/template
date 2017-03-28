@@ -1,18 +1,18 @@
-import axios from 'axios';
+import requestProvider from './requestProvider';
 
 /**
  * Pages
  */
 export const getPages = (data) =>
-  axios.get(`${API_ENDPOINT}/api/pages`, { params: data })
+  requestProvider.get('/api/pages', { params: data })
   .then(res => res.data);
 
 export const getPage = ({ id }) =>
-  axios.get(`${API_ENDPOINT}/api/pages/${id}`)
+  requestProvider.get(`/api/pages/${id}`)
   .then(res => res.data);
 
 export const postPage = (data) =>
-  axios.post(`${API_ENDPOINT}/api/pages`, data)
+  requestProvider.post('/api/pages', data)
   .then(res => res.data);
 
 
@@ -20,15 +20,15 @@ export const postPage = (data) =>
  * Products
  */
 export const getProducts = (data) =>
-  axios.get(`${API_ENDPOINT}/api/products`, { params: data })
+  requestProvider.get('/api/products', { params: data })
   .then(res => res.data);
 
 export const getProduct = ({ id }) =>
-  axios.get(`${API_ENDPOINT}/api/products/${id}`)
+  requestProvider.get(`/api/products/${id}`)
   .then(res => res.data);
 
 export const postProduct = (data) =>
-  axios.post(`${API_ENDPOINT}/api/products`, data)
+  requestProvider.post('/api/products', data)
   .then(res => res.data);
 
 
@@ -36,15 +36,15 @@ export const postProduct = (data) =>
  * Page categories
  */
 export const getPageCategories = () =>
-  axios.get(`${API_ENDPOINT}/api/pageCategories`)
+  requestProvider.get('/api/pageCategories')
   .then(res => res.data);
 
 export const getPageCategory = ({ id }) =>
-  axios.get(`${API_ENDPOINT}/api/pageCategories/${id}`)
+  requestProvider.get(`/api/pageCategories/${id}`)
   .then(res => res.data);
 
 export const postPageCategory = (data) =>
-  axios.post(`${API_ENDPOINT}/api/pageCategories`, data)
+  requestProvider.post('/api/pageCategories', data)
   .then(res => res.data);
 
 
@@ -52,15 +52,15 @@ export const postPageCategory = (data) =>
  * Page sub categories
  */
 export const getPageSubCategories = () =>
-  axios.get(`${API_ENDPOINT}/api/pageSubCategories`)
+  requestProvider.get('/api/pageSubCategories')
   .then(res => res.data);
 
 export const getPageSubCategory = ({ id }) =>
-  axios.get(`${API_ENDPOINT}/api/pageSubCategories/${id}`)
+  requestProvider.get(`/api/pageSubCategories/${id}`)
   .then(res => res.data);
 
 export const postPageSubCategory = (data) =>
-  axios.post(`${API_ENDPOINT}/api/pageSubCategories`, data)
+  requestProvider.post('/api/pageSubCategories', data)
   .then(res => res.data);
 
 
@@ -68,15 +68,15 @@ export const postPageSubCategory = (data) =>
  * Product categories
  */
 export const getProductCategories = () =>
-  axios.get(`${API_ENDPOINT}/api/productCategories`)
+  requestProvider.get('/api/productCategories')
   .then(res => res.data);
 
 export const getProductCategory = ({ id }) =>
-  axios.get(`${API_ENDPOINT}/api/productCategories/${id}`)
+  requestProvider.get(`/api/productCategories/${id}`)
   .then(res => res.data);
 
 export const postProductCategory = (data) =>
-  axios.post(`${API_ENDPOINT}/api/productCategories`, data)
+  requestProvider.post('/api/productCategories', data)
   .then(res => res.data);
 
 
@@ -84,43 +84,43 @@ export const postProductCategory = (data) =>
  * Product sub categories
  */
 export const getProductSubCategories = () =>
-  axios.get(`${API_ENDPOINT}/api/productSubCategories`)
+  requestProvider.get('/api/productSubCategories')
   .then(res => res.data);
 
 export const getProductSubCategory = ({ id }) =>
-  axios.get(`${API_ENDPOINT}/api/productSubCategories/${id}`)
+  requestProvider.get(`/api/productSubCategories/${id}`)
   .then(res => res.data);
 
 export const postProductSubCategory = (data) =>
-  axios.post(`${API_ENDPOINT}/api/productSubCategories`, data)
+  requestProvider.post('/api/productSubCategories', data)
   .then(res => res.data);
 
 /**
  * Product categories
  */
 export const getProductOptions = () =>
-  axios.get(`${API_ENDPOINT}/api/productOptions`)
+  requestProvider.get('/api/productOptions')
   .then(res => res.data);
 
 export const getProductOption = ({ id }) =>
-  axios.get(`${API_ENDPOINT}/api/productOptions/${id}`)
+  requestProvider.get(`/api/productOptions/${id}`)
   .then(res => res.data);
 
 export const postProductOption = (data) =>
-  axios.post(`${API_ENDPOINT}/api/productOptions`, data)
+  requestProvider.post('/api/productOptions', data)
   .then(res => res.data);
 
 /**
  * Product images
  */
 export const getProductImages = () =>
-  axios.get(`${API_ENDPOINT}/api/productImages`)
+  requestProvider.get('/api/productImages')
   .then(res => res.data);
 
 export const getProductImage = ({ id }) =>
-  axios.get(`${API_ENDPOINT}/api/productImages/${id}`)
+  requestProvider.get(`/api/productImages/${id}`)
   .then(res => res.data);
 
 export const postProductImage = (data) =>
-  axios.post(`${API_ENDPOINT}/api/productImages`, data)
+  requestProvider.post('/api/productImages', data)
   .then(res => res.data);

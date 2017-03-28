@@ -23,7 +23,10 @@ const CartDropdownComponent = ({ children, cartPosition, isVisible }) =>
   </div>;
 
 CartDropdownComponent.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: React.PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
   cartPosition: PropTypes.shape({
     top: PropTypes.number,
     left: PropTypes.number,
