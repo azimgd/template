@@ -17,9 +17,9 @@ const ProductComponent = ({ product, height }) =>
           <Link to={`/products/${product.id}`}>{product.title}</Link>
         </div>
         <div className="ProductComponent-content-category">
-          {product.category.name ? product.category.name : null}
-          {product.category.name && product.subcategory.name ? ' / ' : null}
-          {product.subcategory.name ? product.subcategory.name : null}
+          {product.category && product.category.name ? product.category.name : null}
+          {product.category && product.category.name && product.subcategory.name ? ' / ' : null}
+          {product.subcategory && product.subcategory.name ? product.subcategory.name : null}
         </div>
       </div>
       <div className="ProductComponent-button">

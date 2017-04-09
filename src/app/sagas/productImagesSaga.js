@@ -8,9 +8,10 @@ import * as constants from 'constants/index';
 /**
  * Product images
  */
-function* getProductImagesRequest() {
+function* getProductImagesRequest(req) {
+  const { payload } = req;
   try {
-    const data = yield call(api.getProductImages);
+    const data = yield call(api.getProductImages.bind(null, payload));
     yield put(actions.getProductImagesSuccess({ data }));
   } catch (e) {
     yield put(actions.getProductImagesFailure({ message: 'Cant get products' }));
