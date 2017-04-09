@@ -7,6 +7,7 @@ Server.templating(app);
 if (process.env.NODE_ENV !== 'production') {
   Server.devServer(app);
 }
+Server.run(app);
 app.listen(port);
 
 console.log(`Listening at http://localhost:${port}`);
