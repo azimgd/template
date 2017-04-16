@@ -1,32 +1,40 @@
 import React, { PropTypes } from 'react';
-import _ from 'lodash';
+import get from 'lodash/get';
+import map from 'lodash/map';
+import isEmpty from 'lodash/isEmpty';
 
 const ProductDetailsItemComponent = ({ options }) =>
   <div className="ProductDetailsItemComponent">
     <div className="ProductDetailsItemComponent-title">
-      {options.key}:
+      {get(options, 'key')}:
     </div>
     <div className="ProductDetailsItemComponent-content">
-      {options.value || 'unavailable'}
+      {get(options, 'value', 'unavailable')}
     </div>
   </div>;
 
 ProductDetailsItemComponent.propTypes = {
-  options: PropTypes.object.isRequired,
+  options: PropTypes.shape({
+    key: PropTypes.string,
+    value: PropTypes.string,
+  }).isRequired,
 };
 
 const ProductDetailsComponent = ({ productOptions, productParsedToHtml }) => (
   <div className="ProductDetailsComponentBlock">
     <div className="ProductDetailsComponent">
-      <div className="ProductDetailsComponent-detailsBlock">
-        <div className="ProductDetailsComponent-details">
-          {_.map(productOptions, (options, key) =>
-            <div className="ProductDetailsComponent-details-item" key={key}>
-              <ProductDetailsItemComponent options={options} />
-            </div>
-          )}
+      {isEmpty(productOptions) ?
+        <div className="ProductDetailsComponent-detailsBlock">
+          <div className="ProductDetailsComponent-details">
+            {map(productOptions, (options, key) =>
+              <div className="ProductDetailsComponent-details-item" key={key}>
+                <ProductDetailsItemComponent options={options} />
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      : null}
+
       <div className="ProductDetailsComponent-description">
         <p dangerouslySetInnerHTML={{ __html: productParsedToHtml }} />
       </div>
@@ -35,8 +43,10 @@ const ProductDetailsComponent = ({ productOptions, productParsedToHtml }) => (
 );
 
 ProductDetailsComponent.propTypes = {
-  product: PropTypes.object.isRequired,
-  productOptions: PropTypes.object.isRequired,
+  productOptions: PropTypes.shape({
+    key: PropTypes.string,
+    value: PropTypes.string,
+  }).isRequired,
   productParsedToHtml: PropTypes.string.isRequired,
 };
 

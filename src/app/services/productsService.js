@@ -7,14 +7,6 @@ export const mapProductImagesToAmazonUrl = images => _.chain(images)
   .map(item => `https://shoptemplate.s3-eu-west-1.amazonaws.com/${item.filename}`)
   .value();
 
-export const mapProductOptions = (product, productOptions) => {
-  const details = [
-    { key: 'Category', value: product.category },
-    { key: 'SubCategory', value: product.subCategory },
-  ];
-  return [...productOptions, ...details];
-};
-
 /**
  * Function will take an array of ({ category }) and ({ product }) object
  * will return category object for given product

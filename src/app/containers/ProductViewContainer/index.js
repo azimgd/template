@@ -48,7 +48,7 @@ export class ProductViewContainer extends React.Component {
                 </div>
                 <div className="ProductViewContainer-block-left">
                   <ProductDetailsComponent
-                    productOptions={this.props.mappedProductOptions}
+                    productOptions={this.props.productOptions}
                     productParsedToHtml={this.props.productParsedToHtml}
                   />
                 </div>
@@ -84,7 +84,7 @@ ProductViewContainer.propTypes = {
   product: PropTypes.object.isRequired,
   productCategory: PropTypes.object.isRequired,
   productSubCategory: PropTypes.object.isRequired,
-  mappedProductOptions: PropTypes.object.isRequired,
+  productOptions: PropTypes.object.isRequired,
   mappedProductImages: PropTypes.object.isRequired,
   productParsedToHtml: PropTypes.string.isRequired,
 };

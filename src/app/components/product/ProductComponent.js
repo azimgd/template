@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import get from 'lodash/get';
 import configMock from 'mocks/config';
 import { ButtonIconComponent } from 'components/icons/IconsComponent';
 
@@ -17,9 +18,9 @@ const ProductComponent = ({ product, height }) =>
           <Link to={`/products/${product.id}`}>{product.title}</Link>
         </div>
         <div className="ProductComponent-content-category">
-          {product.category && product.category.name ? product.category.name : null}
-          {product.category && product.category.name && product.subcategory.name ? ' / ' : null}
-          {product.subcategory && product.subcategory.name ? product.subcategory.name : null}
+          {get(product, 'category.name')}
+          {get(product, 'category.name') && get(product, 'subcategory.name') ? ' / ' : null}
+          {get(product, 'subcategory.name')}
         </div>
       </div>
       <div className="ProductComponent-button">

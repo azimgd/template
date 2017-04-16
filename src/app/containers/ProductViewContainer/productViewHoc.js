@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import marked from 'marked';
 import _ from 'lodash';
 import * as actions from 'actions/index';
-import { mapProductImagesToAmazonUrl, mapProductOptions, findProductsCategory, findProductsSubCategory } from 'services/productsService';
+import { mapProductImagesToAmazonUrl, findProductsCategory, findProductsSubCategory } from 'services/productsService';
 import { isInputArrayContentEmpty } from 'utils/index';
 
 const mapStateToProps = (state) => ({
@@ -30,7 +30,6 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const isLoading = false;
   const isEmpty = isInputArrayContentEmpty([stateProps.product.data]);
   const mappedProductImages = mapProductImagesToAmazonUrl(stateProps.productImages.data);
-  const mappedProductOptions = mapProductOptions(stateProps.product.data, stateProps.productOptions.data);
   const productCategory = findProductsCategory(stateProps.productCategories.data, stateProps.product.data);
   const productSubCategory = findProductsSubCategory(stateProps.productSubCategories.data, stateProps.product.data);
   const productParsedToHtml = marked(_.get(stateProps.product, 'data.description', ''));
@@ -39,7 +38,6 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     isEmpty,
     productParsedToHtml,
     mappedProductImages,
-    mappedProductOptions,
     productCategory,
     productSubCategory,
   }, ownProps, stateProps, dispatchProps);
