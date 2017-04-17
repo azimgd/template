@@ -24,8 +24,8 @@ export class ProductViewContainer extends React.Component {
         <div className="ProductViewContainerBlock-title">
           <PageNavLocationComponent
             product={this.props.product.data}
-            productCategory={this.props.product.data.productCategory}
-            productSubCategory={this.props.product.data.productSubCategory}
+            productCategory={this.props.product.data.category}
+            productSubCategory={this.props.product.data.subcategory}
           />
         </div>
         <div className="ProductViewContainer">
@@ -39,7 +39,7 @@ export class ProductViewContainer extends React.Component {
                 </div>
                 <div className="ProductViewContainer-block-left">
                   <ProductDetailsComponent
-                    productOptions={this.props.product.data.productOptions}
+                    productOptions={this.props.product.data.options}
                     productParsedToHtml={this.props.productParsedToHtml}
                   />
                 </div>
