@@ -98,8 +98,8 @@ export const postProductSubCategory = (data) =>
 /**
  * Product categories
  */
-export const getProductOptions = () =>
-  requestProvider.get('/api/productOptions')
+export const getProductOptions = (data) =>
+  requestProvider.get('/api/productOptions', { params: data })
   .then(res => res.data);
 
 export const getProductOption = ({ id }) =>
