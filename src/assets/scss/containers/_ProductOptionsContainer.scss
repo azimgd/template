@@ -11,6 +11,14 @@
     padding: $padding-large-horizontal;
     @extend .row;
 
+    &-full {
+      @extend .col-sm-12;
+      margin-bottom: $padding-large-horizontal;
+      &:empty {
+        margin-bottom: 0;
+      }
+    }
+
     &-left {
       @extend .col-sm-9;
       div:not(:last-child) { margin-bottom: $padding-base-horizontal; }

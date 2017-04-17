@@ -9,6 +9,11 @@ import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 
 export class ProductOptionsContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.createOption = this.createOption.bind(this);
+  }
+
   componentWillMount() {
     this.props.getProductRequest({ id: this.props.params.id });
     this.props.getProductOptionsRequest({ id: this.props.params.id });
@@ -16,6 +21,10 @@ export class ProductOptionsContainer extends React.Component {
 
   componentWillUnmount() {
     this.props.getProductIdle();
+  }
+
+  createOption(data) {
+    this.props.postProductOptionRequest({ ...data, productId: this.props.params.id });
   }
 
   render() {
@@ -41,7 +50,7 @@ export class ProductOptionsContainer extends React.Component {
                     productOptions={this.props.productOptions.data}
                   />
                   <ProductOptionsFormComponent
-                    createOption={this.props.postProductOptionRequest}
+                    createOption={this.createOption}
                   />
                 </div>
                 <div className="ProductOptionsContainer-block-right">
