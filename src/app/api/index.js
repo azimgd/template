@@ -98,8 +98,8 @@ export const postProductSubCategory = (data) =>
 /**
  * Product categories
  */
-export const getProductOptions = () =>
-  requestProvider.get('/api/productOptions')
+export const getProductOptions = (data) =>
+  requestProvider.get('/api/productOptions', { params: data })
   .then(res => res.data);
 
 export const getProductOption = ({ id }) =>
@@ -113,8 +113,8 @@ export const postProductOption = (data) =>
 /**
  * Product images
  */
-export const getProductImages = () =>
-  requestProvider.get('/api/productImages')
+export const getProductImages = (data) =>
+  requestProvider.get('/api/productImages', { params: data })
   .then(res => res.data);
 
 export const getProductImage = ({ id }) =>

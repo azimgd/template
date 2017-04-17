@@ -19,11 +19,6 @@ const globalVariables = {
 module.exports = {
   init: () => {
     const app = express();
-    const buildPath = express.static(locations.buildFolder);
-
-    app.use('/build', buildPath);
-    app.get('*', (_, res) => { res.render('index', globalVariables); });
-
     return app;
   },
 
@@ -44,4 +39,9 @@ module.exports = {
       path: '/__webpack_hmr',
     }));
   },
+
+  run: (app) => {
+    app.use('/build', express.static(locations.buildFolder));
+    app.get('*', (req, res) => { res.render('index', globalVariables); });
+  }
 };

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-
+import isEmpty from 'lodash/isEmpty';
 import productViewHoc from 'containers/ProductViewContainer/productViewHoc';
 import ProductDetailsComponent from 'components/productDetails/ProductDetailsComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
@@ -11,20 +11,11 @@ import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 
 export class ProductViewContainer extends React.Component {
   componentWillMount() {
-    const { id } = this.props.params;
-    this.props.getProductRequest({ id });
-    this.props.getProductImagesRequest({ id });
-    this.props.getProductOptionsRequest({ id });
-    this.props.getProductCategoriesRequest();
-    this.props.getProductSubCategoriesRequest();
+    this.props.getProductRequest({ id: this.props.params.id });
   }
 
   componentWillUnmount() {
     this.props.getProductIdle();
-    this.props.getProductImagesIdle();
-    this.props.getProductOptionsIdle();
-    this.props.getProductCategoriesIdle();
-    this.props.getProductSubCategoriesIdle();
   }
 
   render() {
@@ -33,8 +24,8 @@ export class ProductViewContainer extends React.Component {
         <div className="ProductViewContainerBlock-title">
           <PageNavLocationComponent
             product={this.props.product.data}
-            productCategory={this.props.productCategory}
-            productSubCategory={this.props.productSubCategory}
+            productCategory={this.props.product.data.category}
+            productSubCategory={this.props.product.data.subcategory}
           />
         </div>
         <div className="ProductViewContainer">
@@ -42,13 +33,13 @@ export class ProductViewContainer extends React.Component {
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
               <div className="ProductViewContainer-block">
                 <div className="ProductViewContainer-block-full">
-                  {this.props.mappedProductImages.length ?
-                    <ProductGalleryComponent images={this.props.mappedProductImages} />
+                  {!isEmpty(this.props.product.data.productImages) ?
+                    <ProductGalleryComponent images={this.props.product.data.productImages} />
                   : null}
                 </div>
                 <div className="ProductViewContainer-block-left">
                   <ProductDetailsComponent
-                    productOptions={this.props.mappedProductOptions}
+                    productOptions={this.props.product.data.options}
                     productParsedToHtml={this.props.productParsedToHtml}
                   />
                 </div>
@@ -72,20 +63,10 @@ ProductViewContainer.propTypes = {
     id: PropTypes.string.isRequired,
   }).isRequired,
   getProductRequest: PropTypes.func.isRequired,
-  getProductImagesRequest: PropTypes.func.isRequired,
   getProductIdle: PropTypes.func.isRequired,
-  getProductImagesIdle: PropTypes.func.isRequired,
-  getProductOptionsRequest: PropTypes.func.isRequired,
-  getProductOptionsIdle: PropTypes.func.isRequired,
-  getProductCategoriesRequest: PropTypes.func.isRequired,
-  getProductSubCategoriesRequest: PropTypes.func.isRequired,
-  getProductCategoriesIdle: PropTypes.func.isRequired,
-  getProductSubCategoriesIdle: PropTypes.func.isRequired,
-  product: PropTypes.object.isRequired,
-  productCategory: PropTypes.object.isRequired,
-  productSubCategory: PropTypes.object.isRequired,
-  mappedProductOptions: PropTypes.object.isRequired,
-  mappedProductImages: PropTypes.object.isRequired,
+  product: PropTypes.shape({
+    data: PropTypes.object.isRequired,
+  }).isRequired,
   productParsedToHtml: PropTypes.string.isRequired,
 };
 

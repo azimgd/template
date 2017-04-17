@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
 import * as actions from 'actions/index';
-import { transformCategories, filterSubCategories } from 'services/categoriesService';
+import { transformCategories, transformSubCategories, filterSubCategories } from 'services/categoriesService';
 import { transformProductImages } from 'services/productsService';
 import { getFailedNotifications, getSucceededNotifications } from 'services/uiService';
 import { generateFilePreviewAsync, randomString } from 'utils/index';
@@ -40,8 +40,7 @@ const mapDispatchToProps = {
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const uniqueProductId = randomString();
   const mappedCategories = transformCategories(stateProps.productCategories.data);
-  const filteredSubCategories = filterSubCategories(stateProps.productSubCategories.data, { categoryId: stateProps.formCategoryId });
-  const mappedSubCategories = transformCategories(filteredSubCategories);
+  const mappedSubCategories = transformSubCategories(filterSubCategories(stateProps.productSubCategories.data, { categoryId: stateProps.formCategoryId }));
   const mappedImages = transformProductImages(stateProps.images.data, { uniqueProductId });
   const notificationsSuccess = getSucceededNotifications([
     stateProps.productsActions.postProduct,
