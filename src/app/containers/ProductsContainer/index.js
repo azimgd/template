@@ -10,14 +10,10 @@ export class ProductsContainer extends React.Component {
   componentWillMount() {
     const { categoryId, subCategoryId } = this.props.location.query;
     this.props.getProductsRequest({ categoryId, subCategoryId });
-    this.props.getProductCategoriesRequest();
-    this.props.getProductSubCategoriesRequest();
   }
 
   componentWillUnmount() {
     this.props.getProductsIdle();
-    this.props.getProductCategoriesIdle();
-    this.props.getProductSubCategoriesIdle();
   }
 
   render() {
@@ -29,7 +25,7 @@ export class ProductsContainer extends React.Component {
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
               <div className="ProductsContainer-products">
-                {this.props.mappedProducts && this.props.mappedProducts.map((product) =>
+                {this.props.products.data && this.props.products.data.map((product) =>
                   <div key={product.id}><ProductComponent product={product} height={this.props.maxHeight} /></div>
                 )}
               </div>
@@ -44,16 +40,18 @@ export class ProductsContainer extends React.Component {
 ProductsContainer.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
-  location: PropTypes.object.isRequired,
-  products: PropTypes.array.isRequired,
-  mappedProducts: PropTypes.array.isRequired,
+  location: PropTypes.shape({
+    query: PropTypes.shape({
+      categoryId: PropTypes.string,
+      subCategoryId: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+  products: PropTypes.shape({
+    data: PropTypes.object,
+  }).isRequired,
   maxHeight: PropTypes.number.isRequired,
   getProductsRequest: PropTypes.func.isRequired,
-  getProductCategoriesRequest: PropTypes.func.isRequired,
-  getProductSubCategoriesRequest: PropTypes.func.isRequired,
   getProductsIdle: PropTypes.func.isRequired,
-  getProductCategoriesIdle: PropTypes.func.isRequired,
-  getProductSubCategoriesIdle: PropTypes.func.isRequired,
 };
 
 export default productsResizeListener(

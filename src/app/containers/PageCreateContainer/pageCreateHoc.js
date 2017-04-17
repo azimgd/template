@@ -22,7 +22,7 @@ const mapDispatchToProps = {
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const mappedCategories = transformCategories(stateProps.pageCategories.data, stateProps.pageSubCategories.data);
+  const mappedCategories = transformCategories(stateProps.pageCategories.data);
   const filteredSubCategories = filterSubCategories(stateProps.pageSubCategories.data, { categoryId: stateProps.formCategoryId });
   const mappedSubCategories = transformSubCategories(filteredSubCategories);
   const notificationsSuccess = getSucceededNotifications([

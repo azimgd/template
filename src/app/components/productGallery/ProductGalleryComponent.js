@@ -5,7 +5,7 @@ const ProductGalleryComponent = ({ images }) =>
   <div className="ProductGalleryComponentBlock">
     <div className="ProductGalleryComponent">
       <Slider isInfinite delay={5000}>
-        {images.map((image, key) => <div key={key}><img src={image} alt="" /></div>)}
+        {images.map((image, key) => <div key={key}><img src={image.amazonUrl} alt="" /></div>)}
       </Slider>
     </div>
   </div>;

@@ -8,7 +8,7 @@ const ProductComponent = ({ product, height }) =>
   <div className="ProductComponentBlock">
     <div className="ProductComponent">
       <Link to={`/products/${product.id}`}>
-        <div className="ProductComponent-image" style={{ backgroundImage: `url(${product.image || configMock.productComponentThumb})` }}>
+        <div className="ProductComponent-image" style={{ backgroundImage: `url(${get(product, 'productImages[0].amazonUrl', configMock.productComponentThumb)})` }}>
           <div className="ProductComponent-image-price">{product.price}</div>
         </div>
       </Link>

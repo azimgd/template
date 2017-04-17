@@ -2,11 +2,6 @@ import _ from 'lodash';
 
 export const transformProductImages = (images, { uniqueProductId }) => _.map(images, item => ({ ...item, ...{ uniqueProductId } }));
 
-export const mapProductImagesToAmazonUrl = images => _.chain(images)
-  .filter(item => item.filename)
-  .map(item => `https://shoptemplate.s3-eu-west-1.amazonaws.com/${item.filename}`)
-  .value();
-
 /**
  * Function will take an array of ({ category }) and ({ product }) object
  * will return category object for given product

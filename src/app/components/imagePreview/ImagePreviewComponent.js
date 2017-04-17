@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const ImagePreviewComponent = ({ image }) => {
-  const backgroundImage = image.publicUrl ? `https://shoptemplate.s3-eu-west-1.amazonaws.com/${image.filename}` : image.thumbnail;
+  const backgroundImage = image.amazonUrl || image.thumbnail;
   const opacity = image.publicUrl ? 1 : 0.5;
 
   return (

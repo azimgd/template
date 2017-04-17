@@ -39,9 +39,8 @@ const mapDispatchToProps = {
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const uniqueProductId = randomString();
-  const mappedCategories = transformCategories(stateProps.productCategories.data, stateProps.productSubCategories.data);
-  const filteredSubCategories = filterSubCategories(stateProps.productSubCategories.data, { categoryId: stateProps.formCategoryId });
-  const mappedSubCategories = transformSubCategories(filteredSubCategories);
+  const mappedCategories = transformCategories(stateProps.productCategories.data);
+  const mappedSubCategories = transformSubCategories(filterSubCategories(stateProps.productSubCategories.data, { categoryId: stateProps.formCategoryId }));
   const mappedImages = transformProductImages(stateProps.images.data, { uniqueProductId });
   const notificationsSuccess = getSucceededNotifications([
     stateProps.productsActions.postProduct,
