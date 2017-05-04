@@ -24,8 +24,11 @@ export class ProductCreateContainer extends React.Component {
   }
 
   createProduct(data) {
-    this.props.postProductRequest({ ...data, uniqueProductId: this.props.uniqueProductId });
-    this.props.postProductImageRequestBulk(this.props.mappedImages);
+    this.props.postProductRequest({ ...data, uniqueProductId: this.props.uniqueIdentifier });
+    /**
+     * Temporary timeout hack to prevent race condition
+     */
+    setTimeout(this.props.postProductImageRequestBulk.bind(null, this.props.mappedImages), 2000);
   }
 
   render() {
@@ -85,7 +88,7 @@ export class ProductCreateContainer extends React.Component {
 }
 
 ProductCreateContainer.propTypes = {
-  uniqueProductId: PropTypes.string.isRequired,
+  uniqueIdentifier: PropTypes.string.isRequired,
   mappedImages: PropTypes.array.isRequired,
   images: PropTypes.array.isRequired,
   onUploadStart: PropTypes.func.isRequired,

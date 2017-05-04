@@ -4,7 +4,7 @@ import * as actions from 'actions/index';
 import { transformCategories, transformSubCategories, filterSubCategories } from 'services/categoriesService';
 import { transformProductImages } from 'services/productsService';
 import { getFailedNotifications, getSucceededNotifications } from 'services/uiService';
-import { generateFilePreviewAsync, randomString } from 'utils/index';
+import { generateFilePreviewAsync } from 'utils/index';
 
 const selector = formValueSelector('ProductFormComponent');
 
@@ -38,10 +38,9 @@ const mapDispatchToProps = {
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const uniqueProductId = randomString();
   const mappedCategories = transformCategories(stateProps.productCategories.data);
   const mappedSubCategories = transformSubCategories(filterSubCategories(stateProps.productSubCategories.data, { categoryId: stateProps.formCategoryId }));
-  const mappedImages = transformProductImages(stateProps.images.data, { uniqueProductId });
+  const mappedImages = transformProductImages(stateProps.images.data, { uniqueProductId: ownProps.uniqueIdentifier });
   const notificationsSuccess = getSucceededNotifications([
     stateProps.productsActions.postProduct,
   ]);
@@ -67,7 +66,6 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     dispatchProps.finishImageUpload({ name: file.name, publicUrl, filename });
   };
   return Object.assign({
-    uniqueProductId,
     notificationsSuccess,
     notificationsFailure,
     mappedCategories,

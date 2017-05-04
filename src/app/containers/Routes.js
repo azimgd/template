@@ -18,6 +18,7 @@ import ConfigContainer from 'containers/ConfigContainer/index';
 import ConfigNavigationContainer from 'containers/ConfigNavigationContainer/index';
 import ConfigPageCategoriesContainer from 'containers/ConfigPageCategoriesContainer/index';
 import ConfigProductCategoriesContainer from 'containers/ConfigProductCategoriesContainer/index';
+import UniqueIdentifierContainer from 'containers/UniqueIdentifierContainer/index';
 
 const Routes = ({ history }) =>
   <Router history={history}>
@@ -26,7 +27,9 @@ const Routes = ({ history }) =>
       <IndexRoute component={HomeContainer} />
       <Route path={routes.PRODUCTS}>
         <IndexRoute component={ProductsContainer} />
-        <Route path={routes.PRODUCTS_CREATE} component={ProductCreateContainer} />
+        <Route component={UniqueIdentifierContainer}>
+          <Route path={routes.PRODUCTS_CREATE} component={ProductCreateContainer} />
+        </Route>
         <Route path={routes.PRODUCTS_OPTIONS_CREATE} component={ProductOptionsContainer} />
         <Route path={routes.PRODUCTS_SHOW} component={ProductViewContainer} />
       </Route>

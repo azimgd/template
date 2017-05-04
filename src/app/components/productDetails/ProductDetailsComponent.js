@@ -23,7 +23,7 @@ ProductDetailsItemComponent.propTypes = {
 const ProductDetailsComponent = ({ productOptions, productParsedToHtml }) => (
   <div className="ProductDetailsComponentBlock">
     <div className="ProductDetailsComponent">
-      {isEmpty(productOptions) ?
+      {!isEmpty(productOptions) ?
         <div className="ProductDetailsComponent-detailsBlock">
           <div className="ProductDetailsComponent-details">
             {map(productOptions, (options, key) =>
