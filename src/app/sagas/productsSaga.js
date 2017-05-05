@@ -13,6 +13,10 @@ function* getProductsRequest(req) {
   try {
     const data = yield call(api.getProducts.bind(null, payload));
     yield put(actions.getProductsSuccess({ data }));
+    /**
+     * Hack to arrange product thumbnails
+     */
+    window.dispatchEvent(new Event('resize'));
   } catch (e) {
     yield put(actions.getProductsFailure({ message: 'Cant get products' }));
   }
