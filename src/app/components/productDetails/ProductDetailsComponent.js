@@ -1,26 +1,11 @@
 import React, { PropTypes } from 'react';
-import get from 'lodash/get';
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
+import ProductDetailsHoc from 'components/productDetails/ProductDetailsHoc';
+import ProductDetailsItemComponent from 'components/productDetails/ProductDetailsItemComponent';
+import ProductDetailsYoutubeComponent from 'components/productDetails/ProductDetailsYoutubeComponent';
 
-const ProductDetailsItemComponent = ({ options }) =>
-  <div className="ProductDetailsItemComponent">
-    <div className="ProductDetailsItemComponent-title">
-      {get(options, 'key')}:
-    </div>
-    <div className="ProductDetailsItemComponent-content">
-      {get(options, 'value', 'unavailable')}
-    </div>
-  </div>;
-
-ProductDetailsItemComponent.propTypes = {
-  options: PropTypes.shape({
-    key: PropTypes.string,
-    value: PropTypes.string,
-  }).isRequired,
-};
-
-const ProductDetailsComponent = ({ productOptions, productParsedToHtml }) => (
+const ProductDetailsComponent = ({ productOptions, youtubeOptions, productParsedToHtml }) => (
   <div className="ProductDetailsComponentBlock">
     <div className="ProductDetailsComponent">
       {!isEmpty(productOptions) ?
@@ -38,6 +23,16 @@ const ProductDetailsComponent = ({ productOptions, productParsedToHtml }) => (
       <div className="ProductDetailsComponent-description">
         <p dangerouslySetInnerHTML={{ __html: productParsedToHtml }} />
       </div>
+
+      {!isEmpty(youtubeOptions) ?
+        <div>
+          {map(youtubeOptions, (options, key) =>
+            <div key={key}>
+              <ProductDetailsYoutubeComponent options={options} />
+            </div>
+          )}
+        </div>
+      : null}
     </div>
   </div>
 );
@@ -47,7 +42,11 @@ ProductDetailsComponent.propTypes = {
     key: PropTypes.string,
     value: PropTypes.string,
   }).isRequired,
+  youtubeOptions: PropTypes.shape({
+    key: PropTypes.string,
+    value: PropTypes.string,
+  }).isRequired,
   productParsedToHtml: PropTypes.string.isRequired,
 };
 
-export default ProductDetailsComponent;
+export default ProductDetailsHoc(ProductDetailsComponent);
