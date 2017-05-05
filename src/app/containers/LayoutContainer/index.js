@@ -29,18 +29,8 @@ const LayoutContainer = ({ ui, toggleCartDropdown, toggleAlertMessage, children,
       <div className="LayoutContainer-topnavbar">
         <TopnavbarComponent pathname={location.pathname} />
       </div>
-      <div className="LayoutContainer-search">
-        <AlertMessageComponent toggleAlertMessage={toggleAlertMessage} isVisible={ui.alertMessageIsVisible} />
-      </div>
       <div className="LayoutContainer-block">
-        <div className="LayoutContainerContent">
-          <div className="LayoutContainerContent-left">
-            {children}
-          </div>
-          <div className="LayoutContainerContent-right">
-            <SidebarComponent items={configMock.sidebarComponentItems} />
-          </div>
-        </div>
+        {children}
       </div>
       <div className="LayoutContainer-footer">
         <FooterComponent />
