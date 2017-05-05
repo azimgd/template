@@ -24,7 +24,7 @@ const Routes = ({ history }) =>
   <Router history={history}>
     <Route path={routes.LOGIN} component={LoginContainer} />
     <Route path={routes.ROOT} component={LayoutContainer}>
-      <IndexRoute component={HomeContainer} />
+      <IndexRoute component={ProductsContainer} />
       <Route path={routes.PRODUCTS}>
         <IndexRoute component={ProductsContainer} />
         <Route component={UniqueIdentifierContainer}>

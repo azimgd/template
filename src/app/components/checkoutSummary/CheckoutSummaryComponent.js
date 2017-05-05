@@ -16,7 +16,7 @@ const CheckoutSummaryComponent = () =>
             <p><small>{product.description}</small></p>
           </div>
           <div className="CheckoutSummaryComponent-item-price">
-            <p>{product.price}</p>
+            <p>{product.price} {APP_CURRENCY}</p>
           </div>
         </div>
       )}

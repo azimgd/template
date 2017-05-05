@@ -14,6 +14,7 @@ const locations = {
 const globalVariables = {
   API_ENDPOINT: process.env.API_ENDPOINT,
   APP_TITLE: process.env.APP_TITLE,
+  APP_CURRENCY: process.env.APP_CURRENCY,
 };
 
 module.exports = {

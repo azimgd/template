@@ -11,6 +11,7 @@
     "FileReader": true,
     "API_ENDPOINT": true,
     "APP_TITLE": true,
+    "APP_CURRENCY": true,
   },
   "ecmaFeatures": {
     "jsx": true

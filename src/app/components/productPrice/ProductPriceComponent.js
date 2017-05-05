@@ -5,7 +5,7 @@ const ProductPriceComponent = ({ product }) =>
   <div className="ProductPriceComponentBlock">
     <div className="ProductPriceComponent">
       <div className="ProductPriceComponent-price">
-        {product.price}
+        {product.price} {APP_CURRENCY}
       </div>
       <div className="ProductPriceComponent-more">
         <strong>15% OFF</strong> until october 30
