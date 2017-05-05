@@ -8,7 +8,7 @@ const ProductPriceComponent = ({ product }) =>
         {product.price} {APP_CURRENCY}
       </div>
       <div className="ProductPriceComponent-more">
-        <strong>15% OFF</strong> until october 30
+        <strong>15% OFF</strong> until Jun 15
       </div>
     </div>
     <div className="ProductPriceComponentBlock-button">
