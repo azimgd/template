@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
-import ProductDetailsHoc from 'components/productDetails/ProductDetailsHoc';
+import productDetailsHoc from 'components/productDetails/ProductDetailsHoc';
 import ProductDetailsItemComponent from 'components/productDetails/ProductDetailsItemComponent';
-import ProductDetailsYoutubeComponent from 'components/productDetails/ProductDetailsYoutubeComponent';
+import YoutubePlayerComponent from 'components/youtubePlayer/YoutubePlayerComponent';
 
 const ProductDetailsComponent = ({ productOptions, youtubeOptions, productParsedToHtml }) => (
   <div className="ProductDetailsComponentBlock">
@@ -26,11 +26,7 @@ const ProductDetailsComponent = ({ productOptions, youtubeOptions, productParsed
 
       {!isEmpty(youtubeOptions) ?
         <div>
-          {map(youtubeOptions, (options, key) =>
-            <div key={key}>
-              <ProductDetailsYoutubeComponent options={options} />
-            </div>
-          )}
+          <YoutubePlayerComponent youtubeOptions={youtubeOptions} />
         </div>
       : null}
     </div>
@@ -49,4 +45,4 @@ ProductDetailsComponent.propTypes = {
   productParsedToHtml: PropTypes.string.isRequired,
 };
 
-export default ProductDetailsHoc(ProductDetailsComponent);
+export default productDetailsHoc(ProductDetailsComponent);

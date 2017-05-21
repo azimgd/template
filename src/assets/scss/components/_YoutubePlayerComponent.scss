@@ -1,0 +1,31 @@
+.YoutubePlayerActive {
+  margin-bottom: $padding-base-horizontal;
+}
+
+.YoutubePlayerActiveComponent {
+  iframe {
+    width: 100%;
+    min-height: 360px;
+  }
+}
+
+.YoutubePlayerItems > div:not(:last-child) {
+  margin-bottom: $padding-base-horizontal;
+}
+
+.YoutubePlayerItemComponent {
+  padding: $padding-base-horizontal;
+  background: $c-bodyBackground;
+  display: flex;
+  justify-content: space-between;
+
+  &--active {
+    background: $c-secondaryBackground;
+  }
+
+  &-title {
+  }
+
+  &-nav {
+  }
+}

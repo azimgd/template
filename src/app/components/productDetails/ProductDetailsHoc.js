@@ -10,12 +10,12 @@ const productDetailsHoc = (ProductDetailsComponent) => {
       this.setState({ productOptions, youtubeOptions });
     }
 
-    stripFilteredOptions(productOptions) {
-      return filter(productOptions, item => !includes(item.key, '[['));
-    }
-
     getYoutubeOptions(productOptions) {
       return filter(productOptions, item => includes(item.key, '[[youtube_iframe]]'));
+    }
+
+    stripFilteredOptions(productOptions) {
+      return filter(productOptions, item => !includes(item.key, '[['));
     }
 
     render() {
@@ -30,7 +30,10 @@ const productDetailsHoc = (ProductDetailsComponent) => {
   }
 
   ProductDetailsHoc.propTypes = {
-    productOptions: PropTypes.object.isRequired,
+    productOptions: PropTypes.shape({
+      key: PropTypes.string,
+      value: PropTypes.string,
+    }).isRequired,
   };
 
   return ProductDetailsHoc;
