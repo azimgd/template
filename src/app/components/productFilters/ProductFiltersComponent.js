@@ -3,7 +3,7 @@ import productFiltersHoc from 'components/productFilters/ProductFiltersHoc';
 import ProductFilterItemComponent from 'components/productFilters/ProductFilterItemComponent';
 import map from 'lodash/map';
 
-const ProductFiltersComponent = ({ productFilters }) =>
+const ProductFiltersComponent = ({ productFilters, setActiveItem }) =>
   <div className="ProductFiltersComponentBlock">
     {map(productFilters, (filter, filterKey) =>
       <div className="ProductFiltersComponent" key={filterKey}>
@@ -11,7 +11,10 @@ const ProductFiltersComponent = ({ productFilters }) =>
         <div className="ProductFiltersComponent-filters">
           {map(filter, (option, optionKey) =>
             <div className="ProductFiltersComponent-filters-item" key={optionKey}>
-              <ProductFilterItemComponent title={option.value} />
+              <ProductFilterItemComponent
+                filter={option}
+                setActiveItem={setActiveItem}
+              />
             </div>
           )}
         </div>
@@ -22,6 +25,7 @@ const ProductFiltersComponent = ({ productFilters }) =>
 ProductFiltersComponent.propTypes = {
   productFilters: PropTypes.shape({
   }).isRequired,
+  setActiveItem: PropTypes.func.isRequired,
 };
 
 export default productFiltersHoc(ProductFiltersComponent);

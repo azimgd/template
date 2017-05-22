@@ -32,4 +32,8 @@
 .ProductFilterItemComponent {
   padding: 4px $padding-base-horizontal;
   background: $c-bodyBackground;
+
+  &--active {
+    background: $c-secondaryBackground;
+  }
 }
