@@ -5,21 +5,25 @@ import map from 'lodash/map';
 
 const ProductFiltersComponent = ({ productFilters, setActiveItem }) =>
   <div className="ProductFiltersComponentBlock">
-    {map(productFilters, (filter, filterKey) =>
-      <div className="ProductFiltersComponent" key={filterKey}>
-        <div className="ProductFiltersComponent-title">{filterKey}</div>
-        <div className="ProductFiltersComponent-filters">
-          {map(filter, (option, optionKey) =>
-            <div className="ProductFiltersComponent-filters-item" key={optionKey}>
-              <ProductFilterItemComponent
-                filter={option}
-                setActiveItem={setActiveItem}
-              />
+    <div className="ProductFiltersComponent">
+      {map(productFilters, (filter, filterKey) =>
+        <div className="ProductFiltersComponent-item" key={filterKey}>
+          <div className="ProductFilterCategory">
+            <div className="ProductFilterCategory-title">{filterKey}</div>
+            <div className="ProductFilterCategory-filters">
+              {map(filter, (option, optionKey) =>
+                <div className="ProductFilterCategory-filters-item" key={optionKey}>
+                  <ProductFilterItemComponent
+                    filter={option}
+                    setActiveItem={setActiveItem}
+                  />
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
-      </div>
-    )}
+      )}
+    </div>
   </div>;
 
 ProductFiltersComponent.propTypes = {

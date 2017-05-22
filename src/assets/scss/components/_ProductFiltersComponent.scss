@@ -1,13 +1,15 @@
 .ProductFiltersComponentBlock {
   padding: $padding-small-horizontal $padding-large-horizontal;
   border-bottom: 2px solid $c-gray-1;
-
-  & > div:not(:last-child) {
-    margin-bottom: $padding-base-horizontal;
-  }
 }
 
 .ProductFiltersComponent {
+  &-item:not(:last-child) {
+    margin-bottom: $padding-large-horizontal;
+  }
+}
+
+.ProductFilterCategory {
   display: flex;
   &-title {
     width: 120px;
@@ -17,10 +19,10 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: -$padding-base-horizontal;
+    margin: -$padding-xs-horizontal;
     margin-bottom: 0;
     &-item {
-      padding: $padding-base-horizontal;
+      padding: $padding-xs-horizontal;
       padding-bottom: 0;
     }
   }

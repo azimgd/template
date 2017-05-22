@@ -20,7 +20,13 @@ class ProductFilterItemComponent extends React.Component {
     return (
       <div className="ProductFilterItemComponentBlock">
         <div className={style}>
-          <a href="" onClick={this.setActiveItem}>{this.props.filter.value}</a>
+          {this.props.filter.isActive ?
+            <a href="" onClick={this.setActiveItem}>{this.props.filter.value} (x)</a>
+          : null}
+
+          {!this.props.filter.isActive ?
+            <a href="" onClick={this.setActiveItem}>{this.props.filter.value}</a>
+          : null}
         </div>
       </div>
     );
