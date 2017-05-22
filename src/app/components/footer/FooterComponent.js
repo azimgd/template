@@ -9,7 +9,7 @@ const FooterComponent = () =>
         </div>
       </div>
       <div className="FooterComponent-right">
-        logout
+        © Poland 2017
       </div>
     </div>
   </div>;

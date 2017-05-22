@@ -13,16 +13,19 @@ const initialState = {
     getProducts: {
       message: null,
       status: null,
+      isLoading: false,
       createdAt: null,
     },
     getProduct: {
       message: null,
       status: null,
+      isLoading: false,
       createdAt: null,
     },
     postProduct: {
       message: null,
       status: null,
+      isLoading: false,
       createdAt: null,
     },
   },
@@ -31,6 +34,12 @@ const initialState = {
 /**
  * Get products
  */
+const getProductsRequest = (state, action) => update(state, {
+  actions: {
+    getProducts: { $setRequestActionLoading: action.payload },
+  },
+});
+
 const getProductsSuccess = (state, action) => update(state, {
   products: {
     data: { $set: action.payload.data },
@@ -59,6 +68,12 @@ const getProductsIdle = (state, action) => update(state, {
 /**
  * Get product
  */
+const getProductRequest = (state, action) => update(state, {
+  actions: {
+    getProduct: { $setRequestActionLoading: action.payload },
+  },
+});
+
 const getProductSuccess = (state, action) => update(state, {
   product: {
     data: { $set: action.payload.data },
@@ -86,6 +101,12 @@ const getProductIdle = (state, action) => update(state, {
 /**
  * Post product
  */
+const postProductRequest = (state, action) => update(state, {
+  actions: {
+    postProduct: { $setRequestActionLoading: action.payload },
+  },
+});
+
 const postProductSuccess = (state, action) => update(state, {
   actions: {
     postProduct: { $setRequestActionSuccess: action.payload },
@@ -105,14 +126,17 @@ const postProductIdle = (state, action) => update(state, {
 });
 
 export default handleActions({
+  [constants.GET_PRODUCTS_REQUEST]: getProductsRequest,
   [constants.GET_PRODUCTS_SUCCESS]: getProductsSuccess,
   [constants.GET_PRODUCTS_FAILURE]: getProductsFailure,
   [constants.GET_PRODUCTS_IDLE]: getProductsIdle,
 
+  [constants.GET_PRODUCT_REQUEST]: getProductRequest,
   [constants.GET_PRODUCT_SUCCESS]: getProductSuccess,
   [constants.GET_PRODUCT_FAILURE]: getProductFailure,
   [constants.GET_PRODUCT_IDLE]: getProductIdle,
 
+  [constants.POST_PRODUCT_REQUEST]: postProductRequest,
   [constants.POST_PRODUCT_SUCCESS]: postProductSuccess,
   [constants.POST_PRODUCT_FAILURE]: postProductFailure,
   [constants.POST_PRODUCT_IDLE]: postProductIdle,

@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 import marked from 'marked';
 import get from 'lodash/get';
 import * as actions from 'actions/index';
-import { isInputArrayContentEmpty } from 'utils/index';
+import { isInputArrayContentEmpty, allItemsAreFalsy } from 'utils/index';
 
 const mapStateToProps = (state) => ({
   product: state.productsReducer.product,
+  getProductRequest: state.productsReducer.actions.getProduct,
 });
 
 const mapDispatchToProps = {
@@ -14,7 +15,7 @@ const mapDispatchToProps = {
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const isLoading = false;
+  const isLoading = allItemsAreFalsy([stateProps.getProductRequest.isLoading]);
   const isEmpty = isInputArrayContentEmpty([stateProps.product.data]);
   const productParsedToHtml = marked(get(stateProps.product, 'data.description', ''));
   return Object.assign({

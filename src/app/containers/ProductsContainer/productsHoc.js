@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import * as actions from 'actions/index';
-import { isInputArrayContentEmpty } from 'utils/index';
+import { isInputArrayContentEmpty, allItemsAreFalsy } from 'utils/index';
 
 const mapStateToProps = (state) => ({
   products: state.productsReducer.products,
+  getProductsRequest: state.productsReducer.actions.getProducts,
   distinctProductOptions: state.productOptionsReducer.distinctProductOptions,
 });
 
@@ -15,7 +16,7 @@ const mapDispatchToProps = {
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const isLoading = false;
+  const isLoading = allItemsAreFalsy([stateProps.getProductsRequest.isLoading]);
   const isEmpty = isInputArrayContentEmpty([stateProps.products.data]);
   return Object.assign({
     isLoading,
