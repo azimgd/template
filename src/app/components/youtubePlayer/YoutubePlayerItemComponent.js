@@ -20,7 +20,7 @@ class YoutubePlayerItemComponent extends React.Component {
     });
     return (
       <div className={style}>
-        <div className="YoutubePlayerItemComponent-title">{get(this.props.options, 'value', 'unavailable')}</div>
+        <div className="YoutubePlayerItemComponent-title">{get(this.props.options, 'value.title', 'unavailable')}</div>
         <div className="YoutubePlayerItemComponent-nav"><a href="" onClick={this.setActiveItem}>play</a></div>
       </div>
     );

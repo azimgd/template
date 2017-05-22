@@ -4,7 +4,7 @@ import get from 'lodash/get';
 const YoutubePlayerActiveComponent = ({ item }) =>
   <div className="YoutubePlayerActiveComponent">
     <iframe
-      src={`${get(item, 'value', 'unavailable')}`}
+      src={`${get(item, 'value.iframe', 'unavailable')}`}
       frameBorder="0"
       allowFullScreen
     />
