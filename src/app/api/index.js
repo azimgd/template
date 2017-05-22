@@ -102,6 +102,10 @@ export const getProductOptions = (data) =>
   requestProvider.get('/api/productOptions', { params: data })
   .then(res => res.data);
 
+export const getDistinctProductOptions = (data) =>
+  requestProvider.get('/api/productOptions/distinct', { params: data })
+  .then(res => res.data);
+
 export const getProductOption = ({ id }) =>
   requestProvider.get(`/api/productOptions/${id}`)
   .then(res => res.data);

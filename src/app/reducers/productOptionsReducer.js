@@ -6,8 +6,16 @@ const initialState = {
   productOptions: {
     data: [],
   },
+  distinctProductOptions: {
+    data: [],
+  },
   actions: {
     getProductOptions: {
+      message: null,
+      status: null,
+      createdAt: null,
+    },
+    getDistinctProductOptions: {
       message: null,
       status: null,
       createdAt: null,
@@ -48,6 +56,33 @@ const getProductOptionsIdle = (state, action) => update(state, {
 });
 
 /**
+ * Get product categories
+ */
+const getDistinctProductOptionsSuccess = (state, action) => update(state, {
+  distinctProductOptions: {
+    data: { $set: action.payload.data },
+  },
+  actions: {
+    getDistinctProductOptions: { $setRequestActionSuccess: action.payload },
+  },
+});
+
+const getDistinctProductOptionsFailure = (state, action) => update(state, {
+  actions: {
+    getDistinctProductOptions: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const getDistinctProductOptionsIdle = (state, action) => update(state, {
+  distinctProductOptions: {
+    data: { $set: initialState.distinctProductOptions.data },
+  },
+  actions: {
+    getDistinctProductOptions: { $setRequestActionIdle: action.payload },
+  },
+});
+
+/**
  * Post product categories
  */
 const postProductOptionSuccess = (state, action) => update(state, {
@@ -72,6 +107,10 @@ export default handleActions({
   [constants.GET_PRODUCT_OPTIONS_SUCCESS]: getProductOptionsSuccess,
   [constants.GET_PRODUCT_OPTIONS_FAILURE]: getProductOptionsFailure,
   [constants.GET_PRODUCT_OPTIONS_IDLE]: getProductOptionsIdle,
+
+  [constants.GET_DISTINCT_PRODUCT_OPTIONS_SUCCESS]: getDistinctProductOptionsSuccess,
+  [constants.GET_DISTINCT_PRODUCT_OPTIONS_FAILURE]: getDistinctProductOptionsFailure,
+  [constants.GET_DISTINCT_PRODUCT_OPTIONS_IDLE]: getDistinctProductOptionsIdle,
 
   [constants.POST_PRODUCT_OPTION_SUCCESS]: postProductOptionSuccess,
   [constants.POST_PRODUCT_OPTION_FAILURE]: postProductOptionFailure,

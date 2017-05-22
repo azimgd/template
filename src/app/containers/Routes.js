@@ -4,7 +4,6 @@ import { Router, Route, Redirect, IndexRoute, IndexRedirect } from 'react-router
 import * as routes from 'constants/routes';
 import LayoutContainer from 'containers/LayoutContainer/index';
 import LoginContainer from 'containers/LoginContainer/index';
-import HomeContainer from 'containers/HomeContainer/index';
 import ProductsContainer from 'containers/ProductsContainer/index';
 import ProductViewContainer from 'containers/ProductViewContainer/index';
 import ProductCreateContainer from 'containers/ProductCreateContainer/index';

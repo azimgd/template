@@ -1,0 +1,35 @@
+.ProductFiltersComponentBlock {
+  padding: $padding-small-horizontal $padding-large-horizontal;
+  border-bottom: 2px solid $c-gray-1;
+
+  & > div:not(:last-child) {
+    margin-bottom: $padding-base-horizontal;
+  }
+}
+
+.ProductFiltersComponent {
+  display: flex;
+  &-title {
+    width: 120px;
+    font-weight: bold;
+  }
+  &-filters {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: -$padding-base-horizontal;
+    margin-bottom: 0;
+    &-item {
+      padding: $padding-base-horizontal;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.ProductFilterItemComponentBlock {
+}
+
+.ProductFilterItemComponent {
+  padding: 4px $padding-base-horizontal;
+  background: $c-bodyBackground;
+}

@@ -18,6 +18,17 @@ function* getProductOptionsRequest(req) {
   }
 }
 
+
+function* getDistinctProductOptionsRequest(req) {
+  const { payload } = req;
+  try {
+    const data = yield call(api.getDistinctProductOptions.bind(null, payload));
+    yield put(actions.getDistinctProductOptionsSuccess({ data }));
+  } catch (e) {
+    yield put(actions.getDistinctProductOptionsFailure({ message: 'Cant get products' }));
+  }
+}
+
 function* getProductOptionRequest(req) {
   const { payload } = req;
   try {
@@ -40,6 +51,7 @@ function* postProductOptionRequest(req) {
 
 export default [
   fork(takeEvery, constants.GET_PRODUCT_OPTIONS_REQUEST, getProductOptionsRequest),
+  fork(takeEvery, constants.GET_DISTINCT_PRODUCT_OPTIONS_REQUEST, getDistinctProductOptionsRequest),
   fork(takeEvery, constants.GET_PRODUCT_OPTION_REQUEST, getProductOptionRequest),
   fork(takeEvery, constants.POST_PRODUCT_OPTION_REQUEST, postProductOptionRequest),
 ];

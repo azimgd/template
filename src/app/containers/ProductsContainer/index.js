@@ -3,16 +3,19 @@ import React, { PropTypes } from 'react';
 import productsHoc from 'containers/ProductsContainer/productsHoc';
 import productsResizeListener from 'hoc/ProductsResizeListener';
 import ProductComponent from 'components/product/ProductComponent';
+import ProductFiltersComponent from 'components/productFilters/ProductFiltersComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 
 export class ProductsContainer extends React.Component {
   componentWillMount() {
     const { categoryId, subCategoryId } = this.props.location.query;
+    this.props.getDistinctProductOptionsRequest();
     this.props.getProductsRequest({ categoryId, subCategoryId });
   }
 
   componentWillUnmount() {
+    this.props.getDistinctProductOptionsIdle();
     this.props.getProductsIdle();
   }
 
@@ -20,6 +23,9 @@ export class ProductsContainer extends React.Component {
     return (
       <div className="ProductsContainerBlock">
         <div className="ProductsContainerBlock-title">Products</div>
+        <div className="ProductsContainerBlock-filters">
+          <ProductFiltersComponent distinctProductOptions={this.props.distinctProductOptions} />
+        </div>
 
         <div className="ProductsContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>
@@ -49,9 +55,14 @@ ProductsContainer.propTypes = {
   products: PropTypes.shape({
     data: PropTypes.object,
   }).isRequired,
+  distinctProductOptions: PropTypes.shape({
+    data: PropTypes.object,
+  }).isRequired,
   maxHeight: PropTypes.number.isRequired,
   getProductsRequest: PropTypes.func.isRequired,
   getProductsIdle: PropTypes.func.isRequired,
+  getDistinctProductOptionsRequest: PropTypes.func.isRequired,
+  getDistinctProductOptionsIdle: PropTypes.func.isRequired,
 };
 
 export default productsResizeListener(

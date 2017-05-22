@@ -4,11 +4,14 @@ import { isInputArrayContentEmpty } from 'utils/index';
 
 const mapStateToProps = (state) => ({
   products: state.productsReducer.products,
+  distinctProductOptions: state.productOptionsReducer.distinctProductOptions,
 });
 
 const mapDispatchToProps = {
   getProductsRequest: actions.getProductsRequest,
   getProductsIdle: actions.getProductsIdle,
+  getDistinctProductOptionsRequest: actions.getDistinctProductOptionsRequest,
+  getDistinctProductOptionsIdle: actions.getDistinctProductOptionsIdle,
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
