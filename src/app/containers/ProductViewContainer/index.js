@@ -45,7 +45,6 @@ export class ProductViewContainer extends React.Component {
                 </div>
                 <div className="ProductViewContainer-block-right">
                   <ProductPriceComponent product={this.props.product.data} />
-                  <ProductAboutComponent product={this.props.product.data} />
                 </div>
               </div>
             </IsEmptyComponent>

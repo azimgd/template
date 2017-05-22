@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Router, Route, Redirect, IndexRoute } from 'react-router';
+import { Router, Route, Redirect, IndexRoute, IndexRedirect } from 'react-router';
 
 import * as routes from 'constants/routes';
 import LayoutContainer from 'containers/LayoutContainer/index';
@@ -24,7 +24,7 @@ const Routes = ({ history }) =>
   <Router history={history}>
     <Route path={routes.LOGIN} component={LoginContainer} />
     <Route path={routes.ROOT} component={LayoutContainer}>
-      <IndexRoute component={ProductsContainer} />
+      <IndexRedirect to={routes.PRODUCTS} />
       <Route path={routes.PRODUCTS}>
         <IndexRoute component={ProductsContainer} />
         <Route component={UniqueIdentifierContainer}>

@@ -1,6 +1,11 @@
 .ProductGalleryComponentBlock {
+  margin-bottom: $padding-base-horizontal;
 }
 
 .ProductGalleryComponent {
   overflow: hidden;
+
+  img {
+    height: 600px;
+  }
 }

@@ -20,6 +20,14 @@
   }
 
   &-description {
+    background: $c-bodyBackground-1;
+    padding: $padding-large-horizontal;
+    margin-bottom: $padding-large-horizontal;
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
   }
 }
 
