@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config ./webpack.config.js --progress --colors",
+    "build": "NODE_ENV=production webpack --config ./webpack.config.js --progress --colors",
     "postinstall": "npm rebuild node-sass && npm run build && ./node_modules/.bin/gulp styles",
-    "start": "node ./src/app.js",
+    "start": "NODE_ENV=production node ./src/app.js",
+    "dev": "NODE_ENV=development node ./src/app.js",
     "test": "NODE_PATH=./src/app/ ./node_modules/.bin/ava"
   },
   "keywords": [],
