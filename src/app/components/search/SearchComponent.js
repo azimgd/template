@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { Field, reduxForm } from 'redux-form';
 import { ButtonIconComponent } from 'components/icons/IconsComponent';
+import { InputText } from 'components/shared/SharedFormInputComponent';
 
-const SearchComponent = () =>
+const SearchComponent = ({ handleSubmit, getProductsRequest }) =>
   <div className="SearchComponentBlock">
-    <div className="SearchComponent">
+    <form className="SearchComponent" onSubmit={handleSubmit(getProductsRequest)}>
       <div className="SearchComponent-search">
-        <input type="text" placeholder="Search for" />
+        <Field name="search" component={InputText} label="Search by" />
       </div>
       <div className="SearchComponent-button">
-        <button><ButtonIconComponent name="IoIosSearchStrong" /></button>
+        <button type="submit"><ButtonIconComponent name="IoIosSearchStrong" /></button>
       </div>
-    </div>
+    </form>
   </div>;
 
 SearchComponent.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  getProductsRequest: PropTypes.func.isRequired,
 };
 
-export default SearchComponent;
+export default reduxForm({
+  form: 'SearchComponent',
+})(SearchComponent);

@@ -4,10 +4,15 @@
 .SearchComponent {
   display: flex;
   height: $header-itemHeight;
+  margin: 0;
 
   &-search > input {
     border: 0;
     height: 100%;
+  }
+
+  &-search label {
+    display: none;
   }
 
   &-button > button {
