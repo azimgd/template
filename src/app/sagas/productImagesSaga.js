@@ -1,4 +1,4 @@
-import { takeEvery } from 'redux-saga';
+import { takeLatest } from 'redux-saga';
 import { call, put, fork } from 'redux-saga/effects';
 import * as actions from 'actions/index';
 import * as api from 'api/index';
@@ -46,8 +46,8 @@ function* postProductImageRequestBulk(req) {
 }
 
 export default [
-  fork(takeEvery, constants.GET_PRODUCT_IMAGES_REQUEST, getProductImagesRequest),
-  fork(takeEvery, constants.GET_PRODUCT_IMAGE_REQUEST, getProductImageRequest),
-  fork(takeEvery, constants.POST_PRODUCT_IMAGE_REQUEST, postProductImageRequest),
-  fork(takeEvery, constants.POST_PRODUCT_IMAGE_REQUEST_BULK, postProductImageRequestBulk),
+  fork(takeLatest, constants.GET_PRODUCT_IMAGES_REQUEST, getProductImagesRequest),
+  fork(takeLatest, constants.GET_PRODUCT_IMAGE_REQUEST, getProductImageRequest),
+  fork(takeLatest, constants.POST_PRODUCT_IMAGE_REQUEST, postProductImageRequest),
+  fork(takeLatest, constants.POST_PRODUCT_IMAGE_REQUEST_BULK, postProductImageRequestBulk),
 ];

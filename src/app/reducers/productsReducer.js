@@ -15,6 +15,14 @@ const initialState = {
       status: null,
       isLoading: false,
       createdAt: null,
+
+      /**
+       * Filters/Search related meta data
+       */
+      meta: {
+        options: [],
+        search: null,
+      }
     },
     getProduct: {
       message: null,

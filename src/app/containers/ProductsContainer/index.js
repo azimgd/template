@@ -1,19 +1,20 @@
 import React, { PropTypes } from 'react';
 
 import productsHoc from 'containers/ProductsContainer/productsHoc';
+import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
 import productsResizeListener from 'hoc/ProductsResizeListener';
 import ProductComponent from 'components/product/ProductComponent';
 import ProductFiltersComponent from 'components/productFilters/ProductFiltersComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 import isEmpty from 'lodash/isEmpty';
+import flow from 'lodash/flow';
 
 export class ProductsContainer extends React.Component {
   componentWillMount() {
     const { categoryId, subCategoryId } = this.props.location.query;
     this.props.getDistinctProductOptionsRequest();
     this.props.getProductsRequest({ categoryId, subCategoryId });
-    this.getFilteredProductsRequest = (options) => this.props.getProductsRequest({ options, categoryId, subCategoryId });
   }
 
   componentWillUnmount() {
@@ -29,7 +30,7 @@ export class ProductsContainer extends React.Component {
           <div className="ProductsContainerBlock-filters">
             <ProductFiltersComponent
               distinctProductOptions={this.props.distinctProductOptions}
-              getFilteredProductsRequest={this.getFilteredProductsRequest}
+              getFilteredProductsRequest={this.props.getFilteredProductsRequest}
             />
           </div>
         : null}
@@ -59,6 +60,9 @@ ProductsContainer.propTypes = {
       subCategoryId: PropTypes.string,
     }).isRequired,
   }).isRequired,
+  searchForm: PropTypes.shape({
+    search: PropTypes.string,
+  }).isRequired,
   products: PropTypes.shape({
     data: PropTypes.object,
   }).isRequired,
@@ -70,8 +74,7 @@ ProductsContainer.propTypes = {
   getProductsIdle: PropTypes.func.isRequired,
   getDistinctProductOptionsRequest: PropTypes.func.isRequired,
   getDistinctProductOptionsIdle: PropTypes.func.isRequired,
+  getFilteredProductsRequest: PropTypes.func.isRequired,
 };
 
-export default productsResizeListener(
-  productsHoc(ProductsContainer)
-);
+export default flow(productsHoc, productsProviderHoc, productsResizeListener)(ProductsContainer);

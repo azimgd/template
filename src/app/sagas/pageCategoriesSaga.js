@@ -1,4 +1,4 @@
-import { takeEvery } from 'redux-saga';
+import { takeLatest } from 'redux-saga';
 import { call, put, fork } from 'redux-saga/effects';
 import * as actions from 'actions/index';
 import * as api from 'api/index';
@@ -38,7 +38,7 @@ function* postPageCategoryRequest(req) {
 }
 
 export default [
-  fork(takeEvery, constants.GET_PAGE_CATEGORIES_REQUEST, getPageCategoriesRequest),
-  fork(takeEvery, constants.GET_PAGE_CATEGORY_REQUEST, getPageCategoryRequest),
-  fork(takeEvery, constants.POST_PAGE_CATEGORY_REQUEST, postPageCategoryRequest),
+  fork(takeLatest, constants.GET_PAGE_CATEGORIES_REQUEST, getPageCategoriesRequest),
+  fork(takeLatest, constants.GET_PAGE_CATEGORY_REQUEST, getPageCategoryRequest),
+  fork(takeLatest, constants.POST_PAGE_CATEGORY_REQUEST, postPageCategoryRequest),
 ];

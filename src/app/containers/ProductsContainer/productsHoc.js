@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
 import * as actions from 'actions/index';
 import { isInputArrayContentEmpty, allItemsAreFalsy } from 'utils/index';
+import { getFormValues } from 'redux-form';
 
 const mapStateToProps = (state) => ({
   products: state.productsReducer.products,
   getProductsRequest: state.productsReducer.actions.getProducts,
   distinctProductOptions: state.productOptionsReducer.distinctProductOptions,
+  searchForm: getFormValues('SearchComponent')(state),
 });
 
 const mapDispatchToProps = {

@@ -1,4 +1,4 @@
-import { takeEvery } from 'redux-saga';
+import { takeLatest } from 'redux-saga';
 import { call, put, fork } from 'redux-saga/effects';
 import * as actions from 'actions/index';
 import * as api from 'api/index';
@@ -43,7 +43,7 @@ function* _postProductCategoryRequest(req) {
 }
 
 export default [
-  fork(takeEvery, constants.GET_PRODUCT_CATEGORIES_REQUEST, getProductCategoriesRequest),
-  fork(takeEvery, constants.GET_PRODUCT_CATEGORY_REQUEST, getProductCategoryRequest),
-  fork(takeEvery, constants.POST_PRODUCT_CATEGORY_REQUEST, _postProductCategoryRequest),
+  fork(takeLatest, constants.GET_PRODUCT_CATEGORIES_REQUEST, getProductCategoriesRequest),
+  fork(takeLatest, constants.GET_PRODUCT_CATEGORY_REQUEST, getProductCategoryRequest),
+  fork(takeLatest, constants.POST_PRODUCT_CATEGORY_REQUEST, _postProductCategoryRequest),
 ];

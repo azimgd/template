@@ -1,4 +1,4 @@
-import { takeEvery } from 'redux-saga';
+import { takeLatest } from 'redux-saga';
 import { call, put, fork } from 'redux-saga/effects';
 import * as actions from 'actions/index';
 import * as api from 'api/index';
@@ -50,8 +50,8 @@ function* postProductOptionRequest(req) {
 }
 
 export default [
-  fork(takeEvery, constants.GET_PRODUCT_OPTIONS_REQUEST, getProductOptionsRequest),
-  fork(takeEvery, constants.GET_DISTINCT_PRODUCT_OPTIONS_REQUEST, getDistinctProductOptionsRequest),
-  fork(takeEvery, constants.GET_PRODUCT_OPTION_REQUEST, getProductOptionRequest),
-  fork(takeEvery, constants.POST_PRODUCT_OPTION_REQUEST, postProductOptionRequest),
+  fork(takeLatest, constants.GET_PRODUCT_OPTIONS_REQUEST, getProductOptionsRequest),
+  fork(takeLatest, constants.GET_DISTINCT_PRODUCT_OPTIONS_REQUEST, getDistinctProductOptionsRequest),
+  fork(takeLatest, constants.GET_PRODUCT_OPTION_REQUEST, getProductOptionRequest),
+  fork(takeLatest, constants.POST_PRODUCT_OPTION_REQUEST, postProductOptionRequest),
 ];

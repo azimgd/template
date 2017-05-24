@@ -15,16 +15,17 @@ update.extend('$setRequestActionFailure', (data, original) => update(original, {
   createdAt: { $set: Date.now() },
 }));
 
-update.extend('$setRequestActionIdle', (loading, original) => update(original, {
+update.extend('$setRequestActionIdle', (data, original) => update(original, {
   message: { $set: null },
   status: { $set: constants.STATUS_IDLE },
   isLoading: { $set: false },
   createdAt: { $set: Date.now() },
 }));
 
-update.extend('$setRequestActionLoading', (loading, original) => update(original, {
+update.extend('$setRequestActionLoading', (data, original) => update(original, {
   message: { $set: null },
   status: { $set: constants.STATUS_LOADING },
   isLoading: { $set: true },
   createdAt: { $set: Date.now() },
+  meta: { $set: data },
 }));

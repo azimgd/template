@@ -6,6 +6,7 @@
   "globals": {
     "window": true,
     "document": true,
+    "Event": true,
     "React": true,
     "apiEndpoint": true,
     "FileReader": true,

@@ -3,9 +3,9 @@ import { Field, reduxForm } from 'redux-form';
 import { ButtonIconComponent } from 'components/icons/IconsComponent';
 import { InputText } from 'components/shared/SharedFormInputComponent';
 
-const SearchComponent = ({ handleSubmit, getProductsRequest }) =>
+const SearchComponent = ({ handleSubmit, getSearchedProductsRequest }) =>
   <div className="SearchComponentBlock">
-    <form className="SearchComponent" onSubmit={handleSubmit(getProductsRequest)}>
+    <form className="SearchComponent" onSubmit={handleSubmit(getSearchedProductsRequest)}>
       <div className="SearchComponent-search">
         <Field name="search" component={InputText} label="Search by" />
       </div>
@@ -17,7 +17,7 @@ const SearchComponent = ({ handleSubmit, getProductsRequest }) =>
 
 SearchComponent.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  getProductsRequest: PropTypes.func.isRequired,
+  getSearchedProductsRequest: PropTypes.func.isRequired,
 };
 
 export default reduxForm({
