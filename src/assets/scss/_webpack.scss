@@ -1,0 +1,10 @@
+/**
+ * This file is included into each module by webpack
+ */
+$bootstrap-sass-asset-helper: "~bootstrap-sass/assets/fonts/" !default;
+@import "bootstrap/bootstrap/variables";
+@import "bootstrap/bootstrap/mixins";
+@import "bootstrap/bootstrap/grid";
+@import "bootstrap/bootstrap/responsive-utilities";
+@import "variables";
+@import "utils";

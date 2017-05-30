@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/containers/_HomeContainer.scss';
+
 import isEmpty from 'lodash/isEmpty';
 import homeHoc from 'containers/HomeContainer/homeHoc';
 import HomeCategoriesComponent from 'components/homeCategories/HomeCategoriesComponent';

@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_ConfigNavigationComponent.scss';
+
 import { Field, reduxForm } from 'redux-form';
 import ConfigNavigationComponentValidator from 'validators/ConfigNavigationComponentValidator';
 import { InputText } from 'components/shared/SharedFormInputComponent';

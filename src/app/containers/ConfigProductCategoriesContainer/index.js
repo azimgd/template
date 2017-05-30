@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'scss/containers/_ConfigProductCategoriesContainer.scss';
 
 import configProductCategoriesHoc from 'containers/ConfigProductCategoriesContainer/configProductCategoriesHoc';
 import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';

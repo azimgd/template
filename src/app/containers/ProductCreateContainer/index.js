@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'scss/containers/_ProductCreateContainer.scss';
 
 import productCreateHoc from 'containers/ProductCreateContainer/productCreateHoc';
 import ProductFormComponent from 'components/productForm/ProductFormComponent';

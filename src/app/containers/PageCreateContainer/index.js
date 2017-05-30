@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/containers/_PageCreateContainer.scss';
+
 import configMock from 'mocks/config';
 import pageCreateHoc from 'containers/PageCreateContainer/pageCreateHoc';
 import PageFormComponent from 'components/pageForm/PageFormComponent';

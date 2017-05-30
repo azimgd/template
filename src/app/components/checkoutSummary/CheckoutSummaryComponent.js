@@ -1,6 +1,7 @@
 import React from 'react';
-import _ from 'lodash';
+import 'scss/components/_CheckoutSummaryComponent.scss';
 
+import _ from 'lodash';
 import checkoutMock from 'mocks/checkout';
 
 const CheckoutSummaryComponent = () =>

@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_ProductDetailsComponent.scss';
+
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
 import productDetailsHoc from 'components/productDetails/ProductDetailsHoc';

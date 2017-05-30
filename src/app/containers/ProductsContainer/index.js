@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'scss/containers/_ProductsContainer.scss';
 
 import productsHoc from 'containers/ProductsContainer/productsHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';

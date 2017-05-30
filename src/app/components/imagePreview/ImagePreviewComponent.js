@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_ImagePreviewComponent.scss';
 
 const ImagePreviewComponent = ({ image }) => {
   const backgroundImage = image.amazonUrl || image.thumbnail;

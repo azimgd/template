@@ -1,4 +1,5 @@
 import React from 'react';
+import 'scss/components/_CheckoutUserInfoComponent.scss';
 
 const CheckoutUserInfoComponent = () =>
   <div className="CheckoutUserInfoComponentBlock">

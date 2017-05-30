@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_HomeCategoriesComponent.scss';
+
 import map from 'lodash/map';
-import get from 'lodash/get';
 import { Link } from 'react-router';
 
 const HomeCategoriesComponent = ({ categoryUrl, subCategoryUrl, categories }) =>

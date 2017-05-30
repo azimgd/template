@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/containers/_ProductViewContainer.scss';
+
 import isEmpty from 'lodash/isEmpty';
 import productViewHoc from 'containers/ProductViewContainer/productViewHoc';
 import ProductDetailsComponent from 'components/productDetails/ProductDetailsComponent';

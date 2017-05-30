@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_YoutubePlayerComponent.scss';
+
 import map from 'lodash/map';
 import youtubePlayerHoc from 'components/youtubePlayer/YoutubePlayerHoc';
 import YoutubePlayerActiveComponent from 'components/youtubePlayer/YoutubePlayerActiveComponent';

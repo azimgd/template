@@ -1,4 +1,5 @@
 import React from 'react';
+import 'scss/components/_CheckoutControlComponent.scss';
 
 const CheckoutControlComponent = () =>
   <div className="CheckoutControlComponentBlock">

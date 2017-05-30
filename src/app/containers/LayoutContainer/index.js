@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'scss/containers/_LayoutContainer.scss';
 
 import cartResizeHoc from 'containers/LayoutContainer/cartResizeHoc';
 import layoutHoc from 'containers/LayoutContainer/layoutHoc';

@@ -1,4 +1,5 @@
 import React from 'react';
+import 'scss/containers/_NotFoundContainer.scss';
 
 const NotFoundContainer = () =>
   <div className="NotFoundContainerBlock">

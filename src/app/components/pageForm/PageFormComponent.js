@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_PageFormComponent.scss';
+
 import { Field, reduxForm } from 'redux-form';
 import PageFormComponentValidator from 'validators/PageFormComponentValidator';
 import { InputText, InputSelect, RichTextarea } from 'components/shared/SharedFormInputComponent';
@@ -9,7 +11,7 @@ const PageFormComponent = ({ categories, subCategories, handleSubmit, createPage
       <div className="PageFormComponent-pageForm">
         <div className="PageFormComponent-pageForm-input">
           <Field name="title" component={InputText} label="Page title" />
-        </div>
+        </div>1
         <div className="PageFormComponent-pageForm-input">
           <Field name="categoryId" component={InputSelect} label="Page category" options={categories} />
         </div>

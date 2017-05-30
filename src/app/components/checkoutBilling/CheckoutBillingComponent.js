@@ -1,4 +1,5 @@
 import React from 'react';
+import 'scss/components/_CheckoutBillingComponent.scss';
 
 import PaymentOptionComponent from 'components/paymentOption/PaymentOptionComponent';
 

@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_ProductFormComponent.scss';
+
 import { Field, reduxForm } from 'redux-form';
 import ProductFormComponentValidator from 'validators/ProductFormComponentValidator';
 import { InputText, RichTextarea, InputSelect } from 'components/shared/SharedFormInputComponent';

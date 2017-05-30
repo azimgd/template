@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_IsLoadingComponent.scss';
 
 const IsLoadingComponent = ({ isLoading, children }) => {
   if (isLoading) {

@@ -1,4 +1,5 @@
 import React from 'react';
+import 'scss/components/_ConfigSidebarComponent.scss';
 
 const ConfigSidebarComponent = () =>
   <div className="ConfigSidebarComponent">

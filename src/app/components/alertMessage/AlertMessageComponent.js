@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_AlertMessageComponent.scss';
 
 const AlertMessageComponent = ({ isVisible, toggleAlertMessage }) =>
   <div className="AlertMessageComponentBlock" style={{ display: isVisible ? 'block' : 'none' }}>

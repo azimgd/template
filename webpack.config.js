@@ -4,6 +4,9 @@ const WriteFilePlugin = require('write-file-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+const globalStyleInclude = `\
+  @import "${path.join(__dirname, 'src/assets/scss/_webpack.scss')}";
+`;
 
 /**
  * Styling
@@ -111,7 +114,8 @@ module.exports = {
             options: {
               sourceMap: !IS_PRODUCTION,
               outputStyle: IS_PRODUCTION ? 'compressed' : 'nested',
-              includePaths: [path.join(__dirname, 'src/assets')]
+              data: globalStyleInclude,
+              includePaths: [path.join(__dirname, 'src/assets')],
             },
           }],
           fallback: 'style-loader',

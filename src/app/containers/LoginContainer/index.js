@@ -1,4 +1,5 @@
 import React from 'react';
+import 'scss/containers/_LoginContainer.scss';
 
 import LoginFormComponent from 'components/loginForm/LoginFormComponent';
 

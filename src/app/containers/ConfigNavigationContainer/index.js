@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'scss/containers/_ConfigNavigationContainer.scss';
 
 import configNavigationHoc from 'containers/ConfigNavigationContainer/configNavigationHoc';
 import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
