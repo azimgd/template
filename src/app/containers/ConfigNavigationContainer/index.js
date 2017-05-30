@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_ConfigNavigationContainer.scss';
+import 'containers/ConfigNavigationContainer/_ConfigNavigationContainer.scss';
 
 import configNavigationHoc from 'containers/ConfigNavigationContainer/configNavigationHoc';
 import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
 import ConfigNavigationComponent from 'components/configNavigation/ConfigNavigationComponent';
+import flow from 'lodash/flow';
 
 class ConfigNavigationContainer extends React.Component {
   constructor(props) {
@@ -32,8 +33,10 @@ class ConfigNavigationContainer extends React.Component {
   }
 }
 
-ConfigNavigationContainer.propTypes = {
+export const propTypes = {
   config: PropTypes.object.isRequired,
 };
 
-export default configNavigationHoc(ConfigNavigationContainer);
+ConfigNavigationContainer.propTypes = propTypes;
+export const init = flow([configNavigationHoc]);
+export default init(ConfigNavigationContainer);

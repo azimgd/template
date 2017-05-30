@@ -1,15 +1,11 @@
-import React, { PropTypes } from 'react';
-import 'containers/ProductsContainer/_ProductsContainer.scss';
-
-import productsHoc from 'containers/ProductsContainer/productsHoc';
-import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
-import productsResizeHoc from 'containers/ProductsContainer/productsResizeHoc';
+import React from 'react';
+import { init, propTypes } from 'containers/ProductsContainer/index';
 import ProductComponent from 'components/product/ProductComponent';
 import ProductFiltersComponent from 'components/productFilters/ProductFiltersComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
 import isEmpty from 'lodash/isEmpty';
-import flow from 'lodash/flow';
+import 'template/containers/ProductsContainer/_ProductsContainer.scss';
 
 export class ProductsContainer extends React.Component {
   componentWillMount() {
@@ -52,32 +48,5 @@ export class ProductsContainer extends React.Component {
   }
 }
 
-export const propTypes = {
-  isLoading: PropTypes.bool.isRequired,
-  isEmpty: PropTypes.bool.isRequired,
-  location: PropTypes.shape({
-    query: PropTypes.shape({
-      categoryId: PropTypes.string,
-      subCategoryId: PropTypes.string,
-    }).isRequired,
-  }).isRequired,
-  searchForm: PropTypes.shape({
-    search: PropTypes.string,
-  }).isRequired,
-  products: PropTypes.shape({
-    data: PropTypes.object,
-  }).isRequired,
-  distinctProductOptions: PropTypes.shape({
-    data: PropTypes.object,
-  }).isRequired,
-  maxHeight: PropTypes.number.isRequired,
-  getProductsRequest: PropTypes.func.isRequired,
-  getProductsIdle: PropTypes.func.isRequired,
-  getDistinctProductOptionsRequest: PropTypes.func.isRequired,
-  getDistinctProductOptionsIdle: PropTypes.func.isRequired,
-  getFilteredProductsRequest: PropTypes.func.isRequired,
-};
-
 ProductsContainer.propTypes = propTypes;
-export const init = flow([productsHoc, productsProviderHoc, productsResizeHoc]);
 export default init(ProductsContainer);

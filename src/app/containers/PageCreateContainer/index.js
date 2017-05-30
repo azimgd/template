@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_PageCreateContainer.scss';
+import 'containers/PageCreateContainer/_PageCreateContainer.scss';
 
 import configMock from 'mocks/config';
 import pageCreateHoc from 'containers/PageCreateContainer/pageCreateHoc';
 import PageFormComponent from 'components/pageForm/PageFormComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
 import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
+import flow from 'lodash/flow';
 
 export class PageCreateContainer extends React.Component {
   constructor(props) {
@@ -60,7 +61,7 @@ export class PageCreateContainer extends React.Component {
   }
 }
 
-PageCreateContainer.propTypes = {
+export const propTypes = {
   notificationsSuccess: PropTypes.array.isRequired,
   notificationsFailure: PropTypes.array.isRequired,
   mappedCategories: PropTypes.object.isRequired,
@@ -72,4 +73,6 @@ PageCreateContainer.propTypes = {
   getPageSubCategoriesIdle: PropTypes.func.isRequired,
 };
 
-export default pageCreateHoc(PageCreateContainer);
+PageCreateContainer.propTypes = propTypes;
+export const init = flow([pageCreateHoc]);
+export default init(PageCreateContainer);

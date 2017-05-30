@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_PagesContainer.scss';
+import 'containers/PagesContainer/_PagesContainer.scss';
 
 import pagesHoc from 'containers/PagesContainer/pagesHoc';
 import PageComponent from 'components/page/PageComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
+import flow from 'lodash/flow';
 
 export class PagesContainer extends React.Component {
   componentWillMount() {
@@ -39,7 +40,7 @@ export class PagesContainer extends React.Component {
   }
 }
 
-PagesContainer.propTypes = {
+export const propTypes = {
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   location: PropTypes.object.isRequired,
@@ -51,4 +52,6 @@ PagesContainer.propTypes = {
   maxHeight: PropTypes.number,
 };
 
-export default pagesHoc(PagesContainer);
+PagesContainer.propTypes = propTypes;
+export const init = flow([pagesHoc]);
+export default init(PagesContainer);

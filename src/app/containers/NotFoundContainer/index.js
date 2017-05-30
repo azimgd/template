@@ -1,5 +1,7 @@
 import React from 'react';
-import 'scss/containers/_NotFoundContainer.scss';
+import 'containers/NotFoundContainer/_NotFoundContainer.scss';
+
+import flow from 'lodash/flow';
 
 const NotFoundContainer = () =>
   <div className="NotFoundContainerBlock">
@@ -9,4 +11,9 @@ const NotFoundContainer = () =>
     </div>
   </div>;
 
-export default NotFoundContainer;
+export const propTypes = {
+};
+
+NotFoundContainer.propTypes = propTypes;
+export const init = flow();
+export default init(NotFoundContainer);

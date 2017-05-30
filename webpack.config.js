@@ -83,8 +83,12 @@ module.exports = {
     modules: [
       path.join(__dirname, 'src/app'),
       path.join(__dirname, 'src/assets'),
+      path.join(__dirname, 'src/template/default'),
       'node_modules',
     ],
+    alias: {
+      template: path.join(__dirname, 'src/template/default'),
+    },
     extensions: ['.js', '.css', '.scss'],
   },
   stats: {

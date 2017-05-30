@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_PageViewContainer.scss';
+import 'containers/PageViewContainer/_PageViewContainer.scss';
 
 import pageViewHoc from 'containers/PageViewContainer/pageViewHoc';
 import PageDetailsComponent from 'components/pageDetails/PageDetailsComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
+import flow from 'lodash/flow';
 
 export class PageViewContainer extends React.Component {
   componentWillMount() {
@@ -35,7 +36,7 @@ export class PageViewContainer extends React.Component {
   }
 }
 
-PageViewContainer.propTypes = {
+export const propTypes = {
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   params: PropTypes.shape({
@@ -47,4 +48,6 @@ PageViewContainer.propTypes = {
   pageParsedToHtml: PropTypes.object.isRequired,
 };
 
-export default pageViewHoc(PageViewContainer);
+PageViewContainer.propTypes = propTypes;
+export const init = flow([pageViewHoc]);
+export default init(PageViewContainer);

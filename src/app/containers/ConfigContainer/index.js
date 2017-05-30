@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_ConfigContainer.scss';
+import 'containers/ConfigContainer/_ConfigContainer.scss';
 
 import configHoc from 'containers/ConfigContainer/configHoc';
+import flow from 'lodash/flow';
 
 class ConfigContainer extends React.Component {
   constructor(props) {
@@ -22,8 +23,10 @@ class ConfigContainer extends React.Component {
   }
 }
 
-ConfigContainer.propTypes = {
+export const propTypes = {
   config: PropTypes.object.isRequired,
 };
 
-export default configHoc(ConfigContainer);
+ConfigContainer.propTypes = propTypes;
+export const init = flow([configHoc]);
+export default init(ConfigContainer);
