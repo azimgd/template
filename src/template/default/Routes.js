@@ -3,7 +3,7 @@ import { Router, Route, Redirect, IndexRoute, IndexRedirect } from 'react-router
 
 import LayoutContainer from 'template/containers/LayoutContainer/index';
 import LoginContainer from 'containers/LoginContainer/index';
-import ProductsContainer from 'containers/ProductsContainer/index';
+import ProductsContainer from 'template/containers/ProductsContainer/index';
 import ProductViewContainer from 'containers/ProductViewContainer/index';
 import ProductCreateContainer from 'containers/ProductCreateContainer/index';
 import ProductOptionsContainer from 'containers/ProductOptionsContainer/index';
