@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_ProductsComponent.scss';
+
 import { Link } from 'react-router';
 import get from 'lodash/get';
 import configMock from 'mocks/config';

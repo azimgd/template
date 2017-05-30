@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-const productsResizeListener = (ProductViewComponent) => {
+const productsResizeHoc = (ProductViewComponent) => {
   class ProductsResizeListenerComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -39,4 +39,4 @@ const productsResizeListener = (ProductViewComponent) => {
   return ProductsResizeListenerComponent;
 };
 
-export default productsResizeListener;
+export default productsResizeHoc;

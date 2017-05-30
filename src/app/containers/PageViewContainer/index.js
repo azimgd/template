@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'scss/containers/_PageViewContainer.scss';
 
 import pageViewHoc from 'containers/PageViewContainer/pageViewHoc';
 import PageDetailsComponent from 'components/pageDetails/PageDetailsComponent';

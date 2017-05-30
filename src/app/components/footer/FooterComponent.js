@@ -1,4 +1,5 @@
 import React from 'react';
+import 'scss/components/_FooterComponent.scss';
 
 const FooterComponent = () =>
   <div className="FooterComponentBlock">

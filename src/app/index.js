@@ -8,6 +8,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import 'services/immutabilityService';
 import configureStore from 'configureStore';
 import Routes from 'containers/Routes';
+import 'scss/index.scss';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);

@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_PagesComponent.scss';
+
 import { Link } from 'react-router';
 import _ from 'lodash';
 

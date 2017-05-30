@@ -1,4 +1,5 @@
 import React from 'react';
+import 'scss/components/_ProductAboutComponent.scss';
 
 const ProductAboutComponent = () =>
   <div className="ProductAboutComponent">

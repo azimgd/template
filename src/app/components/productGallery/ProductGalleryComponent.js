@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_ProductGalleryComponent.scss';
+
 import Slider from 'react-image-slider';
 
 const ProductGalleryComponent = ({ images }) =>

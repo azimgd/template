@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_ProductPriceComponent.scss';
+
 import { ButtonIconComponent } from 'components/icons/IconsComponent';
 
 const ProductPriceComponent = ({ product }) =>

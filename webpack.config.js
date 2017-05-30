@@ -1,14 +1,26 @@
 const path = require('path');
 const webpack = require('webpack');
 const WriteFilePlugin = require('write-file-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+const globalStyleInclude = `\
+  @import "${path.join(__dirname, 'src/assets/scss/_webpack.scss')}";
+`;
+
+/**
+ * Styling
+ */
+const extractSass = new ExtractTextPlugin({
+  filename: 'bundle.css',
+});
 
 const WebpackPlugins = [
   new WriteFilePlugin(),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`
   }),
+  extractSass,
 ];
 const WebpackLoaders = [];
 const WebpackEntries = [];
@@ -19,14 +31,13 @@ if (IS_PRODUCTION) {
    * Plugins
    */
   WebpackPlugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { drop_console: true } }));
-  WebpackPlugins.push(new webpack.optimize.OccurrenceOrderPlugin());
 
   /**
    * Loaders
    */
   WebpackLoaders.push({
     test: /\.js$/,
-    loaders: ['babel'],
+    loader: 'babel-loader',
     include: path.join(__dirname, 'src'),
   });
 
@@ -46,7 +57,7 @@ if (IS_PRODUCTION) {
    */
   WebpackLoaders.push({
     test: /\.js$/,
-    loaders: ['react-hot-loader/webpack', 'babel'],
+    loaders: ['react-hot-loader/webpack', 'babel-loader'],
     include: path.join(__dirname, 'src'),
   });
 
@@ -67,17 +78,49 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/build/webpack/',
   },
-  aggregateTimeout: 300,
-  poll: 1000,
   plugins: WebpackPlugins,
   resolve: {
-    root: path.join(__dirname, 'src/app'),
-    extensions: ['', '.js'],
+    modules: [
+      path.join(__dirname, 'src/app'),
+      path.join(__dirname, 'src/assets'),
+      'node_modules',
+    ],
+    extensions: ['.js', '.css', '.scss'],
   },
   stats: {
     colors: true,
   },
   module: {
-    loaders: WebpackLoaders,
+    rules: [
+      ...WebpackLoaders,
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          use: [{
+            loader: 'css-loader',
+            options: {
+              minimize: true,
+              discardComments: {
+                removeAll: true
+              },
+            }
+          }, {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: !IS_PRODUCTION,
+            },
+          }, {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: !IS_PRODUCTION,
+              outputStyle: IS_PRODUCTION ? 'compressed' : 'nested',
+              data: globalStyleInclude,
+              includePaths: [path.join(__dirname, 'src/assets')],
+            },
+          }],
+          fallback: 'style-loader',
+        })
+      }
+    ],
   },
 };

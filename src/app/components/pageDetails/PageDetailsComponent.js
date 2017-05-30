@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_PageDetailsComponent.scss';
 
 const PageDetailsComponent = ({ page, pageParsedToHtml }) =>
   <div className="PageDetailsComponentBlock">

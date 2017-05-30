@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
+import 'scss/containers/_HomeContainer.scss';
+
 import isEmpty from 'lodash/isEmpty';
 import homeHoc from 'containers/HomeContainer/homeHoc';
-import * as routes from 'constants/routes';
 import HomeCategoriesComponent from 'components/homeCategories/HomeCategoriesComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
@@ -32,8 +33,8 @@ export class HomeContainer extends React.Component {
                   <div className="HomeContainer-productCategories-content">
                     <HomeCategoriesComponent
                       categories={this.props.productCategories.data}
-                      categoryUrl={routes.PRODUCTS}
-                      subCategoryUrl={routes.PRODUCTS}
+                      categoryUrl="/products"
+                      subCategoryUrl="/products"
                     />
                   </div>
                 </div>
@@ -47,8 +48,8 @@ export class HomeContainer extends React.Component {
                   <div className="HomeContainer-pageCategories-content">
                     <HomeCategoriesComponent
                       categories={this.props.pageCategories.data}
-                      categoryUrl={routes.PAGES}
-                      subCategoryUrl={routes.PAGES}
+                      categoryUrl="/pages"
+                      subCategoryUrl="/pages"
                     />
                   </div>
                 </div>

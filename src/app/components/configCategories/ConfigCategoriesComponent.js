@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_ConfigCategoriesComponent.scss';
+
 import { Field, reduxForm } from 'redux-form';
 import ConfigCategoriesComponentValidator from 'validators/ConfigCategoriesComponentValidator';
 import { InputText } from 'components/shared/SharedFormInputComponent';

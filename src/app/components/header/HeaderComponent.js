@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_HeaderComponent.scss';
+
 import { Link } from 'react-router';
 
 const HeaderComponent = ({ children }) =>

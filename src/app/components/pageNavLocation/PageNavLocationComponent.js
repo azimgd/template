@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_PageNavLocationComponent.scss';
+
 import { Link } from 'react-router';
 
 const PageNavLocationComponent = ({ product, productCategory, productSubCategory }) =>

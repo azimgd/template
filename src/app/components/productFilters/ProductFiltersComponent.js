@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import 'scss/components/_ProductFiltersComponent.scss';
+
 import productFiltersHoc from 'components/productFilters/ProductFiltersHoc';
 import ProductFilterItemComponent from 'components/productFilters/ProductFilterItemComponent';
 import map from 'lodash/map';
