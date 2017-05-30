@@ -15,10 +15,6 @@ gulp.task('server', () => {
   });
 });
 
-gulp.task('watch', () => {
-  gulp.watch(src.styles.files, src.styles.task);
-});
-
 gulp.task('default', (callback) => {
-  runSequence(['watch', 'server'], callback);
+  runSequence(['server'], callback);
 });
