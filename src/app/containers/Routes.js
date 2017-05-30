@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Router, Route, Redirect, IndexRoute, IndexRedirect } from 'react-router';
 
-import * as routes from 'constants/routes';
 import LayoutContainer from 'containers/LayoutContainer/index';
 import LoginContainer from 'containers/LoginContainer/index';
 import ProductsContainer from 'containers/ProductsContainer/index';
@@ -21,31 +20,31 @@ import UniqueIdentifierContainer from 'containers/UniqueIdentifierContainer/inde
 
 const Routes = ({ history }) =>
   <Router history={history}>
-    <Route path={routes.LOGIN} component={LoginContainer} />
-    <Route path={routes.ROOT} component={LayoutContainer}>
-      <IndexRedirect to={routes.PRODUCTS} />
-      <Route path={routes.PRODUCTS}>
+    <Route path="/login" component={LoginContainer} />
+    <Route path="/" component={LayoutContainer}>
+      <IndexRedirect to="/products" />
+      <Route path="/products">
         <IndexRoute component={ProductsContainer} />
         <Route component={UniqueIdentifierContainer}>
-          <Route path={routes.PRODUCTS_CREATE} component={ProductCreateContainer} />
+          <Route path="new" component={ProductCreateContainer} />
         </Route>
-        <Route path={routes.PRODUCTS_OPTIONS_CREATE} component={ProductOptionsContainer} />
-        <Route path={routes.PRODUCTS_SHOW} component={ProductViewContainer} />
+        <Route path="options/:id" component={ProductOptionsContainer} />
+        <Route path=":id" component={ProductViewContainer} />
       </Route>
-      <Route path={routes.PAGES}>
+      <Route path="/pages">
         <IndexRoute component={PagesContainer} />
-        <Route path={routes.PAGES_CREATE} component={PageCreateContainer} />
-        <Route path={routes.PAGES_SHOW} component={PageViewContainer} />
+        <Route path="new" component={PageCreateContainer} />
+        <Route path=":id" component={PageViewContainer} />
       </Route>
-      <Route path={routes.CONFIG}>
+      <Route path="/config">
         <IndexRoute component={ConfigContainer} />
-        <Route path={routes.CONFIG_NAVIGATION} component={ConfigNavigationContainer} />
-        <Route path={routes.CONFIG_PRODUCT_CATEGORIES} component={ConfigProductCategoriesContainer} />
-        <Route path={routes.CONFIG_PAGE_CATEGORIES} component={ConfigPageCategoriesContainer} />
+        <Route path="navigation" component={ConfigNavigationContainer} />
+        <Route path="categories/products" component={ConfigProductCategoriesContainer} />
+        <Route path="categories/pages" component={ConfigPageCategoriesContainer} />
       </Route>
-      <Route path={routes.CHECKOUT} component={CheckoutContainer} />
-      <Route path={routes.NOTFOUND} component={NotFoundContainer} />
-      <Redirect from="*" to={routes.NOTFOUND} />
+      <Route path="/checkout" component={CheckoutContainer} />
+      <Route path="/404" component={NotFoundContainer} />
+      <Redirect from="*" to="/404" />
     </Route>
   </Router>;
 

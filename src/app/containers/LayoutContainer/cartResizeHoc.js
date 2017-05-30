@@ -1,7 +1,7 @@
 import React from 'react';
 
-const cartResizeListener = (CartViewComponent) => {
-  class CartResizeListenerComponent extends React.Component {
+const cartResizeHoc = (CartViewComponent) => {
+  class CartResizeHocComponent extends React.Component {
     constructor(props) {
       super(props);
 
@@ -43,7 +43,7 @@ const cartResizeListener = (CartViewComponent) => {
     }
   }
 
-  return CartResizeListenerComponent;
+  return CartResizeHocComponent;
 };
 
-export default cartResizeListener;
+export default cartResizeHoc;

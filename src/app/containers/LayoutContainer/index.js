@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import cartResizeListener from 'hoc/cartResizeListener';
+import cartResizeHoc from 'containers/LayoutContainer/cartResizeHoc';
 import layoutHoc from 'containers/LayoutContainer/layoutHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
 import HeaderComponent from 'components/header/HeaderComponent';
@@ -53,4 +53,4 @@ LayoutContainer.propTypes = {
   getSearchedProductsRequest: PropTypes.func.isRequired,
 };
 
-export default flow([layoutHoc, productsProviderHoc, cartResizeListener])(LayoutContainer);
+export default flow([layoutHoc, productsProviderHoc, cartResizeHoc])(LayoutContainer);

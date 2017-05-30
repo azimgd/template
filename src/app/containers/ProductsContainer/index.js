@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import productsHoc from 'containers/ProductsContainer/productsHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
-import productsResizeListener from 'hoc/ProductsResizeListener';
+import productsResizeHoc from 'containers/ProductsContainer/productsResizeHoc';
 import ProductComponent from 'components/product/ProductComponent';
 import ProductFiltersComponent from 'components/productFilters/ProductFiltersComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
@@ -77,4 +77,4 @@ ProductsContainer.propTypes = {
   getFilteredProductsRequest: PropTypes.func.isRequired,
 };
 
-export default flow(productsHoc, productsProviderHoc, productsResizeListener)(ProductsContainer);
+export default flow(productsHoc, productsProviderHoc, productsResizeHoc)(ProductsContainer);
