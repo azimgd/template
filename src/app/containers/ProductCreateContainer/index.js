@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_ProductCreateContainer.scss';
+import 'containers/ProductCreateContainer/_ProductCreateContainer.scss';
 
 import productCreateHoc from 'containers/ProductCreateContainer/productCreateHoc';
 import ProductFormComponent from 'components/productForm/ProductFormComponent';
@@ -7,6 +7,7 @@ import ProductAboutComponent from 'components/productAbout/ProductAboutComponent
 import NotificationComponent from 'components/notification/NotificationComponent';
 import ImagePreviewComponent from 'components/imagePreview/ImagePreviewComponent';
 import ImageUploadComponent from 'components/imageUpload/ImageUploadComponent';
+import flow from 'lodash/flow';
 
 export class ProductCreateContainer extends React.Component {
   constructor(props) {
@@ -88,7 +89,8 @@ export class ProductCreateContainer extends React.Component {
   }
 }
 
-ProductCreateContainer.propTypes = {
+
+export const propTypes = {
   uniqueIdentifier: PropTypes.string.isRequired,
   mappedImages: PropTypes.array.isRequired,
   images: PropTypes.array.isRequired,
@@ -109,4 +111,6 @@ ProductCreateContainer.propTypes = {
   postProductImageRequestBulk: PropTypes.func.isRequired,
 };
 
-export default productCreateHoc(ProductCreateContainer);
+ProductCreateContainer.propTypes = propTypes;
+export const init = flow([productCreateHoc]);
+export default init(ProductCreateContainer);

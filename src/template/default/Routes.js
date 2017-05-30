@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Router, Route, Redirect, IndexRoute, IndexRedirect } from 'react-router';
 
-import LayoutContainer from 'containers/LayoutContainer/index';
+import LayoutContainer from 'template/containers/LayoutContainer/index';
 import LoginContainer from 'containers/LoginContainer/index';
 import ProductsContainer from 'containers/ProductsContainer/index';
 import ProductViewContainer from 'containers/ProductViewContainer/index';

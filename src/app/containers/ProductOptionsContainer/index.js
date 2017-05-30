@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_ProductOptionsContainer.scss';
+import 'containers/ProductOptionsContainer/_ProductOptionsContainer.scss';
 
 import productOptionsHoc from 'containers/ProductOptionsContainer/productOptionsHoc';
 import ProductOptionsFormComponent from 'components/productOptionsForm/ProductOptionsFormComponent';
@@ -8,6 +8,7 @@ import ProductAboutComponent from 'components/productAbout/ProductAboutComponent
 import NotificationComponent from 'components/notification/NotificationComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
+import flow from 'lodash/flow';
 
 export class ProductOptionsContainer extends React.Component {
   constructor(props) {
@@ -66,7 +67,7 @@ export class ProductOptionsContainer extends React.Component {
   }
 }
 
-ProductOptionsContainer.propTypes = {
+export const propTypes = {
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   params: PropTypes.shape({
@@ -82,4 +83,6 @@ ProductOptionsContainer.propTypes = {
   notificationsFailure: PropTypes.array.isRequired,
 };
 
-export default productOptionsHoc(ProductOptionsContainer);
+ProductOptionsContainer.propTypes = propTypes;
+export const init = flow([productOptionsHoc]);
+export default init(ProductOptionsContainer);

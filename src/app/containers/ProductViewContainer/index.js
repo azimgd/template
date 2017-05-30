@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_ProductViewContainer.scss';
+import 'containers/ProductViewContainer/_ProductViewContainer.scss';
 
 import isEmpty from 'lodash/isEmpty';
 import productViewHoc from 'containers/ProductViewContainer/productViewHoc';
@@ -10,6 +10,7 @@ import ProductPriceComponent from 'components/productPrice/ProductPriceComponent
 import PageNavLocationComponent from 'components/pageNavLocation/PageNavLocationComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
+import flow from 'lodash/flow';
 
 export class ProductViewContainer extends React.Component {
   componentWillMount() {
@@ -57,7 +58,7 @@ export class ProductViewContainer extends React.Component {
   }
 }
 
-ProductViewContainer.propTypes = {
+export const propTypes = {
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   params: PropTypes.shape({
@@ -71,4 +72,6 @@ ProductViewContainer.propTypes = {
   productParsedToHtml: PropTypes.string.isRequired,
 };
 
-export default productViewHoc(ProductViewContainer);
+ProductViewContainer.propTypes = propTypes;
+export const init = flow([productViewHoc]);
+export default init(ProductViewContainer);

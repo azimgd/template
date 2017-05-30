@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_ProductsContainer.scss';
+import 'containers/ProductsContainer/_ProductsContainer.scss';
 
 import productsHoc from 'containers/ProductsContainer/productsHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
@@ -52,7 +52,7 @@ export class ProductsContainer extends React.Component {
   }
 }
 
-ProductsContainer.propTypes = {
+export const propTypes = {
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   location: PropTypes.shape({
@@ -78,4 +78,6 @@ ProductsContainer.propTypes = {
   getFilteredProductsRequest: PropTypes.func.isRequired,
 };
 
-export default flow(productsHoc, productsProviderHoc, productsResizeHoc)(ProductsContainer);
+ProductsContainer.propTypes = propTypes;
+export const init = flow([productsHoc, productsProviderHoc, productsResizeHoc]);
+export default init(ProductsContainer);

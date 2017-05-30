@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_ConfigProductCategoriesContainer.scss';
+import 'containers/ConfigProductCategoriesContainer/_ConfigProductCategoriesContainer.scss';
 
 import configProductCategoriesHoc from 'containers/ConfigProductCategoriesContainer/configProductCategoriesHoc';
 import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';
 import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
 import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
 import NotificationComponent from 'components/notification/NotificationComponent';
+import flow from 'lodash/flow';
 
 export class ConfigProductCategoriesContainer extends React.Component {
   constructor(props) {
@@ -60,7 +61,7 @@ export class ConfigProductCategoriesContainer extends React.Component {
   }
 }
 
-ConfigProductCategoriesContainer.propTypes = {
+export const propTypes = {
   notificationsSuccess: PropTypes.array.isRequired,
   notificationsFailure: PropTypes.array.isRequired,
   mappedCategories: PropTypes.array.isRequired,
@@ -73,4 +74,6 @@ ConfigProductCategoriesContainer.propTypes = {
   postProductSubCategoryRequest: PropTypes.func.isRequired,
 };
 
-export default configProductCategoriesHoc(ConfigProductCategoriesContainer);
+ConfigProductCategoriesContainer.propTypes = propTypes;
+export const init = flow([configProductCategoriesHoc]);
+export default init(ConfigProductCategoriesContainer);

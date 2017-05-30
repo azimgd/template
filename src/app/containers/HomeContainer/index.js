@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
-import 'scss/containers/_HomeContainer.scss';
+import 'containers/HomeContainer/_HomeContainer.scss';
 
-import isEmpty from 'lodash/isEmpty';
 import homeHoc from 'containers/HomeContainer/homeHoc';
 import HomeCategoriesComponent from 'components/homeCategories/HomeCategoriesComponent';
 import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
+import isEmpty from 'lodash/isEmpty';
+import flow from 'lodash/flow';
 
 export class HomeContainer extends React.Component {
   componentWillMount() {
@@ -62,7 +63,7 @@ export class HomeContainer extends React.Component {
   }
 }
 
-HomeContainer.propTypes = {
+export const propTypes = {
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   getPageCategoriesRequest: PropTypes.func.isRequired,
@@ -77,4 +78,6 @@ HomeContainer.propTypes = {
   }).isRequired,
 };
 
-export default homeHoc(HomeContainer);
+HomeContainer.propTypes = propTypes;
+export const init = flow([homeHoc]);
+export default init(HomeContainer);

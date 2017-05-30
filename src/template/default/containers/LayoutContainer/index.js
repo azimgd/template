@@ -1,9 +1,5 @@
-import React, { PropTypes } from 'react';
-import 'containers/LayoutContainer/_LayoutContainer.scss';
-
-import cartResizeHoc from 'containers/LayoutContainer/cartResizeHoc';
-import layoutHoc from 'containers/LayoutContainer/layoutHoc';
-import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
+import React from 'react';
+import { init, propTypes } from 'containers/LayoutContainer/index';
 import HeaderComponent from 'components/header/HeaderComponent';
 import FooterComponent from 'components/footer/FooterComponent';
 import TopnavbarComponent from 'components/topnavbar/TopnavbarComponent';
@@ -11,7 +7,7 @@ import CartDropdownComponent from 'components/cartDropdown/CartDropdownComponent
 import CartDropdownItemComponent from 'components/cartDropdownItem/CartDropdownItemComponent';
 import HeaderActionsComponent from 'components/headerActions/HeaderActionsComponent';
 import SearchComponent from 'components/search/SearchComponent';
-import flow from 'lodash/flow';
+import 'template/containers/LayoutContainer/_LayoutContainer.scss';
 
 const LayoutContainer = ({ ui, toggleCartDropdown, getSearchedProductsRequest, children, cartPosition, location }) =>
   <div className="LayoutContainerBlock">
@@ -39,21 +35,5 @@ const LayoutContainer = ({ ui, toggleCartDropdown, getSearchedProductsRequest, c
     </div>
   </div>;
 
-export const propTypes = {
-  children: React.PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-  ]).isRequired,
-  cartPosition: PropTypes.shape({
-    top: PropTypes.number,
-    left: PropTypes.number,
-  }).isRequired,
-  ui: PropTypes.shape({}).isRequired,
-  toggleCartDropdown: PropTypes.func.isRequired,
-  location: PropTypes.shape({}).isRequired,
-  getSearchedProductsRequest: PropTypes.func.isRequired,
-};
-
 LayoutContainer.propTypes = propTypes;
-export const init = flow([layoutHoc, productsProviderHoc, cartResizeHoc]);
 export default init(LayoutContainer);
