@@ -16,7 +16,9 @@ const extractSass = new ExtractTextPlugin({
 });
 
 const WebpackPlugins = [
-  new WriteFilePlugin(),
+  new WriteFilePlugin({
+    test: /^(?!.*(hot)).*/,
+  }),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`
   }),
