@@ -38,7 +38,10 @@ if (IS_PRODUCTION) {
   WebpackLoaders.push({
     test: /\.js$/,
     loader: 'babel-loader',
-    include: path.join(__dirname, 'src'),
+    include: [
+      path.join(__dirname, 'src/app'),
+      path.join(__dirname, 'src/template'),
+    ],
   });
 
   /**
@@ -58,7 +61,10 @@ if (IS_PRODUCTION) {
   WebpackLoaders.push({
     test: /\.js$/,
     loaders: ['react-hot-loader/webpack', 'babel-loader'],
-    include: path.join(__dirname, 'src'),
+    include: [
+      path.join(__dirname, 'src/app'),
+      path.join(__dirname, 'src/template'),
+    ],
   });
 
   /**

@@ -2,7 +2,7 @@ import test from 'ava';
 import React from 'react';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
-import { PagesContainer } from 'containers/PagesContainer.js';
+import { PagesContainer } from 'containers/PagesContainer/index';
 
 const props = {
   getPageCategoriesRequest: sinon.spy(),

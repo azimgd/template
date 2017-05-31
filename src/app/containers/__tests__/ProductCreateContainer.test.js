@@ -2,7 +2,7 @@ import test from 'ava';
 import React from 'react';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
-import { ProductCreateContainer } from 'containers/ProductCreateContainer.js';
+import { ProductCreateContainer } from 'containers/ProductCreateContainer/index';
 
 const props = {
   getProductCategoriesRequest: sinon.spy(),
