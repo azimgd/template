@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_ConfigNavigationComponent.scss';
+import 'components/ConfigNavigation/_ConfigNavigationComponent.scss';
 
 import { Field, reduxForm } from 'redux-form';
 import ConfigNavigationComponentValidator from 'validators/ConfigNavigationComponentValidator';
-import { InputText } from 'components/shared/SharedFormInputComponent';
+import { InputText } from 'components/Shared/SharedFormInputComponent';
 
 const ConfigNavigationComponent = ({ handleSubmit, createNewRoute }) =>
   <div className="ConfigNavigationComponentBlock">

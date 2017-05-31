@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_PageFormComponent.scss';
+import 'components/PageForm/_PageFormComponent.scss';
 
 import { Field, reduxForm } from 'redux-form';
 import PageFormComponentValidator from 'validators/PageFormComponentValidator';
-import { InputText, InputSelect, RichTextarea } from 'components/shared/SharedFormInputComponent';
+import { InputText, InputSelect, RichTextarea } from 'components/Shared/SharedFormInputComponent';
 
 const PageFormComponent = ({ categories, subCategories, handleSubmit, createPage }) =>
   <div className="PageFormComponentBlock">

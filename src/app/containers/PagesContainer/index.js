@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import 'containers/PagesContainer/_PagesContainer.scss';
 
 import pagesHoc from 'containers/PagesContainer/pagesHoc';
-import PageComponent from 'components/page/PageComponent';
-import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
-import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
+import PageComponent from 'components/Page/PageComponent';
+import IsLoadingComponent from 'components/IsLoading/IsLoadingComponent';
+import IsEmptyComponent from 'components/IsEmpty/IsEmptyComponent';
 import flow from 'lodash/flow';
 
 export class PagesContainer extends React.Component {

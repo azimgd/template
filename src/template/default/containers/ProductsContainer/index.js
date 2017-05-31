@@ -1,11 +1,13 @@
 import React from 'react';
-import { init, propTypes } from 'containers/ProductsContainer/index';
-import ProductComponent from 'components/product/ProductComponent';
-import ProductFiltersComponent from 'components/productFilters/ProductFiltersComponent';
-import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
-import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
-import isEmpty from 'lodash/isEmpty';
+import 'containers/ProductsContainer/_ProductsContainer.scss';
 import 'template/containers/ProductsContainer/_ProductsContainer.scss';
+
+import { init, propTypes } from 'containers/ProductsContainer/index';
+import ProductComponent from 'components/Products/ProductComponent';
+import ProductFiltersComponent from 'components/ProductFilters/ProductFiltersComponent';
+import IsLoadingComponent from 'components/IsLoading/IsLoadingComponent';
+import IsEmptyComponent from 'components/IsEmpty/IsEmptyComponent';
+import isEmpty from 'lodash/isEmpty';
 
 export class ProductsContainer extends React.Component {
   componentWillMount() {

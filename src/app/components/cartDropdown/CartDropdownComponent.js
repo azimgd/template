@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_CartDropdownComponent.scss';
+import 'components/CartDropdown/_CartDropdownComponent.scss';
 
 /**
  * Using css -> visibility prop over css -> display on CartDropdownComponent

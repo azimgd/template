@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_SidebarComponent.scss';
+import 'components/Sidebar/_SidebarComponent.scss';
 
 import _ from 'lodash';
 

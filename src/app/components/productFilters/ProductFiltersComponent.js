@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_ProductFiltersComponent.scss';
+import 'components/ProductFilters/_ProductFiltersComponent.scss';
 
-import productFiltersHoc from 'components/productFilters/ProductFiltersHoc';
-import ProductFilterItemComponent from 'components/productFilters/ProductFilterItemComponent';
+import productFiltersHoc from 'components/ProductFilters/ProductFiltersHoc';
+import ProductFilterItemComponent from 'components/ProductFilters/ProductFilterItemComponent';
 import map from 'lodash/map';
 
 const ProductFiltersComponent = ({ productFilters, setActiveItem }) =>

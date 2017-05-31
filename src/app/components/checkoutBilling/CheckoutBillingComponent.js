@@ -1,7 +1,7 @@
 import React from 'react';
-import 'scss/components/_CheckoutBillingComponent.scss';
+import 'components/CheckoutBilling/_CheckoutBillingComponent.scss';
 
-import PaymentOptionComponent from 'components/paymentOption/PaymentOptionComponent';
+import PaymentOptionComponent from 'components/PaymentOption/PaymentOptionComponent';
 
 const CheckoutBillingComponent = () =>
   <div className="CheckoutBillingComponentBlock">

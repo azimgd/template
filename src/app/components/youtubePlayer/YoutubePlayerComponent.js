@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_YoutubePlayerComponent.scss';
+import 'components/YoutubePlayer/_YoutubePlayerComponent.scss';
 
 import map from 'lodash/map';
-import youtubePlayerHoc from 'components/youtubePlayer/YoutubePlayerHoc';
-import YoutubePlayerActiveComponent from 'components/youtubePlayer/YoutubePlayerActiveComponent';
-import YoutubePlayerItemComponent from 'components/youtubePlayer/YoutubePlayerItemComponent';
+import youtubePlayerHoc from 'components/YoutubePlayer/YoutubePlayerHoc';
+import YoutubePlayerActiveComponent from 'components/YoutubePlayer/YoutubePlayerActiveComponent';
+import YoutubePlayerItemComponent from 'components/YoutubePlayer/YoutubePlayerItemComponent';
 
 const YoutubePlayerComponent = ({ setActiveItem, activeItem, inactiveItems }) =>
   <div>

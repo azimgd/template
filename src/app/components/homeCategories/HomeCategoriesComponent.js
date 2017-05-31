@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_HomeCategoriesComponent.scss';
+import 'components/HomeCategories/_HomeCategoriesComponent.scss';
 
 import map from 'lodash/map';
 import { Link } from 'react-router';

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_TopnavbarComponent.scss';
+import 'components/topnavbar/_TopnavbarComponent.scss';
 
 import { Link } from 'react-router';
 

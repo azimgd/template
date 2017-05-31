@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_CartDropdownItemComponent.scss';
+import 'components/CartDropdownItem/_CartDropdownItemComponent.scss';
 
 const CartDropdownItemComponent = () =>
   <div className="CartDropdownItemComponentBlock">

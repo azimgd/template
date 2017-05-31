@@ -1,5 +1,5 @@
 import React from 'react';
-import 'scss/components/_PaymentOptionComponent.scss';
+import 'components/PaymentOption/_PaymentOptionComponent.scss';
 
 const PaymentOptionComponent = () =>
   <div className="PaymentOptionComponentBlock">

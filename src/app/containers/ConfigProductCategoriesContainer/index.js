@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react';
 import 'containers/ConfigProductCategoriesContainer/_ConfigProductCategoriesContainer.scss';
 
 import configProductCategoriesHoc from 'containers/ConfigProductCategoriesContainer/configProductCategoriesHoc';
-import ConfigCategoriesComponent from 'components/configCategories/ConfigCategoriesComponent';
-import ConfigSubCategoriesComponent from 'components/configSubCategories/ConfigSubCategoriesComponent';
-import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
-import NotificationComponent from 'components/notification/NotificationComponent';
+import ConfigCategoriesComponent from 'components/ConfigCategories/ConfigCategoriesComponent';
+import ConfigSubCategoriesComponent from 'components/ConfigSubCategories/ConfigSubCategoriesComponent';
+import ConfigSidebarComponent from 'components/ConfigSidebar/ConfigSidebarComponent';
+import NotificationComponent from 'components/Notification/NotificationComponent';
 import flow from 'lodash/flow';
 
 export class ConfigProductCategoriesContainer extends React.Component {

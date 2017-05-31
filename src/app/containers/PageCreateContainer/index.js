@@ -3,9 +3,9 @@ import 'containers/PageCreateContainer/_PageCreateContainer.scss';
 
 import configMock from 'mocks/config';
 import pageCreateHoc from 'containers/PageCreateContainer/pageCreateHoc';
-import PageFormComponent from 'components/pageForm/PageFormComponent';
-import NotificationComponent from 'components/notification/NotificationComponent';
-import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
+import PageFormComponent from 'components/PageForm/PageFormComponent';
+import NotificationComponent from 'components/Notification/NotificationComponent';
+import ProductAboutComponent from 'components/ProductAbout/ProductAboutComponent';
 import flow from 'lodash/flow';
 
 export class PageCreateContainer extends React.Component {

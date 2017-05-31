@@ -4,10 +4,10 @@ import 'containers/ProductsContainer/_ProductsContainer.scss';
 import productsHoc from 'containers/ProductsContainer/productsHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
 import productsResizeHoc from 'containers/ProductsContainer/productsResizeHoc';
-import ProductComponent from 'components/product/ProductComponent';
-import ProductFiltersComponent from 'components/productFilters/ProductFiltersComponent';
-import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
-import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
+import ProductComponent from 'components/Products/ProductComponent';
+import ProductFiltersComponent from 'components/ProductFilters/ProductFiltersComponent';
+import IsLoadingComponent from 'components/IsLoading/IsLoadingComponent';
+import IsEmptyComponent from 'components/IsEmpty/IsEmptyComponent';
 import isEmpty from 'lodash/isEmpty';
 import flow from 'lodash/flow';
 

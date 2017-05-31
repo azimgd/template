@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_ImageUploadComponent.scss';
+import 'components/ImageUpload/_ImageUploadComponent.scss';
 
 import ReactUploader from 'react-s3-uploader';
 

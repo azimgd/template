@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_ProductsComponent.scss';
+import 'components/Products/_ProductsComponent.scss';
 
 import { Link } from 'react-router';
 import get from 'lodash/get';
 import configMock from 'mocks/config';
-import { ButtonIconComponent } from 'components/icons/IconsComponent';
+import { ButtonIconComponent } from 'components/Icons/IconsComponent';
 
 const ProductComponent = ({ product, height }) =>
   <div className="ProductComponentBlock">

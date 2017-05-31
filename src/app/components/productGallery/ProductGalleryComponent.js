@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_ProductGalleryComponent.scss';
+import 'components/ProductGallery/_ProductGalleryComponent.scss';
 
 import Slider from 'react-image-slider';
 

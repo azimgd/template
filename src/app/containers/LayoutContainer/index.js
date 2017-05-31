@@ -4,13 +4,13 @@ import 'containers/LayoutContainer/_LayoutContainer.scss';
 import cartResizeHoc from 'containers/LayoutContainer/cartResizeHoc';
 import layoutHoc from 'containers/LayoutContainer/layoutHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
-import HeaderComponent from 'components/header/HeaderComponent';
-import FooterComponent from 'components/footer/FooterComponent';
-import TopnavbarComponent from 'components/topnavbar/TopnavbarComponent';
-import CartDropdownComponent from 'components/cartDropdown/CartDropdownComponent';
-import CartDropdownItemComponent from 'components/cartDropdownItem/CartDropdownItemComponent';
-import HeaderActionsComponent from 'components/headerActions/HeaderActionsComponent';
-import SearchComponent from 'components/search/SearchComponent';
+import HeaderComponent from 'components/Header/HeaderComponent';
+import FooterComponent from 'components/Footer/FooterComponent';
+import TopnavbarComponent from 'components/Topnavbar/TopnavbarComponent';
+import CartDropdownComponent from 'components/CartDropdown/CartDropdownComponent';
+import CartDropdownItemComponent from 'components/CartDropdownItem/CartDropdownItemComponent';
+import HeaderActionsComponent from 'components/HeaderActions/HeaderActionsComponent';
+import SearchComponent from 'components/Search/SearchComponent';
 import flow from 'lodash/flow';
 
 const LayoutContainer = ({ ui, toggleCartDropdown, getSearchedProductsRequest, children, cartPosition, location }) =>

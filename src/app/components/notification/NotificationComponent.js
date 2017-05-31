@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_NotificationComponent.scss';
+import 'components/Notification/_NotificationComponent.scss';
 
 const NotificationComponent = ({ isVisible, message, status, toggleNotification }) =>
   <div className={`NotificationComponentBlock NotificationComponentBlock--${status}`} style={{ display: isVisible ? 'block' : 'none' }}>

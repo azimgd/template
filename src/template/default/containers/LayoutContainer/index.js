@@ -1,13 +1,15 @@
 import React from 'react';
-import { init, propTypes } from 'containers/LayoutContainer/index';
-import HeaderComponent from 'components/header/HeaderComponent';
-import FooterComponent from 'components/footer/FooterComponent';
-import TopnavbarComponent from 'components/topnavbar/TopnavbarComponent';
-import CartDropdownComponent from 'components/cartDropdown/CartDropdownComponent';
-import CartDropdownItemComponent from 'components/cartDropdownItem/CartDropdownItemComponent';
-import HeaderActionsComponent from 'components/headerActions/HeaderActionsComponent';
-import SearchComponent from 'components/search/SearchComponent';
+import 'containers/LayoutContainer/_LayoutContainer.scss';
 import 'template/containers/LayoutContainer/_LayoutContainer.scss';
+
+import { init, propTypes } from 'containers/LayoutContainer/index';
+import HeaderComponent from 'components/Header/HeaderComponent';
+import FooterComponent from 'components/Footer/FooterComponent';
+import TopnavbarComponent from 'components/Topnavbar/TopnavbarComponent';
+import CartDropdownComponent from 'components/CartDropdown/CartDropdownComponent';
+import CartDropdownItemComponent from 'components/CartDropdownItem/CartDropdownItemComponent';
+import HeaderActionsComponent from 'components/HeaderActions/HeaderActionsComponent';
+import SearchComponent from 'components/Search/SearchComponent';
 
 const LayoutContainer = ({ ui, toggleCartDropdown, getSearchedProductsRequest, children, cartPosition, location }) =>
   <div className="LayoutContainerBlock">

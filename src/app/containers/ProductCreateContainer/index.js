@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react';
 import 'containers/ProductCreateContainer/_ProductCreateContainer.scss';
 
 import productCreateHoc from 'containers/ProductCreateContainer/productCreateHoc';
-import ProductFormComponent from 'components/productForm/ProductFormComponent';
-import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
-import NotificationComponent from 'components/notification/NotificationComponent';
-import ImagePreviewComponent from 'components/imagePreview/ImagePreviewComponent';
-import ImageUploadComponent from 'components/imageUpload/ImageUploadComponent';
+import ProductFormComponent from 'components/ProductForm/ProductFormComponent';
+import ProductAboutComponent from 'components/ProductAbout/ProductAboutComponent';
+import NotificationComponent from 'components/Notification/NotificationComponent';
+import ImagePreviewComponent from 'components/ImagePreview/ImagePreviewComponent';
+import ImageUploadComponent from 'components/ImageUpload/ImageUploadComponent';
 import flow from 'lodash/flow';
 
 export class ProductCreateContainer extends React.Component {

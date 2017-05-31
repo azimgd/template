@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_PageNavLocationComponent.scss';
+import 'components/PageNavLocation/_PageNavLocationComponent.scss';
 
 import { Link } from 'react-router';
 

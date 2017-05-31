@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react';
 import 'containers/ConfigNavigationContainer/_ConfigNavigationContainer.scss';
 
 import configNavigationHoc from 'containers/ConfigNavigationContainer/configNavigationHoc';
-import ConfigSidebarComponent from 'components/configSidebar/ConfigSidebarComponent';
-import ConfigNavigationComponent from 'components/configNavigation/ConfigNavigationComponent';
+import ConfigSidebarComponent from 'components/ConfigSidebar/ConfigSidebarComponent';
+import ConfigNavigationComponent from 'components/ConfigNavigation/ConfigNavigationComponent';
 import flow from 'lodash/flow';
 
 class ConfigNavigationContainer extends React.Component {

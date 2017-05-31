@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_ProductDetailsComponent.scss';
+import 'components/ProductDetails/_ProductDetailsComponent.scss';
 
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
-import productDetailsHoc from 'components/productDetails/ProductDetailsHoc';
-import ProductDetailsItemComponent from 'components/productDetails/ProductDetailsItemComponent';
-import YoutubePlayerComponent from 'components/youtubePlayer/YoutubePlayerComponent';
+import productDetailsHoc from 'components/ProductDetails/ProductDetailsHoc';
+import ProductDetailsItemComponent from 'components/ProductDetails/ProductDetailsItemComponent';
+import YoutubePlayerComponent from 'components/YoutubePlayer/YoutubePlayerComponent';
 
 const ProductDetailsComponent = ({ productOptions, youtubeOptions, productParsedToHtml }) => (
   <div className="ProductDetailsComponentBlock">

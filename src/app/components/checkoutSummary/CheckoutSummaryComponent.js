@@ -1,5 +1,5 @@
 import React from 'react';
-import 'scss/components/_CheckoutSummaryComponent.scss';
+import 'components/CheckoutSummary/_CheckoutSummaryComponent.scss';
 
 import _ from 'lodash';
 import checkoutMock from 'mocks/checkout';

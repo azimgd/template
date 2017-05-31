@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_ConfigSubCategoriesComponent.scss';
+import 'components/ConfigSubCategories/_ConfigSubCategoriesComponent.scss';
 
 import { Field, reduxForm } from 'redux-form';
 import ConfigSubCategoriesComponentValidator from 'validators/ConfigSubCategoriesComponentValidator';
-import { InputText, InputSelect } from 'components/shared/SharedFormInputComponent';
+import { InputText, InputSelect } from 'components/Shared/SharedFormInputComponent';
 
 const ConfigSubCategoriesComponent = ({ categories, handleSubmit, createNewSubCategory }) =>
   <div className="ConfigSubCategoriesComponentBlock">

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_ProductOptionsListComponent.scss';
+import 'components/ProductOptionsList/_ProductOptionsListComponent.scss';
 
 const ProductOptionsListComponent = ({ productOptions }) =>
   <div className="ProductOptionsListComponentBlock">

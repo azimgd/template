@@ -1,5 +1,5 @@
 import React from 'react';
-import 'scss/components/_ProductAboutComponent.scss';
+import 'components/ProductAbout/_ProductAboutComponent.scss';
 
 const ProductAboutComponent = () =>
   <div className="ProductAboutComponent">

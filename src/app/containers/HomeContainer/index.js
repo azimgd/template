@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import 'containers/HomeContainer/_HomeContainer.scss';
 
 import homeHoc from 'containers/HomeContainer/homeHoc';
-import HomeCategoriesComponent from 'components/homeCategories/HomeCategoriesComponent';
-import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
-import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
+import HomeCategoriesComponent from 'components/HomeCategories/HomeCategoriesComponent';
+import IsLoadingComponent from 'components/IsLoading/IsLoadingComponent';
+import IsEmptyComponent from 'components/IsEmpty/IsEmptyComponent';
 import isEmpty from 'lodash/isEmpty';
 import flow from 'lodash/flow';
 

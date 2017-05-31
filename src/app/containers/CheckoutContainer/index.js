@@ -1,10 +1,10 @@
 import React from 'react';
 import 'containers/CheckoutContainer/_CheckoutContainer.scss';
 
-import CheckoutSummaryComponent from 'components/checkoutSummary/CheckoutSummaryComponent';
-import CheckoutUserInfoComponent from 'components/checkoutUserInfo/CheckoutUserInfoComponent';
-import CheckoutBillingComponent from 'components/checkoutBilling/CheckoutBillingComponent';
-import CheckoutControlComponent from 'components/checkoutControl/CheckoutControlComponent';
+import CheckoutSummaryComponent from 'components/CheckoutSummary/CheckoutSummaryComponent';
+import CheckoutUserInfoComponent from 'components/CheckoutUserInfo/CheckoutUserInfoComponent';
+import CheckoutBillingComponent from 'components/CheckoutBilling/CheckoutBillingComponent';
+import CheckoutControlComponent from 'components/CheckoutControl/CheckoutControlComponent';
 import flow from 'lodash/flow';
 
 const CheckoutContainer = () =>

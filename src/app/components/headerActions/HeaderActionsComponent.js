@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_HeaderActionsComponent.scss';
+import 'components/HeaderActions/_HeaderActionsComponent.scss';
 
-import { TitleIconComponent } from 'components/icons/IconsComponent';
+import { TitleIconComponent } from 'components/Icons/IconsComponent';
 
 const HeaderActions = ({ toggleCartDropdown }) =>
   <div className="HeaderActionsBlock">

@@ -1,5 +1,5 @@
 import React from 'react';
-import 'scss/components/_LoginFormComponent.scss';
+import 'components/LoginForm/_LoginFormComponent.scss';
 
 const LoginFormComponent = () =>
   <div className="LoginFormComponentBlock">

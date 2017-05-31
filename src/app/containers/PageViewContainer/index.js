@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import 'containers/PageViewContainer/_PageViewContainer.scss';
 
 import pageViewHoc from 'containers/PageViewContainer/pageViewHoc';
-import PageDetailsComponent from 'components/pageDetails/PageDetailsComponent';
-import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
-import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
+import PageDetailsComponent from 'components/PageDetails/PageDetailsComponent';
+import IsLoadingComponent from 'components/IsLoading/IsLoadingComponent';
+import IsEmptyComponent from 'components/IsEmpty/IsEmptyComponent';
 import flow from 'lodash/flow';
 
 export class PageViewContainer extends React.Component {

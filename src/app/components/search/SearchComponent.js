@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_SearchComponent.scss';
+import 'components/Search/_SearchComponent.scss';
 
 import { Field, reduxForm } from 'redux-form';
-import { ButtonIconComponent } from 'components/icons/IconsComponent';
-import { InputText } from 'components/shared/SharedFormInputComponent';
+import { ButtonIconComponent } from 'components/Icons/IconsComponent';
+import { InputText } from 'components/Shared/SharedFormInputComponent';
 
 const SearchComponent = ({ handleSubmit, getSearchedProductsRequest }) =>
   <div className="SearchComponentBlock">

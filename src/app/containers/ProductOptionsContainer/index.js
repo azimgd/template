@@ -2,12 +2,12 @@ import React, { PropTypes } from 'react';
 import 'containers/ProductOptionsContainer/_ProductOptionsContainer.scss';
 
 import productOptionsHoc from 'containers/ProductOptionsContainer/productOptionsHoc';
-import ProductOptionsFormComponent from 'components/productOptionsForm/ProductOptionsFormComponent';
-import ProductOptionsListComponent from 'components/productOptionsList/ProductOptionsListComponent';
-import ProductAboutComponent from 'components/productAbout/ProductAboutComponent';
-import NotificationComponent from 'components/notification/NotificationComponent';
-import IsLoadingComponent from 'components/isLoading/IsLoadingComponent';
-import IsEmptyComponent from 'components/isEmpty/IsEmptyComponent';
+import ProductOptionsFormComponent from 'components/ProductOptionsForm/ProductOptionsFormComponent';
+import ProductOptionsListComponent from 'components/ProductOptionsList/ProductOptionsListComponent';
+import ProductAboutComponent from 'components/ProductAbout/ProductAboutComponent';
+import NotificationComponent from 'components/Notification/NotificationComponent';
+import IsLoadingComponent from 'components/IsLoading/IsLoadingComponent';
+import IsEmptyComponent from 'components/IsEmpty/IsEmptyComponent';
 import flow from 'lodash/flow';
 
 export class ProductOptionsContainer extends React.Component {

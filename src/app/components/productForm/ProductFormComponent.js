@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_ProductFormComponent.scss';
+import 'components/ProductForm/_ProductFormComponent.scss';
 
 import { Field, reduxForm } from 'redux-form';
 import ProductFormComponentValidator from 'validators/ProductFormComponentValidator';
-import { InputText, RichTextarea, InputSelect } from 'components/shared/SharedFormInputComponent';
+import { InputText, RichTextarea, InputSelect } from 'components/Shared/SharedFormInputComponent';
 
 const ProductFormComponent = ({ children, categories, subCategories, handleSubmit, createProduct }) =>
   <div className="ProductFormComponentBlock">

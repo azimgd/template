@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import 'scss/components/_SharedFormInputComponent.scss';
+import 'components/Shared/_SharedFormInputComponent.scss';
 
 import RichTextEditor from 'react-rte';
 import _ from 'lodash';

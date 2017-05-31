@@ -1,7 +1,7 @@
 import React from 'react';
 import 'containers/LoginContainer/_LoginContainer.scss';
 
-import LoginFormComponent from 'components/loginForm/LoginFormComponent';
+import LoginFormComponent from 'components/LoginForm/LoginFormComponent';
 import flow from 'lodash/flow';
 
 const LoginContainer = () =>
