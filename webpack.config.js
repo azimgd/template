@@ -91,11 +91,11 @@ module.exports = {
     modules: [
       path.join(__dirname, 'src/app'),
       path.join(__dirname, 'src/assets'),
-      path.join(__dirname, 'src/template/default'),
+      path.join(__dirname, `src/template/${process.env.TEMPLATE}`),
       'node_modules',
     ],
     alias: {
-      template: path.join(__dirname, 'src/template/default'),
+      template: path.join(__dirname, `src/template/${process.env.TEMPLATE}`),
     },
     extensions: ['.js', '.css', '.scss'],
   },
