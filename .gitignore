@@ -6,3 +6,6 @@ yarn-error.log
 build/*
 error.log
 .env
+
+src/template/*
+!src/template/default
