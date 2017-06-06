@@ -1,0 +1,36 @@
+.TopnavbarComponentBlock {
+  background: $c-contentBackground;
+}
+
+.TopnavbarComponent {
+  &-nav {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0;
+
+    & > li {
+      display: inline-block;
+      padding: $padding-small-horizontal $padding-base-horizontal;
+    }
+
+    &-item > a {
+      color: $c-text-1;
+      text-decoration: none;
+    }
+
+    &-item--active {
+      border-bottom: 3px solid $c-primaryBackground;
+    }
+
+    &-item--active > a {
+      color: $c-primaryBackground;
+      cursor: pointer;
+    }
+
+    &-item > a:hover,
+    &-item > a:active {
+      color: $c-primaryBackground;
+      cursor: pointer;
+    }
+  }
+}
