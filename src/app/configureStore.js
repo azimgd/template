@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import { persistStore, autoRehydrate } from 'redux-persist';
 import rootReducer from 'reducers/index';
 import rootSagas from 'sagas/index';
 
@@ -11,8 +12,11 @@ export default (preloadedState) => {
     preloadedState,
     composeEnhancers(
       applyMiddleware(sagaMiddleware),
+      autoRehydrate(),
     ),
   );
+
+  persistStore(store, { whitelist: ['loginReducer'] });
 
   sagaMiddleware.run(rootSagas);
 

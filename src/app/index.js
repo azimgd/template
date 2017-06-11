@@ -6,11 +6,13 @@ import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import 'services/immutabilityService';
+import { authorizationProvider } from 'services/authorizationService';
 import configureStore from 'configureStore';
 import Routes from 'template/Routes';
 import 'scss/index.scss';
 
 const store = configureStore();
+authorizationProvider(store);
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render((

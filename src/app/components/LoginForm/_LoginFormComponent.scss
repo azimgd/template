@@ -1,34 +1,30 @@
 .LoginFormComponentBlock {
-  @extend .row;
-  padding: $padding-large-horizontal;
 }
 
 .LoginFormComponent {
-  @extend .col-sm-4;
-  @extend .col-xs-offset-4;
-  padding: $padding-large-horizontal;
-  background: $c-contentBackground;
+  &-form {
+    margin-bottom: $padding-base-horizontal;
 
-  &-title {
-    font-weight: $f-headingsWeight;
-    margin-bottom: $padding-large-horizontal;
+    &-input:not(:last-child) {
+      margin-bottom: $padding-base-horizontal;
+    }
   }
 
-  &-input {
-    margin-bottom: $padding-large-horizontal;
+  &-control > *:not(:last-child) {
+    margin-bottom: $padding-base-horizontal;
   }
 
-  &-control {
-    @extend .row;
+  &-button {
+    width: 100%;
+    padding: $padding-small-horizontal $padding-large-horizontal;
+    background: $c-secondaryBackground;
+    color: $c-white;
+    text-align: center;
+  }
 
-    &-left {
-      @extend .col-xs-6;
-    }
-
-    &-right {
-      @extend .col-xs-6;
-      text-align: right;
-      padding-top: $padding-base-vertical;
-    }
+  &-link {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }

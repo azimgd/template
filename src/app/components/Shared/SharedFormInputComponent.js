@@ -27,6 +27,26 @@ InputText.propTypes = {
 /**
  *
  */
+export const InputPassword = ({ input, label, meta: { asyncValidating, touched, error } }) => (
+  <div className="SharedFormInputComponent SharedFormInputComponent--InputPassword">
+    <label>{label}</label>
+    <div className={asyncValidating ? 'SharedFormInputComponent-isValidating' : ''}>
+      <input {...input} type="password" placeholder={label} />
+      {touched && error && <div className="SharedFormInputComponent-error">{error}</div>}
+    </div>
+  </div>
+);
+
+InputPassword.propTypes = {
+  input: PropTypes.object,
+  label: PropTypes.string,
+  type: PropTypes.string,
+  meta: PropTypes.object,
+};
+
+/**
+ *
+ */
 export const InputTextarea = ({ input, label, meta: { asyncValidating, touched, error } }) => (
   <div className="SharedFormInputComponent SharedFormInputComponent--InputTextarea">
     <label>{label}</label>

@@ -55,8 +55,8 @@ export class ProductCreateContainer extends React.Component {
               {this.props.notificationsSuccess.map(notificationSuccess =>
                 <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
               )}
-              {this.props.notificationsFailure.map(notificationsFailure =>
-                <NotificationComponent isVisible message={notificationsFailure.message} status={notificationsFailure.status} />
+              {this.props.notificationsFailure.map(notificationFailure =>
+                <NotificationComponent isVisible message={notificationFailure.message} status={notificationFailure.status} />
               )}
             </div>
 

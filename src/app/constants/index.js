@@ -7,6 +7,14 @@ export const TOGGLE_CART_DROPDOWN = 'TOGGLE_CART_DROPDOWN';
 export const TOGGLE_ALERT_MESSAGE = 'TOGGLE_ALERT_MESSAGE';
 
 /**
+ * Login
+ */
+export const POST_LOGIN_IDLE = 'POST_LOGIN_IDLE';
+export const POST_LOGIN_REQUEST = 'POST_LOGIN_REQUEST';
+export const POST_LOGIN_SUCCESS = 'POST_LOGIN_SUCCESS';
+export const POST_LOGIN_FAILURE = 'POST_LOGIN_FAILURE';
+
+/**
  * Pages
  */
 export const GET_PAGES_IDLE = 'GET_PAGES_IDLE';

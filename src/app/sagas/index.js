@@ -1,3 +1,4 @@
+import loginSaga from './loginSaga';
 import pageCategoriesSaga from './pageCategoriesSaga';
 import pagesSaga from './pagesSaga';
 import pageSubCategoriesSaga from './pageSubCategoriesSaga';
@@ -9,6 +10,7 @@ import productSubCategoriesSaga from './productSubCategoriesSaga';
 
 export default function* rootSaga() {
   yield []
+    .concat(loginSaga)
     .concat(pageCategoriesSaga)
     .concat(pagesSaga)
     .concat(pageSubCategoriesSaga)

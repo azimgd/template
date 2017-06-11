@@ -7,6 +7,14 @@ export const toggleAlertMessage = createAction(constants.TOGGLE_ALERT_MESSAGE);
 /**
  * Pages
  */
+export const postLoginIdle = createAction(constants.POST_LOGIN_IDLE);
+export const postLoginRequest = createAction(constants.POST_LOGIN_REQUEST);
+export const postLoginSuccess = createAction(constants.POST_LOGIN_SUCCESS);
+export const postLoginFailure = createAction(constants.POST_LOGIN_FAILURE);
+
+/**
+ * Pages
+ */
 export const getPagesIdle = createAction(constants.GET_PAGES_IDLE);
 export const getPagesRequest = createAction(constants.GET_PAGES_REQUEST);
 export const getPagesSuccess = createAction(constants.GET_PAGES_SUCCESS);

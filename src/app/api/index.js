@@ -3,6 +3,13 @@ import requestProvider from './requestProvider';
 /**
  * Pages
  */
+export const postLogin = (data) =>
+  requestProvider.post('/api/users/login', data)
+  .then(res => res.data);
+
+/**
+ * Pages
+ */
 export const getPages = (data) =>
   requestProvider.get('/api/pages', { params: data })
   .then(res => res.data);

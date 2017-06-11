@@ -26,4 +26,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   }, ownProps, stateProps, dispatchProps);
 };
 
-export default (ConfigCategoriesContainer) => connect(mapStateToProps, mapDispatchToProps, mergeProps)(ConfigCategoriesContainer);
+export default (HomeContainer) => connect(mapStateToProps, mapDispatchToProps, mergeProps)(HomeContainer);

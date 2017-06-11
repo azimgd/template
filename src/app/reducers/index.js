@@ -3,6 +3,7 @@ import { routerReducer as routing } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 
 import uiReducer from 'reducers/uiReducer';
+import loginReducer from 'reducers/loginReducer';
 import pagesReducer from 'reducers/pagesReducer';
 import pageCategoriesReducer from 'reducers/pageCategoriesReducer';
 import pageSubCategoriesReducer from 'reducers/pageSubCategoriesReducer';
@@ -15,6 +16,7 @@ import imageUploadReducer from 'reducers/imageUploadReducer';
 
 export default combineReducers({
   uiReducer,
+  loginReducer,
   pagesReducer,
   pageCategoriesReducer,
   pageSubCategoriesReducer,

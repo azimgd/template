@@ -1,32 +1,40 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import 'components/LoginForm/_LoginFormComponent.scss';
 
-const LoginFormComponent = () =>
+import { Field, reduxForm } from 'redux-form';
+import LoginFormComponentValidator from 'validators/LoginFormComponentValidator';
+import { InputText, InputPassword } from 'components/Shared/SharedFormInputComponent';
+
+const LoginFormComponent = ({ handleSubmit, postLoginRequest }) =>
   <div className="LoginFormComponentBlock">
-    <div className="LoginFormComponent">
-      <div className="LoginFormComponent-title">
-        Website name
+    <form className="LoginFormComponent" onSubmit={handleSubmit(postLoginRequest)}>
+      <div className="LoginFormComponent-form">
+        <div className="LoginFormComponent-form-input">
+          <Field name="username" component={InputText} label="Username" />
+        </div>
+        <div className="LoginFormComponent-form-input">
+          <Field name="password" component={InputPassword} label="Password" />
+        </div>
       </div>
 
-      <div className="LoginFormComponent-input">
-        <input type="text" />
-      </div>
-      <div className="LoginFormComponent-input">
-        <input type="password" />
-      </div>
       <div className="LoginFormComponent-control">
-        <div className="LoginFormComponent-control-left">
-          <button className="Submit">Submit</button>
-        </div>
-        <div className="LoginFormComponent-control-right">
-          <a href="">Forgot password ?</a>
-        </div>
-      </div>
+        <button type="submit" className="LoginFormComponent-button">
+          Submit
+        </button>
 
-    </div>
+        <a href="" className="LoginFormComponent-link">
+          Forgot password ?
+        </a>
+      </div>
+    </form>
   </div>;
 
 LoginFormComponent.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  postLoginRequest: PropTypes.func.isRequired,
 };
 
-export default LoginFormComponent;
+export default reduxForm({
+  form: 'LoginFormComponent',
+  asyncValidate: LoginFormComponentValidator.asyncValidate,
+})(LoginFormComponent);
