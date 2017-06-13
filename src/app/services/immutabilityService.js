@@ -27,5 +27,4 @@ update.extend('$setRequestActionLoading', (data, original) => update(original, {
   status: { $set: constants.STATUS_LOADING },
   isLoading: { $set: true },
   createdAt: { $set: Date.now() },
-  meta: { $set: data },
 }));

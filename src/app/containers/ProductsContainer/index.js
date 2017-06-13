@@ -13,14 +13,11 @@ import flow from 'lodash/flow';
 
 export class ProductsContainer extends React.Component {
   componentWillMount() {
-    const { categoryId, subCategoryId } = this.props.location.query;
-    this.props.getDistinctProductOptionsRequest();
-    this.props.getProductsRequest({ categoryId, subCategoryId });
+    this.props.componentWillMount();
   }
 
   componentWillUnmount() {
-    this.props.getDistinctProductOptionsIdle();
-    this.props.getProductsIdle();
+    this.props.componentWillUnmount();
   }
 
   render() {
@@ -44,6 +41,10 @@ export class ProductsContainer extends React.Component {
                   <div key={product.id}><ProductComponent product={product} height={this.props.maxHeight} /></div>
                 )}
               </div>
+
+              <div className="ProductsContainer-loadMore">
+                <button onClick={this.props.getProductsRequestModified}>Load more</button>
+              </div>
             </IsEmptyComponent>
           </IsLoadingComponent>
         </div>
@@ -53,6 +54,8 @@ export class ProductsContainer extends React.Component {
 }
 
 export const propTypes = {
+  componentWillMount: PropTypes.func.isRequired,
+  componentWillUnmount: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   location: PropTypes.shape({
@@ -72,6 +75,7 @@ export const propTypes = {
   }).isRequired,
   maxHeight: PropTypes.number.isRequired,
   getProductsRequest: PropTypes.func.isRequired,
+  getProductsRequestModified: PropTypes.func.isRequired,
   getProductsIdle: PropTypes.func.isRequired,
   getDistinctProductOptionsRequest: PropTypes.func.isRequired,
   getDistinctProductOptionsIdle: PropTypes.func.isRequired,

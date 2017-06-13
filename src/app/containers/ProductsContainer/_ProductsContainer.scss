@@ -14,11 +14,17 @@
 
   &-products {
     @extend .row;
-    margin-bottom: -$padding-large-horizontal;
 
     & > div {
       @extend .col-lg-3;
       @extend .col-sm-4;
+    }
+  }
+
+  &-loadMore {
+    text-align: center;
+    button {
+
     }
   }
 }

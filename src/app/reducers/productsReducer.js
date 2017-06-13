@@ -22,6 +22,8 @@ const initialState = {
       meta: {
         options: [],
         search: null,
+        limit: 20,
+        offset: 0,
       }
     },
     getProduct: {
@@ -44,16 +46,28 @@ const initialState = {
  */
 const getProductsRequest = (state, action) => update(state, {
   actions: {
-    getProducts: { $setRequestActionLoading: action.payload },
+    getProducts: {
+      meta: {
+        categoryId: { $set: action.payload.categoryId },
+        subCategoryId: { $set: action.payload.subCategoryId },
+        offset: { $set: action.payload.offset || state.actions.getProducts.meta.offset },
+        limit: { $set: action.payload.limit || state.actions.getProducts.meta.limit },
+      },
+    },
   },
 });
 
 const getProductsSuccess = (state, action) => update(state, {
   products: {
-    data: { $set: action.payload.data },
+    data: { $push: action.payload.data },
   },
   actions: {
-    getProducts: { $setRequestActionSuccess: action.payload },
+    getProducts: {
+      $setRequestActionSuccess: action.payload,
+      meta: {
+        offset: { $set: state.actions.getProducts.meta.offset + action.payload.data.length },
+      }
+    },
   },
 });
 
