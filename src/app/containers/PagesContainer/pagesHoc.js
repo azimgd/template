@@ -15,12 +15,25 @@ const mapDispatchToProps = {
   getPageCategoriesIdle: actions.getPageCategoriesIdle,
 };
 
+const componentWillMount = (stateProps, dispatchProps, ownProps) => {
+  const { categoryId, subCategoryId } = ownProps.location.query;
+  dispatchProps.getPagesRequest({ categoryId, subCategoryId });
+  dispatchProps.getPageCategoriesRequest();
+};
+
+const componentWillUnmount = (stateProps, dispatchProps) => {
+  dispatchProps.getPagesIdle();
+  dispatchProps.getPageCategoriesIdle();
+};
+
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const isLoading = allItemsAreFalsy([stateProps.getPagesRequest.isLoading]);
   const isEmpty = isInputArrayContentEmpty([stateProps.pages.data]);
   return Object.assign({
     isLoading,
     isEmpty,
+    componentWillMount: componentWillMount.bind(null, stateProps, dispatchProps, ownProps),
+    componentWillUnmount: componentWillUnmount.bind(null, stateProps, dispatchProps, ownProps),
   }, ownProps, stateProps, dispatchProps);
 };
 

@@ -36,6 +36,15 @@ const mapDispatchToProps = {
   errorImageUpload: actions.errorImageUpload,
   finishImageUpload: actions.finishImageUpload,
 };
+const componentWillMount = (stateProps, dispatchProps) => {
+  dispatchProps.getProductCategoriesRequest();
+  dispatchProps.getProductSubCategoriesRequest();
+};
+
+const componentWillUnmount = (stateProps, dispatchProps) => {
+  dispatchProps.getProductCategoriesIdle();
+  dispatchProps.getProductSubCategoriesIdle();
+};
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const mappedCategories = transformCategories(stateProps.productCategories.data);
@@ -79,6 +88,9 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     onUploadProgress,
     onUploadError,
     onUploadFinish,
+
+    componentWillMount: componentWillMount.bind(null, stateProps, dispatchProps, ownProps),
+    componentWillUnmount: componentWillUnmount.bind(null, stateProps, dispatchProps, ownProps),
   }, ownProps, stateProps, dispatchProps);
 };
 

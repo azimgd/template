@@ -9,24 +9,12 @@ import ProductAboutComponent from 'components/ProductAbout/ProductAboutComponent
 import flow from 'lodash/flow';
 
 export class PageCreateContainer extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.createPage = this.createPage.bind(this);
-  }
-
   componentWillMount() {
-    this.props.getPageCategoriesRequest();
-    this.props.getPageSubCategoriesRequest();
+    this.props.componentWillMount();
   }
 
   componentWillUnmount() {
-    this.props.getPageCategoriesIdle();
-    this.props.getPageSubCategoriesIdle();
-  }
-
-  createPage(data) {
-    this.props.postPageRequest(data);
+    this.props.componentWillUnmount();
   }
 
   render() {
@@ -45,7 +33,7 @@ export class PageCreateContainer extends React.Component {
             </div>
             <div className="PageCreateContainer-block-left">
               <PageFormComponent
-                createPage={this.createPage}
+                createPage={this.props.postPageRequest}
                 citiesList={configMock.citiesList}
                 categories={this.props.mappedCategories}
                 subCategories={this.props.mappedSubCategories}
@@ -62,6 +50,8 @@ export class PageCreateContainer extends React.Component {
 }
 
 export const propTypes = {
+  componentWillMount: PropTypes.func.isRequired,
+  componentWillUnmount: PropTypes.func.isRequired,
   notificationsSuccess: PropTypes.array.isRequired,
   notificationsFailure: PropTypes.array.isRequired,
   mappedCategories: PropTypes.object.isRequired,

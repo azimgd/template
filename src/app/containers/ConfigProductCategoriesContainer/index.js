@@ -9,28 +9,12 @@ import NotificationComponent from 'components/Notification/NotificationComponent
 import flow from 'lodash/flow';
 
 export class ConfigProductCategoriesContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.createNewCategory = this.createNewCategory.bind(this);
-    this.createNewSubCategory = this.createNewSubCategory.bind(this);
-  }
-
   componentWillMount() {
-    this.props.getProductCategoriesRequest();
-    this.props.getProductSubCategoriesRequest();
+    this.props.componentWillMount();
   }
 
   componentWillUnmount() {
-    this.props.getProductCategoriesIdle();
-    this.props.getProductSubCategoriesIdle();
-  }
-
-  createNewCategory(category) {
-    this.props.postProductCategoryRequest(category);
-  }
-
-  createNewSubCategory(subCategory) {
-    this.props.postProductSubCategoryRequest(subCategory);
+    this.props.componentWillUnmount();
   }
 
   render() {
@@ -48,8 +32,8 @@ export class ConfigProductCategoriesContainer extends React.Component {
               )}
             </div>
             <div className="ConfigProductCategoriesContainer-block-left">
-              <ConfigCategoriesComponent createNewCategory={this.createNewCategory} />
-              <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.createNewSubCategory} />
+              <ConfigCategoriesComponent createNewCategory={this.props.postProductCategoryRequest} />
+              <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.props.postProductSubCategoryRequest} />
             </div>
             <div className="ConfigProductCategoriesContainer-block-right">
               <ConfigSidebarComponent />
@@ -62,6 +46,8 @@ export class ConfigProductCategoriesContainer extends React.Component {
 }
 
 export const propTypes = {
+  componentWillMount: PropTypes.func.isRequired,
+  componentWillUnmount: PropTypes.func.isRequired,
   notificationsSuccess: PropTypes.array.isRequired,
   notificationsFailure: PropTypes.array.isRequired,
   mappedCategories: PropTypes.array.isRequired,

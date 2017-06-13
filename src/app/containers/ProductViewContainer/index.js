@@ -14,11 +14,11 @@ import flow from 'lodash/flow';
 
 export class ProductViewContainer extends React.Component {
   componentWillMount() {
-    this.props.getProductRequest({ id: this.props.params.id });
+    this.props.componentWillMount();
   }
 
   componentWillUnmount() {
-    this.props.getProductIdle();
+    this.props.componentWillUnmount();
   }
 
   render() {
@@ -59,6 +59,8 @@ export class ProductViewContainer extends React.Component {
 }
 
 export const propTypes = {
+  componentWillMount: PropTypes.func.isRequired,
+  componentWillUnmount: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   params: PropTypes.shape({

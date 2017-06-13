@@ -10,13 +10,11 @@ import flow from 'lodash/flow';
 
 export class HomeContainer extends React.Component {
   componentWillMount() {
-    this.props.getPageCategoriesRequest();
-    this.props.getProductCategoriesRequest();
+    this.props.componentWillMount();
   }
 
   componentWillUnmount() {
-    this.props.getPageCategoriesIdle();
-    this.props.getProductCategoriesIdle();
+    this.props.componentWillUnmount();
   }
 
   render() {
@@ -64,6 +62,8 @@ export class HomeContainer extends React.Component {
 }
 
 export const propTypes = {
+  componentWillMount: PropTypes.func.isRequired,
+  componentWillUnmount: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   getPageCategoriesRequest: PropTypes.func.isRequired,

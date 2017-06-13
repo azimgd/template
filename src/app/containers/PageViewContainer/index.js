@@ -9,12 +9,11 @@ import flow from 'lodash/flow';
 
 export class PageViewContainer extends React.Component {
   componentWillMount() {
-    const { id } = this.props.params;
-    this.props.getPageRequest({ id });
+    this.props.componentWillMount();
   }
 
   componentWillUnmount() {
-    this.props.getPageIdle();
+    this.props.componentWillUnmount();
   }
 
   render() {
@@ -37,6 +36,8 @@ export class PageViewContainer extends React.Component {
 }
 
 export const propTypes = {
+  componentWillMount: PropTypes.func.isRequired,
+  componentWillUnmount: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   params: PropTypes.shape({

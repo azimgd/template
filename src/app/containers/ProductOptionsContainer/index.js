@@ -17,12 +17,11 @@ export class ProductOptionsContainer extends React.Component {
   }
 
   componentWillMount() {
-    this.props.getProductRequest({ id: this.props.params.id });
-    this.props.getProductOptionsRequest({ id: this.props.params.id });
+    this.props.componentWillMount();
   }
 
   componentWillUnmount() {
-    this.props.getProductIdle();
+    this.props.componentWillUnmount();
   }
 
   createOption(data) {
@@ -68,6 +67,8 @@ export class ProductOptionsContainer extends React.Component {
 }
 
 export const propTypes = {
+  componentWillMount: PropTypes.func.isRequired,
+  componentWillUnmount: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,
   params: PropTypes.shape({

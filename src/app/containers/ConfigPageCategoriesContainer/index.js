@@ -9,28 +9,12 @@ import NotificationComponent from 'components/Notification/NotificationComponent
 import flow from 'lodash/flow';
 
 export class ConfigPageCategoriesContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.createNewCategory = this.createNewCategory.bind(this);
-    this.createNewSubCategory = this.createNewSubCategory.bind(this);
-  }
-
   componentWillMount() {
-    this.props.getPageCategoriesRequest();
-    this.props.getPageSubCategoriesRequest();
+    this.props.componentWillMount();
   }
 
   componentWillUnmount() {
-    this.props.getPageCategoriesIdle();
-    this.props.getPageSubCategoriesIdle();
-  }
-
-  createNewCategory(category) {
-    this.props.postPageCategoryRequest(category);
-  }
-
-  createNewSubCategory(subCategory) {
-    this.props.postPageSubCategoryRequest(subCategory);
+    this.props.componentWillUnmount();
   }
 
   render() {
@@ -48,8 +32,8 @@ export class ConfigPageCategoriesContainer extends React.Component {
               )}
             </div>
             <div className="ConfigPageCategoriesContainer-block-left">
-              <ConfigCategoriesComponent createNewCategory={this.createNewCategory} />
-              <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.createNewSubCategory} />
+              <ConfigCategoriesComponent createNewCategory={this.props.postPageCategoryRequest} />
+              <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.props.postPageSubCategoryRequest} />
             </div>
             <div className="ConfigPageCategoriesContainer-block-right">
               <ConfigSidebarComponent />
@@ -62,6 +46,8 @@ export class ConfigPageCategoriesContainer extends React.Component {
 }
 
 export const propTypes = {
+  componentWillMount: PropTypes.func.isRequired,
+  componentWillUnmount: PropTypes.func.isRequired,
   notificationsSuccess: PropTypes.array.isRequired,
   notificationsFailure: PropTypes.array.isRequired,
   mappedCategories: PropTypes.array.isRequired,

@@ -14,6 +14,16 @@ const mapDispatchToProps = {
   getProductCategoriesIdle: actions.getProductCategoriesIdle,
 };
 
+const componentWillMount = (stateProps, dispatchProps) => {
+  dispatchProps.getPageCategoriesRequest();
+  dispatchProps.getProductCategoriesRequest();
+};
+
+const componentWillUnmount = (stateProps, dispatchProps) => {
+  dispatchProps.getPageCategoriesIdle();
+  dispatchProps.getProductCategoriesIdle();
+};
+
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const isLoading = false;
   const isEmpty = isInputArrayContentEmpty([
@@ -23,6 +33,8 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   return Object.assign({
     isLoading,
     isEmpty,
+    componentWillMount: componentWillMount.bind(null, stateProps, dispatchProps, ownProps),
+    componentWillUnmount: componentWillUnmount.bind(null, stateProps, dispatchProps, ownProps),
   }, ownProps, stateProps, dispatchProps);
 };
 

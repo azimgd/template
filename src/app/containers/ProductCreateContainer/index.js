@@ -16,13 +16,11 @@ export class ProductCreateContainer extends React.Component {
   }
 
   componentWillMount() {
-    this.props.getProductCategoriesRequest();
-    this.props.getProductSubCategoriesRequest();
+    this.props.componentWillMount();
   }
 
   componentWillUnmount() {
-    this.props.getProductCategoriesIdle();
-    this.props.getProductSubCategoriesIdle();
+    this.props.componentWillUnmount();
   }
 
   createProduct(data) {
@@ -91,6 +89,8 @@ export class ProductCreateContainer extends React.Component {
 
 
 export const propTypes = {
+  componentWillMount: PropTypes.func.isRequired,
+  componentWillUnmount: PropTypes.func.isRequired,
   uniqueIdentifier: PropTypes.string.isRequired,
   mappedImages: PropTypes.array.isRequired,
   images: PropTypes.array.isRequired,

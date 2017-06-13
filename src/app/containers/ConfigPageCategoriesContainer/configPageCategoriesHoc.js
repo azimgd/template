@@ -19,6 +19,16 @@ const mapDispatchToProps = {
   postPageSubCategoryRequest: actions.postPageSubCategoryRequest,
 };
 
+const componentWillMount = (stateProps, dispatchProps) => {
+  dispatchProps.getPageCategoriesRequest();
+  dispatchProps.getPageSubCategoriesRequest();
+};
+
+const componentWillUnmount = (stateProps, dispatchProps) => {
+  dispatchProps.getPageCategoriesIdle();
+  dispatchProps.getPageSubCategoriesIdle();
+};
+
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const mappedCategories = transformCategories(stateProps.pageCategories.data);
   const notificationsSuccess = getSucceededNotifications([
@@ -33,6 +43,8 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     notificationsSuccess,
     notificationsFailure,
     mappedCategories,
+    componentWillMount: componentWillMount.bind(null, stateProps, dispatchProps, ownProps),
+    componentWillUnmount: componentWillUnmount.bind(null, stateProps, dispatchProps, ownProps),
   }, ownProps, stateProps, dispatchProps);
 };
 

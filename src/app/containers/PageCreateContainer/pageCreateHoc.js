@@ -21,6 +21,16 @@ const mapDispatchToProps = {
   getPageSubCategoriesIdle: actions.getPageSubCategoriesIdle,
 };
 
+const componentWillMount = (stateProps, dispatchProps) => {
+  dispatchProps.getPageCategoriesRequest();
+  dispatchProps.getPageSubCategoriesRequest();
+};
+
+const componentWillUnmount = (stateProps, dispatchProps) => {
+  dispatchProps.getPageCategoriesIdle();
+  dispatchProps.getPageSubCategoriesIdle();
+};
+
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const mappedCategories = transformCategories(stateProps.pageCategories.data);
   const filteredSubCategories = filterSubCategories(stateProps.pageSubCategories.data, { categoryId: stateProps.formCategoryId });
@@ -36,6 +46,8 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     notificationsFailure,
     mappedCategories,
     mappedSubCategories,
+    componentWillMount: componentWillMount.bind(null, stateProps, dispatchProps, ownProps),
+    componentWillUnmount: componentWillUnmount.bind(null, stateProps, dispatchProps, ownProps),
   }, ownProps, stateProps, dispatchProps);
 };
 

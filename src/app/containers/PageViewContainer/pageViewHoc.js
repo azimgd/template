@@ -14,6 +14,15 @@ const mapDispatchToProps = {
   getPageIdle: actions.getPageIdle,
 };
 
+const componentWillMount = (stateProps, dispatchProps, ownProps) => {
+  const { id } = ownProps.params;
+  dispatchProps.getPageRequest({ id });
+};
+
+const componentWillUnmount = (stateProps, dispatchProps) => {
+  dispatchProps.getPageIdle();
+};
+
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const isLoading = allItemsAreFalsy([stateProps.getPageRequest.isLoading]);
   const isEmpty = isInputArrayContentEmpty([stateProps.page.data]);
@@ -23,6 +32,8 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     pageParsedToHtml,
     isLoading,
     isEmpty,
+    componentWillMount: componentWillMount.bind(null, stateProps, dispatchProps, ownProps),
+    componentWillUnmount: componentWillUnmount.bind(null, stateProps, dispatchProps, ownProps),
   }, ownProps, stateProps, dispatchProps);
 };
 

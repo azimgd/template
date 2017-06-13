@@ -17,6 +17,15 @@ const mapDispatchToProps = {
   getProductOptionsIdle: actions.getProductOptionsIdle,
 };
 
+const componentWillMount = (stateProps, dispatchProps, ownProps) => {
+  dispatchProps.getProductRequest({ id: ownProps.params.id });
+  dispatchProps.getProductOptionsRequest({ id: ownProps.params.id });
+};
+
+const componentWillUnmount = (stateProps, dispatchProps) => {
+  dispatchProps.getProductIdle();
+};
+
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const isLoading = false;
   const isEmpty = isInputArrayContentEmpty([stateProps.product.data]);
@@ -32,6 +41,8 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     isEmpty,
     notificationsSuccess,
     notificationsFailure,
+    componentWillMount: componentWillMount.bind(null, stateProps, dispatchProps, ownProps),
+    componentWillUnmount: componentWillUnmount.bind(null, stateProps, dispatchProps, ownProps),
   }, ownProps, stateProps, dispatchProps);
 };
 
