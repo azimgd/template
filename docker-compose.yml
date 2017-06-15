@@ -1,0 +1,15 @@
+---
+version: "2"
+
+services:
+  app:
+    build: .
+    environment:
+      AWS_ACCESS_KEY_ID:
+      AWS_SECRET_ACCESS_KEY:
+      API_ENDPOINT:
+      APP_TITLE:
+      APP_CURRENCY:
+      TEMPLATE: default
+    ports:
+      - "8900:8080"
