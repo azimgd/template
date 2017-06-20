@@ -7,7 +7,7 @@ import get from 'lodash/get';
 import configMock from 'mocks/config';
 import { ButtonIconComponent } from 'components/Icons/IconsComponent';
 
-const ProductComponent = ({ product, height }) =>
+const ProductItemComponent = ({ product, height }) =>
   <div styleName="ProductComponentBlock">
     <div styleName="ProductComponent">
       <Link to={`/products/${product.id}`}>
@@ -32,7 +32,7 @@ const ProductComponent = ({ product, height }) =>
     </div>
   </div>;
 
-ProductComponent.propTypes = {
+ProductItemComponent.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
@@ -45,4 +45,4 @@ ProductComponent.propTypes = {
   height: PropTypes.number,
 };
 
-export default css(ProductComponent, styles);
+export default css(ProductItemComponent, styles);

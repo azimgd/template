@@ -5,7 +5,7 @@ import styles from 'containers/ProductsContainer/_ProductsContainer.scss';
 import productsHoc from 'containers/ProductsContainer/productsHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
 import productsResizeHoc from 'containers/ProductsContainer/productsResizeHoc';
-import ProductComponent from 'components/Products/ProductComponent';
+import ProductsComponent from 'components/Products/ProductsComponent';
 import ProductFiltersComponent from 'components/ProductFilters/ProductFiltersComponent';
 import IsLoadingComponent from 'components/IsLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/IsEmpty/IsEmptyComponent';
@@ -37,10 +37,9 @@ export class ProductsContainer extends React.Component {
         <div styleName="ProductsContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
+
               <div styleName="ProductsContainer-products">
-                {this.props.products.data && this.props.products.data.map((product) =>
-                  <div key={product.id}><ProductComponent product={product} height={this.props.maxHeight} /></div>
-                )}
+                <ProductsComponent products={this.props.products} />
               </div>
 
               <div styleName="ProductsContainer-loadMore">

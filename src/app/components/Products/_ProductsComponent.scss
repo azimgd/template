@@ -57,3 +57,12 @@
     }
   }
 }
+
+.ProductsComponent {
+  @extend .row;
+
+  & > div {
+    @extend .col-lg-3;
+    @extend .col-sm-4;
+  }
+}
