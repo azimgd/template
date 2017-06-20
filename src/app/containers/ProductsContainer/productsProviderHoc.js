@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import css from 'services/cssService';
 import { connect } from 'react-redux';
 import * as actions from 'actions/index';
 

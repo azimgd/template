@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'containers/LoginContainer/_LoginContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/LoginContainer/_LoginContainer.scss';
 
 import loginHoc from 'containers/LoginContainer/loginHoc';
 import LoginFormComponent from 'components/LoginForm/LoginFormComponent';
@@ -7,13 +8,13 @@ import NotificationComponent from 'components/Notification/NotificationComponent
 import flow from 'lodash/flow';
 
 const LoginContainer = ({ postLoginRequest, notificationsSuccess, notificationsFailure }) => (
-  <div className="LoginContainerBlock">
-    <div className="LoginContainerBlock-title">
+  <div styleName="LoginContainerBlock">
+    <div styleName="LoginContainerBlock-title">
       Login to {APP_TITLE}
     </div>
 
-    <div className="LoginContainer">
-      <div className="LoginContainer-block">
+    <div styleName="LoginContainer">
+      <div styleName="LoginContainer-block">
         {notificationsSuccess.map(notificationSuccess =>
           <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
         )}
@@ -23,7 +24,7 @@ const LoginContainer = ({ postLoginRequest, notificationsSuccess, notificationsF
         )}
       </div>
 
-      <div className="LoginContainer-block">
+      <div styleName="LoginContainer-block">
         <LoginFormComponent postLoginRequest={postLoginRequest} />
       </div>
     </div>
@@ -38,4 +39,4 @@ export const propTypes = {
 
 LoginContainer.propTypes = propTypes;
 export const init = flow([loginHoc]);
-export default init(LoginContainer);
+export default init(css(LoginContainer, styles));

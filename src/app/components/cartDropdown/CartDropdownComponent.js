@@ -1,24 +1,25 @@
 import React, { PropTypes } from 'react';
-import 'components/CartDropdown/_CartDropdownComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/CartDropdown/_CartDropdownComponent.scss';
 
 /**
  * Using css -> visibility prop over css -> display on CartDropdownComponent
  * is must when calculating offsetWidth param
  */
 const CartDropdownComponent = ({ children, cartPosition, isVisible }) =>
-  <div className="CartDropdownComponentBlock" style={{ left: `${cartPosition.left}px`, top: `${cartPosition.top}px`, visibility: isVisible ? 'visible' : 'hidden' }}>
-    <div className="CartDropdownComponentBlock-triangle">
-      <div className="triangleUp" />
+  <div styleName="CartDropdownComponentBlock" style={{ left: `${cartPosition.left}px`, top: `${cartPosition.top}px`, visibility: isVisible ? 'visible' : 'hidden' }}>
+    <div styleName="CartDropdownComponentBlock-triangle">
+      ^
     </div>
-    <div className="CartDropdownComponentBlock-title">
+    <div styleName="CartDropdownComponentBlock-title">
       Cart items
     </div>
-    <div className="CartDropdownComponent">
-      <div className="CartDropdownComponent-item">
+    <div styleName="CartDropdownComponent">
+      <div styleName="CartDropdownComponent-item">
         {children}
       </div>
     </div>
-    <div className="CartDropdownComponentBlock-summary">
+    <div styleName="CartDropdownComponentBlock-summary">
       Total: 232 USD
     </div>
   </div>;
@@ -35,4 +36,4 @@ CartDropdownComponent.propTypes = {
   isVisible: PropTypes.bool.isRequired,
 };
 
-export default CartDropdownComponent;
+export default css(CartDropdownComponent, styles);

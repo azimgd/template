@@ -1,15 +1,16 @@
 import React, { PropTypes } from 'react';
-import 'components/Header/_HeaderComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/Header/_HeaderComponent.scss';
 
 import { Link } from 'react-router';
 
 const HeaderComponent = ({ children }) =>
-  <div className="HeaderComponentBlock">
-    <div className="HeaderComponent">
-      <div className="HeaderComponent-left">
-        <div className="Logo"><Link to="/">{APP_TITLE}</Link></div>
+  <div styleName="HeaderComponentBlock">
+    <div styleName="HeaderComponent">
+      <div styleName="HeaderComponent-left">
+        <div styleName="Logo"><Link to="/">{APP_TITLE}</Link></div>
       </div>
-      <div className="HeaderComponent-right">
+      <div styleName="HeaderComponent-right">
         {children}
       </div>
     </div>
@@ -22,4 +23,4 @@ HeaderComponent.propTypes = {
   ]).isRequired,
 };
 
-export default HeaderComponent;
+export default css(HeaderComponent, styles);

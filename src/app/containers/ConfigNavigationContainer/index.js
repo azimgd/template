@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'containers/ConfigNavigationContainer/_ConfigNavigationContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/ConfigNavigationContainer/_ConfigNavigationContainer.scss';
 
 import configNavigationHoc from 'containers/ConfigNavigationContainer/configNavigationHoc';
 import ConfigSidebarComponent from 'components/ConfigSidebar/ConfigSidebarComponent';
@@ -16,14 +17,14 @@ class ConfigNavigationContainer extends React.Component {
 
   render() {
     return (
-      <div className="ConfigNavigationContainerBlock">
-        <div className="ConfigNavigationContainerBlock-title">Config navigation</div>
-        <div className="ConfigNavigationContainer">
-          <div className="ConfigNavigationContainer-block">
-            <div className="ConfigNavigationContainer-block-left">
+      <div styleName="ConfigNavigationContainerBlock">
+        <div styleName="ConfigNavigationContainerBlock-title">Config navigation</div>
+        <div styleName="ConfigNavigationContainer">
+          <div styleName="ConfigNavigationContainer-block">
+            <div styleName="ConfigNavigationContainer-block-left">
               <ConfigNavigationComponent createNewRoute={this.createNewRoute} />
             </div>
-            <div className="ConfigNavigationContainer-block-right">
+            <div styleName="ConfigNavigationContainer-block-right">
               <ConfigSidebarComponent />
             </div>
           </div>

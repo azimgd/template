@@ -1,18 +1,19 @@
 import React, { PropTypes } from 'react';
-import 'components/AlertMessage/_AlertMessageComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/AlertMessage/_AlertMessageComponent.scss';
 
 const AlertMessageComponent = ({ isVisible, toggleAlertMessage }) =>
-  <div className="AlertMessageComponentBlock" style={{ display: isVisible ? 'block' : 'none' }}>
-    <div className="AlertMessageComponent">
-      <div className="AlertMessageComponent-title">
-        <div className="AlertMessageComponent-title-left">
+  <div styleName="AlertMessageComponentBlock" style={{ display: isVisible ? 'block' : 'none' }}>
+    <div styleName="AlertMessageComponent">
+      <div styleName="AlertMessageComponent-title">
+        <div styleName="AlertMessageComponent-title-left">
           Hello there!
         </div>
-        <div className="AlertMessageComponent-title-right">
+        <div styleName="AlertMessageComponent-title-right">
           <button onClick={toggleAlertMessage}>(x)</button>
         </div>
       </div>
-      <div className="AlertMessageComponent-content">
+      <div styleName="AlertMessageComponent-content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dolores, cum distinctio. Recusandae, eos tenetur, vel facere expedita deleniti amet esse, atque dicta officia blanditiis rerum numquam consequatur dignissimos, minima!
       </div>
     </div>
@@ -23,4 +24,4 @@ AlertMessageComponent.propTypes = {
   toggleAlertMessage: PropTypes.func.isRequired,
 };
 
-export default AlertMessageComponent;
+export default css(AlertMessageComponent, styles);

@@ -1,3 +1,7 @@
+.ProductComponentBlock {
+  /*! keep */
+}
+
 .ProductComponent {
   background: $c-contentBackground;
   padding-bottom: $padding-large-horizontal * 2;
@@ -30,6 +34,7 @@
     }
 
     &-title > a {
+      /*! keep */
     }
 
     &-category {

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'containers/HomeContainer/_HomeContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/HomeContainer/_HomeContainer.scss';
 
 import homeHoc from 'containers/HomeContainer/homeHoc';
 import HomeCategoriesComponent from 'components/HomeCategories/HomeCategoriesComponent';
@@ -19,17 +20,17 @@ export class HomeContainer extends React.Component {
 
   render() {
     return (
-      <div className="HomeContainerBlock">
-        <div className="HomeContainerBlock-title">Home</div>
-        <div className="HomeContainer">
+      <div styleName="HomeContainerBlock">
+        <div styleName="HomeContainerBlock-title">Home</div>
+        <div styleName="HomeContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
               {!isEmpty(this.props.productCategories.data) ?
-                <div className="HomeContainer-productCategories">
-                  <div className="HomeContainer-productCategories-title">
+                <div styleName="HomeContainer-productCategories">
+                  <div styleName="HomeContainer-productCategories-title">
                     Product categories
                   </div>
-                  <div className="HomeContainer-productCategories-content">
+                  <div styleName="HomeContainer-productCategories-content">
                     <HomeCategoriesComponent
                       categories={this.props.productCategories.data}
                       categoryUrl="/products"
@@ -40,11 +41,11 @@ export class HomeContainer extends React.Component {
               : null}
 
               {!isEmpty(this.props.pageCategories.data) ?
-                <div className="HomeContainer-pageCategories">
-                  <div className="HomeContainer-pageCategories-title">
+                <div styleName="HomeContainer-pageCategories">
+                  <div styleName="HomeContainer-pageCategories-title">
                     Page categories
                   </div>
-                  <div className="HomeContainer-pageCategories-content">
+                  <div styleName="HomeContainer-pageCategories-content">
                     <HomeCategoriesComponent
                       categories={this.props.pageCategories.data}
                       categoryUrl="/pages"
@@ -80,4 +81,4 @@ export const propTypes = {
 
 HomeContainer.propTypes = propTypes;
 export const init = flow([homeHoc]);
-export default init(HomeContainer);
+export default init(css(HomeContainer, styles));

@@ -10,6 +10,8 @@
   @extend .u-container;
 
   &-pages {
+    /*! keep */
+
     & > div:not(:last-child) {
       margin-bottom: $padding-large-horizontal * 2;
     }

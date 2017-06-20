@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'containers/ProductCreateContainer/_ProductCreateContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/ProductCreateContainer/_ProductCreateContainer.scss';
 
 import productCreateHoc from 'containers/ProductCreateContainer/productCreateHoc';
 import ProductFormComponent from 'components/ProductForm/ProductFormComponent';
@@ -45,11 +46,11 @@ export class ProductCreateContainer extends React.Component {
     };
 
     return (
-      <div className="ProductCreateContainerBlock">
-        <div className="ProductCreateContainerBlock-title">Products page</div>
-        <div className="ProductCreateContainer">
-          <div className="ProductCreateContainer-block">
-            <div className="ProductCreateContainer-block-full">
+      <div styleName="ProductCreateContainerBlock">
+        <div styleName="ProductCreateContainerBlock-title">Products page</div>
+        <div styleName="ProductCreateContainer">
+          <div styleName="ProductCreateContainer-block">
+            <div styleName="ProductCreateContainer-block-full">
               {this.props.notificationsSuccess.map(notificationSuccess =>
                 <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
               )}
@@ -58,26 +59,26 @@ export class ProductCreateContainer extends React.Component {
               )}
             </div>
 
-            <div className="ProductCreateContainer-block-left">
+            <div styleName="ProductCreateContainer-block-left">
               <ProductFormComponent
                 createProduct={this.createProduct}
                 categories={this.props.mappedCategories}
                 subCategories={this.props.mappedSubCategories}
               >
-                {!this.props.images.data.length ? <div className="ProductCreateContainer-imagesEmpty">No uploaded images</div> : null}
+                {!this.props.images.data.length ? <div styleName="ProductCreateContainer-imagesEmpty">No uploaded images</div> : null}
                 {this.props.images.data.length ? <label htmlFor="">Uploaded images</label> : null}
                 {this.props.images.data.length ?
-                  <div className="ProductCreateContainer-images">
+                  <div styleName="ProductCreateContainer-images">
                     {this.props.images.data.map((image, key) => <div key={key}><ImagePreviewComponent image={image} /></div>)}
                   </div>
                 : null}
-                <div className="ProductCreateContainer-upload">
+                <div styleName="ProductCreateContainer-upload">
                   <ImageUploadComponent {...config} />
                 </div>
               </ProductFormComponent>
             </div>
 
-            <div className="ProductCreateContainer-block-right">
+            <div styleName="ProductCreateContainer-block-right">
               <ProductAboutComponent />
             </div>
           </div>
@@ -113,4 +114,4 @@ export const propTypes = {
 
 ProductCreateContainer.propTypes = propTypes;
 export const init = flow([productCreateHoc]);
-export default init(ProductCreateContainer);
+export default init(css(ProductCreateContainer, styles));

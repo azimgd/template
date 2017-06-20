@@ -1,17 +1,17 @@
 import React, { PropTypes } from 'react';
-import 'components/Sidebar/_SidebarComponent.scss';
-
-import _ from 'lodash';
+import css from 'services/cssService';
+import styles from 'components/Sidebar/_SidebarComponent.scss';
+import map from 'lodash/map';
 
 const SidebarComponent = ({ items }) =>
-  <div className="SidebarComponentBlock">
-    <div className="SidebarComponent">
-      {_.map(items, (item, key) =>
-        <div className="SidebarComponent-item" key={key}>
-          <div className="SidebarComponent-item-title">
+  <div styleName="SidebarComponentBlock">
+    <div styleName="SidebarComponent">
+      {map(items, (item, key) =>
+        <div styleName="SidebarComponent-item" key={key}>
+          <div styleName="SidebarComponent-item-title">
             {item.title}
           </div>
-          <div className="SidebarComponent-item-content">
+          <div styleName="SidebarComponent-item-content">
             {item.content}
           </div>
         </div>
@@ -23,4 +23,4 @@ SidebarComponent.propTypes = {
   items: PropTypes.array.isRequired,
 };
 
-export default SidebarComponent;
+export default css(SidebarComponent, styles);

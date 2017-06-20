@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
-import 'components/HeaderActions/_HeaderActionsComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/HeaderActions/_HeaderActionsComponent.scss';
 
 import { TitleIconComponent } from 'components/Icons/IconsComponent';
 
 const HeaderActions = ({ toggleCartDropdown }) =>
-  <div className="HeaderActionsBlock">
-    <div className="HeaderActions">
+  <div styleName="HeaderActionsBlock">
+    <div styleName="HeaderActions">
       <button onClick={toggleCartDropdown}>
         <TitleIconComponent name="IoIosCart" />
       </button>
@@ -16,4 +17,4 @@ HeaderActions.propTypes = {
   toggleCartDropdown: PropTypes.func.isRequired,
 };
 
-export default HeaderActions;
+export default css(HeaderActions, styles);

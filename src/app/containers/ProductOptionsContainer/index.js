@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'containers/ProductOptionsContainer/_ProductOptionsContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/ProductOptionsContainer/_ProductOptionsContainer.scss';
 
 import productOptionsHoc from 'containers/ProductOptionsContainer/productOptionsHoc';
 import ProductOptionsFormComponent from 'components/ProductOptionsForm/ProductOptionsFormComponent';
@@ -30,15 +31,15 @@ export class ProductOptionsContainer extends React.Component {
 
   render() {
     return (
-      <div className="ProductOptionsContainerBlock">
-        <div className="ProductOptionsContainerBlock-title">
+      <div styleName="ProductOptionsContainerBlock">
+        <div styleName="ProductOptionsContainerBlock-title">
           {this.props.product.data.title}
         </div>
-        <div className="ProductOptionsContainer">
+        <div styleName="ProductOptionsContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
-              <div className="ProductOptionsContainer-block">
-                <div className="ProductOptionsContainer-block-full">
+              <div styleName="ProductOptionsContainer-block">
+                <div styleName="ProductOptionsContainer-block-full">
                   {this.props.notificationsSuccess.map(notificationSuccess =>
                     <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
                   )}
@@ -46,7 +47,7 @@ export class ProductOptionsContainer extends React.Component {
                     <NotificationComponent isVisible message={notificationFailure.message} status={notificationFailure.status} />
                   )}
                 </div>
-                <div className="ProductOptionsContainer-block-left">
+                <div styleName="ProductOptionsContainer-block-left">
                   <ProductOptionsListComponent
                     productOptions={this.props.productOptions.data}
                   />
@@ -54,7 +55,7 @@ export class ProductOptionsContainer extends React.Component {
                     createOption={this.createOption}
                   />
                 </div>
-                <div className="ProductOptionsContainer-block-right">
+                <div styleName="ProductOptionsContainer-block-right">
                   <ProductAboutComponent product={this.props.product.data} />
                 </div>
               </div>
@@ -86,4 +87,4 @@ export const propTypes = {
 
 ProductOptionsContainer.propTypes = propTypes;
 export const init = flow([productOptionsHoc]);
-export default init(ProductOptionsContainer);
+export default init(css(ProductOptionsContainer, styles));

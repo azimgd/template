@@ -1,22 +1,23 @@
 import React from 'react';
-import 'components/CheckoutSummary/_CheckoutSummaryComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/CheckoutSummary/_CheckoutSummaryComponent.scss';
 
-import _ from 'lodash';
+import map from 'lodash/map';
 import checkoutMock from 'mocks/checkout';
 
 const CheckoutSummaryComponent = () =>
-  <div className="CheckoutSummaryComponentBlock">
-    <div className="CheckoutSummaryComponent">
-      {_.map(checkoutMock, (product, key) =>
-        <div className="CheckoutSummaryComponent-item" key={key}>
-          <div className="CheckoutSummaryComponent-item-image">
+  <div styleName="CheckoutSummaryComponentBlock">
+    <div styleName="CheckoutSummaryComponent">
+      {map(checkoutMock, (product, key) =>
+        <div styleName="CheckoutSummaryComponent-item" key={key}>
+          <div styleName="CheckoutSummaryComponent-item-image">
             <img src={product.image} alt="" />
           </div>
-          <div className="CheckoutSummaryComponent-item-title">
+          <div styleName="CheckoutSummaryComponent-item-title">
             <p>{product.title}</p>
             <p><small>{product.description}</small></p>
           </div>
-          <div className="CheckoutSummaryComponent-item-price">
+          <div styleName="CheckoutSummaryComponent-item-price">
             <p>{product.price} {APP_CURRENCY}</p>
           </div>
         </div>
@@ -27,4 +28,4 @@ const CheckoutSummaryComponent = () =>
 CheckoutSummaryComponent.propTypes = {
 };
 
-export default CheckoutSummaryComponent;
+export default css(CheckoutSummaryComponent, styles);

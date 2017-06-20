@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'containers/ProductViewContainer/_ProductViewContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/ProductViewContainer/_ProductViewContainer.scss';
 
 import isEmpty from 'lodash/isEmpty';
 import productViewHoc from 'containers/ProductViewContainer/productViewHoc';
@@ -23,30 +24,30 @@ export class ProductViewContainer extends React.Component {
 
   render() {
     return (
-      <div className="ProductViewContainerBlock">
-        <div className="ProductViewContainerBlock-title">
+      <div styleName="ProductViewContainerBlock">
+        <div styleName="ProductViewContainerBlock-title">
           <PageNavLocationComponent
             product={this.props.product.data}
             productCategory={this.props.product.data.category}
             productSubCategory={this.props.product.data.subcategory}
           />
         </div>
-        <div className="ProductViewContainer">
+        <div styleName="ProductViewContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
-              <div className="ProductViewContainer-block">
-                <div className="ProductViewContainer-block-full">
+              <div styleName="ProductViewContainer-block">
+                <div styleName="ProductViewContainer-block-full">
                   {!isEmpty(this.props.product.data.productImages) ?
                     <ProductGalleryComponent images={this.props.product.data.productImages} />
                   : null}
                 </div>
-                <div className="ProductViewContainer-block-left">
+                <div styleName="ProductViewContainer-block-left">
                   <ProductDetailsComponent
                     productOptions={this.props.product.data.options}
                     productParsedToHtml={this.props.productParsedToHtml}
                   />
                 </div>
-                <div className="ProductViewContainer-block-right">
+                <div styleName="ProductViewContainer-block-right">
                   <ProductPriceComponent product={this.props.product.data} />
                 </div>
               </div>
@@ -76,4 +77,4 @@ export const propTypes = {
 
 ProductViewContainer.propTypes = propTypes;
 export const init = flow([productViewHoc]);
-export default init(ProductViewContainer);
+export default init(css(ProductViewContainer, styles));

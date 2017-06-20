@@ -1,25 +1,26 @@
 import React, { PropTypes } from 'react';
-import 'components/Page/_PagesComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/Page/_PagesComponent.scss';
 
 import { Link } from 'react-router';
-import _ from 'lodash';
+import truncate from 'lodash/truncate';
 
 const PageComponent = ({ page }) =>
-  <div className="PageComponentBlock">
-    <div className="PageComponent">
-      <div className="PageComponent-content">
-        <div className="PageComponent-content-title">
+  <div styleName="PageComponentBlock">
+    <div styleName="PageComponent">
+      <div styleName="PageComponent-content">
+        <div styleName="PageComponent-content-title">
           <Link to={`/pages/${page.id}`}>{page.title}</Link>
         </div>
-        <div className="PageComponent-content-content">
-          {_.truncate(page.content, { length: 420 })}
+        <div styleName="PageComponent-content-content">
+          {truncate(page.content, { length: 420 })}
         </div>
       </div>
-      <div className="PageComponent-details">
-        <div className="PageComponent-details-left">
+      <div styleName="PageComponent-details">
+        <div styleName="PageComponent-details-left">
           Created on 12 oct
         </div>
-        <div className="PageComponent-details-right">
+        <div styleName="PageComponent-details-right">
           By username
         </div>
       </div>
@@ -33,4 +34,4 @@ PageComponent.propTypes = {
   }).isRequired,
 };
 
-export default PageComponent;
+export default css(PageComponent, styles);

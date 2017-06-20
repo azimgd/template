@@ -112,7 +112,10 @@ module.exports = {
           use: [{
             loader: 'css-loader',
             options: {
-              minimize: true,
+              minimize: IS_PRODUCTION,
+              sourceMap: !IS_PRODUCTION,
+              modules: true,
+              localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
               discardComments: {
                 removeAll: true
               },

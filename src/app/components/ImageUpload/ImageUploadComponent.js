@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
-import 'components/ImageUpload/_ImageUploadComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/ImageUpload/_ImageUploadComponent.scss';
 
 import ReactUploader from 'react-s3-uploader';
 
 const ImageUploadComponent = (props) =>
-  <div className="ImageUploadComponentBlock">
-    <div className="ImageUploadComponent">
+  <div styleName="ImageUploadComponentBlock">
+    <div styleName="ImageUploadComponent">
       <label>Image uploader</label>
       <ReactUploader
         signingUrl={props.signingUrl}
@@ -35,4 +36,4 @@ ImageUploadComponent.propTypes = {
   server: PropTypes.string.isRequired,
 };
 
-export default ImageUploadComponent;
+export default css(ImageUploadComponent, styles);

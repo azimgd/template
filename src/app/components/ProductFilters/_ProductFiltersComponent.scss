@@ -4,6 +4,8 @@
 }
 
 .ProductFiltersComponent {
+  /*! keep */
+
   &-item:not(:last-child) {
     margin-bottom: $padding-large-horizontal;
   }
@@ -11,10 +13,12 @@
 
 .ProductFilterCategory {
   display: flex;
+
   &-title {
     width: 120px;
     font-weight: bold;
   }
+
   &-filters {
     display: flex;
     flex-wrap: wrap;
@@ -29,6 +33,7 @@
 }
 
 .ProductFilterItemComponentBlock {
+  /*! keep */
 }
 
 .ProductFilterItemComponent {

@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
-import 'components/IsLoading/_IsLoadingComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/IsLoading/_IsLoadingComponent.scss';
 
 const IsLoadingComponent = ({ isLoading, children }) => {
   if (isLoading) {
-    return <div className="IsLoadingComponent">Content is loading ...</div>;
+    return <div styleName="IsLoadingComponent">Content is loading ...</div>;
   }
   return <div>{children}</div>;
 };
@@ -16,4 +17,4 @@ IsLoadingComponent.propTypes = {
   ]).isRequired,
 };
 
-export default IsLoadingComponent;
+export default css(IsLoadingComponent, styles);

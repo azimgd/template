@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import css from 'services/cssService';
+import styles from 'components/ProductFilters/_ProductFiltersComponent.scss';
 import cx from 'classnames';
 
 class ProductFilterItemComponent extends React.Component {
@@ -18,7 +20,7 @@ class ProductFilterItemComponent extends React.Component {
       'ProductFilterItemComponent--active': this.props.filter.isActive,
     });
     return (
-      <div className="ProductFilterItemComponentBlock">
+      <div styleName="ProductFilterItemComponentBlock">
         <div className={style}>
           {this.props.filter.isActive ?
             <a href="" onClick={this.setActiveItem}>{this.props.filter.value} (x)</a>
@@ -41,4 +43,4 @@ ProductFilterItemComponent.propTypes = {
   setActiveItem: PropTypes.func.isRequired,
 };
 
-export default ProductFilterItemComponent;
+export default css(ProductFilterItemComponent, styles);

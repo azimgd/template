@@ -1,15 +1,16 @@
 import React from 'react';
-import 'components/Footer/_FooterComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/Footer/_FooterComponent.scss';
 
 const FooterComponent = () =>
-  <div className="FooterComponentBlock">
-    <div className="FooterComponent">
-      <div className="FooterComponent-left">
-        <div className="FooterComponent-left-title">
+  <div styleName="FooterComponentBlock">
+    <div styleName="FooterComponent">
+      <div styleName="FooterComponent-left">
+        <div styleName="FooterComponent-left-title">
           {APP_TITLE}
         </div>
       </div>
-      <div className="FooterComponent-right">
+      <div styleName="FooterComponent-right">
         © Poland 2017
       </div>
     </div>
@@ -18,4 +19,4 @@ const FooterComponent = () =>
 FooterComponent.propTypes = {
 };
 
-export default FooterComponent;
+export default css(FooterComponent, styles);

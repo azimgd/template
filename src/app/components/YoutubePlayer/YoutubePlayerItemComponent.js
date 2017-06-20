@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import css from 'services/cssService';
+import styles from 'components/YoutubePlayer/_YoutubePlayerComponent.scss';
 import get from 'lodash/get';
 import cx from 'classnames';
 
@@ -20,8 +22,8 @@ class YoutubePlayerItemComponent extends React.Component {
     });
     return (
       <div className={style}>
-        <div className="YoutubePlayerItemComponent-title">{get(this.props.options, 'value.title', 'unavailable')}</div>
-        <div className="YoutubePlayerItemComponent-nav"><a href="" onClick={this.setActiveItem}>play</a></div>
+        <div styleName="YoutubePlayerItemComponent-title">{get(this.props.options, 'value.title', 'unavailable')}</div>
+        <div styleName="YoutubePlayerItemComponent-nav"><a href="" onClick={this.setActiveItem}>play</a></div>
       </div>
     );
   }
@@ -35,4 +37,4 @@ YoutubePlayerItemComponent.propTypes = {
   }).isRequired,
 };
 
-export default YoutubePlayerItemComponent;
+export default css(YoutubePlayerItemComponent, styles);

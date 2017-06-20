@@ -3,6 +3,8 @@
 }
 
 .YoutubePlayerActiveComponent {
+  /*! keep */
+
   iframe {
     width: 100%;
     min-height: 360px;
@@ -24,8 +26,10 @@
   }
 
   &-title {
+    /*! keep */
   }
 
   &-nav {
+    /*! keep */
   }
 }

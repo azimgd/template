@@ -1,5 +1,6 @@
 import React from 'react';
-import 'containers/CheckoutContainer/_CheckoutContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/CheckoutContainer/_CheckoutContainer.scss';
 
 import CheckoutSummaryComponent from 'components/CheckoutSummary/CheckoutSummaryComponent';
 import CheckoutUserInfoComponent from 'components/CheckoutUserInfo/CheckoutUserInfoComponent';
@@ -8,20 +9,20 @@ import CheckoutControlComponent from 'components/CheckoutControl/CheckoutControl
 import flow from 'lodash/flow';
 
 const CheckoutContainer = () =>
-  <div className="CheckoutContainerBlock">
-    <div className="CheckoutContainerBlock-title">Checkout</div>
+  <div styleName="CheckoutContainerBlock">
+    <div styleName="CheckoutContainerBlock-title">Checkout</div>
 
-    <div className="CheckoutContainer">
-      <div className="CheckoutContainer-summary">
+    <div styleName="CheckoutContainer">
+      <div styleName="CheckoutContainer-summary">
         <CheckoutSummaryComponent />
       </div>
-      <div className="CheckoutContainer-userInfo">
+      <div styleName="CheckoutContainer-userInfo">
         <CheckoutUserInfoComponent />
       </div>
-      <div className="CheckoutContainer-billing">
+      <div styleName="CheckoutContainer-billing">
         <CheckoutBillingComponent />
       </div>
-      <div className="CheckoutContainer-control">
+      <div styleName="CheckoutContainer-control">
         <CheckoutControlComponent />
       </div>
     </div>
@@ -32,4 +33,4 @@ export const propTypes = {
 
 CheckoutContainer.propTypes = propTypes;
 export const init = flow();
-export default init(CheckoutContainer);
+export default init(css(CheckoutContainer, styles));

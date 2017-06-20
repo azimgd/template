@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'containers/ConfigContainer/_ConfigContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/ConfigContainer/_ConfigContainer.scss';
 
 import configHoc from 'containers/ConfigContainer/configHoc';
 import flow from 'lodash/flow';
@@ -14,9 +15,9 @@ class ConfigContainer extends React.Component {
 
   render() {
     return (
-      <div className="ConfigContainerBlock">
-        <div className="ConfigContainerBlock-title">Config</div>
-        <div className="ConfigContainer">
+      <div styleName="ConfigContainerBlock">
+        <div styleName="ConfigContainerBlock-title">Config</div>
+        <div styleName="ConfigContainer">
         </div>
       </div>
     );
@@ -29,4 +30,4 @@ export const propTypes = {
 
 ConfigContainer.propTypes = propTypes;
 export const init = flow([configHoc]);
-export default init(ConfigContainer);
+export default init(css(ConfigContainer, styles));

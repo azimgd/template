@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react';
-import 'components/CartDropdownItem/_CartDropdownItemComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/CartDropdownItem/_CartDropdownItemComponent.scss';
 
 const CartDropdownItemComponent = () =>
-  <div className="CartDropdownItemComponentBlock">
-    <div className="CartDropdownItemComponent">
-      <div className="CartDropdownItemComponent-left">
+  <div styleName="CartDropdownItemComponentBlock">
+    <div styleName="CartDropdownItemComponent">
+      <div styleName="CartDropdownItemComponent-left">
         <img src="/build/images/defaultone.jpg" alt="" />
       </div>
-      <div className="CartDropdownItemComponent-right">
+      <div styleName="CartDropdownItemComponent-right">
         1 x L size product
       </div>
     </div>
@@ -17,4 +18,4 @@ CartDropdownItemComponent.propTypes = {
   product: PropTypes.object.isRequired,
 };
 
-export default CartDropdownItemComponent;
+export default css(CartDropdownItemComponent, styles);

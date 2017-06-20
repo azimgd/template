@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'containers/PageViewContainer/_PageViewContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/PageViewContainer/_PageViewContainer.scss';
 
 import pageViewHoc from 'containers/PageViewContainer/pageViewHoc';
 import PageDetailsComponent from 'components/PageDetails/PageDetailsComponent';
@@ -18,9 +19,9 @@ export class PageViewContainer extends React.Component {
 
   render() {
     return (
-      <div className="PageViewContainerBlock">
-        <div className="PageViewContainerBlock-title">{this.props.page.data.title}</div>
-        <div className="PageViewContainer">
+      <div styleName="PageViewContainerBlock">
+        <div styleName="PageViewContainerBlock-title">{this.props.page.data.title}</div>
+        <div styleName="PageViewContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
               <PageDetailsComponent
@@ -51,4 +52,4 @@ export const propTypes = {
 
 PageViewContainer.propTypes = propTypes;
 export const init = flow([pageViewHoc]);
-export default init(PageViewContainer);
+export default init(css(PageViewContainer, styles));

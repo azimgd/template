@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import css from 'services/cssService';
 import { randomString } from 'utils/index';
 
 class UniqueIdentifierContainer extends React.Component {

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'containers/PagesContainer/_PagesContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/PagesContainer/_PagesContainer.scss';
 
 import pagesHoc from 'containers/PagesContainer/pagesHoc';
 import PageComponent from 'components/Page/PageComponent';
@@ -18,13 +19,13 @@ export class PagesContainer extends React.Component {
 
   render() {
     return (
-      <div className="PagesContainerBlock">
-        <div className="PagesContainerBlock-title">Pages</div>
+      <div styleName="PagesContainerBlock">
+        <div styleName="PagesContainerBlock-title">Pages</div>
 
-        <div className="PagesContainer">
+        <div styleName="PagesContainer">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
-              <div className="PagesContainer-pages">
+              <div styleName="PagesContainer-pages">
                 {this.props.pages.data && this.props.pages.data.map((page, key) =>
                   <div key={key}><PageComponent page={page} height={this.props.maxHeight} /></div>
                 )}
@@ -53,4 +54,4 @@ export const propTypes = {
 
 PagesContainer.propTypes = propTypes;
 export const init = flow([pagesHoc]);
-export default init(PagesContainer);
+export default init(css(PagesContainer, styles));

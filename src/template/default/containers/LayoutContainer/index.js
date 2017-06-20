@@ -1,6 +1,6 @@
 import React from 'react';
-import 'containers/LayoutContainer/_LayoutContainer.scss';
-import 'template/containers/LayoutContainer/_LayoutContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/LayoutContainer/_LayoutContainer.scss';
 
 import { init, propTypes } from 'containers/LayoutContainer/index';
 import HeaderComponent from 'components/Header/HeaderComponent';
@@ -12,9 +12,9 @@ import HeaderActionsComponent from 'components/HeaderActions/HeaderActionsCompon
 import SearchComponent from 'components/Search/SearchComponent';
 
 const LayoutContainer = ({ ui, toggleCartDropdown, getSearchedProductsRequest, children, cartPosition, location }) =>
-  <div className="LayoutContainerBlock">
-    <div className="LayoutContainer">
-      <div className="LayoutContainer-header">
+  <div styleName="LayoutContainerBlock">
+    <div styleName="LayoutContainer">
+      <div styleName="LayoutContainer-header">
         <HeaderComponent>
           <HeaderActionsComponent toggleCartDropdown={toggleCartDropdown} />
           <SearchComponent
@@ -25,17 +25,17 @@ const LayoutContainer = ({ ui, toggleCartDropdown, getSearchedProductsRequest, c
           <CartDropdownItemComponent />
         </CartDropdownComponent>
       </div>
-      <div className="LayoutContainer-topnavbar">
+      <div styleName="LayoutContainer-topnavbar">
         <TopnavbarComponent pathname={location.pathname} />
       </div>
-      <div className="LayoutContainer-block">
+      <div styleName="LayoutContainer-block">
         {children}
       </div>
-      <div className="LayoutContainer-footer">
+      <div styleName="LayoutContainer-footer">
         <FooterComponent />
       </div>
     </div>
   </div>;
 
 LayoutContainer.propTypes = propTypes;
-export default init(LayoutContainer);
+export default init(css(LayoutContainer, styles));
