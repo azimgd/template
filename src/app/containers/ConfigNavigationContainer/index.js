@@ -17,14 +17,14 @@ class ConfigNavigationContainer extends React.Component {
 
   render() {
     return (
-      <div styleName="ConfigNavigationContainerBlock">
-        <div styleName="ConfigNavigationContainerBlock-title">Config navigation</div>
-        <div styleName="ConfigNavigationContainer">
-          <div styleName="ConfigNavigationContainer-block">
-            <div styleName="ConfigNavigationContainer-block-left">
+      <div styleName="block">
+        <div styleName="title">Config navigation</div>
+        <div styleName="component">
+          <div styleName="component-block">
+            <div styleName="component-block-left">
               <ConfigNavigationComponent createNewRoute={this.createNewRoute} />
             </div>
-            <div styleName="ConfigNavigationContainer-block-right">
+            <div styleName="component-block-right">
               <ConfigSidebarComponent />
             </div>
           </div>

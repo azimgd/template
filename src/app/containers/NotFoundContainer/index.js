@@ -5,9 +5,9 @@ import styles from 'containers/NotFoundContainer/_NotFoundContainer.scss';
 import flow from 'lodash/flow';
 
 const NotFoundContainer = () =>
-  <div styleName="NotFoundContainerBlock">
-    <div styleName="NotFoundContainerBlock-title">Not found</div>
-    <div styleName="NotFoundContainer">
+  <div styleName="block">
+    <div styleName="title">Not found</div>
+    <div styleName="component">
       Following page does not exist
     </div>
   </div>;

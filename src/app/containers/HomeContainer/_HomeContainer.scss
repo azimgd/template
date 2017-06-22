@@ -1,12 +1,12 @@
-.HomeContainerBlock {
+.block {
   @extend .u-containerBlock;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.HomeContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
   @extend .u-container;
 
   & > div:not(:last-child) {

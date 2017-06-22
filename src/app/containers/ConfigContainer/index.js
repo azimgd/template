@@ -15,9 +15,9 @@ class ConfigContainer extends React.Component {
 
   render() {
     return (
-      <div styleName="ConfigContainerBlock">
-        <div styleName="ConfigContainerBlock-title">Config</div>
-        <div styleName="ConfigContainer">
+      <div styleName="block">
+        <div styleName="title">Config</div>
+        <div styleName="component">
         </div>
       </div>
     );

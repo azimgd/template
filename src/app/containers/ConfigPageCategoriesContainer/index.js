@@ -20,11 +20,11 @@ export class ConfigPageCategoriesContainer extends React.Component {
 
   render() {
     return (
-      <div styleName="ConfigPageCategoriesContainerBlock">
-        <div styleName="ConfigPageCategoriesContainerBlock-title">Config page categories</div>
-        <div styleName="ConfigPageCategoriesContainer">
-          <div styleName="ConfigPageCategoriesContainer-block">
-            <div styleName="ConfigPageCategoriesContainer-block-full">
+      <div styleName="block">
+        <div styleName="title">Config page categories</div>
+        <div styleName="component">
+          <div styleName="component-block">
+            <div styleName="component-block-full">
               {this.props.notificationsSuccess.map(notificationSuccess =>
                 <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
               )}
@@ -32,11 +32,11 @@ export class ConfigPageCategoriesContainer extends React.Component {
                 <NotificationComponent isVisible message={notificationFailure.message} status={notificationFailure.status} />
               )}
             </div>
-            <div styleName="ConfigPageCategoriesContainer-block-left">
+            <div styleName="component-block-left">
               <ConfigCategoriesComponent createNewCategory={this.props.postPageCategoryRequest} />
               <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.props.postPageSubCategoryRequest} />
             </div>
-            <div styleName="ConfigPageCategoriesContainer-block-right">
+            <div styleName="component-block-right">
               <ConfigSidebarComponent />
             </div>
           </div>

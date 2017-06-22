@@ -24,30 +24,30 @@ export class ProductViewContainer extends React.Component {
 
   render() {
     return (
-      <div styleName="ProductViewContainerBlock">
-        <div styleName="ProductViewContainerBlock-title">
+      <div styleName="block">
+        <div styleName="title">
           <PageNavLocationComponent
             product={this.props.product.data}
             productCategory={this.props.product.data.category}
             productSubCategory={this.props.product.data.subcategory}
           />
         </div>
-        <div styleName="ProductViewContainer">
+        <div styleName="component">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
-              <div styleName="ProductViewContainer-block">
-                <div styleName="ProductViewContainer-block-full">
+              <div styleName="component-block">
+                <div styleName="component-block-full">
                   {!isEmpty(this.props.product.data.productImages) ?
                     <ProductGalleryComponent images={this.props.product.data.productImages} />
                   : null}
                 </div>
-                <div styleName="ProductViewContainer-block-left">
+                <div styleName="component-block-left">
                   <ProductDetailsComponent
                     productOptions={this.props.product.data.options}
                     productParsedToHtml={this.props.productParsedToHtml}
                   />
                 </div>
-                <div styleName="ProductViewContainer-block-right">
+                <div styleName="component-block-right">
                   <ProductPriceComponent product={this.props.product.data} />
                 </div>
               </div>

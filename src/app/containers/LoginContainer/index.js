@@ -8,13 +8,13 @@ import NotificationComponent from 'components/Notification/NotificationComponent
 import flow from 'lodash/flow';
 
 const LoginContainer = ({ postLoginRequest, notificationsSuccess, notificationsFailure }) => (
-  <div styleName="LoginContainerBlock">
-    <div styleName="LoginContainerBlock-title">
+  <div styleName="block">
+    <div styleName="title">
       Login to {APP_TITLE}
     </div>
 
-    <div styleName="LoginContainer">
-      <div styleName="LoginContainer-block">
+    <div styleName="component">
+      <div styleName="component-block">
         {notificationsSuccess.map(notificationSuccess =>
           <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
         )}
@@ -24,7 +24,7 @@ const LoginContainer = ({ postLoginRequest, notificationsSuccess, notificationsF
         )}
       </div>
 
-      <div styleName="LoginContainer-block">
+      <div styleName="component-block">
         <LoginFormComponent postLoginRequest={postLoginRequest} />
       </div>
     </div>

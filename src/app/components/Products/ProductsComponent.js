@@ -4,10 +4,12 @@ import styles from 'components/Products/_ProductsComponent.scss';
 import ProductItemComponent from 'components/Products/ProductItemComponent';
 
 const ProductsComponent = ({ products, maxHeight }) =>
-  <div styleName="ProductsComponent">
-    {products.data && products.data.map((product) =>
-      <div key={product.id}><ProductItemComponent product={product} height={maxHeight} /></div>
-    )}
+  <div styleName="block">
+    <div styleName="component">
+      {products.data && products.data.map((product) =>
+        <div styleName="component-item" key={product.id}><ProductItemComponent product={product} height={maxHeight} /></div>
+      )}
+    </div>
   </div>;
 
 ProductsComponent.propTypes = {

@@ -1,12 +1,12 @@
-.ConfigProductCategoriesContainerBlock {
+.block {
   @extend .u-containerBlock;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.ConfigProductCategoriesContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
   /*! keep */
 
   &-block {

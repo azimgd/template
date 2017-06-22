@@ -20,17 +20,17 @@ export class HomeContainer extends React.Component {
 
   render() {
     return (
-      <div styleName="HomeContainerBlock">
-        <div styleName="HomeContainerBlock-title">Home</div>
-        <div styleName="HomeContainer">
+      <div styleName="block">
+        <div styleName="title">Home</div>
+        <div styleName="component">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
               {!isEmpty(this.props.productCategories.data) ?
-                <div styleName="HomeContainer-productCategories">
-                  <div styleName="HomeContainer-productCategories-title">
+                <div styleName="component-productCategories">
+                  <div styleName="component-productCategories-title">
                     Product categories
                   </div>
-                  <div styleName="HomeContainer-productCategories-content">
+                  <div styleName="component-productCategories-content">
                     <HomeCategoriesComponent
                       categories={this.props.productCategories.data}
                       categoryUrl="/products"
@@ -41,11 +41,11 @@ export class HomeContainer extends React.Component {
               : null}
 
               {!isEmpty(this.props.pageCategories.data) ?
-                <div styleName="HomeContainer-pageCategories">
-                  <div styleName="HomeContainer-pageCategories-title">
+                <div styleName="component-pageCategories">
+                  <div styleName="component-pageCategories-title">
                     Page categories
                   </div>
-                  <div styleName="HomeContainer-pageCategories-content">
+                  <div styleName="component-pageCategories-content">
                     <HomeCategoriesComponent
                       categories={this.props.pageCategories.data}
                       categoryUrl="/pages"

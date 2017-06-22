@@ -1,16 +1,17 @@
-.ProductsContainerBlock {
+.block {
   @extend .u-containerBlock;
 
-  &-title {
-    @extend .u-pageTitle;
-  }
-
-  &-filters {
-    /*! keep */
-  }
 }
 
-.ProductsContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.filters {
+  /*! keep */
+}
+
+.component {
   @extend .u-container;
 
   &-products {

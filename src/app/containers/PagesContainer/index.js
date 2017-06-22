@@ -19,13 +19,13 @@ export class PagesContainer extends React.Component {
 
   render() {
     return (
-      <div styleName="PagesContainerBlock">
-        <div styleName="PagesContainerBlock-title">Pages</div>
+      <div styleName="block">
+        <div styleName="title">Pages</div>
 
-        <div styleName="PagesContainer">
+        <div styleName="component">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
-              <div styleName="PagesContainer-pages">
+              <div styleName="component-pages">
                 {this.props.pages.data && this.props.pages.data.map((page, key) =>
                   <div key={key}><PageComponent page={page} height={this.props.maxHeight} /></div>
                 )}

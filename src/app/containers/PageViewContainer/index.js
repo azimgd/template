@@ -19,9 +19,9 @@ export class PageViewContainer extends React.Component {
 
   render() {
     return (
-      <div styleName="PageViewContainerBlock">
-        <div styleName="PageViewContainerBlock-title">{this.props.page.data.title}</div>
-        <div styleName="PageViewContainer">
+      <div styleName="block">
+        <div styleName="title">{this.props.page.data.title}</div>
+        <div styleName="component">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
               <PageDetailsComponent

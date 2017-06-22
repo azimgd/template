@@ -31,15 +31,15 @@ export class ProductOptionsContainer extends React.Component {
 
   render() {
     return (
-      <div styleName="ProductOptionsContainerBlock">
-        <div styleName="ProductOptionsContainerBlock-title">
+      <div styleName="block">
+        <div styleName="title">
           {this.props.product.data.title}
         </div>
-        <div styleName="ProductOptionsContainer">
+        <div styleName="component">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
-              <div styleName="ProductOptionsContainer-block">
-                <div styleName="ProductOptionsContainer-block-full">
+              <div styleName="component-block">
+                <div styleName="component-block-full">
                   {this.props.notificationsSuccess.map(notificationSuccess =>
                     <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
                   )}
@@ -47,7 +47,7 @@ export class ProductOptionsContainer extends React.Component {
                     <NotificationComponent isVisible message={notificationFailure.message} status={notificationFailure.status} />
                   )}
                 </div>
-                <div styleName="ProductOptionsContainer-block-left">
+                <div styleName="component-block-left">
                   <ProductOptionsListComponent
                     productOptions={this.props.productOptions.data}
                   />
@@ -55,7 +55,7 @@ export class ProductOptionsContainer extends React.Component {
                     createOption={this.createOption}
                   />
                 </div>
-                <div styleName="ProductOptionsContainer-block-right">
+                <div styleName="component-block-right">
                   <ProductAboutComponent product={this.props.product.data} />
                 </div>
               </div>

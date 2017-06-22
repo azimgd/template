@@ -1,11 +1,11 @@
-.PageViewContainerBlock {
+.block {
   @extend .u-containerBlock;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.PageViewContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
   padding: $padding-large-horizontal;
 }

@@ -46,11 +46,11 @@ export class ProductCreateContainer extends React.Component {
     };
 
     return (
-      <div styleName="ProductCreateContainerBlock">
-        <div styleName="ProductCreateContainerBlock-title">Products page</div>
-        <div styleName="ProductCreateContainer">
-          <div styleName="ProductCreateContainer-block">
-            <div styleName="ProductCreateContainer-block-full">
+      <div styleName="block">
+        <div styleName="title">Products page</div>
+        <div styleName="component">
+          <div styleName="component-block">
+            <div styleName="component-block-full">
               {this.props.notificationsSuccess.map(notificationSuccess =>
                 <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
               )}
@@ -59,26 +59,26 @@ export class ProductCreateContainer extends React.Component {
               )}
             </div>
 
-            <div styleName="ProductCreateContainer-block-left">
+            <div styleName="component-block-left">
               <ProductFormComponent
                 createProduct={this.createProduct}
                 categories={this.props.mappedCategories}
                 subCategories={this.props.mappedSubCategories}
               >
-                {!this.props.images.data.length ? <div styleName="ProductCreateContainer-imagesEmpty">No uploaded images</div> : null}
+                {!this.props.images.data.length ? <div styleName="component-imagesEmpty">No uploaded images</div> : null}
                 {this.props.images.data.length ? <label htmlFor="">Uploaded images</label> : null}
                 {this.props.images.data.length ?
-                  <div styleName="ProductCreateContainer-images">
+                  <div styleName="component-images">
                     {this.props.images.data.map((image, key) => <div key={key}><ImagePreviewComponent image={image} /></div>)}
                   </div>
                 : null}
-                <div styleName="ProductCreateContainer-upload">
+                <div styleName="component-upload">
                   <ImageUploadComponent {...config} />
                 </div>
               </ProductFormComponent>
             </div>
 
-            <div styleName="ProductCreateContainer-block-right">
+            <div styleName="component-block-right">
               <ProductAboutComponent />
             </div>
           </div>

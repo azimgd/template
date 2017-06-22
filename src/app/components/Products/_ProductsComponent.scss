@@ -1,68 +1,13 @@
-.ProductComponentBlock {
+.block {
   /*! keep */
 }
 
-.ProductComponent {
-  background: $c-contentBackground;
-  padding-bottom: $padding-large-horizontal * 2;
-
-  &-image {
-    display: block;
-    height: 140px;
-    width: 100%;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-
-    &-price {
-      background: $c-blackTransparent-1;
-      color: $c-white;
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: $padding-small-vertical $padding-small-horizontal;
-    }
-  }
-
-  &-content {
-    background: $c-bodyBackground-1;
-    padding: $padding-small-horizontal;
-
-    &-title {
-      font-weight: $f-headingsWeight;
-      margin-bottom: $padding-small-horizontal;
-    }
-
-    &-title > a {
-      /*! keep */
-    }
-
-    &-category {
-      color: $c-text-2;
-    }
-  }
-
-  &-button {
-    padding: $padding-small-horizontal;
-    background: $c-secondaryBackground;
-    color: $c-white;
-
-    & > a {
-      width: 100%;
-      text-decoration: none;
-      color: inherit;
-    }
-    & > a:hover {
-      color: inherit;
-    }
-  }
-}
-
-.ProductsComponent {
+.component {
   @extend .row;
 
-  & > div {
-    @extend .col-lg-3;
-    @extend .col-sm-4;
-  }
+}
+
+.component-item {
+  @extend .col-lg-3;
+  @extend .col-sm-4;
 }

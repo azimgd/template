@@ -1,12 +1,12 @@
-.ProductCreateContainerBlock {
+.block {
   @extend .u-containerBlock;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.ProductCreateContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
   /*! keep */
 
   &-block {

@@ -23,10 +23,10 @@ export class ProductsContainer extends React.Component {
 
   render() {
     return (
-      <div styleName="ProductsContainerBlock">
-        <div styleName="ProductsContainerBlock-title">Products</div>
+      <div styleName="block">
+        <div styleName="title">Products</div>
         {!isEmpty(this.props.distinctProductOptions.data) ?
-          <div styleName="ProductsContainerBlock-filters">
+          <div styleName="block-filters">
             <ProductFiltersComponent
               distinctProductOptions={this.props.distinctProductOptions}
               getFilteredProductsRequest={this.props.getFilteredProductsRequest}
@@ -34,15 +34,15 @@ export class ProductsContainer extends React.Component {
           </div>
         : null}
 
-        <div styleName="ProductsContainer">
+        <div styleName="component">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
 
-              <div styleName="ProductsContainer-products">
+              <div styleName="component-products">
                 <ProductsComponent products={this.props.products} />
               </div>
 
-              <div styleName="ProductsContainer-loadMore">
+              <div styleName="component-loadMore">
                 <button onClick={this.props.getProductsRequestModified}>Load more</button>
               </div>
             </IsEmptyComponent>

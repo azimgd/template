@@ -15,9 +15,9 @@ import SearchComponent from 'components/Search/SearchComponent';
 import flow from 'lodash/flow';
 
 const LayoutContainer = ({ ui, toggleCartDropdown, getSearchedProductsRequest, children, cartPosition, location }) =>
-  <div styleName="LayoutContainerBlock">
-    <div styleName="LayoutContainer">
-      <div styleName="LayoutContainer-header">
+  <div styleName="block">
+    <div styleName="component">
+      <div styleName="component-header">
         <HeaderComponent>
           <HeaderActionsComponent toggleCartDropdown={toggleCartDropdown} />
           <SearchComponent
@@ -28,13 +28,13 @@ const LayoutContainer = ({ ui, toggleCartDropdown, getSearchedProductsRequest, c
           <CartDropdownItemComponent />
         </CartDropdownComponent>
       </div>
-      <div styleName="LayoutContainer-topnavbar">
+      <div styleName="component-topnavbar">
         <TopnavbarComponent pathname={location.pathname} />
       </div>
-      <div styleName="LayoutContainer-block">
+      <div styleName="component-block">
         {children}
       </div>
-      <div styleName="LayoutContainer-footer">
+      <div styleName="component-footer">
         <FooterComponent />
       </div>
     </div>

@@ -9,20 +9,20 @@ import CheckoutControlComponent from 'components/CheckoutControl/CheckoutControl
 import flow from 'lodash/flow';
 
 const CheckoutContainer = () =>
-  <div styleName="CheckoutContainerBlock">
-    <div styleName="CheckoutContainerBlock-title">Checkout</div>
+  <div styleName="block">
+    <div styleName="title">Checkout</div>
 
-    <div styleName="CheckoutContainer">
-      <div styleName="CheckoutContainer-summary">
+    <div styleName="component">
+      <div styleName="component-summary">
         <CheckoutSummaryComponent />
       </div>
-      <div styleName="CheckoutContainer-userInfo">
+      <div styleName="component-userInfo">
         <CheckoutUserInfoComponent />
       </div>
-      <div styleName="CheckoutContainer-billing">
+      <div styleName="component-billing">
         <CheckoutBillingComponent />
       </div>
-      <div styleName="CheckoutContainer-control">
+      <div styleName="component-control">
         <CheckoutControlComponent />
       </div>
     </div>

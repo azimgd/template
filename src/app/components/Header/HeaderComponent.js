@@ -5,12 +5,12 @@ import styles from 'components/Header/_HeaderComponent.scss';
 import { Link } from 'react-router';
 
 const HeaderComponent = ({ children }) =>
-  <div styleName="HeaderComponentBlock">
-    <div styleName="HeaderComponent">
-      <div styleName="HeaderComponent-left">
-        <div styleName="Logo"><Link to="/">{APP_TITLE}</Link></div>
+  <div styleName="block">
+    <div styleName="component">
+      <div styleName="component-left">
+        <div styleName="logo"><Link to="/">{APP_TITLE}</Link></div>
       </div>
-      <div styleName="HeaderComponent-right">
+      <div styleName="component-right">
         {children}
       </div>
     </div>
