@@ -2,11 +2,24 @@
 version: "2"
 
 services:
-  app:
-    build: .
+  node:
+    build: ./docker/node/
     env_file:
       - .env
     environment:
       PORT: 8080
     ports:
       - "8080:8080"
+    volumes:
+      - "/usr/src/app"
+  nginx:
+    restart: always
+    build: ./docker/nginx/
+    ports:
+      - "80:80"
+    volumes:
+      - /www/public
+    volumes_from:
+      - node
+    links:
+      - node:node

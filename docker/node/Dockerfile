@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 USER node
 
 # Bundle app source
-COPY . /usr/src/app
+COPY ../../. /usr/src/app
 RUN npm install
 
 EXPOSE 8080
