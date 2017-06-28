@@ -4,12 +4,9 @@ version: "2"
 services:
   app:
     build: .
+    env_file:
+      - .env
     environment:
-      AWS_ACCESS_KEY_ID:
-      AWS_SECRET_ACCESS_KEY:
-      API_ENDPOINT:
-      APP_TITLE:
-      APP_CURRENCY:
-      TEMPLATE: default
+      PORT: 8080
     ports:
-      - "8080:${PORT}"
+      - "8080:8080"
