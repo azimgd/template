@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'components/topnavbar/_TopnavbarComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/topnavbar/_TopnavbarComponent.scss';
 
 import { Link } from 'react-router';
 
@@ -21,9 +22,9 @@ NavbarItem.propTypes = {
 const TopnavbarComponent = ({ pathname }) => {
   const path = pathname.replace(/\/$/, '');
   return (
-    <div className="TopnavbarComponentBlock">
-      <div className="TopnavbarComponent">
-        <ul className="TopnavbarComponent-nav">
+    <div styleName="TopnavbarComponentBlock">
+      <div styleName="TopnavbarComponent">
+        <ul styleName="TopnavbarComponent-nav">
           <NavbarItem currentPath={path} itemPath="/products" itemText="Products" />
           <NavbarItem currentPath={path} itemPath="/pages" itemText="Blog" />
         </ul>
@@ -36,4 +37,4 @@ TopnavbarComponent.propTypes = {
   pathname: PropTypes.string.isRequired,
 };
 
-export default TopnavbarComponent;
+export default css(TopnavbarComponent, styles);

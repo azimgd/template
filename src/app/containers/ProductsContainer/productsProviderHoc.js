@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import css from 'services/cssService';
 import { connect } from 'react-redux';
 import * as actions from 'actions/index';
 
@@ -8,10 +9,6 @@ const productsProviderHoc = (Component) => {
       super(props);
       this.getFilteredProductsRequest = this.getFilteredProductsRequest.bind(this);
       this.getSearchedProductsRequest = this.getSearchedProductsRequest.bind(this);
-    }
-
-    componentWillUnmount() {
-      this.props.getProductsIdle();
     }
 
     getFilteredProductsRequest(options) {

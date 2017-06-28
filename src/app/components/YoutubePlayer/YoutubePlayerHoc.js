@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import css from 'services/cssService';
 import first from 'lodash/first';
 import find from 'lodash/find';
 import findIndex from 'lodash/findIndex';

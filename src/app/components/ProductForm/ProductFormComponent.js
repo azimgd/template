@@ -1,34 +1,35 @@
 import React, { PropTypes } from 'react';
-import 'components/ProductForm/_ProductFormComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/ProductForm/_ProductFormComponent.scss';
 
 import { Field, reduxForm } from 'redux-form';
 import ProductFormComponentValidator from 'validators/ProductFormComponentValidator';
 import { InputText, RichTextarea, InputSelect } from 'components/Shared/SharedFormInputComponent';
 
 const ProductFormComponent = ({ children, categories, subCategories, handleSubmit, createProduct }) =>
-  <div className="ProductFormComponentBlock">
-    <form className="ProductFormComponent" onSubmit={handleSubmit(createProduct)}>
-      <div className="ProductFormComponent-productForm">
-        <div className="ProductFormComponent-productForm-input">
+  <div styleName="ProductFormComponentBlock">
+    <form styleName="ProductFormComponent" onSubmit={handleSubmit(createProduct)}>
+      <div styleName="ProductFormComponent-productForm">
+        <div styleName="ProductFormComponent-productForm-input">
           <Field name="title" component={InputText} label="Product title" />
         </div>
-        <div className="ProductFormComponent-productForm-input">
+        <div styleName="ProductFormComponent-productForm-input">
           <Field name="categoryId" component={InputSelect} label="Product category" options={categories} />
         </div>
-        <div className="ProductFormComponent-productForm-input">
+        <div styleName="ProductFormComponent-productForm-input">
           <Field name="subCategoryId" component={InputSelect} label="Product subcategory" options={subCategories} />
         </div>
-        <div className="ProductFormComponent-productForm-input">
+        <div styleName="ProductFormComponent-productForm-input">
           <Field name="description" component={RichTextarea} label="Product description" />
         </div>
-        <div className="ProductFormComponent-productForm-input">
+        <div styleName="ProductFormComponent-productForm-input">
           <Field name="price" component={InputText} label="Product price" />
         </div>
       </div>
 
       {children}
 
-      <button type="submit" className="ProductFormComponent-button">
+      <button type="submit" styleName="ProductFormComponent-button">
         Create now
       </button>
     </form>
@@ -48,4 +49,4 @@ ProductFormComponent.propTypes = {
 export default reduxForm({
   form: 'ProductFormComponent',
   asyncValidate: ProductFormComponentValidator.asyncValidate,
-})(ProductFormComponent);
+})(css(ProductFormComponent, styles));

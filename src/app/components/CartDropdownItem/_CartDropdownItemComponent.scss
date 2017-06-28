@@ -1,8 +1,10 @@
 .CartDropdownItemComponentBlock {
+  /*! keep */
 }
 
 .CartDropdownItemComponent {
   @extend .row;
+
   &-left {
     @extend .col-xs-3;
   }

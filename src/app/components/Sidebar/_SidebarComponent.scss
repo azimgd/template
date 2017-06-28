@@ -3,6 +3,8 @@
   padding: $padding-large-horizontal;
 
   &-item {
+    /*! keep */
+
     &:not(:last-child) {
       margin-bottom: $padding-large-horizontal;
     }
@@ -13,6 +15,7 @@
     }
 
     &-content {
+      /*! keep */
     }
 
     &-content > ul {

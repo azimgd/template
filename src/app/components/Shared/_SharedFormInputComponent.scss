@@ -1,4 +1,6 @@
 .SharedFormInputComponent {
+  /*! keep */
+
   &-error {
     background: $c-danger;
     color: $c-white;
@@ -11,9 +13,14 @@
   }
 
   &--InputText {
+    /*! keep */
   }
+
   &--InputTextarea {
+    /*! keep */
   }
+
   &--InputSelect {
+    /*! keep */
   }
 }

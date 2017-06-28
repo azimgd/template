@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'containers/ConfigProductCategoriesContainer/_ConfigProductCategoriesContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/ConfigProductCategoriesContainer/_ConfigProductCategoriesContainer.scss';
 
 import configProductCategoriesHoc from 'containers/ConfigProductCategoriesContainer/configProductCategoriesHoc';
 import ConfigCategoriesComponent from 'components/ConfigCategories/ConfigCategoriesComponent';
@@ -19,11 +20,11 @@ export class ConfigProductCategoriesContainer extends React.Component {
 
   render() {
     return (
-      <div className="ConfigProductCategoriesContainerBlock">
-        <div className="ConfigProductCategoriesContainerBlock-title">Config product categories</div>
-        <div className="ConfigProductCategoriesContainer">
-          <div className="ConfigProductCategoriesContainer-block">
-            <div className="ConfigProductCategoriesContainer-block-full">
+      <div styleName="block">
+        <div styleName="title">Config product categories</div>
+        <div styleName="component">
+          <div styleName="component-block">
+            <div styleName="component-block-full">
               {this.props.notificationsSuccess.map(notificationSuccess =>
                 <NotificationComponent isVisible message={notificationSuccess.message} status={notificationSuccess.status} />
               )}
@@ -31,11 +32,11 @@ export class ConfigProductCategoriesContainer extends React.Component {
                 <NotificationComponent isVisible message={notificationFailure.message} status={notificationFailure.status} />
               )}
             </div>
-            <div className="ConfigProductCategoriesContainer-block-left">
+            <div styleName="component-block-left">
               <ConfigCategoriesComponent createNewCategory={this.props.postProductCategoryRequest} />
               <ConfigSubCategoriesComponent categories={this.props.mappedCategories} createNewSubCategory={this.props.postProductSubCategoryRequest} />
             </div>
-            <div className="ConfigProductCategoriesContainer-block-right">
+            <div styleName="component-block-right">
               <ConfigSidebarComponent />
             </div>
           </div>
@@ -62,4 +63,4 @@ export const propTypes = {
 
 ConfigProductCategoriesContainer.propTypes = propTypes;
 export const init = flow([configProductCategoriesHoc]);
-export default init(ConfigProductCategoriesContainer);
+export default init(css(ConfigProductCategoriesContainer, styles));

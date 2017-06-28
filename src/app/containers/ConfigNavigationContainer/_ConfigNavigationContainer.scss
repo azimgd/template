@@ -1,12 +1,14 @@
-.ConfigNavigationContainerBlock {
+.block {
   @extend .u-containerBlock;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.ConfigNavigationContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
+  /*! keep */
+
   &-block {
     padding: $padding-large-horizontal;
     @extend .row;

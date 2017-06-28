@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
-import 'components/PageDetails/_PageDetailsComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/PageDetails/_PageDetailsComponent.scss';
 
 const PageDetailsComponent = ({ page, pageParsedToHtml }) =>
-  <div className="PageDetailsComponentBlock">
-    <div className="PageDetailsComponent">
-      <div className="PageDetailsComponent-content">
+  <div styleName="PageDetailsComponentBlock">
+    <div styleName="PageDetailsComponent">
+      <div styleName="PageDetailsComponent-content">
         <p dangerouslySetInnerHTML={{ __html: pageParsedToHtml }} />
       </div>
     </div>
@@ -15,4 +16,4 @@ PageDetailsComponent.propTypes = {
   pageParsedToHtml: PropTypes.string.isRequired,
 };
 
-export default PageDetailsComponent;
+export default css(PageDetailsComponent, styles);

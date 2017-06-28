@@ -1,12 +1,12 @@
-.HomeContainerBlock {
+.block {
   @extend .u-containerBlock;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.HomeContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
   @extend .u-container;
 
   & > div:not(:last-child) {
@@ -14,6 +14,8 @@
   }
 
   &-productCategories {
+    /*! keep */
+
     &-title {
       font-weight: $f-headingsWeight;
       margin-bottom: $padding-large-horizontal;
@@ -21,6 +23,8 @@
   }
 
   &-pageCategories {
+    /*! keep */
+
     &-title {
       font-weight: $f-headingsWeight;
       margin-bottom: $padding-large-horizontal;

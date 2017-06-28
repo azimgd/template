@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
-import 'containers/ProductsContainer/_ProductsContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/ProductsContainer/_ProductsContainer.scss';
 
 import productsHoc from 'containers/ProductsContainer/productsHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
-import productsResizeHoc from 'containers/ProductsContainer/productsResizeHoc';
-import ProductComponent from 'components/Products/ProductComponent';
+import ProductsComponent from 'components/Products/ProductsComponent';
 import ProductFiltersComponent from 'components/ProductFilters/ProductFiltersComponent';
 import IsLoadingComponent from 'components/IsLoading/IsLoadingComponent';
 import IsEmptyComponent from 'components/IsEmpty/IsEmptyComponent';
@@ -22,10 +22,10 @@ export class ProductsContainer extends React.Component {
 
   render() {
     return (
-      <div className="ProductsContainerBlock">
-        <div className="ProductsContainerBlock-title">Products</div>
+      <div styleName="block">
+        <div styleName="title">Products</div>
         {!isEmpty(this.props.distinctProductOptions.data) ?
-          <div className="ProductsContainerBlock-filters">
+          <div styleName="block-filters">
             <ProductFiltersComponent
               distinctProductOptions={this.props.distinctProductOptions}
               getFilteredProductsRequest={this.props.getFilteredProductsRequest}
@@ -33,16 +33,15 @@ export class ProductsContainer extends React.Component {
           </div>
         : null}
 
-        <div className="ProductsContainer">
+        <div styleName="component">
           <IsLoadingComponent isLoading={this.props.isLoading}>
             <IsEmptyComponent isEmpty={this.props.isEmpty}>
-              <div className="ProductsContainer-products">
-                {this.props.products.data && this.props.products.data.map((product) =>
-                  <div key={product.id}><ProductComponent product={product} height={this.props.maxHeight} /></div>
-                )}
+
+              <div styleName="component-products">
+                <ProductsComponent products={this.props.products} />
               </div>
 
-              <div className="ProductsContainer-loadMore">
+              <div styleName="component-loadMore">
                 <button onClick={this.props.getProductsRequestModified}>Load more</button>
               </div>
             </IsEmptyComponent>
@@ -83,5 +82,5 @@ export const propTypes = {
 };
 
 ProductsContainer.propTypes = propTypes;
-export const init = flow([productsHoc, productsProviderHoc, productsResizeHoc]);
-export default init(ProductsContainer);
+export const init = flow([productsHoc, productsProviderHoc]);
+export default init(css(ProductsContainer, styles));

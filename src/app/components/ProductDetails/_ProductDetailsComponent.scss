@@ -1,8 +1,10 @@
 .ProductDetailsComponentBlock {
-
+  /*! keep */
 }
 
 .ProductDetailsComponent {
+  /*! keep */
+
   &-detailsBlock {
     background: $c-bodyBackground-1;
     padding: $padding-large-horizontal;
@@ -32,9 +34,11 @@
 }
 
 .ProductDetailsItemComponent {
+  /*! keep */
   &-title {
     font-weight: $f-headingsWeight;
   }
   &-content {
+    /*! keep */
   }
 }

@@ -1,17 +1,18 @@
 import React from 'react';
-import 'components/PaymentOption/_PaymentOptionComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/PaymentOption/_PaymentOptionComponent.scss';
 
 const PaymentOptionComponent = () =>
-  <div className="PaymentOptionComponentBlock">
-    <div className="PaymentOptionComponent">
-      <div className="PaymentOptionComponent-title">
+  <div styleName="PaymentOptionComponentBlock">
+    <div styleName="PaymentOptionComponent">
+      <div styleName="PaymentOptionComponent-title">
         Visa
       </div>
-      <div className="PaymentOptionComponent-content">
+      <div styleName="PaymentOptionComponent-content">
         4242 4242 4242 4242
       </div>
     </div>
-    <div className="PaymentOptionComponentBlock-button">
+    <div styleName="PaymentOptionComponentBlock-button">
       Select
     </div>
   </div>;
@@ -19,4 +20,4 @@ const PaymentOptionComponent = () =>
 PaymentOptionComponent.propTypes = {
 };
 
-export default PaymentOptionComponent;
+export default css(PaymentOptionComponent, styles);

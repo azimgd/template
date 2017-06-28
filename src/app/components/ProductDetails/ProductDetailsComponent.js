@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'components/ProductDetails/_ProductDetailsComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/ProductDetails/_ProductDetailsComponent.scss';
 
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
@@ -8,13 +9,13 @@ import ProductDetailsItemComponent from 'components/ProductDetails/ProductDetail
 import YoutubePlayerComponent from 'components/YoutubePlayer/YoutubePlayerComponent';
 
 const ProductDetailsComponent = ({ productOptions, youtubeOptions, productParsedToHtml }) => (
-  <div className="ProductDetailsComponentBlock">
-    <div className="ProductDetailsComponent">
+  <div styleName="ProductDetailsComponentBlock">
+    <div styleName="ProductDetailsComponent">
       {!isEmpty(productOptions) ?
-        <div className="ProductDetailsComponent-detailsBlock">
-          <div className="ProductDetailsComponent-details">
+        <div styleName="ProductDetailsComponent-detailsBlock">
+          <div styleName="ProductDetailsComponent-details">
             {map(productOptions, (options, key) =>
-              <div className="ProductDetailsComponent-details-item" key={key}>
+              <div styleName="ProductDetailsComponent-details-item" key={key}>
                 <ProductDetailsItemComponent options={options} />
               </div>
             )}
@@ -22,7 +23,7 @@ const ProductDetailsComponent = ({ productOptions, youtubeOptions, productParsed
         </div>
       : null}
 
-      <div className="ProductDetailsComponent-description">
+      <div styleName="ProductDetailsComponent-description">
         <p dangerouslySetInnerHTML={{ __html: productParsedToHtml }} />
       </div>
 
@@ -47,4 +48,4 @@ ProductDetailsComponent.propTypes = {
   productParsedToHtml: PropTypes.string.isRequired,
 };
 
-export default productDetailsHoc(ProductDetailsComponent);
+export default productDetailsHoc(css(ProductDetailsComponent, styles));

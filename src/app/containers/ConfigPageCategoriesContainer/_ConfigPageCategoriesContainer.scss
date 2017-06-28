@@ -1,12 +1,14 @@
-.ConfigPageCategoriesContainerBlock {
+.block {
   @extend .u-containerBlock;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.ConfigPageCategoriesContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
+  /*! keep */
+
   &-block {
     padding: $padding-large-horizontal;
     @extend .row;

@@ -1,12 +1,15 @@
 import React, { PropTypes } from 'react';
+import css from 'services/cssService';
+
+import styles from 'components/ProductDetails/_ProductDetailsComponent.scss';
 import get from 'lodash/get';
 
 const ProductDetailsItemComponent = ({ options }) =>
-  <div className="ProductDetailsItemComponent">
-    <div className="ProductDetailsItemComponent-title">
+  <div styleName="ProductDetailsItemComponent">
+    <div styleName="ProductDetailsItemComponent-title">
       {get(options, 'key')}:
     </div>
-    <div className="ProductDetailsItemComponent-content">
+    <div styleName="ProductDetailsItemComponent-content">
       {get(options, 'value', 'unavailable')}
     </div>
   </div>;
@@ -18,4 +21,4 @@ ProductDetailsItemComponent.propTypes = {
   }).isRequired,
 };
 
-export default ProductDetailsItemComponent;
+export default css(ProductDetailsItemComponent, styles);

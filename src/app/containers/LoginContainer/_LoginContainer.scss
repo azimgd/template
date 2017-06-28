@@ -1,14 +1,14 @@
-.LoginContainerBlock {
+.block {
   max-width: 500px;
   padding: $padding-base-horizontal;
   margin: 0 auto;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.LoginContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
   padding: $padding-base-horizontal;
   background: $c-contentBackground;
 

@@ -1,15 +1,17 @@
-.PagesContainerBlock {
+.block {
   @extend .u-containerBlock;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.PagesContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
   @extend .u-container;
 
   &-pages {
+    /*! keep */
+
     & > div:not(:last-child) {
       margin-bottom: $padding-large-horizontal * 2;
     }

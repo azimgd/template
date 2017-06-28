@@ -1,28 +1,29 @@
 import React, { PropTypes } from 'react';
-import 'components/LoginForm/_LoginFormComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/LoginForm/_LoginFormComponent.scss';
 
 import { Field, reduxForm } from 'redux-form';
 import LoginFormComponentValidator from 'validators/LoginFormComponentValidator';
 import { InputText, InputPassword } from 'components/Shared/SharedFormInputComponent';
 
 const LoginFormComponent = ({ handleSubmit, postLoginRequest }) =>
-  <div className="LoginFormComponentBlock">
-    <form className="LoginFormComponent" onSubmit={handleSubmit(postLoginRequest)}>
-      <div className="LoginFormComponent-form">
-        <div className="LoginFormComponent-form-input">
+  <div styleName="LoginFormComponentBlock">
+    <form styleName="LoginFormComponent" onSubmit={handleSubmit(postLoginRequest)}>
+      <div styleName="LoginFormComponent-form">
+        <div styleName="LoginFormComponent-form-input">
           <Field name="username" component={InputText} label="Username" />
         </div>
-        <div className="LoginFormComponent-form-input">
+        <div styleName="LoginFormComponent-form-input">
           <Field name="password" component={InputPassword} label="Password" />
         </div>
       </div>
 
-      <div className="LoginFormComponent-control">
-        <button type="submit" className="LoginFormComponent-button">
+      <div styleName="LoginFormComponent-control">
+        <button type="submit" styleName="LoginFormComponent-button">
           Submit
         </button>
 
-        <a href="" className="LoginFormComponent-link">
+        <a href="" styleName="LoginFormComponent-link">
           Forgot password ?
         </a>
       </div>
@@ -37,4 +38,4 @@ LoginFormComponent.propTypes = {
 export default reduxForm({
   form: 'LoginFormComponent',
   asyncValidate: LoginFormComponentValidator.asyncValidate,
-})(LoginFormComponent);
+})(css(LoginFormComponent, styles));

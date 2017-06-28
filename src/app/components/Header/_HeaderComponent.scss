@@ -1,25 +1,25 @@
-.HeaderComponentBlock {
+.block {
   background: $c-black-2;
   padding: $padding-large-horizontal 0;
 }
 
-.HeaderComponent {
+.component {
   @extend .row;
-
-  &-left {
-    @extend .col-sm-9;
-  }
-
-  &-right {
-    @extend .col-sm-3;
-    @extend .hidden-xs;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-  }
 }
 
-.Logo {
+.component-left {
+  @extend .col-sm-9;
+}
+
+.component-right {
+  @extend .col-sm-3;
+  @extend .hidden-xs;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.logo {
   display: inline-block;
   font-size: $f-h4Size;
   font-weight: $f-h4Size;

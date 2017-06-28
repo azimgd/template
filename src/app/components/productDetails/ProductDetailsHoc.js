@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import css from 'services/cssService';
 import flow from 'lodash/flow';
 import filter from 'lodash/filter';
 import includes from 'lodash/includes';

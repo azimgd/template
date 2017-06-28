@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
-import 'components/ProductGallery/_ProductGalleryComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/ProductGallery/_ProductGalleryComponent.scss';
 
 import Slider from 'react-image-slider';
 
 const ProductGalleryComponent = ({ images }) =>
-  <div className="ProductGalleryComponentBlock">
-    <div className="ProductGalleryComponent">
+  <div styleName="ProductGalleryComponentBlock">
+    <div styleName="ProductGalleryComponent">
       <Slider isInfinite delay={5000}>
         {images.map((image, key) => <div key={key}><img src={image.amazonUrl} alt="" /></div>)}
       </Slider>
@@ -16,4 +17,4 @@ ProductGalleryComponent.propTypes = {
   images: PropTypes.array.isRequired,
 };
 
-export default ProductGalleryComponent;
+export default css(ProductGalleryComponent, styles);

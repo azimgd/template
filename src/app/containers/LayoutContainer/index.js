@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
-import 'containers/LayoutContainer/_LayoutContainer.scss';
+import css from 'services/cssService';
+import styles from 'containers/LayoutContainer/_LayoutContainer.scss';
 
-import cartResizeHoc from 'containers/LayoutContainer/cartResizeHoc';
 import layoutHoc from 'containers/LayoutContainer/layoutHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
 import HeaderComponent from 'components/Header/HeaderComponent';
@@ -14,9 +14,9 @@ import SearchComponent from 'components/Search/SearchComponent';
 import flow from 'lodash/flow';
 
 const LayoutContainer = ({ ui, toggleCartDropdown, getSearchedProductsRequest, children, cartPosition, location }) =>
-  <div className="LayoutContainerBlock">
-    <div className="LayoutContainer">
-      <div className="LayoutContainer-header">
+  <div styleName="block">
+    <div styleName="component">
+      <div styleName="component-header">
         <HeaderComponent>
           <HeaderActionsComponent toggleCartDropdown={toggleCartDropdown} />
           <SearchComponent
@@ -27,13 +27,13 @@ const LayoutContainer = ({ ui, toggleCartDropdown, getSearchedProductsRequest, c
           <CartDropdownItemComponent />
         </CartDropdownComponent>
       </div>
-      <div className="LayoutContainer-topnavbar">
+      <div styleName="component-topnavbar">
         <TopnavbarComponent pathname={location.pathname} />
       </div>
-      <div className="LayoutContainer-block">
+      <div styleName="component-block">
         {children}
       </div>
-      <div className="LayoutContainer-footer">
+      <div styleName="component-footer">
         <FooterComponent />
       </div>
     </div>
@@ -55,5 +55,5 @@ export const propTypes = {
 };
 
 LayoutContainer.propTypes = propTypes;
-export const init = flow([layoutHoc, productsProviderHoc, cartResizeHoc]);
-export default init(LayoutContainer);
+export const init = flow([layoutHoc, productsProviderHoc]);
+export default init(css(LayoutContainer, styles));

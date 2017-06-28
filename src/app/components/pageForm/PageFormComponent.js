@@ -1,29 +1,30 @@
 import React, { PropTypes } from 'react';
-import 'components/PageForm/_PageFormComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/PageForm/_PageFormComponent.scss';
 
 import { Field, reduxForm } from 'redux-form';
 import PageFormComponentValidator from 'validators/PageFormComponentValidator';
 import { InputText, InputSelect, RichTextarea } from 'components/Shared/SharedFormInputComponent';
 
 const PageFormComponent = ({ categories, subCategories, handleSubmit, createPage }) =>
-  <div className="PageFormComponentBlock">
-    <form className="PageFormComponent" onSubmit={handleSubmit(createPage)}>
-      <div className="PageFormComponent-pageForm">
-        <div className="PageFormComponent-pageForm-input">
+  <div styleName="PageFormComponentBlock">
+    <form styleName="PageFormComponent" onSubmit={handleSubmit(createPage)}>
+      <div styleName="PageFormComponent-pageForm">
+        <div styleName="PageFormComponent-pageForm-input">
           <Field name="title" component={InputText} label="Page title" />
-        </div>1
-        <div className="PageFormComponent-pageForm-input">
+        </div>
+        <div styleName="PageFormComponent-pageForm-input">
           <Field name="categoryId" component={InputSelect} label="Page category" options={categories} />
         </div>
-        <div className="PageFormComponent-pageForm-input">
+        <div styleName="PageFormComponent-pageForm-input">
           <Field name="subCategoryId" component={InputSelect} label="Page subcategory" options={subCategories} />
         </div>
-        <div className="PageFormComponent-pageForm-input">
+        <div styleName="PageFormComponent-pageForm-input">
           <Field name="content" component={RichTextarea} label="Page content" />
         </div>
       </div>
 
-      <button type="submit" className="PageFormComponent-button">
+      <button type="submit" styleName="PageFormComponent-button">
         Create now
       </button>
     </form>
@@ -39,4 +40,4 @@ PageFormComponent.propTypes = {
 export default reduxForm({
   form: 'PageFormComponent',
   asyncValidate: PageFormComponentValidator.asyncValidate,
-})(PageFormComponent);
+})(css(PageFormComponent, styles));

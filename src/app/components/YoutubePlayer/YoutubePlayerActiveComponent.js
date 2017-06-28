@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react';
+import css from 'services/cssService';
+import styles from 'components/YoutubePlayer/_YoutubePlayerComponent.scss';
 import get from 'lodash/get';
 
 const YoutubePlayerActiveComponent = ({ item }) =>
-  <div className="YoutubePlayerActiveComponent">
+  <div styleName="YoutubePlayerActiveComponent">
     <iframe
       src={`${get(item, 'value.iframe', 'unavailable')}`}
       frameBorder="0"
@@ -17,4 +19,4 @@ YoutubePlayerActiveComponent.propTypes = {
   }).isRequired,
 };
 
-export default YoutubePlayerActiveComponent;
+export default css(YoutubePlayerActiveComponent, styles);

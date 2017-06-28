@@ -1,13 +1,14 @@
 import React from 'react';
-import 'components/ProductAbout/_ProductAboutComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/ProductAbout/_ProductAboutComponent.scss';
 
 const ProductAboutComponent = () =>
-  <div className="ProductAboutComponent">
-    <div className="ProductAboutComponent-item">
-      <div className="ProductAboutComponent-item-title">
+  <div styleName="ProductAboutComponent">
+    <div styleName="ProductAboutComponent-item">
+      <div styleName="ProductAboutComponent-item-title">
         Default sidebar title
       </div>
-      <div className="ProductAboutComponent-item-content">
+      <div styleName="ProductAboutComponent-item-content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </div>
     </div>
@@ -16,4 +17,4 @@ const ProductAboutComponent = () =>
 ProductAboutComponent.propTypes = {
 };
 
-export default ProductAboutComponent;
+export default css(ProductAboutComponent, styles);

@@ -1,6 +1,6 @@
 $bootstrap-sass-asset-helper: "~bootstrap-sass/assets/fonts/" !default;
 @import './bootstrap/bootstrap';
-@import '~react-image-slider/lib/image-slider.css';
+@import '~react-image-slider/lib/image-slider';
 @import './vendor/ReactImageSlider';
 
 @import './variables.scss';

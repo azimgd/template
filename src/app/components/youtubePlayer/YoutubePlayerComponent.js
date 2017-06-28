@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import 'components/YoutubePlayer/_YoutubePlayerComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/YoutubePlayer/_YoutubePlayerComponent.scss';
 
 import map from 'lodash/map';
 import youtubePlayerHoc from 'components/YoutubePlayer/YoutubePlayerHoc';
@@ -8,11 +9,11 @@ import YoutubePlayerItemComponent from 'components/YoutubePlayer/YoutubePlayerIt
 
 const YoutubePlayerComponent = ({ setActiveItem, activeItem, inactiveItems }) =>
   <div>
-    <div className="YoutubePlayerActive">
+    <div styleName="YoutubePlayerActive">
       <YoutubePlayerActiveComponent item={activeItem} />
     </div>
 
-    <div className="YoutubePlayerItems">
+    <div styleName="YoutubePlayerItems">
       {map(inactiveItems, (options, key) =>
         <div key={key}>
           <YoutubePlayerItemComponent
@@ -36,4 +37,4 @@ YoutubePlayerComponent.propTypes = {
   }).isRequired,
 };
 
-export default youtubePlayerHoc(YoutubePlayerComponent);
+export default youtubePlayerHoc(css(YoutubePlayerComponent, styles));

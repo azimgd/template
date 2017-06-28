@@ -1,7 +1,10 @@
 .ConfigNavigationComponentBlock {
+  /*! keep */
 }
 
 .ConfigNavigationComponent {
+  /*! keep */
+
   &-configForm {
     @extend .row;
     margin-bottom: $padding-large-horizontal * 2;

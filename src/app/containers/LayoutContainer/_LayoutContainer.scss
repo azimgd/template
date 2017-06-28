@@ -1,14 +1,16 @@
-body {
-  background: $c-bodyBackground;
-  font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
+.block {
+  @extend .u-containerBlock;
 }
 
-.LayoutContainerBlock {
-  @extend .container;
+.title {
+  @extend .u-pageTitle;
 }
 
-.LayoutContainer {
+.component {
+  /*! keep */
+
   &-header {
+    /*! keep */
   }
 
   &-topnavbar {
@@ -20,7 +22,7 @@ body {
   }
 
   &-block {
-
+    /*! keep */
   }
 
   &-footer {

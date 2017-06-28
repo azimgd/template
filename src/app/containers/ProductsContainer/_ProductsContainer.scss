@@ -1,30 +1,27 @@
-.ProductsContainerBlock {
+.block {
   @extend .u-containerBlock;
 
-  &-title {
-    @extend .u-pageTitle;
-  }
-
-  &-filters {
-  }
 }
 
-.ProductsContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.filters {
+  /*! keep */
+}
+
+.component {
   @extend .u-container;
 
   &-products {
-    @extend .row;
-
-    & > div {
-      @extend .col-lg-3;
-      @extend .col-sm-4;
-    }
+    /*! keep */
   }
 
   &-loadMore {
     text-align: center;
     button {
-
+      /*! keep */
     }
   }
 }

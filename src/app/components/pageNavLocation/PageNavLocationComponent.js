@@ -1,22 +1,23 @@
 import React, { PropTypes } from 'react';
-import 'components/PageNavLocation/_PageNavLocationComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/PageNavLocation/_PageNavLocationComponent.scss';
 
 import { Link } from 'react-router';
 
 const PageNavLocationComponent = ({ product, productCategory, productSubCategory }) =>
-  <div className="PageNavLocationComponentBlock">
-    <div className="PageNavLocationComponent">
-      <div className="PageNavLocationComponent-title">
+  <div styleName="PageNavLocationComponentBlock">
+    <div styleName="PageNavLocationComponent">
+      <div styleName="PageNavLocationComponent-title">
         {product.title}
       </div>
-      <div className="PageNavLocationComponent-content">
+      <div styleName="PageNavLocationComponent-content">
         {productCategory ?
-          <div className="PageNavLocationComponent-content-item">
+          <div styleName="PageNavLocationComponent-content-item">
             <Link to={{ pathname: '/products', query: { categoryId: productCategory.id } }}>{productCategory.name}</Link>
           </div>
         : null}
         {productSubCategory ?
-          <div className="PageNavLocationComponent-content-item">
+          <div styleName="PageNavLocationComponent-content-item">
             <Link to={{ pathname: '/products', query: { subCategoryId: productSubCategory.id } }}>{productSubCategory.name}</Link>
           </div>
         : null}
@@ -30,4 +31,4 @@ PageNavLocationComponent.propTypes = {
   productSubCategory: PropTypes.object.isRequired,
 };
 
-export default PageNavLocationComponent;
+export default css(PageNavLocationComponent, styles);

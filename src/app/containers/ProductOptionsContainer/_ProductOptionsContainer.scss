@@ -1,12 +1,14 @@
-.ProductOptionsContainerBlock {
+.block {
   @extend .u-containerBlock;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.ProductOptionsContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
+  /*! keep */
+
   &-block {
     padding: $padding-large-horizontal;
     @extend .row;

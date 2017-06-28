@@ -4,6 +4,8 @@
 }
 
 .AlertMessageComponent {
+  /*! keep */
+
   &-title {
     @extend .row;
     margin-bottom: $padding-small-horizontal;
@@ -26,6 +28,6 @@
   }
 
   &-content {
-
+    /*! keep */
   }
 }

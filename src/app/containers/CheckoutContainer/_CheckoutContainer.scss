@@ -1,12 +1,12 @@
-.CheckoutContainerBlock {
+.block {
   @extend .u-containerBlock;
-
-  &-title {
-    @extend .u-pageTitle;
-  }
 }
 
-.CheckoutContainer {
+.title {
+  @extend .u-pageTitle;
+}
+
+.component {
   @extend .u-container;
 
   &-summary {

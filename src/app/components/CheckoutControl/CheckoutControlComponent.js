@@ -1,16 +1,17 @@
 import React from 'react';
-import 'components/CheckoutControl/_CheckoutControlComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/CheckoutControl/_CheckoutControlComponent.scss';
 
 const CheckoutControlComponent = () =>
-  <div className="CheckoutControlComponentBlock">
-    <div className="CheckoutControlComponent">
-      <div className="CheckoutControlComponent-left">
-        <div className="CheckoutControlComponent-left-total">
+  <div styleName="CheckoutControlComponentBlock">
+    <div styleName="CheckoutControlComponent">
+      <div styleName="CheckoutControlComponent-left">
+        <div styleName="CheckoutControlComponent-left-total">
           Total amount 331 USD
         </div>
       </div>
-      <div className="CheckoutControlComponent-right">
-        <div className="CheckoutControlComponent-right-button">
+      <div styleName="CheckoutControlComponent-right">
+        <div styleName="CheckoutControlComponent-right-button">
           Checkout now
         </div>
       </div>
@@ -20,4 +21,4 @@ const CheckoutControlComponent = () =>
 CheckoutControlComponent.propTypes = {
 };
 
-export default CheckoutControlComponent;
+export default css(CheckoutControlComponent, styles);

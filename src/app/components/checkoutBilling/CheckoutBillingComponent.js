@@ -1,20 +1,21 @@
 import React from 'react';
-import 'components/CheckoutBilling/_CheckoutBillingComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/CheckoutBilling/_CheckoutBillingComponent.scss';
 
 import PaymentOptionComponent from 'components/PaymentOption/PaymentOptionComponent';
 
 const CheckoutBillingComponent = () =>
-  <div className="CheckoutBillingComponentBlock">
-    <div className="CheckoutBillingComponent">
-      <div className="CheckoutBillingComponent-item">
+  <div styleName="CheckoutBillingComponentBlock">
+    <div styleName="CheckoutBillingComponent">
+      <div styleName="CheckoutBillingComponent-item">
         <PaymentOptionComponent />
       </div>
 
-      <div className="CheckoutBillingComponent-item">
+      <div styleName="CheckoutBillingComponent-item">
         <PaymentOptionComponent />
       </div>
 
-      <div className="CheckoutBillingComponent-item">
+      <div styleName="CheckoutBillingComponent-item">
         <PaymentOptionComponent />
       </div>
     </div>
@@ -23,4 +24,4 @@ const CheckoutBillingComponent = () =>
 CheckoutBillingComponent.propTypes = {
 };
 
-export default CheckoutBillingComponent;
+export default css(CheckoutBillingComponent, styles);

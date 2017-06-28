@@ -1,21 +1,22 @@
 import React, { PropTypes } from 'react';
-import 'components/ProductOptionsList/_ProductOptionsListComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/ProductOptionsList/_ProductOptionsListComponent.scss';
 
 const ProductOptionsListComponent = ({ productOptions }) =>
-  <div className="ProductOptionsListComponentBlock">
-    <div className="ProductOptionsListComponentBlock-title">
+  <div styleName="ProductOptionsListComponentBlock">
+    <div styleName="ProductOptionsListComponentBlock-title">
       Available product options list
     </div>
-    <div className="ProductOptionsListComponent">
+    <div styleName="ProductOptionsListComponent">
       {productOptions && productOptions.map((productOption, key) =>
-        <div className="ProductOptionsListComponent-item" key={key}>
-          <div className="ProductOptionsListComponent-item-title">
+        <div styleName="ProductOptionsListComponent-item" key={key}>
+          <div styleName="ProductOptionsListComponent-item-title">
             {productOption.key}
           </div>
-          <div className="ProductOptionsListComponent-item-content">
+          <div styleName="ProductOptionsListComponent-item-content">
             {productOption.value}
           </div>
-          <div className="ProductOptionsListComponent-item-actions">
+          <div styleName="ProductOptionsListComponent-item-actions">
             <a href="#">Edit</a>
             <a href="#">Delete</a>
           </div>
@@ -28,4 +29,4 @@ ProductOptionsListComponent.propTypes = {
   productOptions: PropTypes.array.isRequired,
 };
 
-export default ProductOptionsListComponent;
+export default css(ProductOptionsListComponent, styles);

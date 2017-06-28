@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
-import 'components/Notification/_NotificationComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/Notification/_NotificationComponent.scss';
 
 const NotificationComponent = ({ isVisible, message, status, toggleNotification }) =>
   <div className={`NotificationComponentBlock NotificationComponentBlock--${status}`} style={{ display: isVisible ? 'block' : 'none' }}>
-    <div className="NotificationComponent">
-      <div className="NotificationComponent-content">
+    <div styleName="NotificationComponent">
+      <div styleName="NotificationComponent-content">
         {message}
       </div>
     </div>
@@ -16,4 +17,4 @@ NotificationComponent.propTypes = {
   toggleNotification: PropTypes.func.isRequired,
 };
 
-export default NotificationComponent;
+export default css(NotificationComponent, styles);

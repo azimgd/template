@@ -1,13 +1,14 @@
 import React from 'react';
-import 'components/ConfigSidebar/_ConfigSidebarComponent.scss';
+import css from 'services/cssService';
+import styles from 'components/ConfigSidebar/_ConfigSidebarComponent.scss';
 
 const ConfigSidebarComponent = () =>
-  <div className="ConfigSidebarComponent">
-    <div className="ConfigSidebarComponent-item">
-      <div className="ConfigSidebarComponent-item-title">
+  <div styleName="ConfigSidebarComponent">
+    <div styleName="ConfigSidebarComponent-item">
+      <div styleName="ConfigSidebarComponent-item-title">
         Default sidebar title
       </div>
-      <div className="ConfigSidebarComponent-item-content">
+      <div styleName="ConfigSidebarComponent-item-content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </div>
     </div>
@@ -16,4 +17,4 @@ const ConfigSidebarComponent = () =>
 ConfigSidebarComponent.propTypes = {
 };
 
-export default ConfigSidebarComponent;
+export default css(ConfigSidebarComponent, styles);
