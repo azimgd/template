@@ -6,6 +6,7 @@ import { Link } from 'react-router';
 import get from 'lodash/get';
 import configMock from 'mocks/config';
 import { ButtonIconComponent } from 'components/Icons/IconsComponent';
+import productsResizeHoc from 'components/Products/productsResizeHoc';
 
 const ProductItemComponent = ({ product, height }) =>
   <div styleName="block">
@@ -47,4 +48,4 @@ ProductItemComponent.propTypes = {
   height: PropTypes.number,
 };
 
-export default css(ProductItemComponent, styles);
+export default productsResizeHoc(css(ProductItemComponent, styles));

@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import css from 'services/cssService';
 import styles from 'containers/LayoutContainer/_LayoutContainer.scss';
 
-import cartResizeHoc from 'containers/LayoutContainer/cartResizeHoc';
 import layoutHoc from 'containers/LayoutContainer/layoutHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
 import HeaderComponent from 'components/Header/HeaderComponent';
@@ -56,5 +55,5 @@ export const propTypes = {
 };
 
 LayoutContainer.propTypes = propTypes;
-export const init = flow([layoutHoc, productsProviderHoc, cartResizeHoc]);
+export const init = flow([layoutHoc, productsProviderHoc]);
 export default init(css(LayoutContainer, styles));

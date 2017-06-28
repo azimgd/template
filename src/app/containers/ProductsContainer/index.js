@@ -4,7 +4,6 @@ import styles from 'containers/ProductsContainer/_ProductsContainer.scss';
 
 import productsHoc from 'containers/ProductsContainer/productsHoc';
 import productsProviderHoc from 'containers/ProductsContainer/productsProviderHoc';
-import productsResizeHoc from 'containers/ProductsContainer/productsResizeHoc';
 import ProductsComponent from 'components/Products/ProductsComponent';
 import ProductFiltersComponent from 'components/ProductFilters/ProductFiltersComponent';
 import IsLoadingComponent from 'components/IsLoading/IsLoadingComponent';
@@ -83,5 +82,5 @@ export const propTypes = {
 };
 
 ProductsContainer.propTypes = propTypes;
-export const init = flow([productsHoc, productsProviderHoc, productsResizeHoc]);
+export const init = flow([productsHoc, productsProviderHoc]);
 export default init(css(ProductsContainer, styles));

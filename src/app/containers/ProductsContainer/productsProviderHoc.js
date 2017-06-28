@@ -11,10 +11,6 @@ const productsProviderHoc = (Component) => {
       this.getSearchedProductsRequest = this.getSearchedProductsRequest.bind(this);
     }
 
-    componentWillUnmount() {
-      this.props.getProductsIdle();
-    }
-
     getFilteredProductsRequest(options) {
       return this.props.getProductsRequest({
         categoryId: this.props.location.query.categoryId,
