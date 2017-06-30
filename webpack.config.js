@@ -5,7 +5,8 @@ const WriteFilePlugin = require('write-file-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
-const globalStyleInclude = `\
+const cssLocalIdentityName = IS_PRODUCTION ? '[name]__[local][hash:base64:5]' : '[path]___[name]__[local]___[hash:base64:5]';
+const sassGlobalStyleInclude = `\
   @import "${path.join(__dirname, 'src/assets/scss/_webpack.scss')}";
 `;
 
@@ -34,6 +35,7 @@ if (IS_PRODUCTION) {
    * Plugins
    */
   WebpackPlugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { drop_console: true } }));
+  WebpackPlugins.push(new webpack.optimize.AggressiveMergingPlugin());
 
   /**
    * Loaders
@@ -56,7 +58,6 @@ if (IS_PRODUCTION) {
    * Plugins
    */
   WebpackPlugins.push(new webpack.HotModuleReplacementPlugin());
-  WebpackPlugins.push(new webpack.optimize.AggressiveMergingPlugin());
 
   /**
    * Loaders
@@ -112,10 +113,10 @@ module.exports = {
           use: [{
             loader: 'css-loader',
             options: {
-              minimize: IS_PRODUCTION,
+              minimize: true,
               sourceMap: !IS_PRODUCTION,
               modules: true,
-              localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
+              localIdentName: cssLocalIdentityName,
               discardComments: {
                 removeAll: true
               },
@@ -130,7 +131,7 @@ module.exports = {
             options: {
               sourceMap: !IS_PRODUCTION,
               outputStyle: IS_PRODUCTION ? 'compressed' : 'nested',
-              data: globalStyleInclude,
+              data: sassGlobalStyleInclude,
               includePaths: [path.join(__dirname, 'src/assets')],
             },
           }],
