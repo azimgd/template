@@ -2,12 +2,21 @@ server {
   listen 80;
   charset utf-8;
 
-  location /build {
-    alias /usr/src/app/build;
+  ###
+  # serve static files from build folder
+  ###
+  location /build/ {
+    alias /usr/src/app/build/;
+    gzip_static on;
+    expires max;
+    add_header Cache-Control public;
   }
 
+  ###
+  # proxy pass all other requests to node.js container
+  ###
   location / {
-    proxy_pass http://web:3000;
+    proxy_pass http://node:8080;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

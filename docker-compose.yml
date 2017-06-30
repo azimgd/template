@@ -8,15 +8,15 @@ services:
       - .env
     environment:
       PORT: 8080
-    ports:
-      - "8080:8080"
+    expose:
+      - "8080"
     volumes:
-      - "/usr/src/app"
+      - ".:/usr/src/app"
   nginx:
     restart: always
     build: ./docker/nginx/
     ports:
-      - "80:80"
+      - "${PORT}:80"
     volumes:
       - /www/public
     volumes_from:
