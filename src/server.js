@@ -17,6 +17,11 @@ const globalVariables = {
   APP_CURRENCY: process.env.APP_CURRENCY,
 };
 
+if (process.env.NODE_ENV === 'production') {
+  const webpackAssets = require('../build/webpack/assets.json');
+  Object.assign(globalVariables, webpackAssets);
+}
+
 module.exports = {
   init: () => {
     const app = express();

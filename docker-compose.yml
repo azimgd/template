@@ -23,3 +23,5 @@ services:
       - node
     links:
       - node:node
+    depends_on:
+      - node

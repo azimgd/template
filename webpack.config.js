@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const AssetsPlugin = require('assets-webpack-plugin');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 const cssLocalIdentityName = IS_PRODUCTION ? '[name]__[local][hash:base64:5]' : '[path]___[name]__[local]___[hash:base64:5]';
@@ -26,8 +27,34 @@ const WebpackPlugins = [
   }),
   extractSass,
 ];
+
 const WebpackLoaders = [];
-const WebpackEntries = [];
+const WebpackEntries = {
+  bundle: [],
+  vendor: [
+    'axios',
+    'classnames',
+    'immutability-helper',
+    'lodash',
+    'marked',
+    'react',
+    'react-css-modules',
+    'react-dom',
+    'react-image-slider',
+    'react-redux',
+    'react-router',
+    'react-router-redux',
+    'react-rte',
+    'react-s3-uploader',
+    'redux',
+    'redux-actions',
+    'redux-form',
+    'redux-persist',
+    'redux-saga',
+    'reselect',
+    'yup',
+  ],
+};
 const WebpackDevTool = IS_PRODUCTION ? false : 'cheap-module-eval-source-map';
 
 if (IS_PRODUCTION) {
@@ -36,6 +63,16 @@ if (IS_PRODUCTION) {
    */
   WebpackPlugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { drop_console: true } }));
   WebpackPlugins.push(new webpack.optimize.AggressiveMergingPlugin());
+  WebpackPlugins.push(new webpack.optimize.CommonsChunkPlugin({
+    name: 'vendor',
+    filename: '[name].[chunkhash].js',
+    minChunks: Infinity,
+  }));
+  WebpackPlugins.push(new AssetsPlugin({
+    path: path.join(__dirname, 'build/webpack'),
+    filename: 'assets.json',
+    prettyPrint: true,
+  }));
 
   /**
    * Loaders
@@ -52,7 +89,7 @@ if (IS_PRODUCTION) {
   /**
    * Entries
    */
-  WebpackEntries.push('./src/app/index');
+  WebpackEntries.bundle.push('./src/app/index');
 } else {
   /**
    * Plugins
@@ -74,18 +111,18 @@ if (IS_PRODUCTION) {
   /**
    * Entries
    */
-  WebpackEntries.push('react-hot-loader/patch');
-  WebpackEntries.push('webpack/hot/dev-server');
-  WebpackEntries.push('webpack-hot-middleware/client');
-  WebpackEntries.push('./src/app/index');
+  WebpackEntries.bundle.push('react-hot-loader/patch');
+  WebpackEntries.bundle.push('webpack/hot/dev-server');
+  WebpackEntries.bundle.push('webpack-hot-middleware/client');
+  WebpackEntries.bundle.push('./src/app/index');
 }
 
 module.exports = {
   devtool: WebpackDevTool,
   entry: WebpackEntries,
   output: {
+    filename: IS_PRODUCTION ? '[name].[chunkhash].js' : 'bundle.js',
     path: path.join(__dirname, 'build/webpack'),
-    filename: 'bundle.js',
     publicPath: '/build/webpack/',
   },
   plugins: WebpackPlugins,

@@ -12,6 +12,15 @@
       APP_TITLE = '{{ APP_TITLE }}';
       APP_CURRENCY = '{{ APP_CURRENCY }}';
     </script>
-    <script src="/build/webpack/bundle.js"></script>
+
+    {% if process.env.NODE_ENV === 'local' %}
+      <script src="/build/webpack/vendor.js"></script>
+      <script src="/build/webpack/bundle.js"></script>
+    {% else %}
+      <script src="{{vendor.js}}"></script>
+      <script src="{{bundle.js}}"></script>
+    {% endif %}
+
+    {{process.env}}
   </body>
 </html>
