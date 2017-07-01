@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
+const getLocalIdent = require('./webpack/getLocalIdent');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 const cssLocalIdentityName = IS_PRODUCTION ? '[name]__[local][hash:base64:5]' : '[path]___[name]__[local]___[hash:base64:5]';
@@ -154,6 +155,7 @@ module.exports = {
               sourceMap: !IS_PRODUCTION,
               modules: true,
               localIdentName: cssLocalIdentityName,
+              getLocalIdent,
               discardComments: {
                 removeAll: true
               },
