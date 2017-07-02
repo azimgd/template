@@ -13,6 +13,7 @@ import productImagesReducer from 'reducers/productImagesReducer';
 import productOptionsReducer from 'reducers/productOptionsReducer';
 import productSubCategoriesReducer from 'reducers/productSubCategoriesReducer';
 import imageUploadReducer from 'reducers/imageUploadReducer';
+import templateReducers from 'template/reducers/index';
 
 export default combineReducers({
   uiReducer,
@@ -28,4 +29,6 @@ export default combineReducers({
   imageUploadReducer,
   routing,
   form: formReducer,
+
+  ...templateReducers,
 });
