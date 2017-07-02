@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-const productsResizeHoc = (ProductViewComponent) => {
+const productsResizeHoc = (querySelector, ProductViewComponent) => {
   class ProductsResizeListenerComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -26,7 +26,7 @@ const productsResizeHoc = (ProductViewComponent) => {
     }
 
     onResize() {
-      const elements = document.querySelectorAll('.ProductsContainerBlock .ProductComponent > .ProductComponent-content');
+      const elements = document.querySelectorAll(querySelector);
       const maxHeight = _.chain(elements).map(item => item.offsetHeight).max().value();
       this.setState({ maxHeight });
     }
