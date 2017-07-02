@@ -122,7 +122,7 @@ module.exports = {
   devtool: WebpackDevTool,
   entry: WebpackEntries,
   output: {
-    filename: IS_PRODUCTION ? '[name].[chunkhash].js' : 'bundle.js',
+    filename: IS_PRODUCTION ? '[name].[chunkhash].js' : '[name].js',
     path: path.join(__dirname, 'build/webpack'),
     publicPath: '/build/webpack/',
   },
