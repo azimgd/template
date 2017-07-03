@@ -13,7 +13,7 @@
       APP_CURRENCY = '{{ APP_CURRENCY }}';
     </script>
 
-    {% if process.env.NODE_ENV === 'production' %}
+    {% if NODE_ENV === 'production' %}
       <script src="{{vendor.js}}"></script>
       <script src="{{bundle.js}}"></script>
     {% else %}

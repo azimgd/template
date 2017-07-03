@@ -15,6 +15,7 @@ const globalVariables = {
   API_ENDPOINT: process.env.API_ENDPOINT,
   APP_TITLE: process.env.APP_TITLE,
   APP_CURRENCY: process.env.APP_CURRENCY,
+  NODE_ENV: process.env.NODE_ENV,
 };
 
 if (process.env.NODE_ENV === 'production') {
