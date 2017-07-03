@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv');
 const path = require('path');
 const webpack = require('webpack');
 const WriteFilePlugin = require('write-file-webpack-plugin');
