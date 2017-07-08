@@ -5,7 +5,7 @@ import { getFormValues } from 'redux-form';
 
 const mapStateToProps = (state) => ({
   products: state.productsReducer.products,
-  getProductsRequest: state.productsReducer.actions.getProducts,
+  productsActions: state.productsReducer.actions,
   distinctProductOptions: state.productOptionsReducer.distinctProductOptions,
   searchForm: getFormValues('SearchComponent')(state),
 });
@@ -28,18 +28,19 @@ const componentWillUnmount = (stateProps, dispatchProps) => {
   dispatchProps.getProductsIdle();
 };
 
-const getProductsRequestModified = (stateProps, dispatchProps, ownProps) => {
+const getProductsRequestModified = (stateProps, dispatchProps, ownProps, options) => {
   const { categoryId, subCategoryId } = ownProps.location.query;
   dispatchProps.getProductsRequest({
+    ...options,
     categoryId,
     subCategoryId,
-    offset: stateProps.getProductsRequest.meta.offset,
-    limit: stateProps.getProductsRequest.meta.limit
+    offset: stateProps.productsActions.getProducts.meta.offset,
+    limit: stateProps.productsActions.getProducts.meta.limit
   });
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const isLoading = allItemsAreFalsy([stateProps.getProductsRequest.isLoading]);
+  const isLoading = allItemsAreFalsy([stateProps.productsActions.getProducts.isLoading]);
   const isEmpty = isInputArrayContentEmpty([stateProps.products.data]);
   return Object.assign({
     isLoading,
