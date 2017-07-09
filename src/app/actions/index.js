@@ -138,6 +138,11 @@ export const getDistinctProductOptionsRequest = createAction(constants.GET_DISTI
 export const getDistinctProductOptionsSuccess = createAction(constants.GET_DISTINCT_PRODUCT_OPTIONS_SUCCESS);
 export const getDistinctProductOptionsFailure = createAction(constants.GET_DISTINCT_PRODUCT_OPTIONS_FAILURE);
 
+export const getProductSuggestIdle = createAction(constants.GET_PRODUCT_SUGGEST_IDLE);
+export const getProductSuggestRequest = createAction(constants.GET_PRODUCT_SUGGEST_REQUEST);
+export const getProductSuggestSuccess = createAction(constants.GET_PRODUCT_SUGGEST_SUCCESS);
+export const getProductSuggestFailure = createAction(constants.GET_PRODUCT_SUGGEST_FAILURE);
+
 export const getProductOptionIdle = createAction(constants.GET_PRODUCT_OPTION_IDLE);
 export const getProductOptionRequest = createAction(constants.GET_PRODUCT_OPTION_REQUEST);
 export const getProductOptionSuccess = createAction(constants.GET_PRODUCT_OPTION_SUCCESS);

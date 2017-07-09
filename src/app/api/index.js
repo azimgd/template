@@ -38,6 +38,9 @@ export const postProduct = (data) =>
   requestProvider.post('/api/products', data)
   .then(res => res.data);
 
+export const getProductSuggest = (data) =>
+  requestProvider.get('/api/products/autocomplete', { params: data })
+  .then(res => res.data);
 
 /**
  * Page categories

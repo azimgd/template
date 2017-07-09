@@ -5,6 +5,7 @@ import { getFormValues } from 'redux-form';
 
 const mapStateToProps = (state) => ({
   products: state.productsReducer.products,
+  productSuggest: state.productsReducer.productSuggest,
   productsActions: state.productsReducer.actions,
   distinctProductOptions: state.productOptionsReducer.distinctProductOptions,
   searchForm: getFormValues('SearchComponent')(state),
@@ -13,6 +14,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   getProductsRequest: actions.getProductsRequest,
   getProductsIdle: actions.getProductsIdle,
+  getProductSuggestRequest: actions.getProductSuggestRequest,
+  getProductSuggestIdle: actions.getProductSuggestIdle,
   getDistinctProductOptionsRequest: actions.getDistinctProductOptionsRequest,
   getDistinctProductOptionsIdle: actions.getDistinctProductOptionsIdle,
 };

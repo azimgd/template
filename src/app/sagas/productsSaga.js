@@ -41,8 +41,18 @@ function* postProductRequest(req) {
   }
 }
 
+function* getProductSuggestRequest(req) {
+  const { payload } = req;
+  try {
+    const data = yield call(api.getProductSuggest.bind(null, payload));
+    yield put(actions.getProductSuggestSuccess({ data }));
+  } catch (e) {
+    yield put(actions.getProductSuggestFailure({ message: 'Cant get products' }));
+  }
+}
 export default [
   fork(takeLatest, constants.GET_PRODUCTS_REQUEST, getProductsRequest),
   fork(takeLatest, constants.GET_PRODUCT_REQUEST, getProductRequest),
   fork(takeLatest, constants.POST_PRODUCT_REQUEST, postProductRequest),
+  fork(takeLatest, constants.GET_PRODUCT_SUGGEST_REQUEST, getProductSuggestRequest),
 ];

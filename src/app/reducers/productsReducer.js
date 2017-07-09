@@ -9,6 +9,9 @@ const initialState = {
   product: {
     data: {},
   },
+  productSuggest: {
+    data: {},
+  },
   actions: {
     getProducts: {
       message: null,
@@ -33,6 +36,12 @@ const initialState = {
       createdAt: null,
     },
     postProduct: {
+      message: null,
+      status: null,
+      isLoading: false,
+      createdAt: null,
+    },
+    getProductSuggest: {
       message: null,
       status: null,
       isLoading: false,
@@ -120,6 +129,40 @@ const getProductIdle = (state, action) => update(state, {
   },
 });
 
+
+/**
+ * Get product
+ */
+const getProductSuggestRequest = (state, action) => update(state, {
+  actions: {
+    getProductSuggest: { $setRequestActionLoading: action.payload },
+  },
+});
+
+const getProductSuggestSuccess = (state, action) => update(state, {
+  productSuggest: {
+    data: { $set: action.payload.data },
+  },
+  actions: {
+    getProductSuggest: { $setRequestActionSuccess: action.payload },
+  },
+});
+
+const getProductSuggestFailure = (state, action) => update(state, {
+  actions: {
+    getProductSuggest: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const getProductSuggestIdle = (state, action) => update(state, {
+  productSuggest: {
+    data: { $set: initialState.productSuggest.data },
+  },
+  actions: {
+    getProductSuggest: { $setRequestActionIdle: action.payload },
+  },
+});
+
 /**
  * Post product
  */
@@ -162,4 +205,9 @@ export default handleActions({
   [constants.POST_PRODUCT_SUCCESS]: postProductSuccess,
   [constants.POST_PRODUCT_FAILURE]: postProductFailure,
   [constants.POST_PRODUCT_IDLE]: postProductIdle,
+
+  [constants.GET_PRODUCT_SUGGEST_IDLE]: getProductSuggestIdle,
+  [constants.GET_PRODUCT_SUGGEST_REQUEST]: getProductSuggestRequest,
+  [constants.GET_PRODUCT_SUGGEST_SUCCESS]: getProductSuggestSuccess,
+  [constants.GET_PRODUCT_SUGGEST_FAILURE]: getProductSuggestFailure,
 }, initialState);
