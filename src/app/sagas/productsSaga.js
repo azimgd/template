@@ -11,6 +11,9 @@ function* getProductsRequest(req) {
   const { payload } = req;
   try {
     const data = yield call(api.getProducts.bind(null, payload));
+    if (payload.reset) {
+      yield put(actions.getProductsIdle());
+    }
     yield put(actions.getProductsSuccess({ data }));
     /**
      * Hack to arrange product thumbnails
