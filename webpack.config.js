@@ -146,6 +146,11 @@ module.exports = {
     rules: [
       ...WebpackLoaders,
       {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?modules',
+        include: /flexboxgrid/
+      },
+      {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           use: [{
