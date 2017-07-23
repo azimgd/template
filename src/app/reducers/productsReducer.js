@@ -59,7 +59,7 @@ const getProductsRequest = (state, action) => update(state, {
       meta: {
         categoryId: { $set: action.payload.categoryId },
         subCategoryId: { $set: action.payload.subCategoryId },
-        offset: { $set: action.payload.offset || 0 },
+        offset: { $set: action.payload.offset || state.actions.getProducts.meta.offset },
         limit: { $set: action.payload.limit || state.actions.getProducts.meta.limit },
       },
     },
