@@ -86,12 +86,14 @@ const getProductsFailure = (state, action) => update(state, {
   },
 });
 
-const getProductsIdle = (state, action) => update(state, {
+const getProductsIdle = (state) => update(state, {
   products: {
     data: { $set: initialState.products.data },
   },
   actions: {
-    getProducts: { $setRequestActionIdle: action.payload },
+    getProducts: { $setRequestActionIdle: {
+      meta: { $set: initialState.actions.getProducts.meta }
+    } },
   },
 });
 
