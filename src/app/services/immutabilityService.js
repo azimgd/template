@@ -23,9 +23,10 @@ update.extend('$setRequestActionIdle', (data = {}, original) => update(original,
   ...data,
 }));
 
-update.extend('$setRequestActionLoading', (data, original) => update(original, {
+update.extend('$setRequestActionLoading', (data = {}, original) => update(original, {
   message: { $set: null },
   status: { $set: constants.STATUS_LOADING },
   isLoading: { $set: true },
   createdAt: { $set: Date.now() },
+  ...data,
 }));
