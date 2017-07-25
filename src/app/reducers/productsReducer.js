@@ -101,9 +101,9 @@ const getProductsIdle = (state) => update(state, {
 /**
  * Get product
  */
-const getProductRequest = (state, action) => update(state, {
+const getProductRequest = (state) => update(state, {
   actions: {
-    getProduct: { $setRequestActionLoading: action.payload },
+    getProduct: { $setRequestActionLoading: {} },
   },
 });
 
@@ -122,12 +122,12 @@ const getProductFailure = (state, action) => update(state, {
   },
 });
 
-const getProductIdle = (state, action) => update(state, {
+const getProductIdle = (state) => update(state, {
   product: {
     data: { $set: initialState.product.data },
   },
   actions: {
-    getProduct: { $setRequestActionIdle: action.payload },
+    getProduct: { $setRequestActionIdle: {} },
   },
 });
 
@@ -135,9 +135,9 @@ const getProductIdle = (state, action) => update(state, {
 /**
  * Get product
  */
-const getProductSuggestRequest = (state, action) => update(state, {
+const getProductSuggestRequest = (state) => update(state, {
   actions: {
-    getProductSuggest: { $setRequestActionLoading: action.payload },
+    getProductSuggest: { $setRequestActionLoading: {} },
   },
 });
 
@@ -156,21 +156,21 @@ const getProductSuggestFailure = (state, action) => update(state, {
   },
 });
 
-const getProductSuggestIdle = (state, action) => update(state, {
+const getProductSuggestIdle = (state) => update(state, {
   productSuggest: {
     data: { $set: initialState.productSuggest.data },
   },
   actions: {
-    getProductSuggest: { $setRequestActionIdle: action.payload },
+    getProductSuggest: { $setRequestActionIdle: {} },
   },
 });
 
 /**
  * Post product
  */
-const postProductRequest = (state, action) => update(state, {
+const postProductRequest = (state) => update(state, {
   actions: {
-    postProduct: { $setRequestActionLoading: action.payload },
+    postProduct: { $setRequestActionLoading: {} },
   },
 });
 
@@ -186,9 +186,9 @@ const postProductFailure = (state, action) => update(state, {
   },
 });
 
-const postProductIdle = (state, action) => update(state, {
+const postProductIdle = (state) => update(state, {
   actions: {
-    postProduct: { $setRequestActionIdle: action.payload },
+    postProduct: { $setRequestActionIdle: {} },
   },
 });
 

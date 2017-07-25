@@ -43,7 +43,7 @@ const getProductSubCategoriesIdle = (state, action) => update(state, {
     data: { $set: initialState.productSubCategories.data },
   },
   actions: {
-    getProductSubCategories: { $setRequestActionIdle: action.payload },
+    getProductSubCategories: { $setRequestActionIdle: {} },
   },
 });
 
@@ -64,7 +64,7 @@ const postProductSubCategoryFailure = (state, action) => update(state, {
 
 const postProductSubCategoryIdle = (state, action) => update(state, {
   actions: {
-    postProductSubCategory: { $setRequestActionIdle: action.payload },
+    postProductSubCategory: { $setRequestActionIdle: {} },
   },
 });
 

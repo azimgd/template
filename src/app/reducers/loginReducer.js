@@ -38,7 +38,7 @@ const postLoginIdle = (state, action) => update(state, {
     data: { $set: initialState.login.data },
   },
   actions: {
-    postLogin: { $setRequestActionIdle: action.payload },
+    postLogin: { $setRequestActionIdle: {} },
   },
 });
 

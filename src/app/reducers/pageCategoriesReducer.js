@@ -43,7 +43,7 @@ const getPageCategoriesIdle = (state, action) => update(state, {
     data: { $set: initialState.pageCategories.data },
   },
   actions: {
-    getPageCategories: { $setRequestActionIdle: action.payload },
+    getPageCategories: { $setRequestActionIdle: {} },
   },
 });
 
@@ -64,7 +64,7 @@ const postPageCategoryFailure = (state, action) => update(state, {
 
 const postPageCategoryIdle = (state, action) => update(state, {
   actions: {
-    postPageCategory: { $setRequestActionIdle: action.payload },
+    postPageCategory: { $setRequestActionIdle: {} },
   },
 });
 

@@ -43,7 +43,7 @@ const getProductImagesIdle = (state, action) => update(state, {
     data: { $set: initialState.productImages.data },
   },
   actions: {
-    getProductImages: { $setRequestActionIdle: action.payload },
+    getProductImages: { $setRequestActionIdle: {} },
   },
 });
 
@@ -64,7 +64,7 @@ const postProductImageFailure = (state, action) => update(state, {
 
 const postProductImageIdle = (state, action) => update(state, {
   actions: {
-    postProductImage: { $setRequestActionIdle: action.payload },
+    postProductImage: { $setRequestActionIdle: {} },
   },
 });
 

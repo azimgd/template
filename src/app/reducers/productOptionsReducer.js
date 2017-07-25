@@ -51,7 +51,7 @@ const getProductOptionsIdle = (state, action) => update(state, {
     data: { $set: initialState.productOptions.data },
   },
   actions: {
-    getProductOptions: { $setRequestActionIdle: action.payload },
+    getProductOptions: { $setRequestActionIdle: {} },
   },
 });
 
@@ -78,7 +78,7 @@ const getDistinctProductOptionsIdle = (state, action) => update(state, {
     data: { $set: initialState.distinctProductOptions.data },
   },
   actions: {
-    getDistinctProductOptions: { $setRequestActionIdle: action.payload },
+    getDistinctProductOptions: { $setRequestActionIdle: {} },
   },
 });
 
@@ -99,7 +99,7 @@ const postProductOptionFailure = (state, action) => update(state, {
 
 const postProductOptionIdle = (state, action) => update(state, {
   actions: {
-    postProductOption: { $setRequestActionIdle: action.payload },
+    postProductOption: { $setRequestActionIdle: {} },
   },
 });
 

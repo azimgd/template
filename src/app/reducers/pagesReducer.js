@@ -51,7 +51,7 @@ const getPagesIdle = (state, action) => update(state, {
     data: { $set: initialState.pages.data },
   },
   actions: {
-    getPages: { $setRequestActionIdle: action.payload },
+    getPages: { $setRequestActionIdle: {} },
   },
 });
 
@@ -79,7 +79,7 @@ const getPageIdle = (state, action) => update(state, {
     data: { $set: initialState.page.data },
   },
   actions: {
-    getPage: { $setRequestActionIdle: action.payload },
+    getPage: { $setRequestActionIdle: {} },
   },
 });
 
@@ -100,7 +100,7 @@ const postPageFailure = (state, action) => update(state, {
 
 const postPageIdle = (state, action) => update(state, {
   actions: {
-    postPage: { $setRequestActionIdle: action.payload },
+    postPage: { $setRequestActionIdle: {} },
   },
 });
 
