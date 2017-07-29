@@ -1,3 +1,4 @@
+import templateSagas from 'template/sagas/index';
 import loginSaga from './loginSaga';
 import pageCategoriesSaga from './pageCategoriesSaga';
 import pagesSaga from './pagesSaga';
@@ -9,7 +10,7 @@ import productOptionsSaga from './productOptionsSaga';
 import productSubCategoriesSaga from './productSubCategoriesSaga';
 
 export default function* rootSaga() {
-  yield []
+  yield [...templateSagas]
     .concat(loginSaga)
     .concat(pageCategoriesSaga)
     .concat(pagesSaga)
