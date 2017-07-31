@@ -1,6 +1,6 @@
 export const STATUS_SUCCESS = 'success';
 export const STATUS_FAILURE = 'failure';
-export const STATUS_LOADING = 'failure';
+export const STATUS_LOADING = 'loading';
 export const STATUS_IDLE = 'failure';
 
 export const TOGGLE_CART_DROPDOWN = 'TOGGLE_CART_DROPDOWN';
