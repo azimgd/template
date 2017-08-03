@@ -16,7 +16,7 @@ export default (preloadedState) => {
     ),
   );
 
-  persistStore(store, { whitelist: ['loginReducer', 'dashboardAuthReducer'] });
+  persistStore(store, { whitelist: ['loginReducer'] });
 
   sagaMiddleware.run(rootSagas);
 
