@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import css from 'services/cssService';
 import styles from 'components/Shared/_SharedFormInputComponent.scss';
 
-import RichTextEditor from 'react-rte';
 import map from 'lodash/map';
 
 /**
@@ -104,7 +103,7 @@ export class RichTextareaComponent extends React.Component {
     super(props);
     this.onChange = this.onChange.bind(this);
     this.state = {
-      value: RichTextEditor.createValueFromString(this.props.input.value, 'markdown'),
+      value: this.props.input.value,
     };
   }
 
@@ -116,12 +115,12 @@ export class RichTextareaComponent extends React.Component {
   }
 
   render() {
-    const { input, label, options, meta: { asyncValidating, touched, error } } = this.props;
+    const { input, label, meta: { asyncValidating, touched, error } } = this.props;
     return (
       <div styleName="SharedFormInputComponent SharedFormInputComponent--InputTextarea">
         <label>{label}</label>
         <div className={asyncValidating ? 'SharedFormInputComponent-isValidating' : ''}>
-          <RichTextEditor name={input.name} value={this.state.value} onChange={this.onChange} placeholder={label} rows="" />
+          <textarea name={input.name} value={this.state.value} onChange={this.onChange} placeholder={label} rows="" />
           {touched && error && <div styleName="SharedFormInputComponent-error">{error}</div>}
         </div>
       </div>
