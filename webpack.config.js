@@ -45,7 +45,6 @@ const WebpackEntries = {
     'react-redux',
     'react-router',
     'react-router-redux',
-    'react-rte',
     'react-s3-uploader',
     'redux',
     'redux-actions',
