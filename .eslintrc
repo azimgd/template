@@ -13,7 +13,6 @@
     "API_ENDPOINT": true,
     "APP_TITLE": true,
     "APP_CURRENCY": true,
-    "BASE_PATH": true,
   },
   "ecmaFeatures": {
     "jsx": true
