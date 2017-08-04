@@ -30,7 +30,7 @@ const ProductItemComponent = ({ product, height }) =>
       </div>
 
       <div styleName="component-button">
-        <Link to={`/products/${product.id}`}><ButtonIconComponent name="IoAndroidAdd" /> Add to cart</Link>
+        <Link to={`/products/${product.id}`}><ButtonIconComponent name="cart-plus" /> Add to cart</Link>
       </div>
     </div>
   </div>;

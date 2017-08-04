@@ -1,28 +1,35 @@
 import React, { PropTypes } from 'react';
-import * as Icons from 'react-icons/lib/io';
 
-export const TitleIconComponent = ({ name }) => {
-  const Component = Icons[name];
-  return <Component style={{ fontSize: '1.1em', marginTop: '-4px' }} />;
-};
+export const TitleIconComponent = ({ name }) => (
+  <i
+    className={`fa fa-${name}`}
+    style={{ fontSize: '1.1em', marginTop: '-4px' }}
+    aria-hidden="true"
+  />
+);
 
 TitleIconComponent.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export const BodyIconComponent = ({ name }) => {
-  const Component = Icons[name];
-  return <Component />;
-};
+export const BodyIconComponent = ({ name }) => (
+  <i
+    className={`fa fa-${name}`}
+    aria-hidden="true"
+  />
+);
 
 BodyIconComponent.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export const ButtonIconComponent = ({ name }) => {
-  const Component = Icons[name];
-  return <Component style={{ fontSize: '1.1em', marginTop: '-4px' }} />;
-};
+export const ButtonIconComponent = ({ name }) => (
+  <i
+    className={`fa fa-${name}`}
+    style={{ fontSize: '1.1em', marginTop: '-4px' }}
+    aria-hidden="true"
+  />
+);
 
 ButtonIconComponent.propTypes = {
   name: PropTypes.string.isRequired,
