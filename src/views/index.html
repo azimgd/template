@@ -1,8 +1,8 @@
 <html>
   <head>
     <title>{{ APP_TITLE }}</title>
-    <link rel="stylesheet" href="/build/webpack/bundle.css" as="stylesheet" onload="this.rel='stylesheet'">
-    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" as="stylesheet" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="/build/webpack/bundle.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" media="none" onload="if(media!='all')media='all'">
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
     <meta name="apple-mobile-web-app-title" content="React Toolbox">
