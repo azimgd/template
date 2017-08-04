@@ -1,7 +1,8 @@
 import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory } from 'react-router';
+import { createHistory } from 'history';
+import { useRouterHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 
@@ -13,6 +14,11 @@ import 'scss/index.scss';
 
 const store = configureStore();
 authorizationProvider(store);
+
+const browserHistory = useRouterHistory(createHistory)({
+  basename: BASE_PATH,
+});
+
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render((
