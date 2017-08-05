@@ -8,7 +8,7 @@ const HeaderActions = ({ toggleCartDropdown }) =>
   <div styleName="HeaderActionsBlock">
     <div styleName="HeaderActions">
       <button onClick={toggleCartDropdown}>
-        <TitleIconComponent name="IoIosCart" />
+        <TitleIconComponent name="shopping-cart" />
       </button>
     </div>
   </div>;
