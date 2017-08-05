@@ -1,8 +1,8 @@
 <html>
   <head>
     <title>{{ APP_TITLE }}</title>
-    <link rel="stylesheet" href="/build/webpack/bundle.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/build/webpack/bundle.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" media="none" onload="if(media!='all')media='all'">
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
     <meta name="apple-mobile-web-app-title" content="React Toolbox">
@@ -11,10 +11,47 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="HandheldFriendly" content="True">
     <meta http-equiv="cleartype" content="on">
+    <style>
+      .preloader {
+        position: absolute;
+        left: 50%;
+        margin-left: -30px;
+        top: 50%;
+      }
+      .preloader .preloader-dot {
+        animation: preloader-anim 1s ease-in-out 0s infinite;
+        border-radius: 50%;
+        background: #999;
+        position: absolute;
+        height: 12px;
+        width: 12px;
+      }
+      .preloader .preloader-dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      @keyframes preloader-anim {
+          0% {
+            opacity: 0;
+            transform: translateX(0px);
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+            transform: translateX(60px);
+          }
+      }
+    </style>
 
   </head>
   <body>
-    <div id='root'>
+    <div id="root">
+      <div class="preloader">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+      </div>
     </div>
     <script type="text/javascript">
       API_ENDPOINT = '{{ API_ENDPOINT }}';
