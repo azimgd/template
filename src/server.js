@@ -16,6 +16,7 @@ const globalVariables = {
   APP_TITLE: process.env.APP_TITLE,
   APP_CURRENCY: process.env.APP_CURRENCY,
   NODE_ENV: process.env.NODE_ENV,
+  BASE_PATH: process.env.BASE_PATH,
 };
 
 if (process.env.NODE_ENV === 'production') {
@@ -43,7 +44,7 @@ module.exports = {
     }));
     app.use(webpackHotMiddleware(compiler, {
       log: console.log,
-      path: '/__webpack_hmr',
+      path: `http://localhost:${process.env.PORT}/__webpack_hmr`,
     }));
   },
 
