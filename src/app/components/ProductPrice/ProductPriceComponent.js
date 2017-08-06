@@ -15,7 +15,7 @@ const ProductPriceComponent = ({ product }) =>
       </div>
     </div>
     <div styleName="ProductPriceComponentBlock-button">
-      <ButtonIconComponent name="IoCash" /> Buy now
+      <ButtonIconComponent name="usd" /> Buy now
     </div>
   </div>;
 

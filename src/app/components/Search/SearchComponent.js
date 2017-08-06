@@ -13,7 +13,7 @@ const SearchComponent = ({ handleSubmit, getSearchedProductsRequest }) =>
         <Field name="search" component={InputText} label="Search by" />
       </div>
       <div styleName="SearchComponent-button">
-        <button type="submit"><ButtonIconComponent name="IoIosSearchStrong" /></button>
+        <button type="submit"><ButtonIconComponent name="search" /></button>
       </div>
     </form>
   </div>;
