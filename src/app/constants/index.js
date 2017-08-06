@@ -1,7 +1,7 @@
 export const STATUS_SUCCESS = 'success';
 export const STATUS_FAILURE = 'failure';
 export const STATUS_LOADING = 'loading';
-export const STATUS_IDLE = 'failure';
+export const STATUS_IDLE = 'idle';
 
 export const TOGGLE_CART_DROPDOWN = 'TOGGLE_CART_DROPDOWN';
 export const TOGGLE_ALERT_MESSAGE = 'TOGGLE_ALERT_MESSAGE';
