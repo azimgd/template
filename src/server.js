@@ -50,6 +50,10 @@ module.exports = {
 
   run: (app) => {
     app.use('/build', express.static(locations.buildFolder));
+    app.get('/robots.txt', function (req, res) {
+      res.type('text/plain');
+      res.send("User-agent: *\nDisallow: /products\nDisallow: /dashboard");
+    });
     app.get('*', (req, res) => { res.render('index', globalVariables); });
   }
 };
