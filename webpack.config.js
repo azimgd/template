@@ -65,7 +65,7 @@ if (IS_PRODUCTION) {
   WebpackPlugins.push(new webpack.optimize.AggressiveMergingPlugin());
   WebpackPlugins.push(new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
-    filename: '[name].[chunkhash].js',
+    filename: '[name].js',
     minChunks: Infinity,
   }));
   WebpackPlugins.push(new AssetsPlugin({
@@ -121,7 +121,7 @@ module.exports = {
   devtool: WebpackDevTool,
   entry: WebpackEntries,
   output: {
-    filename: IS_PRODUCTION ? '[name].[chunkhash].js' : '[name].js',
+    filename: IS_PRODUCTION ? '[name].js' : '[name].js',
     path: path.join(__dirname, 'build/webpack'),
     publicPath: '/build/webpack/',
   },
