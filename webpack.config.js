@@ -31,7 +31,7 @@ const WebpackPlugins = [
 
 const WebpackLoaders = [];
 const WebpackEntries = {
-  bundle: [],
+  bundle: ['babel-polyfill'],
   vendor: [
     'axios',
     'classnames',
