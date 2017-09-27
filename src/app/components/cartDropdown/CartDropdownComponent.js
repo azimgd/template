@@ -36,4 +36,8 @@ CartDropdownComponent.propTypes = {
   isVisible: PropTypes.bool.isRequired,
 };
 
+CartDropdownComponent.defaultProps = {
+  cartPosition: {},
+};
+
 export default css(CartDropdownComponent, styles);
