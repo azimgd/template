@@ -45,10 +45,11 @@ function* postProductRequest(req) {
 }
 
 function* getProductSuggestRequest(req) {
-  const { payload } = req;
+  const { payload: { onComplete, ...data } } = req;
   try {
-    const data = yield call(api.getProductSuggest.bind(null, payload));
+    const data = yield call(api.getProductSuggest.bind(null, data));
     yield put(actions.getProductSuggestSuccess({ data }));
+    onComplete();
   } catch (e) {
     yield put(actions.getProductSuggestFailure({ message: 'Cant get products' }));
   }
