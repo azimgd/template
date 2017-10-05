@@ -45,9 +45,9 @@ function* postProductRequest(req) {
 }
 
 function* getProductSuggestRequest(req) {
-  const { payload: { onComplete, ...data } } = req;
+  const { payload: { onComplete, ...search } } = req;
   try {
-    const data = yield call(api.getProductSuggest.bind(null, data));
+    const data = yield call(api.getProductSuggest.bind(null, search));
     yield put(actions.getProductSuggestSuccess({ data }));
     onComplete();
   } catch (e) {
