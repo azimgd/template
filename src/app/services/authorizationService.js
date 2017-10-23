@@ -1,6 +1,6 @@
 import get from 'lodash/get';
 import update from 'immutability-helper';
-import { browserHistory } from 'react-router';
+import { browserHistory } from 'react-router-dom';
 import requestProvider from 'api/requestProvider';
 
 const addAuthorizationToHeaders = (state, config) => {

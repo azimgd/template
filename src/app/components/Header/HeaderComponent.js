@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import css from 'services/cssService';
 import styles from 'components/Header/_HeaderComponent.scss';
 
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const HeaderComponent = ({ children }) =>
   <div styleName="block">

@@ -3,7 +3,7 @@ import css from 'services/cssService';
 import styles from 'components/HomeCategories/_HomeCategoriesComponent.scss';
 
 import map from 'lodash/map';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const HomeCategoriesComponent = ({ categoryUrl, subCategoryUrl, categories }) =>
   <div styleName="HomeCategoriesComponentBlock">

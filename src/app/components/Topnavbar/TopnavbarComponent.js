@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import css from 'services/cssService';
 import styles from 'components/topnavbar/_TopnavbarComponent.scss';
 
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const NavbarItem = ({ currentPath, itemPath, itemText }) => {
   const isActive = currentPath === (itemPath === '/' ? '' : itemPath);

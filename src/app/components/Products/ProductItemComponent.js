@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import css from 'services/cssService';
 import styles from 'components/Products/_ProductItemComponent.scss';
 
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import get from 'lodash/get';
 import configMock from 'mocks/config';
 import { ButtonIconComponent } from 'components/Icons/IconsComponent';
