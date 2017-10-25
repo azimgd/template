@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const getLocalIdent = require('./webpack/getLocalIdent');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
@@ -20,11 +21,26 @@ const extractSass = new ExtractTextPlugin({
 });
 
 const WebpackPlugins = [
+  new HardSourceWebpackPlugin({
+    environmentHash: {
+      root: process.cwd(),
+      directories: ['node_modules'],
+      files: ['package.json'],
+    },
+  }),
   new WriteFilePlugin({
     test: /^(?!.*(hot)).*/,
   }),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`
+  }),
+  new webpack.DllReferencePlugin({
+    context: '.',
+    manifest: path.join(__dirname, 'build/dist', 'bundle-manifest.json'),
+  }),
+  new webpack.DllReferencePlugin({
+    context: '.',
+    manifest: path.join(__dirname, 'build/dist', 'vendor-manifest.json'),
   }),
   extractSass,
 ];
