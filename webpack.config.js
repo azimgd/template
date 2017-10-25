@@ -26,14 +26,6 @@ const WebpackPlugins = [
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`
   }),
-  new webpack.DllReferencePlugin({
-    context: '.',
-    manifest: path.join(__dirname, 'build/dist', 'bundle-manifest.json'),
-  }),
-  new webpack.DllReferencePlugin({
-    context: '.',
-    manifest: path.join(__dirname, 'build/dist', 'vendor-manifest.json'),
-  }),
   extractSass,
 ];
 
@@ -134,6 +126,7 @@ module.exports = {
     filename: IS_PRODUCTION ? '[name].js' : '[name].js',
     path: path.join(__dirname, 'build/webpack'),
     publicPath: '/build/webpack/',
+    library: '[name]',
   },
   plugins: WebpackPlugins,
   resolve: {
