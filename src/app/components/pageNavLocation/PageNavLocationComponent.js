@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import css from 'services/cssService';
 import styles from 'components/PageNavLocation/_PageNavLocationComponent.scss';
 
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const PageNavLocationComponent = ({ product, productCategory, productSubCategory }) =>
   <div styleName="PageNavLocationComponentBlock">

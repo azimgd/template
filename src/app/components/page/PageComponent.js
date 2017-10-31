@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import css from 'services/cssService';
 import styles from 'components/Page/_PagesComponent.scss';
 
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import truncate from 'lodash/truncate';
 
 const PageComponent = ({ page }) =>

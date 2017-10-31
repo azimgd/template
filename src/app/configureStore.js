@@ -4,6 +4,18 @@ import { persistStore, autoRehydrate } from 'redux-persist';
 import rootReducer from 'reducers/index';
 import rootSagas from 'sagas/index';
 
+const analytics = () => next => action => {
+  if (window.dataLayer && window.dataLayer instanceof Array) {
+    window.dataLayer.push({
+      event: action.type,
+      actionType: action.type,
+      payload: action.payload
+    });
+  }
+  return next(action);
+};
+
+
 export default (preloadedState) => {
   const sagaMiddleware = createSagaMiddleware();
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -11,7 +23,7 @@ export default (preloadedState) => {
     rootReducer,
     preloadedState,
     composeEnhancers(
-      applyMiddleware(sagaMiddleware),
+      applyMiddleware(sagaMiddleware, analytics),
       autoRehydrate(),
     ),
   );

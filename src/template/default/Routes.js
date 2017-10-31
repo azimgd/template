@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Router, Route, Redirect, IndexRoute, IndexRedirect } from 'react-router';
+import { Router, Route, Redirect, IndexRoute, IndexRedirect } from 'react-router-dom';
 
 import LayoutContainer from 'template/containers/LayoutContainer/index';
 import LoginContainer from 'containers/LoginContainer/index';

@@ -43,7 +43,7 @@ const WebpackEntries = {
     'react-dom',
     'react-image-slider',
     'react-redux',
-    'react-router',
+    'react-router-dom',
     'react-router-redux',
     'react-s3-uploader',
     'redux',
@@ -84,6 +84,7 @@ if (IS_PRODUCTION) {
       path.join(__dirname, 'src/app'),
       path.join(__dirname, 'src/template'),
     ],
+    exclude: /node_modules/,
   });
 
   /**
@@ -106,6 +107,7 @@ if (IS_PRODUCTION) {
       path.join(__dirname, 'src/app'),
       path.join(__dirname, 'src/template'),
     ],
+    exclude: /node_modules/,
   });
 
   /**
@@ -124,6 +126,7 @@ module.exports = {
     filename: IS_PRODUCTION ? '[name].js' : '[name].js',
     path: path.join(__dirname, 'build/webpack'),
     publicPath: '/build/webpack/',
+    library: '[name]',
   },
   plugins: WebpackPlugins,
   resolve: {
