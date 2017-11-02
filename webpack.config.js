@@ -149,7 +149,10 @@ module.exports = {
       ...WebpackLoaders,
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'url-loader?options=10000',
+        loader: 'file-loader',
+        options: {
+          name: 'images/[hash].[ext]'
+        },
       },
       {
         test: /\.css$/,
