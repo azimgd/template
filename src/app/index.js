@@ -14,7 +14,9 @@ import 'scss/index.scss';
 const store = configureStore();
 authorizationProvider(store);
 
-const history = createHistory();
+const history = createHistory({
+  basename: BASE_PATH,
+});
 
 ReactDOM.render((
   <Provider store={store}>
