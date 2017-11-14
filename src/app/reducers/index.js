@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 
@@ -15,7 +14,7 @@ import productSubCategoriesReducer from 'reducers/productSubCategoriesReducer';
 import imageUploadReducer from 'reducers/imageUploadReducer';
 import templateReducers from 'template/reducers/index';
 
-export default combineReducers({
+export default {
   uiReducer,
   loginReducer,
   pagesReducer,
@@ -31,4 +30,4 @@ export default combineReducers({
   form: formReducer,
 
   ...templateReducers,
-});
+};

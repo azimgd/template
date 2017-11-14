@@ -67,6 +67,9 @@
       <script src="/build/webpack/bundle.js"></script>
     {% endif %}
 
-    {{process.env}}
+
+    <script type="text/javascript">
+      initApplication(document.getElementById('root'), {});
+    </script>
   </body>
 </html>
