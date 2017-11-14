@@ -28,3 +28,5 @@ window.initApplication = (selector, appConfig) => {
     </Provider>
   ), selector);
 };
+
+initApplication(document.getElementById('root'), {});
