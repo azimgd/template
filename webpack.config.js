@@ -151,6 +151,7 @@ module.exports = {
         test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
         options: {
+          useRelativePath: true,
           name: 'images/[hash].[ext]'
         },
       },
