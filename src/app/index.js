@@ -28,19 +28,3 @@ window.initApplication = (selector, appConfig) => {
     </Provider>
   ), selector);
 };
-
-const defaultFilters = (() => {
-  try {
-    return DEFAULT_FILTERS;
-  } catch (e) {
-    return {};
-  }
-})();
-
-initApplication(document.getElementById('root'), {
-  make: defaultFilters.MAKE || '',
-  model: defaultFilters.MODEL || '',
-  location: defaultFilters.LOCASI || 'default',
-  condition: defaultFilters.CONDITION || 'all',
-  category: defaultFilters.CATEGORY || 'All Cars',
-});
