@@ -69,5 +69,18 @@
       <script src="/build/webpack/bundle.js"></script>
     {% endif %}
 
+    <script>
+    	var API_ENDPOINT = 'http://cars.dvg.com.au:8080/';
+    	var APP_TITLE = 'Widget';
+    	var BASE_PATH = '/';
+    	var DEFAULT_FILTERS = {
+    		make:       '',
+    		model:      '',
+    		location:   '',
+    		condition:  '',
+    		category:   ''
+    	};
+    </script>
+    <script>window.initApplication(document.getElementById('root'), DEFAULT_FILTERS);</script>
   </body>
 </html>
