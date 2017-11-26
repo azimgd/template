@@ -54,6 +54,7 @@ module.exports = {
       res.type('text/plain');
       res.send("User-agent: *\nDisallow: /products\nDisallow: /dashboard");
     });
+    app.get('/internal', (req, res) => { res.render('internal', globalVariables); });
     app.get('*', (req, res) => { res.render('index', globalVariables); });
   }
 };
