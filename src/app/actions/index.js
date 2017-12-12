@@ -12,6 +12,11 @@ export const postLoginRequest = createAction(constants.POST_LOGIN_REQUEST);
 export const postLoginSuccess = createAction(constants.POST_LOGIN_SUCCESS);
 export const postLoginFailure = createAction(constants.POST_LOGIN_FAILURE);
 
+export const postLogoutIdle = createAction(constants.POST_LOGOUT_IDLE);
+export const postLogoutRequest = createAction(constants.POST_LOGOUT_REQUEST);
+export const postLogoutSuccess = createAction(constants.POST_LOGOUT_SUCCESS);
+export const postLogoutFailure = createAction(constants.POST_LOGOUT_FAILURE);
+
 /**
  * Pages
  */

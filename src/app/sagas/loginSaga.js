@@ -5,7 +5,7 @@ import * as api from 'api/index';
 import * as constants from 'constants/index';
 
 /**
- * Pages
+ * Login
  */
 function* postLoginRequest(req) {
   const { payload } = req;
@@ -17,6 +17,19 @@ function* postLoginRequest(req) {
   }
 }
 
+/**
+ * Logout
+ */
+function* postLogoutRequest() {
+  try {
+    yield put(actions.postLogoutSuccess({ data: {}, message: 'User has been loggout out' }));
+    window.location = BASE_PATH;
+  } catch (e) {
+    yield put(actions.postLogoutFailure({ message: 'Cant login' }));
+  }
+}
+
 export default [
   fork(takeLatest, constants.POST_LOGIN_REQUEST, postLoginRequest),
+  fork(takeLatest, constants.POST_LOGOUT_REQUEST, postLogoutRequest),
 ];

@@ -1,14 +1,14 @@
 import update from 'immutability-helper';
 import * as constants from 'constants/index';
 
-update.extend('$setRequestActionSuccess', (data, original) => update(original, {
+update.extend('$setRequestActionSuccess', (data = {}, original) => update(original, {
   message: { $set: data.message },
   status: { $set: constants.STATUS_SUCCESS },
   isLoading: { $set: false },
   createdAt: { $set: Date.now() },
 }));
 
-update.extend('$setRequestActionFailure', (data, original) => update(original, {
+update.extend('$setRequestActionFailure', (data = {}, original) => update(original, {
   message: { $set: data.message },
   status: { $set: constants.STATUS_FAILURE },
   isLoading: { $set: false },
