@@ -53,16 +53,6 @@
       </div>
     </div>
 
-    {% if NODE_ENV === 'production' %}
-      <script src="{{polyfill.js}}"></script>
-      <script src="{{vendor.js}}"></script>
-      <script src="{{bundle.js}}"></script>
-    {% else %}
-      <script src="/build/webpack/polyfill.js"></script>
-      <script src="/build/webpack/vendor.js"></script>
-      <script src="/build/webpack/bundle.js"></script>
-    {% endif %}
-
     <script>
     	API_ENDPOINT = '{{ API_ENDPOINT }}';
     	APP_TITLE = '{{ APP_TITLE }}';
@@ -76,6 +66,17 @@
     		background: 'https://i.imgur.com/UFfgtc1.jpg',
     	};
     </script>
+
+    {% if NODE_ENV === 'production' %}
+      <script src="{{polyfill.js}}"></script>
+      <script src="{{vendor.js}}"></script>
+      <script src="{{bundle.js}}"></script>
+    {% else %}
+      <script src="/build/webpack/polyfill.js"></script>
+      <script src="/build/webpack/vendor.js"></script>
+      <script src="/build/webpack/bundle.js"></script>
+    {% endif %}
+
     <script>window.initApplication(document.getElementById('root'), DEFAULT_FILTERS);</script>
   </body>
 </html>
