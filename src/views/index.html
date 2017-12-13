@@ -52,12 +52,6 @@
         <div class="preloader-dot"></div>
       </div>
     </div>
-    <script type="text/javascript">
-      API_ENDPOINT = '{{ API_ENDPOINT }}';
-      APP_TITLE = '{{ APP_TITLE }}';
-      APP_CURRENCY = '{{ APP_CURRENCY }}';
-      BASE_PATH = '{{ BASE_PATH }}';
-    </script>
 
     {% if NODE_ENV === 'production' %}
       <script src="{{polyfill.js}}"></script>
@@ -70,9 +64,9 @@
     {% endif %}
 
     <script>
-    	var API_ENDPOINT = 'http://cars.dvg.com.au:8080/';
-    	var APP_TITLE = 'Widget';
-    	var BASE_PATH = '/';
+    	var API_ENDPOINT = '{{ API_ENDPOINT }}';
+    	var APP_TITLE = '{{ APP_TITLE }}';
+    	var BASE_PATH = '{{ BASE_PATH }}';
     	var DEFAULT_FILTERS = {
     		make:       '',
     		model:      '',
