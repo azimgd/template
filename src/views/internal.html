@@ -52,31 +52,36 @@
         <div class="preloader-dot"></div>
       </div>
     </div>
+    <script type="text/javascript">
+      API_ENDPOINT = '{{ API_ENDPOINT }}';
+      APP_TITLE = '{{ APP_TITLE }}';
+      APP_CURRENCY = '{{ APP_CURRENCY }}';
+      BASE_PATH = '{{ BASE_PATH }}';
+    </script>
+
+    {% if NODE_ENV === 'production' %}
+      <script src="{{polyfill.js}}"></script>
+      <script src="{{vendor.js}}"></script>
+      <script src="{{bundle.js}}"></script>
+    {% else %}
+      <script src="/build/webpack/polyfill.js"></script>
+      <script src="/build/webpack/vendor.js"></script>
+      <script src="/build/webpack/bundle.js"></script>
+    {% endif %}
 
     <script>
-    	API_ENDPOINT = '{{ API_ENDPOINT }}';
-    	APP_TITLE = '{{ APP_TITLE }}';
-    	BASE_PATH = '{{ BASE_PATH }}';
-    	DEFAULT_FILTERS = {
+    	var API_ENDPOINT = 'http://cars.dvg.com.au:8080/';
+    	var APP_TITLE = 'Widget';
+    	var BASE_PATH = '/internal';
+    	var DEFAULT_FILTERS = {
     		make:       '',
     		model:      '',
     		location:   '',
     		condition:  '',
-        category:   '',
-    		background: 'https://i.imgur.com/UFfgtc1.jpg',
+    		category:   '',
+        salesManVersion: true,
     	};
     </script>
-
-    {% if NODE_ENV === 'production' %}
-      <script src="{{vendor.js}}"></script>
-      <script src="{{polyfill.js}}"></script>
-      <script src="{{bundle.js}}"></script>
-    {% else %}
-      <script src="/build/webpack/vendor.js"></script>
-      <script src="/build/webpack/polyfill.js"></script>
-      <script src="/build/webpack/bundle.js"></script>
-    {% endif %}
-
     <script>window.initApplication(document.getElementById('root'), DEFAULT_FILTERS);</script>
   </body>
 </html>

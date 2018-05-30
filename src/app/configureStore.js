@@ -1,7 +1,7 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { persistStore, autoRehydrate } from 'redux-persist';
-import rootReducer from 'reducers/index';
+import reducers from 'reducers/index';
 import rootSagas from 'sagas/index';
 
 const analytics = () => next => action => {
@@ -20,8 +20,8 @@ export default (preloadedState) => {
   const sagaMiddleware = createSagaMiddleware();
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const store = createStore(
-    rootReducer,
-    preloadedState,
+    combineReducers(reducers),
+    undefined,
     composeEnhancers(
       applyMiddleware(sagaMiddleware, analytics),
       autoRehydrate(),
@@ -29,6 +29,11 @@ export default (preloadedState) => {
   );
 
   persistStore(store, { whitelist: ['loginReducer'] });
+
+  store.dispatch({
+    type: 'SET_GLOBAL_APP_STATE',
+    payload: preloadedState,
+  });
 
   sagaMiddleware.run(rootSagas);
 

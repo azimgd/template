@@ -31,7 +31,8 @@ const WebpackPlugins = [
 
 const WebpackLoaders = [];
 const WebpackEntries = {
-  bundle: ['babel-polyfill'],
+  polyfill: ['babel-polyfill'],
+  bundle: [],
   vendor: [
     'axios',
     'classnames',
@@ -151,6 +152,7 @@ module.exports = {
         test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
         options: {
+          publicPath: IS_PRODUCTION ? 'http://cars.dvg.com.au/build/webpack/' : '/build/webpack/',
           name: 'images/[hash].[ext]'
         },
       },

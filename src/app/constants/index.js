@@ -15,6 +15,14 @@ export const POST_LOGIN_SUCCESS = 'POST_LOGIN_SUCCESS';
 export const POST_LOGIN_FAILURE = 'POST_LOGIN_FAILURE';
 
 /**
+ * Logout
+ */
+export const POST_LOGOUT_IDLE = 'POST_LOGOUT_IDLE';
+export const POST_LOGOUT_REQUEST = 'POST_LOGOUT_REQUEST';
+export const POST_LOGOUT_SUCCESS = 'POST_LOGOUT_SUCCESS';
+export const POST_LOGOUT_FAILURE = 'POST_LOGOUT_FAILURE';
+
+/**
  * Pages
  */
 export const GET_PAGES_IDLE = 'GET_PAGES_IDLE';

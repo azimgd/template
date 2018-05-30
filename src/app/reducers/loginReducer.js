@@ -33,7 +33,7 @@ const postLoginFailure = (state, action) => update(state, {
   },
 });
 
-const postLoginIdle = (state, action) => update(state, {
+const postLoginIdle = (state) => update(state, {
   login: {
     data: { $set: initialState.login.data },
   },
@@ -42,8 +42,34 @@ const postLoginIdle = (state, action) => update(state, {
   },
 });
 
+/**
+ * Get login
+ */
+const postLogoutSuccess = (state) => update(state, {
+  login: { $set: initialState.login },
+  actions: {
+    postLogin: { $set: initialState.actions.postLogin },
+  },
+});
+
+const postLogoutFailure = (state, action) => update(state, {
+  actions: {
+    postLogout: { $setRequestActionFailure: action.payload },
+  },
+});
+
+const postLogoutIdle = (state) => update(state, {
+  login: {
+    data: { $set: initialState.login.data },
+  },
+});
+
 export default handleActions({
   [constants.POST_LOGIN_SUCCESS]: postLoginSuccess,
   [constants.POST_LOGIN_FAILURE]: postLoginFailure,
   [constants.POST_LOGIN_IDLE]: postLoginIdle,
+
+  [constants.POST_LOGOUT_SUCCESS]: postLogoutSuccess,
+  [constants.POST_LOGOUT_FAILURE]: postLogoutFailure,
+  [constants.POST_LOGOUT_IDLE]: postLogoutIdle,
 }, initialState);

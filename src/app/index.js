@@ -11,17 +11,20 @@ import configureStore from 'configureStore';
 import Routes from 'template/Routes';
 import 'scss/index.scss';
 
-const store = configureStore();
-authorizationProvider(store);
+window.initApplication = (selector, appConfig) => {
+  const store = configureStore(appConfig);
 
-const history = createHistory({
-  basename: BASE_PATH,
-});
+  authorizationProvider(store);
 
-ReactDOM.render((
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Routes history={history} />
-    </ConnectedRouter>
-  </Provider>
-), document.getElementById('root'));
+  const history = createHistory({
+    basename: BASE_PATH,
+  });
+
+  ReactDOM.render((
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <Routes history={history} />
+      </ConnectedRouter>
+    </Provider>
+  ), selector);
+};
